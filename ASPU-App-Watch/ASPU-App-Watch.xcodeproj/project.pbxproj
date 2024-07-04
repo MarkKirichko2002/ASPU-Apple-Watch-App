@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8294CF842C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8294CF832C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8294CF892C34B579006E7EDA /* ASPU_App_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */; };
+		8294CF8B2C34B579006E7EDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CF8A2C34B579006E7EDA /* ContentView.swift */; };
+		8294CF8D2C34B57F006E7EDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8294CF8C2C34B57F006E7EDA /* Assets.xcassets */; };
+		8294CF902C34B57F006E7EDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8294CF8F2C34B57F006E7EDA /* Preview Assets.xcassets */; };
+		8294CFA12C34B772006E7EDA /* AppSectionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFA02C34B772006E7EDA /* AppSectionsListView.swift */; };
+		8294CFA42C34B7BC006E7EDA /* AppSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFA32C34B7BC006E7EDA /* AppSections.swift */; };
+		8294CFA92C36022A006E7EDA /* SettingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFA82C36022A006E7EDA /* SettingsListView.swift */; };
+		8294CFAF2C360432006E7EDA /* SettingSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFAE2C360432006E7EDA /* SettingSectionModel.swift */; };
+		8294CFB12C36045D006E7EDA /* SettingSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFB02C36045D006E7EDA /* SettingSections.swift */; };
+		8294CFB32C3604B0006E7EDA /* AppSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFB22C3604B0006E7EDA /* AppSectionModel.swift */; };
+		8294CFB62C3604DD006E7EDA /* AppSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFB52C3604DD006E7EDA /* AppSectionCell.swift */; };
+		8294CFB92C360564006E7EDA /* SettingSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFB82C360564006E7EDA /* SettingSectionCell.swift */; };
+		8294CFBF2C360696006E7EDA /* NewsCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFBE2C360696006E7EDA /* NewsCategoryModel.swift */; };
+		8294CFC12C3606CF006E7EDA /* NewsCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFC02C3606CF006E7EDA /* NewsCategories.swift */; };
+		8294CFC32C3607B9006E7EDA /* NewsCategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFC22C3607B9006E7EDA /* NewsCategoriesListView.swift */; };
+		8294CFC62C3607CF006E7EDA /* NewsCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFC52C3607CF006E7EDA /* NewsCategoryCell.swift */; };
+		8294CFC82C360957006E7EDA /* NewsCategoriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFC72C360957006E7EDA /* NewsCategoriesListViewModel.swift */; };
+		8294CFCC2C371786006E7EDA /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFCB2C371786006E7EDA /* SettingsManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8294CF852C34B579006E7EDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8294CF772C34B579006E7EDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8294CF822C34B579006E7EDA;
+			remoteInfo = "ASPU-App-Watch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8294CF962C34B57F006E7EDA /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				8294CF842C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8294CF7D2C34B579006E7EDA /* ASPU-App-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ASPU-App-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8294CF832C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ФГБОУ ВО «АГПУ».app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPU_App_WatchApp.swift; sourceTree = "<group>"; };
+		8294CF8A2C34B579006E7EDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8294CF8C2C34B57F006E7EDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8294CF8F2C34B57F006E7EDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8294CFA02C34B772006E7EDA /* AppSectionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSectionsListView.swift; sourceTree = "<group>"; };
+		8294CFA32C34B7BC006E7EDA /* AppSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSections.swift; sourceTree = "<group>"; };
+		8294CFA82C36022A006E7EDA /* SettingsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListView.swift; sourceTree = "<group>"; };
+		8294CFAE2C360432006E7EDA /* SettingSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSectionModel.swift; sourceTree = "<group>"; };
+		8294CFB02C36045D006E7EDA /* SettingSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSections.swift; sourceTree = "<group>"; };
+		8294CFB22C3604B0006E7EDA /* AppSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSectionModel.swift; sourceTree = "<group>"; };
+		8294CFB52C3604DD006E7EDA /* AppSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSectionCell.swift; sourceTree = "<group>"; };
+		8294CFB82C360564006E7EDA /* SettingSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSectionCell.swift; sourceTree = "<group>"; };
+		8294CFBE2C360696006E7EDA /* NewsCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategoryModel.swift; sourceTree = "<group>"; };
+		8294CFC02C3606CF006E7EDA /* NewsCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategories.swift; sourceTree = "<group>"; };
+		8294CFC22C3607B9006E7EDA /* NewsCategoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategoriesListView.swift; sourceTree = "<group>"; };
+		8294CFC52C3607CF006E7EDA /* NewsCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategoryCell.swift; sourceTree = "<group>"; };
+		8294CFC72C360957006E7EDA /* NewsCategoriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategoriesListViewModel.swift; sourceTree = "<group>"; };
+		8294CFCB2C371786006E7EDA /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8294CF802C34B579006E7EDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8294CF762C34B579006E7EDA = {
+			isa = PBXGroup;
+			children = (
+				8294CF872C34B579006E7EDA /* ASPU-App-Watch Watch App */,
+				8294CF7E2C34B579006E7EDA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8294CF7E2C34B579006E7EDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8294CF7D2C34B579006E7EDA /* ASPU-App-Watch.app */,
+				8294CF832C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8294CF872C34B579006E7EDA /* ASPU-App-Watch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFC92C371771006E7EDA /* Services */,
+				8294CF9E2C34B747006E7EDA /* App Sections List */,
+				8294CFA52C36020C006E7EDA /* Settings List */,
+				8294CFBA2C360648006E7EDA /* News Categories List MVVM */,
+				8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */,
+				8294CF8A2C34B579006E7EDA /* ContentView.swift */,
+				8294CF8C2C34B57F006E7EDA /* Assets.xcassets */,
+				8294CF8E2C34B57F006E7EDA /* Preview Content */,
+			);
+			path = "ASPU-App-Watch Watch App";
+			sourceTree = "<group>";
+		};
+		8294CF8E2C34B57F006E7EDA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8294CF8F2C34B57F006E7EDA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8294CF9E2C34B747006E7EDA /* App Sections List */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFA22C34B7B1006E7EDA /* Model */,
+				8294CF9F2C34B75A006E7EDA /* View */,
+				8294CFB42C3604CD006E7EDA /* Cell */,
+			);
+			path = "App Sections List";
+			sourceTree = "<group>";
+		};
+		8294CF9F2C34B75A006E7EDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFA02C34B772006E7EDA /* AppSectionsListView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8294CFA22C34B7B1006E7EDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFB22C3604B0006E7EDA /* AppSectionModel.swift */,
+				8294CFA32C34B7BC006E7EDA /* AppSections.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8294CFA52C36020C006E7EDA /* Settings List */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFAD2C360412006E7EDA /* Model */,
+				8294CFA62C360218006E7EDA /* View */,
+				8294CFB72C360543006E7EDA /* Cell */,
+			);
+			path = "Settings List";
+			sourceTree = "<group>";
+		};
+		8294CFA62C360218006E7EDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFA82C36022A006E7EDA /* SettingsListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8294CFAD2C360412006E7EDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFAE2C360432006E7EDA /* SettingSectionModel.swift */,
+				8294CFB02C36045D006E7EDA /* SettingSections.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8294CFB42C3604CD006E7EDA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFB52C3604DD006E7EDA /* AppSectionCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		8294CFB72C360543006E7EDA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFB82C360564006E7EDA /* SettingSectionCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8294CFBA2C360648006E7EDA /* News Categories List MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFBD2C36065F006E7EDA /* Model */,
+				8294CFBC2C36065D006E7EDA /* View */,
+				8294CFC42C3607C1006E7EDA /* Cell */,
+				8294CFBB2C36065B006E7EDA /* ViewModel */,
+			);
+			path = "News Categories List MVVM";
+			sourceTree = "<group>";
+		};
+		8294CFBB2C36065B006E7EDA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFC72C360957006E7EDA /* NewsCategoriesListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8294CFBC2C36065D006E7EDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFC22C3607B9006E7EDA /* NewsCategoriesListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8294CFBD2C36065F006E7EDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFBE2C360696006E7EDA /* NewsCategoryModel.swift */,
+				8294CFC02C3606CF006E7EDA /* NewsCategories.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8294CFC42C3607C1006E7EDA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFC52C3607CF006E7EDA /* NewsCategoryCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8294CFC92C371771006E7EDA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFCA2C371776006E7EDA /* Settings */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8294CFCA2C371776006E7EDA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFCB2C371786006E7EDA /* SettingsManager.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8294CF7C2C34B579006E7EDA /* ASPU-App-Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8294CF972C34B57F006E7EDA /* Build configuration list for PBXNativeTarget "ASPU-App-Watch" */;
+			buildPhases = (
+				8294CF7B2C34B579006E7EDA /* Resources */,
+				8294CF962C34B57F006E7EDA /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8294CF862C34B579006E7EDA /* PBXTargetDependency */,
+			);
+			name = "ASPU-App-Watch";
+			productName = "ASPU-App-Watch";
+			productReference = 8294CF7D2C34B579006E7EDA /* ASPU-App-Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		8294CF822C34B579006E7EDA /* ASPU-App-Watch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8294CF932C34B57F006E7EDA /* Build configuration list for PBXNativeTarget "ASPU-App-Watch Watch App" */;
+			buildPhases = (
+				8294CF7F2C34B579006E7EDA /* Sources */,
+				8294CF802C34B579006E7EDA /* Frameworks */,
+				8294CF812C34B579006E7EDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ASPU-App-Watch Watch App";
+			productName = "ASPU-App-Watch Watch App";
+			productReference = 8294CF832C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8294CF772C34B579006E7EDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					8294CF7C2C34B579006E7EDA = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					8294CF822C34B579006E7EDA = {
+						CreatedOnToolsVersion = 15.1;
+					};
+				};
+			};
+			buildConfigurationList = 8294CF7A2C34B579006E7EDA /* Build configuration list for PBXProject "ASPU-App-Watch" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8294CF762C34B579006E7EDA;
+			productRefGroup = 8294CF7E2C34B579006E7EDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8294CF7C2C34B579006E7EDA /* ASPU-App-Watch */,
+				8294CF822C34B579006E7EDA /* ASPU-App-Watch Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8294CF7B2C34B579006E7EDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8294CF812C34B579006E7EDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8294CF902C34B57F006E7EDA /* Preview Assets.xcassets in Resources */,
+				8294CF8D2C34B57F006E7EDA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8294CF7F2C34B579006E7EDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8294CFC62C3607CF006E7EDA /* NewsCategoryCell.swift in Sources */,
+				8294CF8B2C34B579006E7EDA /* ContentView.swift in Sources */,
+				8294CFA92C36022A006E7EDA /* SettingsListView.swift in Sources */,
+				8294CFAF2C360432006E7EDA /* SettingSectionModel.swift in Sources */,
+				8294CFB12C36045D006E7EDA /* SettingSections.swift in Sources */,
+				8294CFA42C34B7BC006E7EDA /* AppSections.swift in Sources */,
+				8294CF892C34B579006E7EDA /* ASPU_App_WatchApp.swift in Sources */,
+				8294CFC12C3606CF006E7EDA /* NewsCategories.swift in Sources */,
+				8294CFC32C3607B9006E7EDA /* NewsCategoriesListView.swift in Sources */,
+				8294CFB62C3604DD006E7EDA /* AppSectionCell.swift in Sources */,
+				8294CFA12C34B772006E7EDA /* AppSectionsListView.swift in Sources */,
+				8294CFB92C360564006E7EDA /* SettingSectionCell.swift in Sources */,
+				8294CFCC2C371786006E7EDA /* SettingsManager.swift in Sources */,
+				8294CFC82C360957006E7EDA /* NewsCategoriesListViewModel.swift in Sources */,
+				8294CFBF2C360696006E7EDA /* NewsCategoryModel.swift in Sources */,
+				8294CFB32C3604B0006E7EDA /* AppSectionModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8294CF862C34B579006E7EDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8294CF822C34B579006E7EDA /* ASPU-App-Watch Watch App */;
+			targetProxy = 8294CF852C34B579006E7EDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8294CF912C34B57F006E7EDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8294CF922C34B57F006E7EDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		8294CF942C34B57F006E7EDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ASPU-App-Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 265GKHT32M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
+				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		8294CF952C34B57F006E7EDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ASPU-App-Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 265GKHT32M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
+				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		8294CF982C34B57F006E7EDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 265GKHT32M;
+				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8294CF992C34B57F006E7EDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 265GKHT32M;
+				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8294CF7A2C34B579006E7EDA /* Build configuration list for PBXProject "ASPU-App-Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8294CF912C34B57F006E7EDA /* Debug */,
+				8294CF922C34B57F006E7EDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8294CF932C34B57F006E7EDA /* Build configuration list for PBXNativeTarget "ASPU-App-Watch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8294CF942C34B57F006E7EDA /* Debug */,
+				8294CF952C34B57F006E7EDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8294CF972C34B57F006E7EDA /* Build configuration list for PBXNativeTarget "ASPU-App-Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8294CF982C34B57F006E7EDA /* Debug */,
+				8294CF992C34B57F006E7EDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8294CF772C34B579006E7EDA /* Project object */;
+}
