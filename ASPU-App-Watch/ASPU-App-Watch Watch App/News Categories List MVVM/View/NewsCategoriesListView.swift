@@ -9,12 +9,15 @@ import SwiftUI
 
 struct NewsCategoriesListView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @ObservedObject var viewModel = NewsCategoriesListViewModel()
     
     var body: some View {
         List(viewModel.categories) { category in
             NewsCategoryCell(category: category, isSelected: viewModel.isSavedCategory(category: category))
                 .onTapGesture {
+                    self.presentationMode.wrappedValue.dismiss()
                     viewModel.selectCategory(category: category)
              }
         }
