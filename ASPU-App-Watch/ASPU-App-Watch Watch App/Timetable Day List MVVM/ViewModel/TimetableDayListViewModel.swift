@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TimetableDayListViewModel: ObservableObject {
+final class TimetableDayListViewModel: ObservableObject {
     
     var timetable = TimeTable(id: "", date: "", disciplines: [
         Discipline(id: UUID(), time: "8:00-9:30", name: "Разговоры о важном, Николаева Л.Г., доц.", groupName: "ВМ-ИВТ-2-1", teacherName: "Николаева Л.Г., доц.", audienceID: "23", subgroup: 0, type: .none),
@@ -18,6 +18,7 @@ class TimetableDayListViewModel: ObservableObject {
     
     // MARK: - сервисы
     private let service = TimeTableService()
+    private let dateManager = DateManager()
     
     init() {
         getTimetable()
@@ -32,5 +33,9 @@ class TimetableDayListViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+    
+    func getCurrentDate()-> String {
+        return dateManager.getCurrentDate()
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class TimeTableService {
+final class TimeTableService {
     
     func getTimeTableDay(id: String, date: String, owner: String, completion: @escaping(Result<TimeTable,Error>)->Void) {
         

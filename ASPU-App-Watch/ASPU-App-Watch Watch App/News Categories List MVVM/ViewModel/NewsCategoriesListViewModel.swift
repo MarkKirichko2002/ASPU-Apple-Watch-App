@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NewsCategoriesListViewModel: ObservableObject {
+final class NewsCategoriesListViewModel: ObservableObject {
     
     var categories = NewsCategories.categories
     @Published var isChanged = false

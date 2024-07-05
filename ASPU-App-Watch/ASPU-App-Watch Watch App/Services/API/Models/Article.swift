@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Article: Codable {
+struct Article: Identifiable, Codable {
     let id: Int
     let title: String
     let description: String?

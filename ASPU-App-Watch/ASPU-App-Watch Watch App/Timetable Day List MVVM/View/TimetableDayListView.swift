@@ -24,7 +24,7 @@ struct TimetableDayListView: View {
             }
         }
         .listStyle(.carousel)
-            .navigationTitle("05.07.2024")
+        .navigationTitle(viewModel.getCurrentDate())
         .onChange(of: viewModel.isChanged) {}
     }
 }
