@@ -16,6 +16,8 @@ struct AppSectionsListView: View {
                     switch section.id {
                     case 1:
                         NewsListView()
+                    case 2:
+                        TimetableDayListView()
                     case 3:
                         SettingsListView()
                     default:

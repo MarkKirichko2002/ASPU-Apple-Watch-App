@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8255E4382C378D7A009D24B1 /* PairCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255E4372C378D7A009D24B1 /* PairCell.swift */; };
 		8294CF842C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8294CF832C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8294CF892C34B579006E7EDA /* ASPU_App_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */; };
 		8294CF8B2C34B579006E7EDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CF8A2C34B579006E7EDA /* ContentView.swift */; };
@@ -27,6 +28,16 @@
 		8294CFC82C360957006E7EDA /* NewsCategoriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFC72C360957006E7EDA /* NewsCategoriesListViewModel.swift */; };
 		8294CFCC2C371786006E7EDA /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFCB2C371786006E7EDA /* SettingsManager.swift */; };
 		8294CFD32C371A60006E7EDA /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CFD22C371A60006E7EDA /* NewsListView.swift */; };
+		82A608EE2C3758FE0005EDC3 /* HostName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A608ED2C3758FE0005EDC3 /* HostName.swift */; };
+		82A608F02C3759190005EDC3 /* Discipline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A608EF2C3759190005EDC3 /* Discipline.swift */; };
+		82A608F22C3759350005EDC3 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A608F12C3759350005EDC3 /* Article.swift */; };
+		82A608F42C3759460005EDC3 /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A608F32C3759460005EDC3 /* NewsResponse.swift */; };
+		82A608F62C3759620005EDC3 /* TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A608F52C3759620005EDC3 /* TimeTable.swift */; };
+		82A608F82C3759A10005EDC3 /* ASPUNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A608F72C3759A00005EDC3 /* ASPUNewsService.swift */; };
+		82A608FA2C3759D30005EDC3 /* TimeTableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A608F92C3759D30005EDC3 /* TimeTableService.swift */; };
+		82A609012C375A2B0005EDC3 /* TimetableDayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A609002C375A2B0005EDC3 /* TimetableDayListView.swift */; };
+		82A609032C375A4D0005EDC3 /* TimetableDayListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A609022C375A4D0005EDC3 /* TimetableDayListViewModel.swift */; };
+		82A609062C375C8B0005EDC3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 82A609052C375C8B0005EDC3 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +65,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		822D84F42C37766200148062 /* ASPU-App-Watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ASPU-App-Watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8255E4372C378D7A009D24B1 /* PairCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairCell.swift; sourceTree = "<group>"; };
 		8294CF7D2C34B579006E7EDA /* ASPU-App-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ASPU-App-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8294CF832C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ФГБОУ ВО «АГПУ».app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPU_App_WatchApp.swift; sourceTree = "<group>"; };
@@ -75,6 +88,15 @@
 		8294CFC72C360957006E7EDA /* NewsCategoriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategoriesListViewModel.swift; sourceTree = "<group>"; };
 		8294CFCB2C371786006E7EDA /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		8294CFD22C371A60006E7EDA /* NewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListView.swift; sourceTree = "<group>"; };
+		82A608ED2C3758FE0005EDC3 /* HostName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostName.swift; sourceTree = "<group>"; };
+		82A608EF2C3759190005EDC3 /* Discipline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discipline.swift; sourceTree = "<group>"; };
+		82A608F12C3759350005EDC3 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		82A608F32C3759460005EDC3 /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
+		82A608F52C3759620005EDC3 /* TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTable.swift; sourceTree = "<group>"; };
+		82A608F72C3759A00005EDC3 /* ASPUNewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPUNewsService.swift; sourceTree = "<group>"; };
+		82A608F92C3759D30005EDC3 /* TimeTableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableService.swift; sourceTree = "<group>"; };
+		82A609002C375A2B0005EDC3 /* TimetableDayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayListView.swift; sourceTree = "<group>"; };
+		82A609022C375A4D0005EDC3 /* TimetableDayListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,12 +104,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82A609062C375C8B0005EDC3 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8255E4362C378D6D009D24B1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8255E4372C378D7A009D24B1 /* PairCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		8294CF762C34B579006E7EDA = {
 			isa = PBXGroup;
 			children = (
@@ -108,9 +139,11 @@
 		8294CF872C34B579006E7EDA /* ASPU-App-Watch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				822D84F42C37766200148062 /* ASPU-App-Watch-Watch-App-Info.plist */,
 				8294CFC92C371771006E7EDA /* Services */,
 				8294CF9E2C34B747006E7EDA /* App Sections List */,
 				8294CFD02C371A42006E7EDA /* News List View */,
+				82A608E42C3758800005EDC3 /* Timetable Day List MVVM */,
 				8294CFA52C36020C006E7EDA /* Settings List */,
 				8294CFBA2C360648006E7EDA /* News Categories List MVVM */,
 				8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */,
@@ -246,6 +279,7 @@
 		8294CFC92C371771006E7EDA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				82A608E72C3758A00005EDC3 /* API */,
 				8294CFCA2C371776006E7EDA /* Settings */,
 			);
 			path = Services;
@@ -273,6 +307,86 @@
 				8294CFD22C371A60006E7EDA /* NewsListView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		82A608E42C3758800005EDC3 /* Timetable Day List MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				82A608E62C3758940005EDC3 /* View */,
+				8255E4362C378D6D009D24B1 /* Cell */,
+				82A608E52C3758910005EDC3 /* ViewModel */,
+			);
+			path = "Timetable Day List MVVM";
+			sourceTree = "<group>";
+		};
+		82A608E52C3758910005EDC3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82A609022C375A4D0005EDC3 /* TimetableDayListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82A608E62C3758940005EDC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82A609002C375A2B0005EDC3 /* TimetableDayListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82A608E72C3758A00005EDC3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				82A608EA2C3758B80005EDC3 /* Host Name */,
+				82A608E92C3758B70005EDC3 /* Models */,
+				82A608E82C3758B40005EDC3 /* Services */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		82A608E82C3758B40005EDC3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				82A608EC2C3758D70005EDC3 /* News */,
+				82A608EB2C3758D50005EDC3 /* Timetable */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		82A608E92C3758B70005EDC3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				82A608EF2C3759190005EDC3 /* Discipline.swift */,
+				82A608F12C3759350005EDC3 /* Article.swift */,
+				82A608F32C3759460005EDC3 /* NewsResponse.swift */,
+				82A608F52C3759620005EDC3 /* TimeTable.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		82A608EA2C3758B80005EDC3 /* Host Name */ = {
+			isa = PBXGroup;
+			children = (
+				82A608ED2C3758FE0005EDC3 /* HostName.swift */,
+			);
+			path = "Host Name";
+			sourceTree = "<group>";
+		};
+		82A608EB2C3758D50005EDC3 /* Timetable */ = {
+			isa = PBXGroup;
+			children = (
+				82A608F92C3759D30005EDC3 /* TimeTableService.swift */,
+			);
+			path = Timetable;
+			sourceTree = "<group>";
+		};
+		82A608EC2C3758D70005EDC3 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				82A608F72C3759A00005EDC3 /* ASPUNewsService.swift */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +422,9 @@
 			dependencies = (
 			);
 			name = "ASPU-App-Watch Watch App";
+			packageProductDependencies = (
+				82A609052C375C8B0005EDC3 /* Alamofire */,
+			);
 			productName = "ASPU-App-Watch Watch App";
 			productReference = 8294CF832C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app */;
 			productType = "com.apple.product-type.application";
@@ -339,6 +456,9 @@
 				Base,
 			);
 			mainGroup = 8294CF762C34B579006E7EDA;
+			packageReferences = (
+				82A609042C375C8B0005EDC3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 8294CF7E2C34B579006E7EDA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -375,20 +495,30 @@
 			files = (
 				8294CFC62C3607CF006E7EDA /* NewsCategoryCell.swift in Sources */,
 				8294CF8B2C34B579006E7EDA /* ContentView.swift in Sources */,
+				82A608F82C3759A10005EDC3 /* ASPUNewsService.swift in Sources */,
+				82A608EE2C3758FE0005EDC3 /* HostName.swift in Sources */,
+				82A608F62C3759620005EDC3 /* TimeTable.swift in Sources */,
 				8294CFA92C36022A006E7EDA /* SettingsListView.swift in Sources */,
+				82A608F22C3759350005EDC3 /* Article.swift in Sources */,
 				8294CFAF2C360432006E7EDA /* SettingSectionModel.swift in Sources */,
 				8294CFB12C36045D006E7EDA /* SettingSections.swift in Sources */,
+				82A608FA2C3759D30005EDC3 /* TimeTableService.swift in Sources */,
 				8294CFA42C34B7BC006E7EDA /* AppSections.swift in Sources */,
 				8294CF892C34B579006E7EDA /* ASPU_App_WatchApp.swift in Sources */,
+				82A609012C375A2B0005EDC3 /* TimetableDayListView.swift in Sources */,
+				82A608F02C3759190005EDC3 /* Discipline.swift in Sources */,
 				8294CFC12C3606CF006E7EDA /* NewsCategories.swift in Sources */,
 				8294CFC32C3607B9006E7EDA /* NewsCategoriesListView.swift in Sources */,
 				8294CFB62C3604DD006E7EDA /* AppSectionCell.swift in Sources */,
 				8294CFA12C34B772006E7EDA /* AppSectionsListView.swift in Sources */,
+				82A608F42C3759460005EDC3 /* NewsResponse.swift in Sources */,
 				8294CFB92C360564006E7EDA /* SettingSectionCell.swift in Sources */,
 				8294CFCC2C371786006E7EDA /* SettingsManager.swift in Sources */,
 				8294CFC82C360957006E7EDA /* NewsCategoriesListViewModel.swift in Sources */,
 				8294CFBF2C360696006E7EDA /* NewsCategoryModel.swift in Sources */,
+				82A609032C375A4D0005EDC3 /* TimetableDayListViewModel.swift in Sources */,
 				8294CFD32C371A60006E7EDA /* NewsListView.swift in Sources */,
+				8255E4382C378D7A009D24B1 /* PairCell.swift in Sources */,
 				8294CFB32C3604B0006E7EDA /* AppSectionModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,6 +659,7 @@
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ASPU-App-Watch-Watch-App-Info.plist";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -558,6 +689,7 @@
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ASPU-App-Watch-Watch-App-Info.plist";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -647,6 +779,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		82A609042C375C8B0005EDC3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = exactVersion;
+				version = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		82A609052C375C8B0005EDC3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82A609042C375C8B0005EDC3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8294CF772C34B579006E7EDA /* Project object */;
 }
