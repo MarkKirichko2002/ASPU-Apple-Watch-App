@@ -19,6 +19,8 @@ struct AppSectionsListView: View {
                     case 2:
                         TimetableDayListView()
                     case 3:
+                        BuildingsMapView()
+                    case 4:
                         SettingsListView()
                     default:
                         EmptyView()

@@ -18,16 +18,9 @@ struct ArticleCell: View {
             ArticleDetailView(article: article)
         } label: {
             HStack {
-                WebImage(url: URL(string: article.previewImage)!)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 70, height: 80)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(.black, lineWidth: 3))
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 10) {
                     Text(article.title)
                         .fontWeight(.black)
-                        .lineLimit(3)
                     Text(article.date)
                         .fontWeight(.medium)
                 }
