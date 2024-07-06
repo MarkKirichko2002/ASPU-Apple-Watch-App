@@ -18,7 +18,7 @@ struct NewsOptionsListView: View {
                 NavigationLink {
                     switch option.id {
                     case 1:
-                        EmptyView()
+                        NewsCategoriesListView()
                     default:
                         EmptyView()
                     }

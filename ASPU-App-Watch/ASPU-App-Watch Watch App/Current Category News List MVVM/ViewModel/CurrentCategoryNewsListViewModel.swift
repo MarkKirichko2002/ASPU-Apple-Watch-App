@@ -1,13 +1,13 @@
 //
-//  NewsListViewModel.swift
+//  CurrentCategoryNewsListViewModel.swift
 //  ASPU-App-Watch Watch App
 //
-//  Created by Марк Киричко on 05.07.2024.
+//  Created by Марк Киричко on 06.07.2024.
 //
 
 import Foundation
 
-class NewsListViewModel: ObservableObject {
+final class CurrentCategoryNewsListViewModel: ObservableObject {
     
     @Published var isPresented = false
     
