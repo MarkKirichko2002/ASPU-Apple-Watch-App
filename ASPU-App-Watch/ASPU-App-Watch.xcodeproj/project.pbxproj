@@ -10,6 +10,8 @@
 		82160F542C38A13600017A1F /* BuildingsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F532C38A13600017A1F /* BuildingsMapView.swift */; };
 		82160F582C38A32200017A1F /* Buildings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F572C38A32200017A1F /* Buildings.swift */; };
 		82160F5B2C38D61C00017A1F /* BuildingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F5A2C38D61C00017A1F /* BuildingDetailView.swift */; };
+		82160F5E2C38EDFB00017A1F /* BuildingsMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F5D2C38EDFB00017A1F /* BuildingsMapViewModel.swift */; };
+		82160F612C38EEC800017A1F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F602C38EEC800017A1F /* LocationManager.swift */; };
 		8255E4382C378D7A009D24B1 /* PairCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255E4372C378D7A009D24B1 /* PairCell.swift */; };
 		8255E43B2C385A58009D24B1 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255E43A2C385A58009D24B1 /* DateManager.swift */; };
 		8255E43E2C385C11009D24B1 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255E43D2C385C11009D24B1 /* NewsListViewModel.swift */; };
@@ -76,6 +78,8 @@
 		82160F532C38A13600017A1F /* BuildingsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsMapView.swift; sourceTree = "<group>"; };
 		82160F572C38A32200017A1F /* Buildings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildings.swift; sourceTree = "<group>"; };
 		82160F5A2C38D61C00017A1F /* BuildingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingDetailView.swift; sourceTree = "<group>"; };
+		82160F5D2C38EDFB00017A1F /* BuildingsMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsMapViewModel.swift; sourceTree = "<group>"; };
+		82160F602C38EEC800017A1F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		822D84F42C37766200148062 /* ASPU-App-Watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ASPU-App-Watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8255E4372C378D7A009D24B1 /* PairCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairCell.swift; sourceTree = "<group>"; };
 		8255E43A2C385A58009D24B1 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
@@ -135,13 +139,14 @@
 			path = "Article Detail";
 			sourceTree = "<group>";
 		};
-		82160F522C38A12000017A1F /* Buildings Map */ = {
+		82160F522C38A12000017A1F /* Buildings Map MVVM */ = {
 			isa = PBXGroup;
 			children = (
 				82160F562C38A2CD00017A1F /* Model */,
 				82160F552C38A2C200017A1F /* View */,
+				82160F5C2C38EDBA00017A1F /* ViewModel */,
 			);
-			path = "Buildings Map";
+			path = "Buildings Map MVVM";
 			sourceTree = "<group>";
 		};
 		82160F552C38A2C200017A1F /* View */ = {
@@ -166,6 +171,22 @@
 				82160F5A2C38D61C00017A1F /* BuildingDetailView.swift */,
 			);
 			path = "Location Detail";
+			sourceTree = "<group>";
+		};
+		82160F5C2C38EDBA00017A1F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82160F5D2C38EDFB00017A1F /* BuildingsMapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82160F5F2C38EE1800017A1F /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				82160F602C38EEC800017A1F /* LocationManager.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		8255E4362C378D6D009D24B1 /* Cell */ = {
@@ -235,7 +256,7 @@
 				8294CF9E2C34B747006E7EDA /* App Sections List */,
 				8294CFD02C371A42006E7EDA /* News List MVVM */,
 				82A608E42C3758800005EDC3 /* Timetable Day List MVVM */,
-				82160F522C38A12000017A1F /* Buildings Map */,
+				82160F522C38A12000017A1F /* Buildings Map MVVM */,
 				8294CFA52C36020C006E7EDA /* Settings List */,
 				8294CFBA2C360648006E7EDA /* News Categories List MVVM */,
 				8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */,
@@ -374,6 +395,7 @@
 				82A608E72C3758A00005EDC3 /* API */,
 				8255E4392C385A47009D24B1 /* Date */,
 				8294CFCA2C371776006E7EDA /* Settings */,
+				82160F5F2C38EE1800017A1F /* Location */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -597,6 +619,8 @@
 				82A608EE2C3758FE0005EDC3 /* HostName.swift in Sources */,
 				82A608F62C3759620005EDC3 /* TimeTable.swift in Sources */,
 				8294CFA92C36022A006E7EDA /* SettingsListView.swift in Sources */,
+				82160F5E2C38EDFB00017A1F /* BuildingsMapViewModel.swift in Sources */,
+				82160F612C38EEC800017A1F /* LocationManager.swift in Sources */,
 				82A608F22C3759350005EDC3 /* Article.swift in Sources */,
 				8294CFAF2C360432006E7EDA /* SettingSectionModel.swift in Sources */,
 				8255E4442C385DB5009D24B1 /* ArticleCell.swift in Sources */,

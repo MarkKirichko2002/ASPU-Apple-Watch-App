@@ -20,10 +20,6 @@ final class TimetableDayListViewModel: ObservableObject {
     private let service = TimeTableService()
     private let dateManager = DateManager()
     
-    init() {
-        getTimetable()
-    }
-    
     func getTimetable() {
         service.getTimeTableDay(id: "ВМ-ИВТ-2-1", date: "05.07.2024", owner: "GROUP") { result in
             switch result {

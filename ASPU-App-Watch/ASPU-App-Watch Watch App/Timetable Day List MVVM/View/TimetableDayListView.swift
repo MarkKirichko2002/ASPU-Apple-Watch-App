@@ -23,6 +23,9 @@ struct TimetableDayListView: View {
                 }
             }
         }
+        .onAppear {
+            viewModel.getTimetable()
+        }
         .listStyle(.carousel)
         .navigationTitle(viewModel.getCurrentDate())
         .onChange(of: viewModel.isChanged) {}

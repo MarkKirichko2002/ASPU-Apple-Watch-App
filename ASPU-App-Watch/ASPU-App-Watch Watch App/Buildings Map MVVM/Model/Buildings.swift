@@ -8,7 +8,7 @@
 import MapKit
 
 struct BuildingModel: Identifiable {
-    let id: Int
+    let id: UUID
     let name: String
     let audiences: [String]?
     let pin: CLLocationCoordinate2D
@@ -18,7 +18,7 @@ struct Buildings {
     
     static let pins = [
         BuildingModel(
-            id: 0,
+            id: UUID(),
             name: "Главный корпус",
             audiences: [
                 "1",
@@ -52,7 +52,7 @@ struct Buildings {
             pin: CLLocationCoordinate2D(latitude: 45.001817, longitude: 41.132393)
         ),
         BuildingModel(
-            id: 1,
+            id: UUID(),
             name: "Корпус и Общежитие №1",
             audiences: [
                 "30",
@@ -89,7 +89,7 @@ struct Buildings {
             pin: CLLocationCoordinate2D(latitude: 45.000517, longitude: 41.126859)
         ),
         BuildingModel(
-            id: 2,
+            id: UUID(),
             name: "Корпус №2",
             audiences: [
                 "24",
@@ -101,7 +101,7 @@ struct Buildings {
             pin: CLLocationCoordinate2D(latitude: 45.000415, longitude: 41.131333)
         ),
         BuildingModel(
-            id: 3,
+            id: UUID(),
             name: "Корпус №3 (СПФ)",
             audiences: [
                 "40",
@@ -119,7 +119,7 @@ struct Buildings {
             pin: CLLocationCoordinate2D(latitude: 45.002263, longitude: 41.121873)
         ),
         BuildingModel(
-            id: 4,
+            id: UUID(),
             name: "Корпус №4 (ФТЭиД)",
             audiences: [
                 "51",
@@ -142,7 +142,7 @@ struct Buildings {
             pin: CLLocationCoordinate2D(latitude: 45.003697, longitude: 41.122763)
         ),
         BuildingModel(
-            id: 5,
+            id: UUID(),
             name: "Корпус №5 (ЕБД)",
             audiences: [
                 "80",
@@ -155,7 +155,7 @@ struct Buildings {
             pin: CLLocationCoordinate2D(latitude: 45.003372, longitude: 41.121388)
         ),
         BuildingModel(
-            id: 6,
+            id: UUID(),
             name: "Корпус №6 (ФОК)",
             audiences: [
                 "85",
@@ -167,7 +167,7 @@ struct Buildings {
             pin: CLLocationCoordinate2D(latitude: 45.006374, longitude: 41.128629)
         ),
         BuildingModel(
-            id: 7,
+            id: UUID(),
             name: "ИСТФАК",
             audiences: [
                 "201",
@@ -184,7 +184,7 @@ struct Buildings {
             pin: CLLocationCoordinate2D(latitude: 44.989082, longitude: 41.126904)
         ),
         BuildingModel(
-            id: 8,
+            id: UUID(),
             name: "Общежитие №2",
             audiences: nil,
             pin: CLLocationCoordinate2D(latitude: 44.972907, longitude: 41.149784)
