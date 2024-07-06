@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NewsListView: View {
     
-    var viewModel = NewsListViewModel()
+    @ObservedObject var viewModel = NewsListViewModel()
     
     var body: some View {
         VStack {
@@ -18,12 +18,15 @@ struct NewsListView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    NavigationLink {
-                        NewsCategoriesListView()
-                    } label: {
+                    Button(action: {
+                        self.viewModel.isPresented.toggle()
+                    }) {
                         Image("sections")
                     }
                 }
+            }
+            .sheet(isPresented: $viewModel.isPresented) {
+                NewsOptionsListView()
             }
             .listStyle(.carousel)
         }

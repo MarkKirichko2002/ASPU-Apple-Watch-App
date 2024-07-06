@@ -1,5 +1,5 @@
 //
-//  NewsCategoriesListView.swift
+//  SavedNewsCategoriesListView.swift
 //  ASPU-App-Watch Watch App
 //
 //  Created by Марк Киричко on 04.07.2024.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct NewsCategoriesListView: View {
+struct SavedNewsCategoriesListView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    @ObservedObject var viewModel = NewsCategoriesListViewModel()
+    @ObservedObject var viewModel = SavedNewsCategoriesListViewModel()
     
     var body: some View {
         List(viewModel.categories) { category in
@@ -27,5 +27,5 @@ struct NewsCategoriesListView: View {
 }
 
 #Preview {
-    NewsCategoriesListView()
+    SavedNewsCategoriesListView()
 }

@@ -18,7 +18,7 @@ struct SettingsListView: View {
                     NavigationLink {
                         switch section.id {
                         case 1:
-                            NewsCategoriesListView()
+                            SavedNewsCategoriesListView()
                         default:
                             EmptyView()
                         }

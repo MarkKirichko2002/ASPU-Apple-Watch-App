@@ -1,5 +1,5 @@
 //
-//  NewsCategoriesListViewModel.swift
+//  SavedNewsCategoriesListViewModel.swift
 //  ASPU-App-Watch Watch App
 //
 //  Created by Марк Киричко on 04.07.2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class NewsCategoriesListViewModel: ObservableObject {
+final class SavedNewsCategoriesListViewModel: ObservableObject {
     
     var categories = NewsCategories.categories
     @Published var isChanged = false
