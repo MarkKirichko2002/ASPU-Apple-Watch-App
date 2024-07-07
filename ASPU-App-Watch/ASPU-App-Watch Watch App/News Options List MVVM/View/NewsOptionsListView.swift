@@ -9,7 +9,6 @@ import SwiftUI
 
 struct NewsOptionsListView: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var viewModel = NewsOptionsListViewModel()
     
     var body: some View {

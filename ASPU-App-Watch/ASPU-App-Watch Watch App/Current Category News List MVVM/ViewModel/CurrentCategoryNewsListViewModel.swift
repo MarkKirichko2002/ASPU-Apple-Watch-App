@@ -9,8 +9,7 @@ import Foundation
 
 final class CurrentCategoryNewsListViewModel: ObservableObject {
     
+    @Published var newsResponse = NewsResponse(currentPage: 0, countPages: 0, articles: [])
     @Published var isPresented = false
-    
-    let newsResponse = NewsDummyData.newsResponse
     
 }

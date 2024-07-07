@@ -16,6 +16,9 @@ struct NewsListView: View {
             List(viewModel.newsResponse.articles ?? []) { article in
                 ArticleCell(article: article)
             }
+            .onAppear {
+                viewModel.getNews()
+            }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {

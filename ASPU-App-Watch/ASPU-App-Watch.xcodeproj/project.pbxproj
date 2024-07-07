@@ -25,7 +25,6 @@
 		828C1A4D2C39C2A900151AFA /* NewsCategoriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C1A4C2C39C2A900151AFA /* NewsCategoriesListViewModel.swift */; };
 		828C1A522C39C4DB00151AFA /* CurrentCategoryNewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C1A512C39C4DB00151AFA /* CurrentCategoryNewsListView.swift */; };
 		828C1A542C39C4E400151AFA /* CurrentCategoryNewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C1A532C39C4E400151AFA /* CurrentCategoryNewsListViewModel.swift */; };
-		828C1A562C39C52000151AFA /* NewsDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C1A552C39C52000151AFA /* NewsDummyData.swift */; };
 		8294CF842C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8294CF832C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8294CF892C34B579006E7EDA /* ASPU_App_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */; };
 		8294CF8B2C34B579006E7EDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CF8A2C34B579006E7EDA /* ContentView.swift */; };
@@ -101,7 +100,6 @@
 		828C1A4C2C39C2A900151AFA /* NewsCategoriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategoriesListViewModel.swift; sourceTree = "<group>"; };
 		828C1A512C39C4DB00151AFA /* CurrentCategoryNewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCategoryNewsListView.swift; sourceTree = "<group>"; };
 		828C1A532C39C4E400151AFA /* CurrentCategoryNewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCategoryNewsListViewModel.swift; sourceTree = "<group>"; };
-		828C1A552C39C52000151AFA /* NewsDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDummyData.swift; sourceTree = "<group>"; };
 		8294CF7D2C34B579006E7EDA /* ASPU-App-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ASPU-App-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8294CF832C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ФГБОУ ВО «АГПУ».app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPU_App_WatchApp.swift; sourceTree = "<group>"; };
@@ -303,7 +301,6 @@
 			children = (
 				8294CFBE2C360696006E7EDA /* NewsCategoryModel.swift */,
 				8294CFC02C3606CF006E7EDA /* NewsCategories.swift */,
-				828C1A552C39C52000151AFA /* NewsDummyData.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -757,7 +754,6 @@
 				8294CFA12C34B772006E7EDA /* AppSectionsListView.swift in Sources */,
 				82A608F42C3759460005EDC3 /* NewsResponse.swift in Sources */,
 				8294CFB92C360564006E7EDA /* SettingSectionCell.swift in Sources */,
-				828C1A562C39C52000151AFA /* NewsDummyData.swift in Sources */,
 				828C1A4D2C39C2A900151AFA /* NewsCategoriesListViewModel.swift in Sources */,
 				8294CFCC2C371786006E7EDA /* SettingsManager.swift in Sources */,
 				8255E43B2C385A58009D24B1 /* DateManager.swift in Sources */,
