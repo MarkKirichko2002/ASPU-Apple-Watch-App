@@ -10,6 +10,7 @@ import SwiftUI
 struct CurrentCategoryNewsListView: View {
     
     @ObservedObject var viewModel = CurrentCategoryNewsListViewModel()
+    var category: NewsCategoryModel
     
     var body: some View {
         NavigationView {
@@ -17,10 +18,13 @@ struct CurrentCategoryNewsListView: View {
                 ArticleCell(article: article)
             }
             .listStyle(.carousel)
+            .onAppear {
+                viewModel.getNews(category: category)
+            }
         }
     }
 }
 
 #Preview {
-    CurrentCategoryNewsListView()
+    CurrentCategoryNewsListView(category: NewsCategories.categories[0])
 }

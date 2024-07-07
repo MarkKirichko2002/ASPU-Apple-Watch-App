@@ -20,7 +20,7 @@ struct NewsCategoriesListView: View {
         }
         .onChange(of: viewModel.isChanged) {}
         .sheet(isPresented: $viewModel.isChanged) {
-            CurrentCategoryNewsListView()
+            CurrentCategoryNewsListView(category: viewModel.currentCategory)
         }
         .navigationTitle("Категории")
     }

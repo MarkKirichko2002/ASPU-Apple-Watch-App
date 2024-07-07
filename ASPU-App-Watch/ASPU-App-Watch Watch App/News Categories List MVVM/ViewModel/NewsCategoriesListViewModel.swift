@@ -9,13 +9,15 @@ import Foundation
 
 final class NewsCategoriesListViewModel: ObservableObject {
     
-    var categories = NewsCategories.categories
     @Published var isChanged = false
+    var categories = NewsCategories.categories
+    var currentCategory = NewsCategories.categories[0]
     
     // MARK: - сервисы
     private let settingsManager = SettingsManager()
     
     func selectCategory(category: NewsCategoryModel) {
+        currentCategory = category
         settingsManager.saveCategory(abbreviation: category.abbreviation)
         isChanged.toggle()
     }

@@ -15,9 +15,6 @@ struct NewsCategoryCell: View {
     var body: some View {
         if isSelected {
             HStack {
-                Image("aspu")
-                    .resizable()
-                    .frame(width: 40, height: 40)
                 Text(category.name)
                     .fontWeight(.bold)
                 Spacer()
@@ -27,9 +24,6 @@ struct NewsCategoryCell: View {
             }
         } else {
             HStack {
-                Image("aspu")
-                    .resizable()
-                    .frame(width: 40, height: 40)
                 Text(category.name)
                     .fontWeight(.bold)
             }
