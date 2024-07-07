@@ -12,23 +12,19 @@ struct TimetableDayListView: View {
     @ObservedObject var viewModel = TimetableDayListViewModel()
     
     var body: some View {
-        List(viewModel.timetable.disciplines) { pair in
-            PairCell(discipline: pair)
-        }.toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink {
-                   
-                } label: {
-                    Image("sections")
-                }
+        VStack {
+            if !viewModel.timetable.disciplines.isEmpty {
+                List(viewModel.timetable.disciplines) { pair in
+                    PairCell(discipline: pair)
+                }.listStyle(.carousel)
+            } else {
+                Text("Нет расписания")
             }
         }
         .onAppear {
             viewModel.getTimetable()
         }
-        .listStyle(.carousel)
         .navigationTitle(viewModel.getCurrentDate())
-        .onChange(of: viewModel.isChanged) {}
     }
 }
 
