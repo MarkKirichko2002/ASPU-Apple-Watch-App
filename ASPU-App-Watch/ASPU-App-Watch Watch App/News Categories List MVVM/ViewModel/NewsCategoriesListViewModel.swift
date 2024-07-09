@@ -9,9 +9,9 @@ import Foundation
 
 final class NewsCategoriesListViewModel: ObservableObject {
     
+    @Published var currentCategory = NewsCategories.categories[0]
     @Published var isChanged = false
     var categories = NewsCategories.categories
-    var currentCategory = NewsCategories.categories[0]
     
     // MARK: - сервисы
     private let settingsManager = SettingsManager()

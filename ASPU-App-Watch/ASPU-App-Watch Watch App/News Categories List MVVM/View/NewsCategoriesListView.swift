@@ -18,7 +18,6 @@ struct NewsCategoriesListView: View {
                     viewModel.selectCategory(category: category)
              }
         }
-        .onChange(of: viewModel.isChanged) {}
         .sheet(isPresented: $viewModel.isChanged) {
             CurrentCategoryNewsListView(category: viewModel.currentCategory)
         }

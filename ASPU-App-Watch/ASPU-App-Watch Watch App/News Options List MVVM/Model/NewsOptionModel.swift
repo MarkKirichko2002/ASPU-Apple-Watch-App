@@ -15,7 +15,7 @@ struct NewsOptionModel: Identifiable {
 struct NewsOptions {
     
     static let options = [
-        NewsOptionModel(id: 1, name: "Категории"),
-        NewsOptionModel(id: 2, name: "Страницы"),
+        NewsOptionModel(id: 1, name: "Категория: ..."),
+        NewsOptionModel(id: 2, name: "Страниц: ..."),
     ]
 }

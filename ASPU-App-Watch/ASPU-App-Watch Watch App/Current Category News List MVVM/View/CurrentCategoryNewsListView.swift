@@ -18,6 +18,7 @@ struct CurrentCategoryNewsListView: View {
                 ArticleCell(article: article)
             }
             .listStyle(.carousel)
+            .navigationTitle(category.name)
             .onAppear {
                 viewModel.getNews(category: category)
             }

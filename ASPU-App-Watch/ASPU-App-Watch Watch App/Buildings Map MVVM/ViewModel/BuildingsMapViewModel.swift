@@ -8,7 +8,7 @@
 import MapKit
 import SwiftUI
 
-class BuildingsMapViewModel: ObservableObject {
+final class BuildingsMapViewModel: ObservableObject {
     
     @Published var selected: Int?
     @Published var isPresented = false

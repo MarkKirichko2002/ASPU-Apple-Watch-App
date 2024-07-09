@@ -10,6 +10,7 @@ import SwiftUI
 struct NewsListView: View {
     
     @ObservedObject var viewModel = NewsListViewModel()
+    @State var isDisappear = false
     
     var body: some View {
         VStack {
@@ -28,8 +29,11 @@ struct NewsListView: View {
                     }
                 }
             }
+            .onChange(of: isDisappear) {
+                viewModel.getNews()
+            }
             .sheet(isPresented: $viewModel.isPresented) {
-                NewsOptionsListView()
+                NewsOptionsListView(isDisappear: $isDisappear, category: viewModel.currentCategory)
             }
             .listStyle(.carousel)
         }

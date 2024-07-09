@@ -11,6 +11,7 @@ final class NewsListViewModel: ObservableObject {
     
     @Published var newsResponse = NewsResponse(currentPage: 0, countPages: 0, articles: [])
     @Published var isPresented = false
+    var currentCategory = NewsCategories.categories[0]
     
     // MARK: - сервисы
     private let newsService = ASPUNewsService()
@@ -18,11 +19,14 @@ final class NewsListViewModel: ObservableObject {
     
     func getNews() {
         let abbreviation = settingsManager.getSavedCategory()
+        currentCategory = NewsCategories.categories.first(where: { $0.abbreviation == abbreviation})!
         Task {
             let result = try await newsService.getNews(abbreviation: abbreviation)
             switch result {
             case .success(let data):
-                self.newsResponse = data
+                DispatchQueue.main.async {
+                    self.newsResponse = data
+                }
             case .failure(let error):
                 print(error)
             }

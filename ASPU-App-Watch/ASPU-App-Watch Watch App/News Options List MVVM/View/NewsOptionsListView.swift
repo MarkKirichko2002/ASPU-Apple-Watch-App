@@ -10,6 +10,9 @@ import SwiftUI
 struct NewsOptionsListView: View {
     
     @ObservedObject var viewModel = NewsOptionsListViewModel()
+    @Binding var isDisappear: Bool
+    
+    var category: NewsCategoryModel
     
     var body: some View {
         NavigationView {
@@ -27,12 +30,15 @@ struct NewsOptionsListView: View {
             }
         }
         .onAppear {
-            viewModel.getData()
+            viewModel.getData(category: category)
+        }
+        .onDisappear {
+            isDisappear.toggle()
         }
         .navigationTitle("Новости")
     }
 }
 
-#Preview {
-    NewsOptionsListView()
-}
+//#Preview {
+//    NewsOptionsListView(category: NewsCategories.categories[0])
+//}

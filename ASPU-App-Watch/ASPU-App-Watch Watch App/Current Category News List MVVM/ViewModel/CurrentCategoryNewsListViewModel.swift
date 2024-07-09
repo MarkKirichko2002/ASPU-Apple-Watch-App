@@ -10,7 +10,6 @@ import Foundation
 final class CurrentCategoryNewsListViewModel: ObservableObject {
     
     @Published var newsResponse = NewsResponse(currentPage: 0, countPages: 0, articles: [])
-    @Published var isPresented = false
     
     // MARK: - сервисы
     private let newsService = ASPUNewsService()
@@ -20,7 +19,9 @@ final class CurrentCategoryNewsListViewModel: ObservableObject {
             let result = try await newsService.getNews(abbreviation: category.abbreviation)
             switch result {
             case .success(let data):
-                self.newsResponse = data
+                DispatchQueue.main.async {
+                    self.newsResponse = data
+                }
             case .failure(let error):
                 print(error)
             }

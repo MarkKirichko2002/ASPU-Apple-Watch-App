@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SettingsManager {
+final class SettingsManager {
     
     func saveCategory(abbreviation: String) {
         UserDefaults.standard.setValue(abbreviation, forKey: "news category")
