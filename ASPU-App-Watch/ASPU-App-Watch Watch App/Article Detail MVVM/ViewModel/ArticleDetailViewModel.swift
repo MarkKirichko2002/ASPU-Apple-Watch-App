@@ -21,6 +21,7 @@ class ArticleDetailViewModel: ObservableObject {
             case .success(let data):
                 DispatchQueue.main.async {
                     self.articleInfo = data
+                    print(data.images)
                 }
             case .failure(let error):
                 print(error)

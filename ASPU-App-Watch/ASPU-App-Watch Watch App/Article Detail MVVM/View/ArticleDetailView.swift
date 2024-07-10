@@ -18,22 +18,30 @@ struct ArticleDetailView: View {
     var body: some View {
         
         Form() {
-            
-            Section("Изображение") {
-                WebImage(url: URL(string: article.previewImage))
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+            Section("Изображения") {
+                ScrollView(.horizontal, showsIndicators: true) {
+                    LazyHStack {
+                        ForEach(viewModel.articleInfo.images, id: \.self) { image in
+                            WebImage(url: URL(string: image))
+                                .resizable()
+                                .frame(width: 160, height: 160)
+                                .aspectRatio(contentMode: .fill)
+                                .cornerRadius(10)
+                        }.listStyle(.carousel)
+                    }
+                    .padding()
+                }
             }
-        
-            Section("название") {
-                Text(article.title)
+            
+            Section("Название") {
+                Text(viewModel.articleInfo.title)
             }
             
-            Section("дата") {
-                Text(article.date)
+            Section("Дата") {
+                Text(viewModel.articleInfo.date)
             }
             
-            Section("описание") {
+            Section("Описание") {
                 if !viewModel.articleInfo.description.isEmpty {
                     Text(viewModel.articleInfo.description)
                 } else {
