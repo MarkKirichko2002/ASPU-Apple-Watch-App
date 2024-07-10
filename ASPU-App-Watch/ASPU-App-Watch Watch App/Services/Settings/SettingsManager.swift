@@ -14,7 +14,7 @@ final class SettingsManager {
     }
     
     func getSavedCategory()-> String {
-        let savedCategory = UserDefaults.standard.object(forKey: "news category") as? String ?? ""
+        let savedCategory = UserDefaults.standard.object(forKey: "news category") as? String ?? "-"
         return savedCategory
     }
 }

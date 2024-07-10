@@ -23,18 +23,33 @@ final class NewsOptionsListViewModel: ObservableObject {
     }
     
     func getPagesCount(category: NewsCategoryModel) {
-        Task {
-            let result = try await newsService.getNews(abbreviation: category.abbreviation)
-            switch result {
-            case .success(let data):
-                self.newsResponse = data
-                print(newsResponse)
-                DispatchQueue.main.async {
-                    self.options[0].name = "Категория: \(category.name)"
-                    self.options[1].name = "Страниц: \(data.countPages ?? 0)"
+        if category.abbreviation != "-" {
+            Task {
+                let result = try await newsService.getNews(abbreviation: category.abbreviation)
+                switch result {
+                case .success(let data):
+                    DispatchQueue.main.async {
+                        self.newsResponse = data
+                        self.options[0].name = "Категория: \(category.name)"
+                        self.options[1].name = "Страниц: \(data.countPages ?? 0)"
+                    }
+                case .failure(let error):
+                    print(error)
                 }
-            case .failure(let error):
-                print(error)
+            }
+        } else {
+            Task {
+                let result = try await newsService.getASPUNews()
+                switch result {
+                case .success(let data):
+                    DispatchQueue.main.async {
+                        self.newsResponse = data
+                        self.options[0].name = "Категория: \(category.name)"
+                        self.options[1].name = "Страниц: \(data.countPages ?? 0)"
+                    }
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
     }

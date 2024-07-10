@@ -15,7 +15,7 @@ struct CurrentCategoryNewsListView: View {
     var body: some View {
         NavigationView {
             List(viewModel.newsResponse.articles ?? []) { article in
-                ArticleCell(article: article)
+                ArticleCell(article: article, abbreviation: category.abbreviation)
             }
             .listStyle(.carousel)
             .navigationTitle(category.name)

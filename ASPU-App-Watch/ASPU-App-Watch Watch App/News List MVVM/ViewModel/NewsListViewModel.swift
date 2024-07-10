@@ -18,17 +18,33 @@ final class NewsListViewModel: ObservableObject {
     private let settingsManager = SettingsManager()
     
     func getNews() {
+        
         let abbreviation = settingsManager.getSavedCategory()
         currentCategory = NewsCategories.categories.first(where: { $0.abbreviation == abbreviation})!
-        Task {
-            let result = try await newsService.getNews(abbreviation: abbreviation)
-            switch result {
-            case .success(let data):
-                DispatchQueue.main.async {
-                    self.newsResponse = data
+        
+        if currentCategory.abbreviation != "-" {
+            Task {
+                let result = try await newsService.getNews(abbreviation: abbreviation)
+                switch result {
+                case .success(let data):
+                    DispatchQueue.main.async {
+                        self.newsResponse = data
+                    }
+                case .failure(let error):
+                    print(error)
                 }
-            case .failure(let error):
-                print(error)
+            }
+        } else {
+            Task {
+                let result = try await newsService.getASPUNews()
+                switch result {
+                case .success(let data):
+                    DispatchQueue.main.async {
+                        self.newsResponse = data
+                    }
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
     }

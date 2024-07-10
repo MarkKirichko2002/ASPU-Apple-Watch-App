@@ -15,7 +15,7 @@ struct NewsListView: View {
     var body: some View {
         VStack {
             List(viewModel.newsResponse.articles ?? []) { article in
-                ArticleCell(article: article)
+                ArticleCell(article: article, abbreviation: viewModel.currentCategory.abbreviation)
             }
             .onAppear {
                 viewModel.getNews()
