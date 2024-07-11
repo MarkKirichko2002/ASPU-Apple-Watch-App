@@ -57,6 +57,8 @@
 		82A609012C375A2B0005EDC3 /* TimetableDayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A609002C375A2B0005EDC3 /* TimetableDayListView.swift */; };
 		82A609032C375A4D0005EDC3 /* TimetableDayListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A609022C375A4D0005EDC3 /* TimetableDayListViewModel.swift */; };
 		82A609062C375C8B0005EDC3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 82A609052C375C8B0005EDC3 /* Alamofire */; };
+		82F315B32C405CB700E826F9 /* TimetableDayRoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F315B22C405CB700E826F9 /* TimetableDayRoomListView.swift */; };
+		82F315B52C405CC100E826F9 /* TimetableDayRoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F315B42C405CC100E826F9 /* TimetableDayRoomListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +136,8 @@
 		82A608F92C3759D30005EDC3 /* TimeTableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableService.swift; sourceTree = "<group>"; };
 		82A609002C375A2B0005EDC3 /* TimetableDayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayListView.swift; sourceTree = "<group>"; };
 		82A609022C375A4D0005EDC3 /* TimetableDayListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayListViewModel.swift; sourceTree = "<group>"; };
+		82F315B22C405CB700E826F9 /* TimetableDayRoomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayRoomListView.swift; sourceTree = "<group>"; };
+		82F315B42C405CC100E826F9 /* TimetableDayRoomListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayRoomListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,12 +212,12 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
-		8255E4362C378D6D009D24B1 /* Cell */ = {
+		8255E4362C378D6D009D24B1 /* Pair Cell */ = {
 			isa = PBXGroup;
 			children = (
 				8255E4372C378D7A009D24B1 /* PairCell.swift */,
 			);
-			path = Cell;
+			path = "Pair Cell";
 			sourceTree = "<group>";
 		};
 		8255E4392C385A47009D24B1 /* Date */ = {
@@ -245,6 +249,7 @@
 			children = (
 				828C1A492C39C24F00151AFA /* News Category Cell */,
 				82160F592C38D60500017A1F /* Location Detail */,
+				8255E4362C378D6D009D24B1 /* Pair Cell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -383,13 +388,10 @@
 				8255E4462C3861B9009D24B1 /* Views */,
 				8294CFC92C371771006E7EDA /* Services */,
 				8294CF9E2C34B747006E7EDA /* App Sections List */,
-				8294CFD02C371A42006E7EDA /* News List MVVM */,
-				82160F512C38A11600017A1F /* Article Detail MVVM */,
-				828C1A382C39771300151AFA /* News Options List MVVM */,
-				828C1A422C39C1EC00151AFA /* News Categories List MVVM */,
-				828C1A4E2C39C49800151AFA /* Current Category News List MVVM */,
+				82F315AD2C405BDE00E826F9 /* News Modles */,
 				82A608E42C3758800005EDC3 /* Timetable Day List MVVM */,
 				82160F522C38A12000017A1F /* Buildings Map MVVM */,
+				82F315AF2C405C7900E826F9 /* Timetable Day Room List */,
 				8294CFA52C36020C006E7EDA /* Settings List */,
 				8294CFBA2C360648006E7EDA /* Saved News Categories List MVVM */,
 				8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */,
@@ -560,7 +562,6 @@
 			isa = PBXGroup;
 			children = (
 				82A608E62C3758940005EDC3 /* View */,
-				8255E4362C378D6D009D24B1 /* Cell */,
 				82A608E52C3758910005EDC3 /* ViewModel */,
 			);
 			path = "Timetable Day List MVVM";
@@ -635,6 +636,43 @@
 				82A608F72C3759A00005EDC3 /* ASPUNewsService.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		82F315AD2C405BDE00E826F9 /* News Modles */ = {
+			isa = PBXGroup;
+			children = (
+				8294CFD02C371A42006E7EDA /* News List MVVM */,
+				82160F512C38A11600017A1F /* Article Detail MVVM */,
+				828C1A382C39771300151AFA /* News Options List MVVM */,
+				828C1A422C39C1EC00151AFA /* News Categories List MVVM */,
+				828C1A4E2C39C49800151AFA /* Current Category News List MVVM */,
+			);
+			path = "News Modles";
+			sourceTree = "<group>";
+		};
+		82F315AF2C405C7900E826F9 /* Timetable Day Room List */ = {
+			isa = PBXGroup;
+			children = (
+				82F315B12C405C9F00E826F9 /* View */,
+				82F315B02C405C9D00E826F9 /* ViewModel */,
+			);
+			path = "Timetable Day Room List";
+			sourceTree = "<group>";
+		};
+		82F315B02C405C9D00E826F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82F315B42C405CC100E826F9 /* TimetableDayRoomListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82F315B12C405C9F00E826F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82F315B22C405CB700E826F9 /* TimetableDayRoomListView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -775,7 +813,9 @@
 				82958D8D2C3E06D3007ACA24 /* ArticleInfo.swift in Sources */,
 				8255E43E2C385C11009D24B1 /* NewsListViewModel.swift in Sources */,
 				8294CFA12C34B772006E7EDA /* AppSectionsListView.swift in Sources */,
+				82F315B32C405CB700E826F9 /* TimetableDayRoomListView.swift in Sources */,
 				82A608F42C3759460005EDC3 /* NewsResponse.swift in Sources */,
+				82F315B52C405CC100E826F9 /* TimetableDayRoomListViewModel.swift in Sources */,
 				8294CFB92C360564006E7EDA /* SettingSectionCell.swift in Sources */,
 				828C1A4D2C39C2A900151AFA /* NewsCategoriesListViewModel.swift in Sources */,
 				82958D8B2C3E05DC007ACA24 /* ArticleDetailViewModel.swift in Sources */,

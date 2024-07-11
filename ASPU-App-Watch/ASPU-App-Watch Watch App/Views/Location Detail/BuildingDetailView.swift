@@ -11,22 +11,28 @@ import SDWebImageSwiftUI
 struct BuildingDetailView: View {
     
     var building: BuildingModel
+    @State var currentAudience = ""
+    @State var isPresented = false
     
     var body: some View {
         
         Form() {
             
-            Section("название") {
+            Section("Название") {
                 Text(building.name)
             }
             
-            Section("аудитории") {
+            Section("Аудитории") {
                 if building.audiences?.count ?? 0 > 0 {
                     List(building.audiences ?? [], id: \.self) { audience in
                         Text(audience)
+                            .onTapGesture {
+                                currentAudience = audience
+                                isPresented.toggle()
+                          }
                     }
                 } else {
-                    Text("нет аудиторий")
+                    Text("Нет аудиторий")
                 }
             }
             
@@ -36,10 +42,13 @@ struct BuildingDetailView: View {
                         WKExtension.shared().openSystemURL(url)
                     }
                 }) {
-                    Text("начать путь")
+                    Text("Начать путь")
                 }
             }
         }.navigationTitle("Подробнее")
+            .sheet(isPresented: $isPresented, content: {
+                TimetableDayRoomListView(room: currentAudience)
+        })
     }
 }
 

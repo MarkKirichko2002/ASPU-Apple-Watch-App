@@ -9,7 +9,8 @@ import Foundation
 
 struct TimeTable: Codable {
     
-    let id, date: String
+    let id: String?
+    let date: String?
     var disciplines: [Discipline]
     
     enum CodingKeys: String, CodingKey {
