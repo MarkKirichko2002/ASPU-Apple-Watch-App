@@ -68,6 +68,10 @@
 		82E8A1032C474C6400CF2179 /* TeachersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1022C474C6400CF2179 /* TeachersListView.swift */; };
 		82E8A1052C474C7000CF2179 /* TeachersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1042C474C7000CF2179 /* TeachersListViewModel.swift */; };
 		82E8A1082C47509200CF2179 /* String + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1072C47509200CF2179 /* String + Extensions.swift */; };
+		82E8A10D2C47635C00CF2179 /* TimetableOwnersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A10C2C47635C00CF2179 /* TimetableOwnersListView.swift */; };
+		82E8A10F2C47637700CF2179 /* TimetableOwners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A10E2C47637700CF2179 /* TimetableOwners.swift */; };
+		82E8A1122C4772C500CF2179 /* TimetableOwnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1112C4772C500CF2179 /* TimetableOwnerCell.swift */; };
+		82E8A1142C4774AA00CF2179 /* FacultyGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1132C4774AA00CF2179 /* FacultyGroups.swift */; };
 		82F315B32C405CB700E826F9 /* TimetableDayResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F315B22C405CB700E826F9 /* TimetableDayResultListView.swift */; };
 		82F315B52C405CC100E826F9 /* TimetableDayResultListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F315B42C405CC100E826F9 /* TimetableDayResultListViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -156,6 +160,10 @@
 		82E8A1022C474C6400CF2179 /* TeachersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersListView.swift; sourceTree = "<group>"; };
 		82E8A1042C474C7000CF2179 /* TeachersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersListViewModel.swift; sourceTree = "<group>"; };
 		82E8A1072C47509200CF2179 /* String + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extensions.swift"; sourceTree = "<group>"; };
+		82E8A10C2C47635C00CF2179 /* TimetableOwnersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableOwnersListView.swift; sourceTree = "<group>"; };
+		82E8A10E2C47637700CF2179 /* TimetableOwners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableOwners.swift; sourceTree = "<group>"; };
+		82E8A1112C4772C500CF2179 /* TimetableOwnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableOwnerCell.swift; sourceTree = "<group>"; };
+		82E8A1132C4774AA00CF2179 /* FacultyGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyGroups.swift; sourceTree = "<group>"; };
 		82F315B22C405CB700E826F9 /* TimetableDayResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayResultListView.swift; sourceTree = "<group>"; };
 		82F315B42C405CC100E826F9 /* TimetableDayResultListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayResultListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -322,6 +330,7 @@
 		828C1A432C39C1FD00151AFA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				82E8A1132C4774AA00CF2179 /* FacultyGroups.swift */,
 				828C1A442C39C20400151AFA /* News */,
 			);
 			path = Models;
@@ -716,9 +725,10 @@
 			isa = PBXGroup;
 			children = (
 				82A608E42C3758800005EDC3 /* Timetable Day List MVVM */,
-				82F315AF2C405C7900E826F9 /* Timetable Day Result List */,
+				82E8A1092C47633A00CF2179 /* Timetable Owners List */,
 				82E8A0F72C4748CE00CF2179 /* Departments List MVVM */,
 				82E8A0FF2C474C3E00CF2179 /* Teachers List MVVM */,
+				82F315AF2C405C7900E826F9 /* Timetable Day Result List */,
 			);
 			path = "Timetable Modules";
 			sourceTree = "<group>";
@@ -754,6 +764,40 @@
 				82E8A1072C47509200CF2179 /* String + Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		82E8A1092C47633A00CF2179 /* Timetable Owners List */ = {
+			isa = PBXGroup;
+			children = (
+				82E8A10A2C47634800CF2179 /* Model */,
+				82E8A10B2C47634D00CF2179 /* View */,
+				82E8A1102C4772B300CF2179 /* Cell */,
+			);
+			path = "Timetable Owners List";
+			sourceTree = "<group>";
+		};
+		82E8A10A2C47634800CF2179 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82E8A10E2C47637700CF2179 /* TimetableOwners.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		82E8A10B2C47634D00CF2179 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82E8A10C2C47635C00CF2179 /* TimetableOwnersListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82E8A1102C4772B300CF2179 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				82E8A1112C4772C500CF2179 /* TimetableOwnerCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		82F315AD2C405BDE00E826F9 /* News Modules */ = {
@@ -906,6 +950,7 @@
 			files = (
 				82160F5B2C38D61C00017A1F /* BuildingDetailView.swift in Sources */,
 				828C1A482C39C24000151AFA /* NewsCategoriesListView.swift in Sources */,
+				82E8A1142C4774AA00CF2179 /* FacultyGroups.swift in Sources */,
 				8294CFC62C3607CF006E7EDA /* NewsCategoryCell.swift in Sources */,
 				8294CF8B2C34B579006E7EDA /* ContentView.swift in Sources */,
 				82A608F82C3759A10005EDC3 /* ASPUNewsService.swift in Sources */,
@@ -927,7 +972,9 @@
 				82160F542C38A13600017A1F /* BuildingsMapView.swift in Sources */,
 				82E8A0FD2C47499A00CF2179 /* DepartmentsListView.swift in Sources */,
 				8294CFA42C34B7BC006E7EDA /* AppSections.swift in Sources */,
+				82E8A10D2C47635C00CF2179 /* TimetableOwnersListView.swift in Sources */,
 				8294CF892C34B579006E7EDA /* ASPU_App_WatchApp.swift in Sources */,
+				82E8A10F2C47637700CF2179 /* TimetableOwners.swift in Sources */,
 				82A609012C375A2B0005EDC3 /* TimetableDayListView.swift in Sources */,
 				82A608F02C3759190005EDC3 /* Discipline.swift in Sources */,
 				8294CFC12C3606CF006E7EDA /* NewsCategories.swift in Sources */,
@@ -954,6 +1001,7 @@
 				8294CFC82C360957006E7EDA /* SavedNewsCategoriesListViewModel.swift in Sources */,
 				8294CFBF2C360696006E7EDA /* NewsCategoryModel.swift in Sources */,
 				82E8A1052C474C7000CF2179 /* TeachersListViewModel.swift in Sources */,
+				82E8A1122C4772C500CF2179 /* TimetableOwnerCell.swift in Sources */,
 				82A609032C375A4D0005EDC3 /* TimetableDayListViewModel.swift in Sources */,
 				8294CFD32C371A60006E7EDA /* NewsListView.swift in Sources */,
 				82E8A0FB2C47491100CF2179 /* DepartmentsListViewModel.swift in Sources */,

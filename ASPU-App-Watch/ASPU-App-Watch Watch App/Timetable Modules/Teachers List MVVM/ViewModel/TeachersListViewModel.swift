@@ -16,6 +16,10 @@ class TeachersListViewModel: ObservableObject {
     // MARK: - сервисы
     private let dbService = DBService(response: .teachers)
     
+    init() {
+        print("fknnkf")
+    }
+    
     func getData(id: Int) {
         
         dbService.id = id

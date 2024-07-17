@@ -13,28 +13,26 @@ struct TeachersListView: View {
     var id: Int
     
     var body: some View {
-        NavigationView {
-            VStack {
-                if !viewModel.teachers.isEmpty {
-                    List(viewModel.teachers) { teacher in
-                        Text(viewModel.configure(teacher: teacher))
-                            .onTapGesture {
-                                viewModel.isPresented.toggle()
-                                viewModel.currentTeacher = viewModel.configure(teacher: teacher)
-                            }
-                    }
-                } else {
-                    Text("Загрузка...")
+        VStack {
+            if !viewModel.teachers.isEmpty {
+                List(viewModel.teachers) { teacher in
+                    Text(viewModel.configure(teacher: teacher))
+                        .onTapGesture {
+                            viewModel.isPresented.toggle()
+                            viewModel.currentTeacher = viewModel.configure(teacher: teacher)
+                     }
                 }
+            } else {
+                Text("Загрузка...")
             }
-            .navigationTitle("Препод.")
-            .onAppear {
-                viewModel.getData(id: id)
-            }
-            .sheet(isPresented: $viewModel.isPresented, content: {
-                TimetableDayResultListView(id: viewModel.currentTeacher, owner: "TEACHER")
-            })
         }
+        .navigationTitle("Препод.")
+        .onAppear {
+            viewModel.getData(id: id)
+        }
+        .sheet(isPresented: $viewModel.isPresented, content: {
+            TimetableDayResultListView(id: viewModel.currentTeacher, owner: "TEACHER")
+        })
     }
 }
 

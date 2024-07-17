@@ -55,7 +55,7 @@ class DBService {
             app.routes.get("teachers") { req async throws -> [Teacher] in
                 if let sql = req.db as? SQLDatabase {
                     let number = String(self.id)
-                    let result = try await sql.raw("SELECT * FROM teachers").all(decodingFluent: Teacher.self)
+                    let result = try await sql.raw("SELECT * FROM teachers t JOIN lnk_teacher_department ltd ON t.id = ltd.teacher_id WHERE ltd.department_id = \(unsafeRaw: number)").all(decodingFluent: Teacher.self)
                     return result
                 }
                 return []

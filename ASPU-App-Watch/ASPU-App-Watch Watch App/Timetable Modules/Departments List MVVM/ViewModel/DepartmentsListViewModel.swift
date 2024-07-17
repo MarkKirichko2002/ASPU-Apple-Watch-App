@@ -10,6 +10,8 @@ import Foundation
 class DepartmentsListViewModel: ObservableObject {
     
     @Published var departments = [DepartmentModel]()
+    @Published var isPresented = false
+    @Published var currentId = 1
     
     // MARK: - сервисы
     private let dbService = DBService(response: .departments)

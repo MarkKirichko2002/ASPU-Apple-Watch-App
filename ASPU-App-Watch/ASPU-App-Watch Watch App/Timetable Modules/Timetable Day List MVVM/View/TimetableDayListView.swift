@@ -34,7 +34,7 @@ struct TimetableDayListView: View {
             viewModel.getTimetable()
         }
         .sheet(isPresented: $viewModel.isPresented) {
-            TeachersListView(id: 1)
+            TimetableOwnersListView()
         }
         .navigationTitle(viewModel.getCurrentDate())
     }

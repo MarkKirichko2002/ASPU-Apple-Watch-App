@@ -12,23 +12,23 @@ struct DepartmentsListView: View {
     @ObservedObject var viewModel = DepartmentsListViewModel()
     
     var body: some View {
-        NavigationView {
-            VStack {
-                if !viewModel.departments.isEmpty {
-                    List(viewModel.departments) { department in
-                        NavigationLink {
-                            TeachersListView(id: department.id)
-                        } label: {
-                            Text(department.name)
+        VStack {
+            if !viewModel.departments.isEmpty {
+                List(viewModel.departments) { department in
+                    Text(department.name)
+                        .onTapGesture {
+                            self.viewModel.isPresented.toggle()
+                            self.viewModel.currentId = department.id
                         }
-                    }
-                    .listStyle(.carousel)
-                } else {
-                    Text("Загрузка...")
                 }
+                .listStyle(.carousel)
+            } else {
+                Text("Загрузка...")
             }
-            .navigationTitle("Кафедры")
+        }.sheet(isPresented: $viewModel.isPresented) {
+            TeachersListView(id: viewModel.currentId)
         }
+        .navigationTitle("Кафедры")
     }
 }
 
