@@ -47,7 +47,7 @@ struct BuildingDetailView: View {
             }
         }.navigationTitle("Подробнее")
             .sheet(isPresented: $isPresented, content: {
-                TimetableDayRoomListView(room: currentAudience)
+                TimetableDayResultListView(id: currentAudience, owner: "CLASSROOM")
         })
     }
 }

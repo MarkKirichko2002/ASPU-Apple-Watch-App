@@ -1,15 +1,17 @@
 //
-//  TimetableDayListView.swift
+//  TimetableDayResultListView.swift
 //  ASPU-App-Watch Watch App
 //
-//  Created by Марк Киричко on 05.07.2024.
+//  Created by Марк Киричко on 11.07.2024.
 //
 
 import SwiftUI
 
-struct TimetableDayListView: View {
+struct TimetableDayResultListView: View {
     
-    @ObservedObject var viewModel = TimetableDayListViewModel()
+    @ObservedObject var viewModel = TimetableDayResultListViewModel()
+    var id: String = ""
+    var owner: String = ""
     
     var body: some View {
         VStack {
@@ -22,12 +24,12 @@ struct TimetableDayListView: View {
             }
         }
         .onAppear {
-            viewModel.getTimetable()
+            viewModel.getTimetable(id: id, owner: owner)
         }
-        .navigationTitle(viewModel.getCurrentDate())
+        .navigationTitle(id)
     }
 }
 
 #Preview {
-    TimetableDayListView()
+    TimetableDayResultListView(id: "ВМ-ИВТ-2-1", owner: "GROUP")
 }

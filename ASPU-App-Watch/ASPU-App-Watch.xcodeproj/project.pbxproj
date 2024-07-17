@@ -57,8 +57,19 @@
 		82A609012C375A2B0005EDC3 /* TimetableDayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A609002C375A2B0005EDC3 /* TimetableDayListView.swift */; };
 		82A609032C375A4D0005EDC3 /* TimetableDayListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A609022C375A4D0005EDC3 /* TimetableDayListViewModel.swift */; };
 		82A609062C375C8B0005EDC3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 82A609052C375C8B0005EDC3 /* Alamofire */; };
-		82F315B32C405CB700E826F9 /* TimetableDayRoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F315B22C405CB700E826F9 /* TimetableDayRoomListView.swift */; };
-		82F315B52C405CC100E826F9 /* TimetableDayRoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F315B42C405CC100E826F9 /* TimetableDayRoomListViewModel.swift */; };
+		82E8A0E82C47443500CF2179 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A0E72C47443500CF2179 /* DBService.swift */; };
+		82E8A0EB2C4744F800CF2179 /* Fluent in Frameworks */ = {isa = PBXBuildFile; productRef = 82E8A0EA2C4744F800CF2179 /* Fluent */; };
+		82E8A0EE2C47453B00CF2179 /* FluentPostgresDriver in Frameworks */ = {isa = PBXBuildFile; productRef = 82E8A0ED2C47453B00CF2179 /* FluentPostgresDriver */; };
+		82E8A0F22C47460500CF2179 /* DBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A0F12C47460500CF2179 /* DBResponse.swift */; };
+		82E8A0F42C47462200CF2179 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A0F32C47462200CF2179 /* Department.swift */; };
+		82E8A0F62C47463E00CF2179 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A0F52C47463E00CF2179 /* Teacher.swift */; };
+		82E8A0FB2C47491100CF2179 /* DepartmentsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A0FA2C47491100CF2179 /* DepartmentsListViewModel.swift */; };
+		82E8A0FD2C47499A00CF2179 /* DepartmentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A0FC2C47499A00CF2179 /* DepartmentsListView.swift */; };
+		82E8A1032C474C6400CF2179 /* TeachersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1022C474C6400CF2179 /* TeachersListView.swift */; };
+		82E8A1052C474C7000CF2179 /* TeachersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1042C474C7000CF2179 /* TeachersListViewModel.swift */; };
+		82E8A1082C47509200CF2179 /* String + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1072C47509200CF2179 /* String + Extensions.swift */; };
+		82F315B32C405CB700E826F9 /* TimetableDayResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F315B22C405CB700E826F9 /* TimetableDayResultListView.swift */; };
+		82F315B52C405CC100E826F9 /* TimetableDayResultListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F315B42C405CC100E826F9 /* TimetableDayResultListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,8 +147,17 @@
 		82A608F92C3759D30005EDC3 /* TimeTableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableService.swift; sourceTree = "<group>"; };
 		82A609002C375A2B0005EDC3 /* TimetableDayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayListView.swift; sourceTree = "<group>"; };
 		82A609022C375A4D0005EDC3 /* TimetableDayListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayListViewModel.swift; sourceTree = "<group>"; };
-		82F315B22C405CB700E826F9 /* TimetableDayRoomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayRoomListView.swift; sourceTree = "<group>"; };
-		82F315B42C405CC100E826F9 /* TimetableDayRoomListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayRoomListViewModel.swift; sourceTree = "<group>"; };
+		82E8A0E72C47443500CF2179 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
+		82E8A0F12C47460500CF2179 /* DBResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBResponse.swift; sourceTree = "<group>"; };
+		82E8A0F32C47462200CF2179 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		82E8A0F52C47463E00CF2179 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		82E8A0FA2C47491100CF2179 /* DepartmentsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsListViewModel.swift; sourceTree = "<group>"; };
+		82E8A0FC2C47499A00CF2179 /* DepartmentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsListView.swift; sourceTree = "<group>"; };
+		82E8A1022C474C6400CF2179 /* TeachersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersListView.swift; sourceTree = "<group>"; };
+		82E8A1042C474C7000CF2179 /* TeachersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersListViewModel.swift; sourceTree = "<group>"; };
+		82E8A1072C47509200CF2179 /* String + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extensions.swift"; sourceTree = "<group>"; };
+		82F315B22C405CB700E826F9 /* TimetableDayResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayResultListView.swift; sourceTree = "<group>"; };
+		82F315B42C405CC100E826F9 /* TimetableDayResultListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayResultListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8255E4412C385DA3009D24B1 /* SDWebImageSwiftUI in Frameworks */,
+				82E8A0EE2C47453B00CF2179 /* FluentPostgresDriver in Frameworks */,
 				82A609062C375C8B0005EDC3 /* Alamofire in Frameworks */,
+				82E8A0EB2C4744F800CF2179 /* Fluent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,19 +405,18 @@
 		8294CF872C34B579006E7EDA /* ASPU-App-Watch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				82E8A1062C47507800CF2179 /* Extensions */,
 				828C1A432C39C1FD00151AFA /* Models */,
-				822D84F42C37766200148062 /* ASPU-App-Watch-Watch-App-Info.plist */,
 				8255E4462C3861B9009D24B1 /* Views */,
 				8294CFC92C371771006E7EDA /* Services */,
 				8294CF9E2C34B747006E7EDA /* App Sections List */,
-				82F315AD2C405BDE00E826F9 /* News Modles */,
-				82A608E42C3758800005EDC3 /* Timetable Day List MVVM */,
+				82F315AD2C405BDE00E826F9 /* News Modules */,
+				82E8A0FE2C474BFE00CF2179 /* Timetable Modules */,
 				82160F522C38A12000017A1F /* Buildings Map MVVM */,
-				82F315AF2C405C7900E826F9 /* Timetable Day Room List */,
 				8294CFA52C36020C006E7EDA /* Settings List */,
-				8294CFBA2C360648006E7EDA /* Saved News Categories List MVVM */,
 				8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */,
 				8294CF8A2C34B579006E7EDA /* ContentView.swift */,
+				822D84F42C37766200148062 /* ASPU-App-Watch-Watch-App-Info.plist */,
 				8294CF8C2C34B57F006E7EDA /* Assets.xcassets */,
 				8294CF8E2C34B57F006E7EDA /* Preview Content */,
 			);
@@ -508,6 +529,7 @@
 		8294CFC92C371771006E7EDA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				82E8A0E62C47442200CF2179 /* DB */,
 				82A608E72C3758A00005EDC3 /* API */,
 				8255E4392C385A47009D24B1 /* Date */,
 				8294CFCA2C371776006E7EDA /* Settings */,
@@ -638,7 +660,103 @@
 			path = News;
 			sourceTree = "<group>";
 		};
-		82F315AD2C405BDE00E826F9 /* News Modles */ = {
+		82E8A0E62C47442200CF2179 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				82E8A0F02C4745D500CF2179 /* Models */,
+				82E8A0EF2C4745C800CF2179 /* Service */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		82E8A0EF2C4745C800CF2179 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				82E8A0E72C47443500CF2179 /* DBService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82E8A0F02C4745D500CF2179 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				82E8A0F12C47460500CF2179 /* DBResponse.swift */,
+				82E8A0F32C47462200CF2179 /* Department.swift */,
+				82E8A0F52C47463E00CF2179 /* Teacher.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		82E8A0F72C4748CE00CF2179 /* Departments List MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				82E8A0F92C4748F900CF2179 /* View */,
+				82E8A0F82C4748F600CF2179 /* ViewModel */,
+			);
+			path = "Departments List MVVM";
+			sourceTree = "<group>";
+		};
+		82E8A0F82C4748F600CF2179 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82E8A0FA2C47491100CF2179 /* DepartmentsListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82E8A0F92C4748F900CF2179 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82E8A0FC2C47499A00CF2179 /* DepartmentsListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82E8A0FE2C474BFE00CF2179 /* Timetable Modules */ = {
+			isa = PBXGroup;
+			children = (
+				82A608E42C3758800005EDC3 /* Timetable Day List MVVM */,
+				82F315AF2C405C7900E826F9 /* Timetable Day Result List */,
+				82E8A0F72C4748CE00CF2179 /* Departments List MVVM */,
+				82E8A0FF2C474C3E00CF2179 /* Teachers List MVVM */,
+			);
+			path = "Timetable Modules";
+			sourceTree = "<group>";
+		};
+		82E8A0FF2C474C3E00CF2179 /* Teachers List MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				82E8A1012C474C5000CF2179 /* View */,
+				82E8A1002C474C4E00CF2179 /* ViewModel */,
+			);
+			path = "Teachers List MVVM";
+			sourceTree = "<group>";
+		};
+		82E8A1002C474C4E00CF2179 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82E8A1042C474C7000CF2179 /* TeachersListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82E8A1012C474C5000CF2179 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82E8A1022C474C6400CF2179 /* TeachersListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82E8A1062C47507800CF2179 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				82E8A1072C47509200CF2179 /* String + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		82F315AD2C405BDE00E826F9 /* News Modules */ = {
 			isa = PBXGroup;
 			children = (
 				8294CFD02C371A42006E7EDA /* News List MVVM */,
@@ -646,23 +764,24 @@
 				828C1A382C39771300151AFA /* News Options List MVVM */,
 				828C1A422C39C1EC00151AFA /* News Categories List MVVM */,
 				828C1A4E2C39C49800151AFA /* Current Category News List MVVM */,
+				8294CFBA2C360648006E7EDA /* Saved News Categories List MVVM */,
 			);
-			path = "News Modles";
+			path = "News Modules";
 			sourceTree = "<group>";
 		};
-		82F315AF2C405C7900E826F9 /* Timetable Day Room List */ = {
+		82F315AF2C405C7900E826F9 /* Timetable Day Result List */ = {
 			isa = PBXGroup;
 			children = (
 				82F315B12C405C9F00E826F9 /* View */,
 				82F315B02C405C9D00E826F9 /* ViewModel */,
 			);
-			path = "Timetable Day Room List";
+			path = "Timetable Day Result List";
 			sourceTree = "<group>";
 		};
 		82F315B02C405C9D00E826F9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				82F315B42C405CC100E826F9 /* TimetableDayRoomListViewModel.swift */,
+				82F315B42C405CC100E826F9 /* TimetableDayResultListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -670,7 +789,7 @@
 		82F315B12C405C9F00E826F9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				82F315B22C405CB700E826F9 /* TimetableDayRoomListView.swift */,
+				82F315B22C405CB700E826F9 /* TimetableDayResultListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -711,6 +830,8 @@
 			packageProductDependencies = (
 				82A609052C375C8B0005EDC3 /* Alamofire */,
 				8255E4402C385DA3009D24B1 /* SDWebImageSwiftUI */,
+				82E8A0EA2C4744F800CF2179 /* Fluent */,
+				82E8A0ED2C47453B00CF2179 /* FluentPostgresDriver */,
 			);
 			productName = "ASPU-App-Watch Watch App";
 			productReference = 8294CF832C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app */;
@@ -746,6 +867,8 @@
 			packageReferences = (
 				82A609042C375C8B0005EDC3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				8255E43F2C385DA3009D24B1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				82E8A0E92C4744F800CF2179 /* XCRemoteSwiftPackageReference "fluent" */,
+				82E8A0EC2C47453B00CF2179 /* XCRemoteSwiftPackageReference "fluent-postgres-driver" */,
 			);
 			productRefGroup = 8294CF7E2C34B579006E7EDA /* Products */;
 			projectDirPath = "";
@@ -787,18 +910,22 @@
 				8294CF8B2C34B579006E7EDA /* ContentView.swift in Sources */,
 				82A608F82C3759A10005EDC3 /* ASPUNewsService.swift in Sources */,
 				82A608EE2C3758FE0005EDC3 /* HostName.swift in Sources */,
+				82E8A1082C47509200CF2179 /* String + Extensions.swift in Sources */,
 				82A608F62C3759620005EDC3 /* TimeTable.swift in Sources */,
 				8294CFA92C36022A006E7EDA /* SettingsListView.swift in Sources */,
 				82160F5E2C38EDFB00017A1F /* BuildingsMapViewModel.swift in Sources */,
 				82160F612C38EEC800017A1F /* LocationManager.swift in Sources */,
 				82A608F22C3759350005EDC3 /* Article.swift in Sources */,
 				8294CFAF2C360432006E7EDA /* SettingSectionModel.swift in Sources */,
+				82E8A0F62C47463E00CF2179 /* Teacher.swift in Sources */,
 				8255E4442C385DB5009D24B1 /* ArticleCell.swift in Sources */,
 				82160F582C38A32200017A1F /* Buildings.swift in Sources */,
 				8294CFB12C36045D006E7EDA /* SettingSections.swift in Sources */,
 				82A608FA2C3759D30005EDC3 /* TimeTableService.swift in Sources */,
+				82E8A0E82C47443500CF2179 /* DBService.swift in Sources */,
 				828C1A412C397BBB00151AFA /* NewsOptionsListViewModel.swift in Sources */,
 				82160F542C38A13600017A1F /* BuildingsMapView.swift in Sources */,
+				82E8A0FD2C47499A00CF2179 /* DepartmentsListView.swift in Sources */,
 				8294CFA42C34B7BC006E7EDA /* AppSections.swift in Sources */,
 				8294CF892C34B579006E7EDA /* ASPU_App_WatchApp.swift in Sources */,
 				82A609012C375A2B0005EDC3 /* TimetableDayListView.swift in Sources */,
@@ -807,15 +934,18 @@
 				8294CFC32C3607B9006E7EDA /* SavedNewsCategoriesListView.swift in Sources */,
 				8294CFB62C3604DD006E7EDA /* AppSectionCell.swift in Sources */,
 				8255E4482C3861ED009D24B1 /* ArticleDetailView.swift in Sources */,
+				82E8A0F42C47462200CF2179 /* Department.swift in Sources */,
 				828C1A3E2C3977E500151AFA /* NewsOptionsListView.swift in Sources */,
 				828C1A542C39C4E400151AFA /* CurrentCategoryNewsListViewModel.swift in Sources */,
 				828C1A522C39C4DB00151AFA /* CurrentCategoryNewsListView.swift in Sources */,
+				82E8A0F22C47460500CF2179 /* DBResponse.swift in Sources */,
 				82958D8D2C3E06D3007ACA24 /* ArticleInfo.swift in Sources */,
 				8255E43E2C385C11009D24B1 /* NewsListViewModel.swift in Sources */,
 				8294CFA12C34B772006E7EDA /* AppSectionsListView.swift in Sources */,
-				82F315B32C405CB700E826F9 /* TimetableDayRoomListView.swift in Sources */,
+				82E8A1032C474C6400CF2179 /* TeachersListView.swift in Sources */,
+				82F315B32C405CB700E826F9 /* TimetableDayResultListView.swift in Sources */,
 				82A608F42C3759460005EDC3 /* NewsResponse.swift in Sources */,
-				82F315B52C405CC100E826F9 /* TimetableDayRoomListViewModel.swift in Sources */,
+				82F315B52C405CC100E826F9 /* TimetableDayResultListViewModel.swift in Sources */,
 				8294CFB92C360564006E7EDA /* SettingSectionCell.swift in Sources */,
 				828C1A4D2C39C2A900151AFA /* NewsCategoriesListViewModel.swift in Sources */,
 				82958D8B2C3E05DC007ACA24 /* ArticleDetailViewModel.swift in Sources */,
@@ -823,8 +953,10 @@
 				8255E43B2C385A58009D24B1 /* DateManager.swift in Sources */,
 				8294CFC82C360957006E7EDA /* SavedNewsCategoriesListViewModel.swift in Sources */,
 				8294CFBF2C360696006E7EDA /* NewsCategoryModel.swift in Sources */,
+				82E8A1052C474C7000CF2179 /* TeachersListViewModel.swift in Sources */,
 				82A609032C375A4D0005EDC3 /* TimetableDayListViewModel.swift in Sources */,
 				8294CFD32C371A60006E7EDA /* NewsListView.swift in Sources */,
+				82E8A0FB2C47491100CF2179 /* DepartmentsListViewModel.swift in Sources */,
 				8255E4382C378D7A009D24B1 /* PairCell.swift in Sources */,
 				828C1A3C2C39773B00151AFA /* NewsOptionModel.swift in Sources */,
 				8294CFB32C3604B0006E7EDA /* AppSectionModel.swift in Sources */,
@@ -1105,6 +1237,22 @@
 				version = 5.9.1;
 			};
 		};
+		82E8A0E92C4744F800CF2179 /* XCRemoteSwiftPackageReference "fluent" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vapor/fluent.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.11.0;
+			};
+		};
+		82E8A0EC2C47453B00CF2179 /* XCRemoteSwiftPackageReference "fluent-postgres-driver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vapor/fluent-postgres-driver";
+			requirement = {
+				kind = exactVersion;
+				version = 2.9.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1117,6 +1265,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 82A609042C375C8B0005EDC3 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		82E8A0EA2C4744F800CF2179 /* Fluent */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82E8A0E92C4744F800CF2179 /* XCRemoteSwiftPackageReference "fluent" */;
+			productName = Fluent;
+		};
+		82E8A0ED2C47453B00CF2179 /* FluentPostgresDriver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82E8A0EC2C47453B00CF2179 /* XCRemoteSwiftPackageReference "fluent-postgres-driver" */;
+			productName = FluentPostgresDriver;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,5 +1,5 @@
 //
-//  TimetableDayRoomListViewModel.swift
+//  TimetableDayResultListViewModel.swift
 //  ASPU-App-Watch Watch App
 //
 //  Created by Марк Киричко on 11.07.2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TimetableDayRoomListViewModel: ObservableObject {
+class TimetableDayResultListViewModel: ObservableObject {
     
     var timetable = TimeTable(id: "", date: "", disciplines: [])
     
@@ -15,8 +15,8 @@ class TimetableDayRoomListViewModel: ObservableObject {
     private let service = TimeTableService()
     private let dateManager = DateManager()
     
-    func getTimetable(room: String) {
-        service.getTimeTableDay(id: room, date: dateManager.getCurrentDate(), owner: "ROOM") { result in
+    func getTimetable(id: String, owner: String) {
+        service.getTimeTableDay(id: id, date: dateManager.getCurrentDate(), owner: owner) { result in
             switch result {
             case .success(let data):
                 self.timetable = data

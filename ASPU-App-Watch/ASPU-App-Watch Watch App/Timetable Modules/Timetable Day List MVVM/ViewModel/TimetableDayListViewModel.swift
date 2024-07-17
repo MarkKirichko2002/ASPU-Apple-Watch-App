@@ -9,7 +9,8 @@ import Foundation
 
 final class TimetableDayListViewModel: ObservableObject {
     
-    var timetable = TimeTable(id: "", date: "", disciplines: [])
+    @Published var timetable = TimeTable(id: "", date: "", disciplines: [])
+    @Published var isPresented = false
     
     // MARK: - сервисы
     private let service = TimeTableService()
