@@ -16,11 +16,12 @@ struct CorpsListView: View {
             Text(corp.name)
                 .onTapGesture {
                     viewModel.isPresented.toggle()
+                    viewModel.currentBuilding = corp
              }
         }
         .navigationTitle("Корпуса")
         .sheet(isPresented: $viewModel.isPresented, content: {
-            //TimetableDayResultListView(id: viewModel.currentTeacher, owner: "TEACHER")
+            AudenciesListView(building: viewModel.currentBuilding)
         })
     }
 }

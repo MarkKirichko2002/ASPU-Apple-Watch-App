@@ -20,6 +20,7 @@
 		8255E4482C3861ED009D24B1 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255E4472C3861ED009D24B1 /* ArticleDetailView.swift */; };
 		827674D32C4861A10083A849 /* CorpsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827674D22C4861A10083A849 /* CorpsListViewModel.swift */; };
 		827674D72C4863420083A849 /* CorpsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827674D62C4863420083A849 /* CorpsListView.swift */; };
+		827674DA2C48ACE20083A849 /* AudenciesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827674D92C48ACE20083A849 /* AudenciesListView.swift */; };
 		828C1A3C2C39773B00151AFA /* NewsOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C1A3B2C39773B00151AFA /* NewsOptionModel.swift */; };
 		828C1A3E2C3977E500151AFA /* NewsOptionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C1A3D2C3977E500151AFA /* NewsOptionsListView.swift */; };
 		828C1A412C397BBB00151AFA /* NewsOptionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C1A402C397BBB00151AFA /* NewsOptionsListViewModel.swift */; };
@@ -115,6 +116,7 @@
 		8255E4472C3861ED009D24B1 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		827674D22C4861A10083A849 /* CorpsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorpsListViewModel.swift; sourceTree = "<group>"; };
 		827674D62C4863420083A849 /* CorpsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorpsListView.swift; sourceTree = "<group>"; };
+		827674D92C48ACE20083A849 /* AudenciesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudenciesListView.swift; sourceTree = "<group>"; };
 		828C1A3B2C39773B00151AFA /* NewsOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsOptionModel.swift; sourceTree = "<group>"; };
 		828C1A3D2C3977E500151AFA /* NewsOptionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsOptionsListView.swift; sourceTree = "<group>"; };
 		828C1A402C397BBB00151AFA /* NewsOptionsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsOptionsListViewModel.swift; sourceTree = "<group>"; };
@@ -309,6 +311,14 @@
 				827674D62C4863420083A849 /* CorpsListView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		827674D82C48ACA70083A849 /* Audencies List  */ = {
+			isa = PBXGroup;
+			children = (
+				827674D92C48ACE20083A849 /* AudenciesListView.swift */,
+			);
+			path = "Audencies List ";
 			sourceTree = "<group>";
 		};
 		828C1A382C39771300151AFA /* News Options List MVVM */ = {
@@ -755,6 +765,7 @@
 				82E8A0F72C4748CE00CF2179 /* Departments List MVVM */,
 				82E8A0FF2C474C3E00CF2179 /* Teachers List MVVM */,
 				827674CF2C4861370083A849 /* Сorps List MVVM */,
+				827674D82C48ACA70083A849 /* Audencies List  */,
 				82F315AF2C405C7900E826F9 /* Timetable Day Result List */,
 			);
 			path = "Timetable Modules";
@@ -1029,6 +1040,7 @@
 				8294CFBF2C360696006E7EDA /* NewsCategoryModel.swift in Sources */,
 				82E8A1052C474C7000CF2179 /* TeachersListViewModel.swift in Sources */,
 				82E8A1122C4772C500CF2179 /* TimetableOwnerCell.swift in Sources */,
+				827674DA2C48ACE20083A849 /* AudenciesListView.swift in Sources */,
 				82A609032C375A4D0005EDC3 /* TimetableDayListViewModel.swift in Sources */,
 				8294CFD32C371A60006E7EDA /* NewsListView.swift in Sources */,
 				82E8A0FB2C47491100CF2179 /* DepartmentsListViewModel.swift in Sources */,

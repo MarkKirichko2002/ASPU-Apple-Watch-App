@@ -11,6 +11,6 @@ class CorpsListViewModel: ObservableObject {
     
     var corps = Buildings.pins
     @Published var isPresented = false
-    @Published var currentId = 1
+    @Published var currentBuilding = Buildings.pins[0]
     
 }
