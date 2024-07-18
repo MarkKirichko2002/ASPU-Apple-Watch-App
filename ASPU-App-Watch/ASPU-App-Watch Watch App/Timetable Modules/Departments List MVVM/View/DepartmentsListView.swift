@@ -25,7 +25,8 @@ struct DepartmentsListView: View {
             } else {
                 Text("Загрузка...")
             }
-        }.sheet(isPresented: $viewModel.isPresented) {
+        }
+        .sheet(isPresented: $viewModel.isPresented) {
             TeachersListView(id: viewModel.currentId)
         }
         .navigationTitle("Кафедры")

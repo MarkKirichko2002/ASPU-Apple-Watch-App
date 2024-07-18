@@ -17,6 +17,8 @@ struct TimetableOwnersListView: View {
                         EmptyView()
                     case 2:
                         DepartmentsListView()
+                    case 3:
+                        CorpsListView()
                     default:
                         EmptyView()
                     }
