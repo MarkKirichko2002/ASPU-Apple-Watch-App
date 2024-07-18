@@ -13,18 +13,12 @@ struct TeachersListView: View {
     var id: Int
     
     var body: some View {
-        VStack {
-            if !viewModel.teachers.isEmpty {
-                List(viewModel.teachers) { teacher in
-                    Text(viewModel.configure(teacher: teacher))
-                        .onTapGesture {
-                            viewModel.isPresented.toggle()
-                            viewModel.currentTeacher = viewModel.configure(teacher: teacher)
-                     }
-                }
-            } else {
-                Text("Загрузка...")
-            }
+        List(viewModel.teachers, id: \.self) { teacher in
+            Text(viewModel.configure(teacher: teacher))
+                .onTapGesture {
+                    viewModel.isPresented.toggle()
+                    viewModel.currentTeacher = viewModel.configure(teacher: teacher)
+             }
         }
         .navigationTitle("Препод.")
         .onAppear {

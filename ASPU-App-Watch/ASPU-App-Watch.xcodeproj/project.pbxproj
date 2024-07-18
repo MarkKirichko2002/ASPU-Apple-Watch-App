@@ -60,12 +60,6 @@
 		82A609012C375A2B0005EDC3 /* TimetableDayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A609002C375A2B0005EDC3 /* TimetableDayListView.swift */; };
 		82A609032C375A4D0005EDC3 /* TimetableDayListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A609022C375A4D0005EDC3 /* TimetableDayListViewModel.swift */; };
 		82A609062C375C8B0005EDC3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 82A609052C375C8B0005EDC3 /* Alamofire */; };
-		82E8A0E82C47443500CF2179 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A0E72C47443500CF2179 /* DBService.swift */; };
-		82E8A0EB2C4744F800CF2179 /* Fluent in Frameworks */ = {isa = PBXBuildFile; productRef = 82E8A0EA2C4744F800CF2179 /* Fluent */; };
-		82E8A0EE2C47453B00CF2179 /* FluentPostgresDriver in Frameworks */ = {isa = PBXBuildFile; productRef = 82E8A0ED2C47453B00CF2179 /* FluentPostgresDriver */; };
-		82E8A0F22C47460500CF2179 /* DBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A0F12C47460500CF2179 /* DBResponse.swift */; };
-		82E8A0F42C47462200CF2179 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A0F32C47462200CF2179 /* Department.swift */; };
-		82E8A0F62C47463E00CF2179 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A0F52C47463E00CF2179 /* Teacher.swift */; };
 		82E8A0FB2C47491100CF2179 /* DepartmentsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A0FA2C47491100CF2179 /* DepartmentsListViewModel.swift */; };
 		82E8A0FD2C47499A00CF2179 /* DepartmentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A0FC2C47499A00CF2179 /* DepartmentsListView.swift */; };
 		82E8A1032C474C6400CF2179 /* TeachersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1022C474C6400CF2179 /* TeachersListView.swift */; };
@@ -156,10 +150,6 @@
 		82A608F92C3759D30005EDC3 /* TimeTableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableService.swift; sourceTree = "<group>"; };
 		82A609002C375A2B0005EDC3 /* TimetableDayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayListView.swift; sourceTree = "<group>"; };
 		82A609022C375A4D0005EDC3 /* TimetableDayListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayListViewModel.swift; sourceTree = "<group>"; };
-		82E8A0E72C47443500CF2179 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
-		82E8A0F12C47460500CF2179 /* DBResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBResponse.swift; sourceTree = "<group>"; };
-		82E8A0F32C47462200CF2179 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
-		82E8A0F52C47463E00CF2179 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		82E8A0FA2C47491100CF2179 /* DepartmentsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsListViewModel.swift; sourceTree = "<group>"; };
 		82E8A0FC2C47499A00CF2179 /* DepartmentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsListView.swift; sourceTree = "<group>"; };
 		82E8A1022C474C6400CF2179 /* TeachersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersListView.swift; sourceTree = "<group>"; };
@@ -178,9 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8255E4412C385DA3009D24B1 /* SDWebImageSwiftUI in Frameworks */,
-				82E8A0EE2C47453B00CF2179 /* FluentPostgresDriver in Frameworks */,
 				82A609062C375C8B0005EDC3 /* Alamofire in Frameworks */,
-				82E8A0EB2C4744F800CF2179 /* Fluent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,7 +562,6 @@
 		8294CFC92C371771006E7EDA /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				82E8A0E62C47442200CF2179 /* DB */,
 				82A608E72C3758A00005EDC3 /* API */,
 				8255E4392C385A47009D24B1 /* Date */,
 				8294CFCA2C371776006E7EDA /* Settings */,
@@ -703,33 +690,6 @@
 				82A608F72C3759A00005EDC3 /* ASPUNewsService.swift */,
 			);
 			path = News;
-			sourceTree = "<group>";
-		};
-		82E8A0E62C47442200CF2179 /* DB */ = {
-			isa = PBXGroup;
-			children = (
-				82E8A0F02C4745D500CF2179 /* Models */,
-				82E8A0EF2C4745C800CF2179 /* Service */,
-			);
-			path = DB;
-			sourceTree = "<group>";
-		};
-		82E8A0EF2C4745C800CF2179 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				82E8A0E72C47443500CF2179 /* DBService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		82E8A0F02C4745D500CF2179 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				82E8A0F12C47460500CF2179 /* DBResponse.swift */,
-				82E8A0F32C47462200CF2179 /* Department.swift */,
-				82E8A0F52C47463E00CF2179 /* Teacher.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		82E8A0F72C4748CE00CF2179 /* Departments List MVVM */ = {
@@ -912,8 +872,6 @@
 			packageProductDependencies = (
 				82A609052C375C8B0005EDC3 /* Alamofire */,
 				8255E4402C385DA3009D24B1 /* SDWebImageSwiftUI */,
-				82E8A0EA2C4744F800CF2179 /* Fluent */,
-				82E8A0ED2C47453B00CF2179 /* FluentPostgresDriver */,
 			);
 			productName = "ASPU-App-Watch Watch App";
 			productReference = 8294CF832C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app */;
@@ -949,8 +907,6 @@
 			packageReferences = (
 				82A609042C375C8B0005EDC3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				8255E43F2C385DA3009D24B1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
-				82E8A0E92C4744F800CF2179 /* XCRemoteSwiftPackageReference "fluent" */,
-				82E8A0EC2C47453B00CF2179 /* XCRemoteSwiftPackageReference "fluent-postgres-driver" */,
 			);
 			productRefGroup = 8294CF7E2C34B579006E7EDA /* Products */;
 			projectDirPath = "";
@@ -1000,12 +956,10 @@
 				827674D32C4861A10083A849 /* CorpsListViewModel.swift in Sources */,
 				82A608F22C3759350005EDC3 /* Article.swift in Sources */,
 				8294CFAF2C360432006E7EDA /* SettingSectionModel.swift in Sources */,
-				82E8A0F62C47463E00CF2179 /* Teacher.swift in Sources */,
 				8255E4442C385DB5009D24B1 /* ArticleCell.swift in Sources */,
 				82160F582C38A32200017A1F /* Buildings.swift in Sources */,
 				8294CFB12C36045D006E7EDA /* SettingSections.swift in Sources */,
 				82A608FA2C3759D30005EDC3 /* TimeTableService.swift in Sources */,
-				82E8A0E82C47443500CF2179 /* DBService.swift in Sources */,
 				828C1A412C397BBB00151AFA /* NewsOptionsListViewModel.swift in Sources */,
 				82160F542C38A13600017A1F /* BuildingsMapView.swift in Sources */,
 				82E8A0FD2C47499A00CF2179 /* DepartmentsListView.swift in Sources */,
@@ -1019,11 +973,9 @@
 				8294CFC32C3607B9006E7EDA /* SavedNewsCategoriesListView.swift in Sources */,
 				8294CFB62C3604DD006E7EDA /* AppSectionCell.swift in Sources */,
 				8255E4482C3861ED009D24B1 /* ArticleDetailView.swift in Sources */,
-				82E8A0F42C47462200CF2179 /* Department.swift in Sources */,
 				828C1A3E2C3977E500151AFA /* NewsOptionsListView.swift in Sources */,
 				828C1A542C39C4E400151AFA /* CurrentCategoryNewsListViewModel.swift in Sources */,
 				828C1A522C39C4DB00151AFA /* CurrentCategoryNewsListView.swift in Sources */,
-				82E8A0F22C47460500CF2179 /* DBResponse.swift in Sources */,
 				82958D8D2C3E06D3007ACA24 /* ArticleInfo.swift in Sources */,
 				8255E43E2C385C11009D24B1 /* NewsListViewModel.swift in Sources */,
 				8294CFA12C34B772006E7EDA /* AppSectionsListView.swift in Sources */,
@@ -1325,22 +1277,6 @@
 				version = 5.9.1;
 			};
 		};
-		82E8A0E92C4744F800CF2179 /* XCRemoteSwiftPackageReference "fluent" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/vapor/fluent.git";
-			requirement = {
-				kind = exactVersion;
-				version = 4.11.0;
-			};
-		};
-		82E8A0EC2C47453B00CF2179 /* XCRemoteSwiftPackageReference "fluent-postgres-driver" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/vapor/fluent-postgres-driver";
-			requirement = {
-				kind = exactVersion;
-				version = 2.9.2;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1353,16 +1289,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 82A609042C375C8B0005EDC3 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		82E8A0EA2C4744F800CF2179 /* Fluent */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 82E8A0E92C4744F800CF2179 /* XCRemoteSwiftPackageReference "fluent" */;
-			productName = Fluent;
-		};
-		82E8A0ED2C47453B00CF2179 /* FluentPostgresDriver */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 82E8A0EC2C47453B00CF2179 /* XCRemoteSwiftPackageReference "fluent-postgres-driver" */;
-			productName = FluentPostgresDriver;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
