@@ -14,28 +14,32 @@ struct NewsListView: View {
     
     var body: some View {
         VStack {
-            List(viewModel.newsResponse.articles ?? []) { article in
-                ArticleCell(article: article, abbreviation: viewModel.currentCategory.abbreviation)
+            if viewModel.newsResponse.articles?.count ?? 0 > 0 {
+                List(viewModel.newsResponse.articles ?? []) { article in
+                    ArticleCell(article: article, abbreviation: viewModel.currentCategory.abbreviation)
+                }
+                .listStyle(.carousel)
+            } else {
+                Text("Загрузка...")
             }
-            .onAppear {
-                viewModel.getNews()
-            }
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        self.viewModel.isPresented.toggle()
-                    }) {
-                        Image("sections")
-                    }
+        }
+        .onAppear {
+            viewModel.getNews()
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    self.viewModel.isPresented.toggle()
+                }) {
+                    Image("sections")
                 }
             }
-            .onChange(of: isDisappear) {
-                viewModel.getNews()
-            }
-            .sheet(isPresented: $viewModel.isPresented) {
-                NewsOptionsListView(isDisappear: $isDisappear, category: viewModel.currentCategory)
-            }
-            .listStyle(.carousel)
+        }
+        .onChange(of: isDisappear) {
+            viewModel.getNews()
+        }
+        .sheet(isPresented: $viewModel.isPresented) {
+            NewsOptionsListView(isDisappear: $isDisappear)
         }
     }
 }

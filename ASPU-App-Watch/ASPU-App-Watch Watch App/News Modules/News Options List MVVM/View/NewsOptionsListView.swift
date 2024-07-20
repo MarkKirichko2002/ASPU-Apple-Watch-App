@@ -11,26 +11,24 @@ struct NewsOptionsListView: View {
     
     @ObservedObject var viewModel = NewsOptionsListViewModel()
     @Binding var isDisappear: Bool
-    
-    var category: NewsCategoryModel
-    
+
     var body: some View {
         NavigationView {
             List(viewModel.options) { option in
-                NavigationLink {
-                    switch option.id {
-                    case 1:
-                        NewsCategoriesListView()
-                    default:
-                        EmptyView()
-                    }
-                } label: {
-                    Text(option.name)
-                }
+                Text(option.name)
+                    .onTapGesture {
+                        viewModel.currentId = option.id
+                        viewModel.isPresented.toggle()
+                 }
             }
         }
-        .onAppear {
-            viewModel.getData(category: category)
+        .sheet(isPresented: $viewModel.isPresented) {
+            switch viewModel.currentId {
+            case 1: NewsCategoriesListView()
+            case 2: NewsPagesListView(count: viewModel.newsResponse.countPages ?? 0)
+            default:
+                EmptyView()
+            }
         }
         .onDisappear {
             isDisappear.toggle()
