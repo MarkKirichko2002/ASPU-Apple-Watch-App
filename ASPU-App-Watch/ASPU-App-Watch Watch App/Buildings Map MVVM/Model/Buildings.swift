@@ -10,6 +10,7 @@ import MapKit
 struct BuildingModel: Identifiable {
     let id: UUID
     let name: String
+    let image: [String]
     let audiences: [String]?
     let pin: CLLocationCoordinate2D
 }
@@ -20,6 +21,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Главный корпус",
+            image: ["главный корпус"],
             audiences: [
                 "1",
                 "2",
@@ -54,6 +56,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Корпус и Общежитие №1",
+            image: ["общежитие 1"],
             audiences: [
                 "30",
                 "31",
@@ -91,6 +94,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Корпус №2",
+            image: [],
             audiences: [
                 "24",
                 "25",
@@ -103,6 +107,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Корпус №3 (СПФ)",
+            image: ["СПФ"],
             audiences: [
                 "40",
                 "41",
@@ -121,6 +126,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Корпус №4 (ФТЭиД)",
+            image: ["ФТЭиД"],
             audiences: [
                 "51",
                 "52",
@@ -144,6 +150,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Корпус №5 (ЕБД)",
+            image: [],
             audiences: [
                 "80",
                 "81",
@@ -157,6 +164,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Корпус №6 (ФОК)",
+            image: ["ФОК"],
             audiences: [
                 "85",
                 "85а",
@@ -169,6 +177,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "ИСТФАК",
+            image: ["истфак"],
             audiences: [
                 "201",
                 "202",
@@ -186,6 +195,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Общежитие №2",
+            image: ["общежитие 2"],
             audiences: nil,
             pin: CLLocationCoordinate2D(latitude: 44.972907, longitude: 41.149784)
         )

@@ -18,6 +18,21 @@ struct BuildingDetailView: View {
         
         Form() {
             
+            Section("Изображение") {
+                ScrollView(.horizontal, showsIndicators: true) {
+                    LazyHStack {
+                        ForEach(building.image, id: \.self) { image in
+                            Image(image)
+                                .resizable()
+                                .frame(width: 160, height: 160)
+                                .aspectRatio(contentMode: .fill)
+                                .cornerRadius(10)
+                        }.listStyle(.carousel)
+                    }
+                    .padding()
+                }
+            }
+            
             Section("Название") {
                 Text(building.name)
             }
