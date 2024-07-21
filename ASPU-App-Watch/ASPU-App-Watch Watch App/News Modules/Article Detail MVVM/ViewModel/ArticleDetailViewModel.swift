@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ArticleDetailViewModel: ObservableObject {
+final class ArticleDetailViewModel: ObservableObject {
     
     @Published var articleInfo = ArticleInfo(id: 0, title: "", description: "", date: "", images: [])
     

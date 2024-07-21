@@ -12,16 +12,16 @@ struct NewsCategoriesListView: View {
     @ObservedObject var viewModel = NewsCategoriesListViewModel()
     
     var body: some View {
-        List(viewModel.categories) { category in
-            NewsCategoryCell(category: category, isSelected: viewModel.isSavedCategory(category: category))
-                .onTapGesture {
-                    viewModel.selectCategory(category: category)
-             }
+        
+        NavigationView {
+            List(viewModel.categories) { category in
+                NewsCategoryCell(category: category, isSelected: viewModel.isSavedCategory(category: category))
+            }
+            .onAppear {
+                viewModel.updateView()
+            }
+            .navigationTitle("Категории")
         }
-        .sheet(isPresented: $viewModel.isChanged) {
-            CurrentCategoryNewsListView(category: viewModel.currentCategory)
-        }
-        .navigationTitle("Категории")
     }
 }
 

@@ -13,19 +13,17 @@ struct CurrentCategoryNewsListView: View {
     var category: NewsCategoryModel
     
     var body: some View {
-        NavigationView {
-            List(viewModel.newsResponse.articles ?? []) { article in
-                ArticleCell(article: article, abbreviation: category.abbreviation)
-            }
-            .listStyle(.carousel)
-            .navigationTitle(category.name)
-            .onAppear {
-                viewModel.getNews(category: category)
-            }
+        List(viewModel.newsResponse.articles ?? []) { article in
+            ArticleCell(article: article, abbreviation: category.abbreviation)
+        }
+        .listStyle(.carousel)
+        .navigationTitle(category.name)
+        .onAppear {
+            viewModel.getNews(category: category)
         }
     }
 }
 
-#Preview {
-    CurrentCategoryNewsListView(category: NewsCategories.categories[0])
-}
+//#Preview {
+//    CurrentCategoryNewsListView(category: NewsCategories.categories[0])
+//}

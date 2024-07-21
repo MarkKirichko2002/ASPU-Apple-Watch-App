@@ -16,11 +16,10 @@ final class NewsCategoriesListViewModel: ObservableObject {
     // MARK: - сервисы
     private let settingsManager = SettingsManager()
     
-    func selectCategory(category: NewsCategoryModel) {
-        currentCategory = category
-        settingsManager.saveCategory(abbreviation: category.abbreviation)
-        NotificationCenter.default.post(name: Notification.Name("category selected"), object: nil)
-        isChanged.toggle()
+    func updateView() {
+        Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { _ in
+            self.isChanged.toggle()
+        }
     }
     
     func isSavedCategory(category: NewsCategoryModel)-> Bool {
@@ -31,4 +30,3 @@ final class NewsCategoriesListViewModel: ObservableObject {
         return false
     }
 }
-

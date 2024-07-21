@@ -296,7 +296,7 @@ struct Departments {
     ]
 }
 
-class DepartmentsListViewModel: ObservableObject {
+final class DepartmentsListViewModel: ObservableObject {
     
     var departments = Departments.departments
     @Published var isPresented = false

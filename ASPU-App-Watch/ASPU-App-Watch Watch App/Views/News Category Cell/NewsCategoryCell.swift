@@ -14,18 +14,26 @@ struct NewsCategoryCell: View {
     
     var body: some View {
         if isSelected {
-            HStack {
-                Text(category.name)
-                    .fontWeight(.bold)
-                Spacer()
-                Image("check")
-                    .resizable()
-                    .frame(width: 20, height: 20)
+            NavigationLink {
+                CurrentCategoryNewsListView(category: category)
+            } label: {
+                HStack {
+                    Text(category.name)
+                        .fontWeight(.bold)
+                    Spacer()
+                    Image("check")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
             }
         } else {
-            HStack {
-                Text(category.name)
-                    .fontWeight(.bold)
+            NavigationLink {
+                CurrentCategoryNewsListView(category: category)
+            } label: {
+                HStack {
+                    Text(category.name)
+                        .fontWeight(.bold)
+                }
             }
         }
     }

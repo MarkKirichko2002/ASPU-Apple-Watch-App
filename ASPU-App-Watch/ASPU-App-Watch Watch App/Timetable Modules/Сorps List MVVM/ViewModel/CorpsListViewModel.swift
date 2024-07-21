@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CorpsListViewModel: ObservableObject {
+final class CorpsListViewModel: ObservableObject {
     
     var corps = Buildings.pins
     @Published var isPresented = false

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TeachersListViewModel: ObservableObject {
+final class TeachersListViewModel: ObservableObject {
     
     @Published var teachers = Departments.departments[0].teachers
     @Published var isPresented = false

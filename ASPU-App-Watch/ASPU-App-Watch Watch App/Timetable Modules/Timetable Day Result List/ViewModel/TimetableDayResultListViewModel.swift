@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TimetableDayResultListViewModel: ObservableObject {
+final class TimetableDayResultListViewModel: ObservableObject {
     
     var timetable = TimeTable(id: "", date: "", disciplines: [])
     

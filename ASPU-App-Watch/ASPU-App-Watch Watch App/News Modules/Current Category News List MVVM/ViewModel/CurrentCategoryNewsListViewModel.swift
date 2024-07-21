@@ -13,8 +13,10 @@ final class CurrentCategoryNewsListViewModel: ObservableObject {
     
     // MARK: - сервисы
     private let newsService = ASPUNewsService()
+    private let settingsManager = SettingsManager()
     
     func getNews(category: NewsCategoryModel) {
+        settingsManager.saveCategory(abbreviation: category.abbreviation)
         if category.abbreviation != "-" {
             Task {
                 let result = try await newsService.getNews(abbreviation: category.abbreviation)
