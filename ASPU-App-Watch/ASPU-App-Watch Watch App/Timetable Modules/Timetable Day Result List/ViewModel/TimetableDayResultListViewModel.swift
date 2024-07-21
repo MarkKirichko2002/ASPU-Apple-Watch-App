@@ -9,21 +9,29 @@ import Foundation
 
 final class TimetableDayResultListViewModel: ObservableObject {
     
-    var timetable = TimeTable(id: "", date: "", disciplines: [])
+    @Published var timetable = TimeTable(id: "", date: "", disciplines: [])
     
     // MARK: - сервисы
     private let service = TimeTableService()
     private let dateManager = DateManager()
     
-    func getTimetable(id: String, owner: String) {
-        service.getTimeTableDay(id: id, date: dateManager.getCurrentDate(), owner: owner) { result in
+    func getTimetable(id: String, date: String, owner: String) {
+        saveItem(id: id, owner: owner)
+        service.getTimeTableDay(id: id, date: date, owner: owner) { result in
             switch result {
             case .success(let data):
-                self.timetable = data
+                DispatchQueue.main.async {
+                    self.timetable = data
+                }
             case .failure(let error):
                 print(error)
             }
         }
+    }
+    
+    func saveItem(id: String, owner: String) {
+        UserDefaults.standard.setValue(id, forKey: "id")
+        UserDefaults.standard.setValue(owner, forKey: "owner")
     }
     
     func getCurrentDate()-> String {

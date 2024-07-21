@@ -72,6 +72,7 @@
 		82E8A10D2C47635C00CF2179 /* TimetableOwnersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A10C2C47635C00CF2179 /* TimetableOwnersListView.swift */; };
 		82E8A10F2C47637700CF2179 /* TimetableOwners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A10E2C47637700CF2179 /* TimetableOwners.swift */; };
 		82E8A1122C4772C500CF2179 /* TimetableOwnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1112C4772C500CF2179 /* TimetableOwnerCell.swift */; };
+		82F297A12C4CDCAB007697C6 /* TimetableOwnersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F297A02C4CDCAB007697C6 /* TimetableOwnersListViewModel.swift */; };
 		82F315B32C405CB700E826F9 /* TimetableDayResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F315B22C405CB700E826F9 /* TimetableDayResultListView.swift */; };
 		82F315B52C405CC100E826F9 /* TimetableDayResultListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F315B42C405CC100E826F9 /* TimetableDayResultListViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -166,6 +167,7 @@
 		82E8A10C2C47635C00CF2179 /* TimetableOwnersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableOwnersListView.swift; sourceTree = "<group>"; };
 		82E8A10E2C47637700CF2179 /* TimetableOwners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableOwners.swift; sourceTree = "<group>"; };
 		82E8A1112C4772C500CF2179 /* TimetableOwnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableOwnerCell.swift; sourceTree = "<group>"; };
+		82F297A02C4CDCAB007697C6 /* TimetableOwnersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableOwnersListViewModel.swift; sourceTree = "<group>"; };
 		82F315B22C405CB700E826F9 /* TimetableDayResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayResultListView.swift; sourceTree = "<group>"; };
 		82F315B42C405CC100E826F9 /* TimetableDayResultListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayResultListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -779,7 +781,7 @@
 			isa = PBXGroup;
 			children = (
 				82A608E42C3758800005EDC3 /* Timetable Day List MVVM */,
-				82E8A1092C47633A00CF2179 /* Timetable Owners List */,
+				82E8A1092C47633A00CF2179 /* Timetable Owners List MVVM */,
 				82E8A0F72C4748CE00CF2179 /* Departments List MVVM */,
 				82E8A0FF2C474C3E00CF2179 /* Teachers List MVVM */,
 				827674CF2C4861370083A849 /* Сorps List MVVM */,
@@ -822,14 +824,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		82E8A1092C47633A00CF2179 /* Timetable Owners List */ = {
+		82E8A1092C47633A00CF2179 /* Timetable Owners List MVVM */ = {
 			isa = PBXGroup;
 			children = (
 				82E8A10A2C47634800CF2179 /* Model */,
 				82E8A10B2C47634D00CF2179 /* View */,
 				82E8A1102C4772B300CF2179 /* Cell */,
+				82F2979F2C4CDC7E007697C6 /* ViewModel */,
 			);
-			path = "Timetable Owners List";
+			path = "Timetable Owners List MVVM";
 			sourceTree = "<group>";
 		};
 		82E8A10A2C47634800CF2179 /* Model */ = {
@@ -854,6 +857,14 @@
 				82E8A1112C4772C500CF2179 /* TimetableOwnerCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		82F2979F2C4CDC7E007697C6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82F297A02C4CDCAB007697C6 /* TimetableOwnersListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		82F315AD2C405BDE00E826F9 /* News Modules */ = {
@@ -1046,6 +1057,7 @@
 				82A608F42C3759460005EDC3 /* NewsResponse.swift in Sources */,
 				821BAA9A2C4B3D2B002470F2 /* NewsPagesListViewModel.swift in Sources */,
 				82F315B52C405CC100E826F9 /* TimetableDayResultListViewModel.swift in Sources */,
+				82F297A12C4CDCAB007697C6 /* TimetableOwnersListViewModel.swift in Sources */,
 				821BAA972C4B38B4002470F2 /* NewsPagesListView.swift in Sources */,
 				8294CFB92C360564006E7EDA /* SettingSectionCell.swift in Sources */,
 				828C1A4D2C39C2A900151AFA /* NewsCategoriesListViewModel.swift in Sources */,

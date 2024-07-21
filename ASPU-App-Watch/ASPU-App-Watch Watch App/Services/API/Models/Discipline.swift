@@ -9,7 +9,7 @@ import UIKit
 
 struct Discipline: Identifiable, Codable, Hashable {
     
-    let id: UUID
+    let id: String?
     let time: String
     let name, groupName, teacherName, audienceID: String
     let subgroup: Int

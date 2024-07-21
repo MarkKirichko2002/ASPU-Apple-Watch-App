@@ -25,6 +25,6 @@ struct NewsCategoriesListView: View {
     }
 }
 
-#Preview {
-    NewsCategoriesListView()
-}
+//#Preview {
+//    NewsCategoriesListView()
+//}

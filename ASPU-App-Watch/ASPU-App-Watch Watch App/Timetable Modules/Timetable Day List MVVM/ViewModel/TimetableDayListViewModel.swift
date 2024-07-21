@@ -14,10 +14,11 @@ final class TimetableDayListViewModel: ObservableObject {
     
     // MARK: - сервисы
     private let service = TimeTableService()
+    private let settingsManager = SettingsManager()
     private let dateManager = DateManager()
     
     func getTimetable() {
-        service.getTimeTableDay(id: "ВМ-ИВТ-2-1", date: dateManager.getCurrentDate(), owner: "GROUP") { result in
+        service.getTimeTableDay(id: settingsManager.getSavedID(), date: dateManager.getCurrentDate(), owner: settingsManager.getSavedOwner()) { result in
             switch result {
             case .success(let data):
                 self.timetable = data

@@ -11,12 +11,13 @@ struct TimetableDayResultListView: View {
     
     @ObservedObject var viewModel = TimetableDayResultListViewModel()
     var id: String = ""
+    var date: String = ""
     var owner: String = ""
     
     var body: some View {
         VStack {
             if !viewModel.timetable.disciplines.isEmpty {
-                List(viewModel.timetable.disciplines) { pair in
+                List(viewModel.timetable.disciplines, id: \.time) { pair in
                     PairCell(discipline: pair)
                 }.listStyle(.carousel)
             } else {
@@ -24,7 +25,7 @@ struct TimetableDayResultListView: View {
             }
         }
         .onAppear {
-            viewModel.getTimetable(id: id, owner: owner)
+            viewModel.getTimetable(id: id, date: date, owner: owner)
         }
         .navigationTitle(id)
     }

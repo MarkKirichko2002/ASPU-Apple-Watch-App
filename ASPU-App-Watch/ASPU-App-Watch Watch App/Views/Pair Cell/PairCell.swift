@@ -40,5 +40,5 @@ struct PairCell: View {
 }
 
 #Preview {
-    PairCell(discipline: Discipline(id: UUID(), time: "8:00-9:30", name: "Электроника", groupName: "ВМ-ИВТ-2-1", teacherName: "Андрусенко", audienceID: "228", subgroup: 2, type: .lab))
+    PairCell(discipline: Discipline(id: "", time: "8:00-9:30", name: "Электроника", groupName: "ВМ-ИВТ-2-1", teacherName: "Андрусенко", audienceID: "228", subgroup: 2, type: .lab))
 }
