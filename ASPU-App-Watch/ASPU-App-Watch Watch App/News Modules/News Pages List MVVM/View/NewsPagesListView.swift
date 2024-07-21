@@ -10,16 +10,29 @@ import SwiftUI
 struct NewsPagesListView: View {
     
     var count: Int
+    var category: NewsCategoryModel
     
     var body: some View {
         
-        List(1...count, id: \.self) { number in
-            Text("Страница: \(number)")
+        VStack {
+            if count > 0 {
+                NavigationView {
+                    List(1...count, id: \.self) { number in
+                        NavigationLink {
+                            CurrentPageNewsListView(page: number, category: category)
+                        } label: {
+                            Text("Страница: \(number)")
+                        }
+                    }
+                }
+                .navigationTitle(category.name)
+            } else {
+                Text("Нет страниц")
+            }
         }
-        .navigationTitle("Страницы")
     }
 }
 
 #Preview {
-    NewsPagesListView(count: 46)
+    NewsPagesListView(count: 46, category: NewsCategories.categories[0])
 }

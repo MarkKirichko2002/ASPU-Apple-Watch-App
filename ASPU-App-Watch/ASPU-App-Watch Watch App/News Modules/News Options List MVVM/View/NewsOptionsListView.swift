@@ -25,10 +25,13 @@ struct NewsOptionsListView: View {
         .sheet(isPresented: $viewModel.isPresented) {
             switch viewModel.currentId {
             case 1: NewsCategoriesListView()
-            case 2: NewsPagesListView(count: viewModel.newsResponse.countPages ?? 0)
+            case 2: NewsPagesListView(count: viewModel.newsResponse.countPages ?? 0, category: viewModel.currentCategory)
             default:
                 EmptyView()
             }
+        }
+        .onAppear {
+            viewModel.getData()
         }
         .onDisappear {
             isDisappear.toggle()

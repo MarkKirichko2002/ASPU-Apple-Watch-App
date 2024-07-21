@@ -12,20 +12,17 @@ final class NewsOptionsListViewModel: ObservableObject {
     @Published var options = NewsOptions.options
     @Published var isPresented = false
     var newsResponse = NewsResponse(currentPage: 0, countPages: 0, articles: [])
+    var currentCategory = NewsCategories.categories[0]
     var currentId = 1
     
     // MARK: - сервисы
     private let newsService = ASPUNewsService()
     private let settingsManager = SettingsManager()
     
-    init() {
-        getData()
-        observeCategoryChanged()
-    }
-    
     func getData() {
         let abbreviation = settingsManager.getSavedCategory()
         guard let category = NewsCategories.categories.first(where: { $0.abbreviation ==  abbreviation}) else {return}
+        self.currentCategory = category
         getPagesCount(category: category)
     }
     
@@ -58,13 +55,6 @@ final class NewsOptionsListViewModel: ObservableObject {
                     print(error)
                 }
             }
-        }
-    }
-    
-    func observeCategoryChanged() {
-        NotificationCenter.default.addObserver(forName: Notification.Name("category selected"), object: nil, queue: .main) { _ in
-            print("category changed")
-            self.getData()
         }
     }
 }
