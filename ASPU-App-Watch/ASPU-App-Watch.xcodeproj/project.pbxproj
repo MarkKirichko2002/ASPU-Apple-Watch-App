@@ -64,6 +64,10 @@
 		82A609012C375A2B0005EDC3 /* TimetableDayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A609002C375A2B0005EDC3 /* TimetableDayListView.swift */; };
 		82A609032C375A4D0005EDC3 /* TimetableDayListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A609022C375A4D0005EDC3 /* TimetableDayListViewModel.swift */; };
 		82A609062C375C8B0005EDC3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 82A609052C375C8B0005EDC3 /* Alamofire */; };
+		82C919632C503F1700848231 /* FacultyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C919622C503F1700848231 /* FacultyModel.swift */; };
+		82C919652C503F4F00848231 /* FacultyGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C919642C503F4F00848231 /* FacultyGroups.swift */; };
+		82C919672C503F7800848231 /* FacultiesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C919662C503F7800848231 /* FacultiesListView.swift */; };
+		82C9196B2C5040A400848231 /* FacultyGroupsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C9196A2C5040A400848231 /* FacultyGroupsListView.swift */; };
 		82E8A0FB2C47491100CF2179 /* DepartmentsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A0FA2C47491100CF2179 /* DepartmentsListViewModel.swift */; };
 		82E8A0FD2C47499A00CF2179 /* DepartmentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A0FC2C47499A00CF2179 /* DepartmentsListView.swift */; };
 		82E8A1032C474C6400CF2179 /* TeachersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1022C474C6400CF2179 /* TeachersListView.swift */; };
@@ -159,6 +163,10 @@
 		82A608F92C3759D30005EDC3 /* TimeTableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableService.swift; sourceTree = "<group>"; };
 		82A609002C375A2B0005EDC3 /* TimetableDayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayListView.swift; sourceTree = "<group>"; };
 		82A609022C375A4D0005EDC3 /* TimetableDayListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayListViewModel.swift; sourceTree = "<group>"; };
+		82C919622C503F1700848231 /* FacultyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyModel.swift; sourceTree = "<group>"; };
+		82C919642C503F4F00848231 /* FacultyGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyGroups.swift; sourceTree = "<group>"; };
+		82C919662C503F7800848231 /* FacultiesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesListView.swift; sourceTree = "<group>"; };
+		82C9196A2C5040A400848231 /* FacultyGroupsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyGroupsListView.swift; sourceTree = "<group>"; };
 		82E8A0FA2C47491100CF2179 /* DepartmentsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsListViewModel.swift; sourceTree = "<group>"; };
 		82E8A0FC2C47499A00CF2179 /* DepartmentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsListView.swift; sourceTree = "<group>"; };
 		82E8A1022C474C6400CF2179 /* TeachersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersListView.swift; sourceTree = "<group>"; };
@@ -752,6 +760,48 @@
 			path = News;
 			sourceTree = "<group>";
 		};
+		82C9195F2C503E9800848231 /* Faculties List */ = {
+			isa = PBXGroup;
+			children = (
+				82C919612C503EFC00848231 /* Model */,
+				82C919602C503EFA00848231 /* View */,
+			);
+			path = "Faculties List";
+			sourceTree = "<group>";
+		};
+		82C919602C503EFA00848231 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82C919662C503F7800848231 /* FacultiesListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82C919612C503EFC00848231 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82C919622C503F1700848231 /* FacultyModel.swift */,
+				82C919642C503F4F00848231 /* FacultyGroups.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		82C919682C50408200848231 /* Faculty Groups List */ = {
+			isa = PBXGroup;
+			children = (
+				82C919692C50409500848231 /* View */,
+			);
+			path = "Faculty Groups List";
+			sourceTree = "<group>";
+		};
+		82C919692C50409500848231 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82C9196A2C5040A400848231 /* FacultyGroupsListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		82E8A0F72C4748CE00CF2179 /* Departments List MVVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -782,6 +832,8 @@
 			children = (
 				82A608E42C3758800005EDC3 /* Timetable Day List MVVM */,
 				82E8A1092C47633A00CF2179 /* Timetable Owners List MVVM */,
+				82C9195F2C503E9800848231 /* Faculties List */,
+				82C919682C50408200848231 /* Faculty Groups List */,
 				82E8A0F72C4748CE00CF2179 /* Departments List MVVM */,
 				82E8A0FF2C474C3E00CF2179 /* Teachers List MVVM */,
 				827674CF2C4861370083A849 /* Сorps List MVVM */,
@@ -1016,11 +1068,13 @@
 				82160F5B2C38D61C00017A1F /* BuildingDetailView.swift in Sources */,
 				828C1A482C39C24000151AFA /* NewsCategoriesListView.swift in Sources */,
 				821BAA9F2C4C9A2C002470F2 /* CurrentPageNewsListViewModel.swift in Sources */,
+				82C9196B2C5040A400848231 /* FacultyGroupsListView.swift in Sources */,
 				8294CFC62C3607CF006E7EDA /* NewsCategoryCell.swift in Sources */,
 				8294CF8B2C34B579006E7EDA /* ContentView.swift in Sources */,
 				82A608F82C3759A10005EDC3 /* ASPUNewsService.swift in Sources */,
 				82A608EE2C3758FE0005EDC3 /* HostName.swift in Sources */,
 				82E8A1082C47509200CF2179 /* String + Extensions.swift in Sources */,
+				82C919632C503F1700848231 /* FacultyModel.swift in Sources */,
 				82A608F62C3759620005EDC3 /* TimeTable.swift in Sources */,
 				8294CFA92C36022A006E7EDA /* SettingsListView.swift in Sources */,
 				82160F5E2C38EDFB00017A1F /* BuildingsMapViewModel.swift in Sources */,
@@ -1064,8 +1118,10 @@
 				82958D8B2C3E05DC007ACA24 /* ArticleDetailViewModel.swift in Sources */,
 				8294CFCC2C371786006E7EDA /* SettingsManager.swift in Sources */,
 				8255E43B2C385A58009D24B1 /* DateManager.swift in Sources */,
+				82C919652C503F4F00848231 /* FacultyGroups.swift in Sources */,
 				8294CFC82C360957006E7EDA /* SavedNewsCategoriesListViewModel.swift in Sources */,
 				8294CFBF2C360696006E7EDA /* NewsCategoryModel.swift in Sources */,
+				82C919672C503F7800848231 /* FacultiesListView.swift in Sources */,
 				82E8A1052C474C7000CF2179 /* TeachersListViewModel.swift in Sources */,
 				82E8A1122C4772C500CF2179 /* TimetableOwnerCell.swift in Sources */,
 				827674DA2C48ACE20083A849 /* AudenciesListView.swift in Sources */,

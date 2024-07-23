@@ -17,7 +17,7 @@ struct TimetableOwnersListView: View {
                 NavigationLink {
                     switch owner.id {
                     case 1:
-                        EmptyView()
+                        FacultiesListView()
                     case 2:
                         DepartmentsListView()
                     case 3:
