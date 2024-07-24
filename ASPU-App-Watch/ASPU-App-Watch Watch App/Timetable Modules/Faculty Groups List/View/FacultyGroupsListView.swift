@@ -9,8 +9,10 @@ import SwiftUI
 
 struct FacultyGroupsListView: View {
     
-    @State var isPresented = false
     @State var currentGroup = ""
+    @State var isPresented = false
+    @State var isSelected = false
+    
     var faculty: FacultyModel
     
     var body: some View {
@@ -18,10 +20,11 @@ struct FacultyGroupsListView: View {
             Text(group)
                 .onTapGesture {
                     currentGroup = group
+                    isSelected.toggle()
               }
         }
         .navigationTitle("Группы")
-        .onChange(of: currentGroup) {
+        .onChange(of: isSelected) {
             isPresented.toggle()
         }
         .sheet(isPresented: $isPresented, content: {

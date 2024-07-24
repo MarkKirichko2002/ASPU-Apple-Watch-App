@@ -18,11 +18,12 @@ struct DepartmentsListView: View {
                     self.viewModel.isPresented.toggle()
                     self.viewModel.currentId = department.id
                 }
-                .sheet(isPresented: $viewModel.isPresented) {
-                    TeachersListView(id: viewModel.currentId)
-                }
-                .navigationTitle("Кафедры")
-        }.listStyle(.carousel)
+        }
+        .navigationTitle("Кафедры")
+        .listStyle(.carousel)
+        .sheet(isPresented: $viewModel.isPresented) {
+            TeachersListView(id: viewModel.currentId)
+        }
     }
 }
 

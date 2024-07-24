@@ -16,8 +16,8 @@ struct TeachersListView: View {
         List(viewModel.teachers, id: \.self) { teacher in
             Text(viewModel.configure(teacher: teacher))
                 .onTapGesture {
-                    viewModel.isPresented.toggle()
                     viewModel.currentTeacher = viewModel.configure(teacher: teacher)
+                    viewModel.isPresented.toggle()
              }
         }
         .navigationTitle("Препод.")

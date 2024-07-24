@@ -9,18 +9,21 @@ import SwiftUI
 
 struct FacultiesListView: View {
     
-    @State var isPresented = false
     @State var currentFaculty = FacultyGroups.groups[0]
+    @State var isPresented = false
+    @State var isSelected = false
     
     var body: some View {
         List(FacultyGroups.groups) { faculty in
             Text(faculty.facultyName)
                 .onTapGesture {
                     currentFaculty = faculty
+                    isSelected.toggle()
              }
         }
         .navigationTitle("Факультеты")
-        .onChange(of: currentFaculty.facultyName) {
+        .listStyle(.carousel)
+        .onChange(of: isSelected) {
             isPresented.toggle()
         }
         .sheet(isPresented: $isPresented, content: {

@@ -13,6 +13,7 @@ struct BuildingDetailView: View {
     var building: BuildingModel
     @State var currentAudience = ""
     @State var isPresented = false
+    @State var isSelected = false
     
     var body: some View {
         
@@ -43,7 +44,7 @@ struct BuildingDetailView: View {
                         Text(audience)
                             .onTapGesture {
                                 currentAudience = audience
-                                isPresented.toggle()
+                                isSelected.toggle()
                           }
                     }
                 } else {
@@ -60,9 +61,13 @@ struct BuildingDetailView: View {
                     Text("Начать путь")
                 }
             }
-        }.navigationTitle("Подробнее")
-            .sheet(isPresented: $isPresented, content: {
-                TimetableDayResultListView(id: currentAudience, owner: "CLASSROOM")
+        }
+        .navigationTitle("Подробнее")
+        .onChange(of: isSelected) {
+            self.isPresented.toggle()
+        }
+        .sheet(isPresented: $isPresented, content: {
+            TimetableDayResultListView(id: currentAudience, owner: "CLASSROOM")
         })
     }
 }

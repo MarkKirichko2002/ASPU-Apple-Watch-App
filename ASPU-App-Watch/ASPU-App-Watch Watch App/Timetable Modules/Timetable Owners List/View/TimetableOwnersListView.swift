@@ -9,8 +9,6 @@ import SwiftUI
 
 struct TimetableOwnersListView: View {
     
-    @ObservedObject var viewModel = TimetableOwnersListViewModel()
-    
     var body: some View {
         NavigationView {
             List(TimetableOwners.owners) { owner in
@@ -29,10 +27,6 @@ struct TimetableOwnersListView: View {
                     TimetableOwnerCell(owner: owner)
                 }
             }
-            .onAppear {
-                viewModel.updateView()
-            }
-            .onChange(of: viewModel.isChanged) {}
             .navigationTitle("Расписание")
         }
     }

@@ -15,14 +15,14 @@ struct SavedNewsCategoriesListView: View {
     
     var body: some View {
         List(viewModel.categories) { category in
-            NewsCategoryCell(category: category, isSelected: viewModel.isSavedCategory(category: category))
+            SavedNewsCategoryCell(category: category, isSelected: viewModel.isSavedCategory(category: category))
                 .onTapGesture {
-                    self.presentationMode.wrappedValue.dismiss()
+                    presentationMode.wrappedValue.dismiss()
                     viewModel.selectCategory(category: category)
              }
         }
-        .onChange(of: viewModel.isChanged) {}
         .navigationTitle("Категории")
+        .onChange(of: viewModel.isChanged) {}
     }
 }
 
