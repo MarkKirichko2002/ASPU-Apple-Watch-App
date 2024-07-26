@@ -22,6 +22,7 @@ struct NewsOptionsListView: View {
                  }
             }
         }
+        .navigationTitle("Новости")
         .sheet(isPresented: $viewModel.isPresented) {
             switch viewModel.currentId {
             case 1: NewsCategoriesListView()
@@ -33,7 +34,6 @@ struct NewsOptionsListView: View {
         .onAppear {
             viewModel.getData()
         }
-        .navigationTitle("Новости")
     }
 }
 

@@ -17,6 +17,7 @@ final class SavedNewsCategoriesListViewModel: ObservableObject {
     
     func selectCategory(category: NewsCategoryModel) {
         settingsManager.saveCategory(abbreviation: category.abbreviation)
+        NotificationCenter.default.post(name: Notification.Name("category"), object: nil)
         isChanged.toggle()
     }
     
