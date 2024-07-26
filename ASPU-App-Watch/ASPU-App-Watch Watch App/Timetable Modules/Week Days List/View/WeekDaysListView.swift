@@ -22,8 +22,10 @@ struct WeekDaysListView: View {
         VStack {
             if viewModel.isLoading {
                 Text("Загрузка...")
+                    .fontWeight(.bold)
             } else if viewModel.days.isEmpty {
                 Text("Нет дней")
+                    .fontWeight(.bold)
             } else {
                 List(viewModel.days) { day in
                     Text("\(day.name) \(day.date)")

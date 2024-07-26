@@ -25,9 +25,6 @@ struct NewsListView: View {
                 .listStyle(.carousel)
             }
         }
-        .onAppear {
-            viewModel.getNews()
-        }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
@@ -41,7 +38,7 @@ struct NewsListView: View {
             viewModel.getNews()
         }
         .sheet(isPresented: $viewModel.isPresented) {
-            NewsOptionsListView(isDisappear: $isDisappear)
+            NewsOptionsListView()
         }
     }
 }

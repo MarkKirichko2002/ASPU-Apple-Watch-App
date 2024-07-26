@@ -12,7 +12,6 @@ struct NewsCategoriesListView: View {
     @ObservedObject var viewModel = NewsCategoriesListViewModel()
     
     var body: some View {
-        
         NavigationView {
             List(viewModel.categories) { category in
                 NewsCategoryCell(category: category, isSelected: viewModel.isSavedCategory(category: category))
