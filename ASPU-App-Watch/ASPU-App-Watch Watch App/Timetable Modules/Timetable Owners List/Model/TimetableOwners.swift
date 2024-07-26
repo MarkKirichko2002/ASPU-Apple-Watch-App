@@ -18,6 +18,7 @@ struct TimetableOwners {
     static let owners = [
         TimetableOwnerModel(id: 1, name: "Группы", icon: "group"),
         TimetableOwnerModel(id: 2, name: "Препод.", icon: "teacher"),
-        TimetableOwnerModel(id: 3, name: "Аудитории", icon: "door")
+        TimetableOwnerModel(id: 3, name: "Аудитории", icon: "door"),
+        TimetableOwnerModel(id: 4, name: "Недели", icon: "calendar")
     ]
 }

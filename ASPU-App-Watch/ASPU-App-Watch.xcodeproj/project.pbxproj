@@ -79,6 +79,10 @@
 		82F315B32C405CB700E826F9 /* TimetableDayResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F315B22C405CB700E826F9 /* TimetableDayResultListView.swift */; };
 		82F315B52C405CC100E826F9 /* TimetableDayResultListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F315B42C405CC100E826F9 /* TimetableDayResultListViewModel.swift */; };
 		82FAEBBA2C531F9F00FB8B15 /* FacultiesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBB92C531F9F00FB8B15 /* FacultiesListViewModel.swift */; };
+		82FAEBC02C53233B00FB8B15 /* WeeksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBBF2C53233B00FB8B15 /* WeeksListView.swift */; };
+		82FAEBC22C53234900FB8B15 /* WeeksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBC12C53234900FB8B15 /* WeeksListViewModel.swift */; };
+		82FAEBC42C53236A00FB8B15 /* WeekModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBC32C53236A00FB8B15 /* WeekModel.swift */; };
+		82FAEBC72C5325C700FB8B15 /* WeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBC62C5325C700FB8B15 /* WeekCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +182,10 @@
 		82F315B22C405CB700E826F9 /* TimetableDayResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayResultListView.swift; sourceTree = "<group>"; };
 		82F315B42C405CC100E826F9 /* TimetableDayResultListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayResultListViewModel.swift; sourceTree = "<group>"; };
 		82FAEBB92C531F9F00FB8B15 /* FacultiesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesListViewModel.swift; sourceTree = "<group>"; };
+		82FAEBBF2C53233B00FB8B15 /* WeeksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksListView.swift; sourceTree = "<group>"; };
+		82FAEBC12C53234900FB8B15 /* WeeksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksListViewModel.swift; sourceTree = "<group>"; };
+		82FAEBC32C53236A00FB8B15 /* WeekModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekModel.swift; sourceTree = "<group>"; };
+		82FAEBC62C5325C700FB8B15 /* WeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -733,6 +741,8 @@
 				82958D8C2C3E06D3007ACA24 /* ArticleInfo.swift */,
 				82A608F32C3759460005EDC3 /* NewsResponse.swift */,
 				82A608F52C3759620005EDC3 /* TimeTable.swift */,
+				82C919622C503F1700848231 /* FacultyModel.swift */,
+				82FAEBC32C53236A00FB8B15 /* WeekModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -764,7 +774,6 @@
 		82C9195F2C503E9800848231 /* Faculties List MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				82C919612C503EFC00848231 /* Model */,
 				82C919602C503EFA00848231 /* View */,
 				82FAEBB82C531EFA00FB8B15 /* ViewModel */,
 			);
@@ -777,14 +786,6 @@
 				82C919662C503F7800848231 /* FacultiesListView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		82C919612C503EFC00848231 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				82C919622C503F1700848231 /* FacultyModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		82C919682C50408200848231 /* Faculty Groups List */ = {
@@ -847,6 +848,7 @@
 				82E8A0FF2C474C3E00CF2179 /* Teachers List MVVM */,
 				827674CF2C4861370083A849 /* Сorps List MVVM */,
 				827674D82C48ACA70083A849 /* Audencies List  */,
+				82FAEBBB2C5322F100FB8B15 /* Weeks List MVVM */,
 				82F315AF2C405C7900E826F9 /* Timetable Day Result List */,
 			);
 			path = "Timetable Modules";
@@ -967,6 +969,40 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		82FAEBBB2C5322F100FB8B15 /* Weeks List MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				82FAEBBE2C53230E00FB8B15 /* View */,
+				82FAEBC52C5325B800FB8B15 /* Cell */,
+				82FAEBBD2C53230C00FB8B15 /* ViewModel */,
+			);
+			path = "Weeks List MVVM";
+			sourceTree = "<group>";
+		};
+		82FAEBBD2C53230C00FB8B15 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82FAEBC12C53234900FB8B15 /* WeeksListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82FAEBBE2C53230E00FB8B15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82FAEBBF2C53233B00FB8B15 /* WeeksListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82FAEBC52C5325B800FB8B15 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				82FAEBC62C5325C700FB8B15 /* WeekCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1082,6 +1118,7 @@
 				8294CF8B2C34B579006E7EDA /* ContentView.swift in Sources */,
 				82A608F82C3759A10005EDC3 /* ASPUNewsService.swift in Sources */,
 				82A608EE2C3758FE0005EDC3 /* HostName.swift in Sources */,
+				82FAEBC22C53234900FB8B15 /* WeeksListViewModel.swift in Sources */,
 				82E8A1082C47509200CF2179 /* String + Extensions.swift in Sources */,
 				82C919632C503F1700848231 /* FacultyModel.swift in Sources */,
 				82A608F62C3759620005EDC3 /* TimeTable.swift in Sources */,
@@ -1101,6 +1138,7 @@
 				821BAAA12C4C9AE6002470F2 /* CurrentPageNewsListView.swift in Sources */,
 				8294CFA42C34B7BC006E7EDA /* AppSections.swift in Sources */,
 				82E8A10D2C47635C00CF2179 /* TimetableOwnersListView.swift in Sources */,
+				82FAEBC02C53233B00FB8B15 /* WeeksListView.swift in Sources */,
 				8294CF892C34B579006E7EDA /* ASPU_App_WatchApp.swift in Sources */,
 				82E8A10F2C47637700CF2179 /* TimetableOwners.swift in Sources */,
 				82A609012C375A2B0005EDC3 /* TimetableDayListView.swift in Sources */,
@@ -1108,6 +1146,7 @@
 				8294CFC12C3606CF006E7EDA /* NewsCategories.swift in Sources */,
 				8294CFC32C3607B9006E7EDA /* SavedNewsCategoriesListView.swift in Sources */,
 				8294CFB62C3604DD006E7EDA /* AppSectionCell.swift in Sources */,
+				82FAEBC42C53236A00FB8B15 /* WeekModel.swift in Sources */,
 				82C9196E2C50ACE900848231 /* SavedNewsCategoryCell.swift in Sources */,
 				8255E4482C3861ED009D24B1 /* ArticleDetailView.swift in Sources */,
 				828C1A3E2C3977E500151AFA /* NewsOptionsListView.swift in Sources */,
@@ -1130,6 +1169,7 @@
 				8294CFC82C360957006E7EDA /* SavedNewsCategoriesListViewModel.swift in Sources */,
 				8294CFBF2C360696006E7EDA /* NewsCategoryModel.swift in Sources */,
 				82C919672C503F7800848231 /* FacultiesListView.swift in Sources */,
+				82FAEBC72C5325C700FB8B15 /* WeekCell.swift in Sources */,
 				82E8A1052C474C7000CF2179 /* TeachersListViewModel.swift in Sources */,
 				82E8A1122C4772C500CF2179 /* TimetableOwnerCell.swift in Sources */,
 				827674DA2C48ACE20083A849 /* AudenciesListView.swift in Sources */,

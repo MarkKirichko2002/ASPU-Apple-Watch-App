@@ -21,7 +21,7 @@ struct TimetableOwnersListView: View {
                     case 3:
                         CorpsListView()
                     default:
-                        EmptyView()
+                        WeeksListView()
                     }
                 } label: {
                     TimetableOwnerCell(owner: owner)

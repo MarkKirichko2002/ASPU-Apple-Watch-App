@@ -61,4 +61,20 @@ final class TimeTableService {
             }
         }
     }
+    
+    func getWeeks(completion: @escaping(Result<[WeekModel],Error>)->Void) {
+        
+        AF.request("https://\(HostName.host)/api/v2/timetable/weeks").responseData { response in
+            
+            guard let data = response.data else {return}
+            
+            do {
+                let weeks = try JSONDecoder().decode([WeekModel].self, from: data)
+                print("Недели: \(weeks)")
+                completion(.success(weeks))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+    }
 }
