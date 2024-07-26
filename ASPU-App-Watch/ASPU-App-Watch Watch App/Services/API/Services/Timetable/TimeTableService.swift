@@ -46,49 +46,18 @@ final class TimeTableService {
         }
     }
     
-
-    func getTimeTableDayImage(json: Data, completion: @escaping(UIImage)->Void) {
+    func getGroups(completion: @escaping(Result<[FacultyModel],Error>)->Void) {
         
-        let url = "https://\(HostName.host)/api/timetable/image/day?vertical"
+        AF.request("https://\(HostName.host)/api/v2/timetable/groups").responseData { response in
         
-        var request = URLRequest(url: URL(string: url)!)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = json
-        
-        AF.request(request).responseData { response in
-            
             guard let data = response.data else {return}
             
-            print(response.response?.statusCode)
-            
-            if let image = UIImage(data: data) {
-                completion(image)
-            } else {
-                print("нет")
-            }
-        }
-    }
-    
-    func getTimeTableWeekImage(json: Data, completion: @escaping(UIImage)->Void) {
-        
-        let url = "https://\(HostName.host)/api/timetable/image/6days?horizontal"
-        
-        var request = URLRequest(url: URL(string: url)!)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = json
-        
-        AF.request(request).responseData { response in
-            
-            guard let data = response.data else {return}
-            
-            print(response.response?.statusCode ?? 0)
-            
-            if let image = UIImage(data: data) {
-                completion(image)
-            } else {
-                print("нет")
+            do {
+                let groups = try JSONDecoder().decode([FacultyModel].self, from: data)
+                print("Группы: \(groups)")
+                completion(.success(groups))
+            } catch {
+                completion(.failure(error))
             }
         }
     }

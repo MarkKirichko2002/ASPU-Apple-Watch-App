@@ -33,6 +33,6 @@ struct FacultyGroupsListView: View {
     }
 }
 
-#Preview {
-    FacultyGroupsListView(faculty: FacultyGroups.groups[0])
-}
+//#Preview {
+//    FacultyGroupsListView(faculty: FacultyGroups.groups[0])
+//}

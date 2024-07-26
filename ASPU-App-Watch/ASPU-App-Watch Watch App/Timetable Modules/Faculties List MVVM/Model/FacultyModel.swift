@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct FacultyModel: Identifiable {
-    let id: Int
+struct FacultyModel: Codable, Identifiable {
+    let id = UUID()
     let facultyName: String
     let groups: [String]
 }
