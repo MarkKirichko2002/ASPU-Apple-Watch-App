@@ -20,7 +20,7 @@ struct TimetableDayListView: View {
                 Text("Нет пар")
                     .fontWeight(.bold)
             } else {
-                List(viewModel.timetable.disciplines) { pair in
+                List(viewModel.timetable.disciplines, id: \.self) { pair in
                     PairCell(discipline: pair)
                 }.listStyle(.carousel)
             }
