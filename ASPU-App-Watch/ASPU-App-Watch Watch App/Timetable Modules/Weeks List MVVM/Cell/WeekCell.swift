@@ -17,7 +17,9 @@ struct WeekCell: View {
             VStack(spacing: 15) {
                 Text("\(week.id)")
                     .multilineTextAlignment(.center)
+                    .fontWeight(.bold)
                 Text("c \(week.from) по \(week.to)")
+                    .fontWeight(.bold)
                     .multilineTextAlignment(.center)
             }
             Spacer()

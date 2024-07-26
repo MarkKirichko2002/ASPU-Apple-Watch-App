@@ -12,15 +12,25 @@ struct WeeksListView: View {
     @ObservedObject var viewModel = WeeksListViewModel()
     
     var body: some View {
-        List(viewModel.weeks) { week in
-            WeekCell(week: week)
-                .onTapGesture {
-                    viewModel.currentWeek = week
-                    viewModel.isSelected.toggle()
-                }
+        
+        VStack {
+            if viewModel.isLoading {
+                Text("Загрузка...")
+                    .fontWeight(.bold)
+            } else if viewModel.weeks.isEmpty {
+                Text("Нет недель")
+                    .fontWeight(.bold)
+            } else {
+                List(viewModel.weeks) { week in
+                    WeekCell(week: week)
+                        .onTapGesture {
+                            viewModel.currentWeek = week
+                            viewModel.isSelected.toggle()
+                     }
+                }.listStyle(.carousel)
+            }
         }
         .navigationTitle("Недели")
-        .listStyle(.carousel)
         .onAppear() {
             viewModel.getWeeks()
         }

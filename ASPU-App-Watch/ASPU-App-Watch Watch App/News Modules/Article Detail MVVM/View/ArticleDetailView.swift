@@ -35,17 +35,21 @@ struct ArticleDetailView: View {
             
             Section("Название") {
                 Text(viewModel.articleInfo.title)
+                    .fontWeight(.bold)
             }
             
             Section("Дата") {
                 Text(viewModel.articleInfo.date)
+                    .fontWeight(.bold)
             }
             
             Section("Описание") {
                 if !viewModel.articleInfo.description.isEmpty {
                     Text(viewModel.articleInfo.description)
+                        .fontWeight(.bold)
                 } else {
                     Text("Нет описания")
+                        .fontWeight(.bold)
                 }
             }
         }.onAppear {

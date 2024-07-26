@@ -10,12 +10,14 @@ import Foundation
 final class CurrentCategoryNewsListViewModel: ObservableObject {
     
     @Published var newsResponse = NewsResponse(currentPage: 0, countPages: 0, articles: [])
+    @Published var isLoading = true
     
     // MARK: - сервисы
     private let newsService = ASPUNewsService()
     private let settingsManager = SettingsManager()
     
     func getNews(category: NewsCategoryModel) {
+        isLoading = true
         settingsManager.saveCategory(abbreviation: category.abbreviation)
         if category.abbreviation != "-" {
             Task {
@@ -24,8 +26,12 @@ final class CurrentCategoryNewsListViewModel: ObservableObject {
                 case .success(let data):
                     DispatchQueue.main.async {
                         self.newsResponse = data
+                        self.isLoading = false
                     }
                 case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.isLoading = false
+                    }
                     print(error)
                 }
             }
@@ -36,8 +42,12 @@ final class CurrentCategoryNewsListViewModel: ObservableObject {
                 case .success(let data):
                     DispatchQueue.main.async {
                         self.newsResponse = data
+                        self.isLoading = false
                     }
                 case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.isLoading = false
+                    }
                     print(error)
                 }
             }

@@ -13,10 +13,19 @@ struct CurrentCategoryNewsListView: View {
     var category: NewsCategoryModel
     
     var body: some View {
-        List(viewModel.newsResponse.articles ?? []) { article in
-            ArticleCell(article: article, abbreviation: category.abbreviation)
+        VStack {
+            if viewModel.isLoading {
+                Text("Загрузка...")
+                    .fontWeight(.bold)
+            } else if viewModel.newsResponse.articles?.count == 0 {
+                Text("Нет новостей")
+                    .fontWeight(.bold)
+            } else {
+                List(viewModel.newsResponse.articles ?? []) { article in
+                    ArticleCell(article: article, abbreviation: category.abbreviation)
+                }.listStyle(.carousel)
+            }
         }
-        .listStyle(.carousel)
         .navigationTitle(category.name)
         .onAppear {
             viewModel.getNews(category: category)

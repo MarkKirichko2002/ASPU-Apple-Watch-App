@@ -15,9 +15,19 @@ struct TimetableDayResultListView: View {
     var owner: String = ""
     
     var body: some View {
-        List(viewModel.timetable.disciplines, id: \.time) { pair in
-            PairCell(discipline: pair)
-        }.listStyle(.carousel)
+        VStack {
+            if viewModel.isLoading {
+                Text("Загрузка...")
+                    .fontWeight(.bold)
+            } else if viewModel.timetable.disciplines.isEmpty {
+                Text("Нет пар")
+                    .fontWeight(.bold)
+            } else {
+                List(viewModel.timetable.disciplines) { pair in
+                    PairCell(discipline: pair)
+                }.listStyle(.carousel)
+            }
+        }
         .onAppear {
             viewModel.getTimetable(id: id, date: date, owner: owner)
         }

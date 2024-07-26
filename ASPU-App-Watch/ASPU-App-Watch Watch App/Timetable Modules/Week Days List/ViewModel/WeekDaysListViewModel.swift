@@ -18,13 +18,19 @@ final class WeekDaysListViewModel: ObservableObject {
     @Published var isPresented = false
     @Published var isSelected = false
     @Published var currentDay = WeekDayModel(name: "", date: "")
+    @Published var isLoading = true
     
     func getTimetable(week: WeekModel) {
+        isLoading = true
         service.getTimeTableWeek(id: settingsManager.getSavedID(), startDate: week.from, endDate: week.to, owner: settingsManager.getSavedOwner()) { result in
             switch result {
             case .success(let data):
                 self.configure(week: week, timetable: data)
+                self.isLoading = false
             case .failure(let error):
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                }
                 print(error)
             }
         }
@@ -33,8 +39,10 @@ final class WeekDaysListViewModel: ObservableObject {
     private func configure(week: WeekModel, timetable: [TimeTable]) {
         if !timetable.isEmpty {
             for i in 0..<timetable.count {
-                let model = WeekDayModel(name: dateManager.getCurrentDayOfWeek(date:  timetable[i].date ?? ""), date: timetable[i].date ?? "")
-                days.append(model)
+                DispatchQueue.main.async {
+                    let model = WeekDayModel(name: self.dateManager.getCurrentDayOfWeek(date:  timetable[i].date ?? ""), date: timetable[i].date ?? "")
+                    self.days.append(model)
+                }
             }
         }
     }

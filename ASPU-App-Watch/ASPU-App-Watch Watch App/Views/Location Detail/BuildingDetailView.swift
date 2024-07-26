@@ -36,12 +36,14 @@ struct BuildingDetailView: View {
             
             Section("Название") {
                 Text(building.name)
+                    .fontWeight(.bold)
             }
             
             Section("Аудитории") {
                 if building.audiences?.count ?? 0 > 0 {
                     List(building.audiences ?? [], id: \.self) { audience in
                         Text(audience)
+                            .fontWeight(.bold)
                             .onTapGesture {
                                 currentAudience = audience
                                 isSelected.toggle()
@@ -49,6 +51,7 @@ struct BuildingDetailView: View {
                     }
                 } else {
                     Text("Нет аудиторий")
+                        .fontWeight(.bold)
                 }
             }
             
@@ -59,6 +62,7 @@ struct BuildingDetailView: View {
                     }
                 }) {
                     Text("Начать путь")
+                        .fontWeight(.bold)
                 }
             }
         }

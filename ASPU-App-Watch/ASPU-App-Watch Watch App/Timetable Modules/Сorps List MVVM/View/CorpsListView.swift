@@ -14,6 +14,7 @@ struct CorpsListView: View {
     var body: some View {
         List(viewModel.corps) { corp in
             Text(corp.name)
+                .fontWeight(.bold)
                 .onTapGesture {
                     viewModel.isPresented.toggle()
                     viewModel.currentBuilding = corp

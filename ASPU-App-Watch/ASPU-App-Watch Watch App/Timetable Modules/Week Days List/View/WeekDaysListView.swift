@@ -19,12 +19,21 @@ struct WeekDaysListView: View {
     var week: WeekModel
     
     var body: some View {
-        List(viewModel.days) { day in
-            Text("\(day.name) \(day.date)")
-                .onTapGesture {
-                    viewModel.currentDay = day
-                    viewModel.isSelected.toggle()
+        VStack {
+            if viewModel.isLoading {
+                Text("Загрузка...")
+            } else if viewModel.days.isEmpty {
+                Text("Нет дней")
+            } else {
+                List(viewModel.days) { day in
+                    Text("\(day.name) \(day.date)")
+                        .fontWeight(.bold)
+                        .onTapGesture {
+                            viewModel.currentDay = day
+                            viewModel.isSelected.toggle()
+                     }
                 }
+            }
         }
         .navigationTitle("Неделя: \(week.id)")
         .onAppear {

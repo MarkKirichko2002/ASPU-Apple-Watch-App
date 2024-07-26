@@ -16,6 +16,7 @@ struct NewsOptionsListView: View {
         NavigationView {
             List(viewModel.options) { option in
                 Text(option.name)
+                    .fontWeight(.bold)
                     .onTapGesture {
                         viewModel.currentId = option.id
                         viewModel.isPresented.toggle()

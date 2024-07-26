@@ -25,6 +25,7 @@ struct AudiencesListView: View {
                 }
             } else {
                 Text("Нет аудиторий")
+                    .fontWeight(.bold)
             }
         }
         .navigationTitle(building.name)

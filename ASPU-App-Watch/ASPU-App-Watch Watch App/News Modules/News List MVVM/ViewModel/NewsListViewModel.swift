@@ -11,6 +11,7 @@ final class NewsListViewModel: ObservableObject {
     
     @Published var newsResponse = NewsResponse(currentPage: 0, countPages: 0, articles: [])
     @Published var isPresented = false
+    @Published var isLoading = true
     var currentCategory = NewsCategories.categories[0]
     
     // MARK: - сервисы
@@ -22,15 +23,21 @@ final class NewsListViewModel: ObservableObject {
         let abbreviation = settingsManager.getSavedCategory()
         currentCategory = NewsCategories.categories.first(where: { $0.abbreviation == abbreviation})!
         
+        self.isLoading = true
+        
         if currentCategory.abbreviation != "-" {
             Task {
                 let result = try await newsService.getNews(abbreviation: abbreviation)
                 switch result {
                 case .success(let data):
                     DispatchQueue.main.async {
+                        self.isLoading = false
                         self.newsResponse = data
                     }
                 case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.isLoading = false
+                    }
                     print(error)
                 }
             }
@@ -40,9 +47,13 @@ final class NewsListViewModel: ObservableObject {
                 switch result {
                 case .success(let data):
                     DispatchQueue.main.async {
+                        self.isLoading = false
                         self.newsResponse = data
                     }
                 case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.isLoading = false
+                    }
                     print(error)
                 }
             }

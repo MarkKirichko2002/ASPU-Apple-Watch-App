@@ -13,10 +13,18 @@ struct NewsListView: View {
     @State var isDisappear = false
     
     var body: some View {
-        List(viewModel.newsResponse.articles ?? []) { article in
-            ArticleCell(article: article, abbreviation: viewModel.currentCategory.abbreviation)
+        
+        VStack {
+            if viewModel.isLoading {
+                Text("Загрузка...")
+                    .fontWeight(.bold)
+            } else {
+                List(viewModel.newsResponse.articles ?? []) { article in
+                    ArticleCell(article: article, abbreviation: viewModel.currentCategory.abbreviation)
+                }
+                .listStyle(.carousel)
+            }
         }
-        .listStyle(.carousel)
         .onAppear {
             viewModel.getNews()
         }

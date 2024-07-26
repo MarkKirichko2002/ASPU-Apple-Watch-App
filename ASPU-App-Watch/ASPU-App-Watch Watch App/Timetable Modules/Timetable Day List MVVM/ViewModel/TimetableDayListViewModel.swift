@@ -11,6 +11,7 @@ final class TimetableDayListViewModel: ObservableObject {
     
     @Published var timetable = TimeTable(id: "", date: "", disciplines: [])
     @Published var isPresented = false
+    @Published var isLoading = true
     
     // MARK: - сервисы
     private let service = TimeTableService()
@@ -18,11 +19,18 @@ final class TimetableDayListViewModel: ObservableObject {
     private let dateManager = DateManager()
     
     func getTimetable() {
+        isLoading = true
         service.getTimeTableDay(id: settingsManager.getSavedID(), date: dateManager.getCurrentDate(), owner: settingsManager.getSavedOwner()) { result in
             switch result {
             case .success(let data):
-                self.timetable = data
+                DispatchQueue.main.async {
+                    self.timetable = data
+                    self.isLoading = false
+                }
             case .failure(let error):
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                }
                 print(error)
             }
         }

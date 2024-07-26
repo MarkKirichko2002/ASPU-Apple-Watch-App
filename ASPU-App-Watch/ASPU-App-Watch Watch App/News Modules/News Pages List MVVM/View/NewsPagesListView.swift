@@ -22,12 +22,14 @@ struct NewsPagesListView: View {
                             CurrentPageNewsListView(page: number, category: category)
                         } label: {
                             Text("Страница: \(number)")
+                                .fontWeight(.bold)
                         }
                     }
                 }
                 .navigationTitle(category.name)
             } else {
                 Text("Нет страниц")
+                    .fontWeight(.bold)
             }
         }
     }

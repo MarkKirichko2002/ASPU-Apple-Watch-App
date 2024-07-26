@@ -14,6 +14,7 @@ struct DepartmentsListView: View {
     var body: some View {
         List(viewModel.departments) { department in
             Text(department.name)
+                .fontWeight(.bold)
                 .onTapGesture {
                     self.viewModel.isPresented.toggle()
                     self.viewModel.currentId = department.id

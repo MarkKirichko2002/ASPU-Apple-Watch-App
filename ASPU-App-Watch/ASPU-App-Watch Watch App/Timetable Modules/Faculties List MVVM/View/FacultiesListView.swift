@@ -12,15 +12,22 @@ struct FacultiesListView: View {
     @ObservedObject var viewModel = FacultiesListViewModel()
     
     var body: some View {
-        List(viewModel.faculties) { faculty in
-            Text(faculty.facultyName)
-                .onTapGesture {
-                    viewModel.currentFaculty = faculty
-                    viewModel.isSelected.toggle()
-             }
+        VStack {
+            if viewModel.isLoading {
+                Text("Загрузка...")
+                    .fontWeight(.bold)
+            } else {
+                List(viewModel.faculties) { faculty in
+                    Text(faculty.facultyName)
+                        .fontWeight(.bold)
+                        .onTapGesture {
+                            viewModel.currentFaculty = faculty
+                            viewModel.isSelected.toggle()
+                     }
+                }.listStyle(.carousel)
+            }
         }
         .navigationTitle("Факультеты")
-        .listStyle(.carousel)
         .onChange(of: viewModel.isSelected) {
             viewModel.isPresented.toggle()
         }
