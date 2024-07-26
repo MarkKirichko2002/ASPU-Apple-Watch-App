@@ -83,6 +83,8 @@
 		82FAEBC22C53234900FB8B15 /* WeeksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBC12C53234900FB8B15 /* WeeksListViewModel.swift */; };
 		82FAEBC42C53236A00FB8B15 /* WeekModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBC32C53236A00FB8B15 /* WeekModel.swift */; };
 		82FAEBC72C5325C700FB8B15 /* WeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBC62C5325C700FB8B15 /* WeekCell.swift */; };
+		82FAEBCB2C532AAE00FB8B15 /* WeekDaysListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBCA2C532AAE00FB8B15 /* WeekDaysListView.swift */; };
+		82FAEBCE2C53346F00FB8B15 /* WeekDaysListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBCD2C53346F00FB8B15 /* WeekDaysListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +188,8 @@
 		82FAEBC12C53234900FB8B15 /* WeeksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksListViewModel.swift; sourceTree = "<group>"; };
 		82FAEBC32C53236A00FB8B15 /* WeekModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekModel.swift; sourceTree = "<group>"; };
 		82FAEBC62C5325C700FB8B15 /* WeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCell.swift; sourceTree = "<group>"; };
+		82FAEBCA2C532AAE00FB8B15 /* WeekDaysListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysListView.swift; sourceTree = "<group>"; };
+		82FAEBCD2C53346F00FB8B15 /* WeekDaysListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -849,6 +853,7 @@
 				827674CF2C4861370083A849 /* Сorps List MVVM */,
 				827674D82C48ACA70083A849 /* Audencies List  */,
 				82FAEBBB2C5322F100FB8B15 /* Weeks List MVVM */,
+				82FAEBC82C532A8800FB8B15 /* Week Days List */,
 				82F315AF2C405C7900E826F9 /* Timetable Day Result List */,
 			);
 			path = "Timetable Modules";
@@ -1003,6 +1008,31 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		82FAEBC82C532A8800FB8B15 /* Week Days List */ = {
+			isa = PBXGroup;
+			children = (
+				82FAEBC92C532A9B00FB8B15 /* View */,
+				82FAEBCC2C53345F00FB8B15 /* ViewModel */,
+			);
+			path = "Week Days List";
+			sourceTree = "<group>";
+		};
+		82FAEBC92C532A9B00FB8B15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82FAEBCA2C532AAE00FB8B15 /* WeekDaysListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82FAEBCC2C53345F00FB8B15 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82FAEBCD2C53346F00FB8B15 /* WeekDaysListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1145,7 +1175,9 @@
 				82A608F02C3759190005EDC3 /* Discipline.swift in Sources */,
 				8294CFC12C3606CF006E7EDA /* NewsCategories.swift in Sources */,
 				8294CFC32C3607B9006E7EDA /* SavedNewsCategoriesListView.swift in Sources */,
+				82FAEBCE2C53346F00FB8B15 /* WeekDaysListViewModel.swift in Sources */,
 				8294CFB62C3604DD006E7EDA /* AppSectionCell.swift in Sources */,
+				82FAEBCB2C532AAE00FB8B15 /* WeekDaysListView.swift in Sources */,
 				82FAEBC42C53236A00FB8B15 /* WeekModel.swift in Sources */,
 				82C9196E2C50ACE900848231 /* SavedNewsCategoryCell.swift in Sources */,
 				8255E4482C3861ED009D24B1 /* ArticleDetailView.swift in Sources */,

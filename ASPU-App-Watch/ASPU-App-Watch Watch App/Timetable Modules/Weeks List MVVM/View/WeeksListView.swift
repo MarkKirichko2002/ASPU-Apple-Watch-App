@@ -14,11 +14,22 @@ struct WeeksListView: View {
     var body: some View {
         List(viewModel.weeks) { week in
             WeekCell(week: week)
+                .onTapGesture {
+                    viewModel.currentWeek = week
+                    viewModel.isSelected.toggle()
+                }
         }
         .navigationTitle("Недели")
+        .listStyle(.carousel)
         .onAppear() {
             viewModel.getWeeks()
         }
+        .onChange(of: viewModel.isSelected) {
+            viewModel.isPresented.toggle()
+        }
+        .sheet(isPresented: $viewModel.isPresented, content: {
+            WeekDaysListView(week: viewModel.currentWeek)
+        })
     }
 }
 

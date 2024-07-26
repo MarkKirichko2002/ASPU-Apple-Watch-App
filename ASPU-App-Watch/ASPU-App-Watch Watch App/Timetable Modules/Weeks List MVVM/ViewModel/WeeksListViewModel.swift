@@ -10,6 +10,9 @@ import Foundation
 final class WeeksListViewModel: ObservableObject {
     
     @Published var weeks = [WeekModel]()
+    @Published var currentWeek = WeekModel(id: 1, from: "", to: "", dayNames: ["" : ""])
+    @Published var isPresented = false
+    @Published var isSelected = false
     
     // MARK: - сервисы
     private let service = TimeTableService()
