@@ -21,7 +21,7 @@ struct CorpsListView: View {
         }
         .navigationTitle("Корпуса")
         .sheet(isPresented: $viewModel.isPresented, content: {
-            AudenciesListView(building: viewModel.currentBuilding)
+            AudiencesListView(building: viewModel.currentBuilding)
         })
     }
 }

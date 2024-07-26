@@ -13,11 +13,22 @@ final class TeachersListViewModel: ObservableObject {
     @Published var isPresented = false
     @Published var currentTeacher = ""
     
+    // MARK: - сервисы
+    private let settingsManager = SettingsManager()
+    
     func getData(id: Int) {
         teachers = Departments.departments[id - 1].teachers
     }
     
     func configure(teacher: String)-> String {
         return teacher.abbreviation()
+    }
+    
+    func isSavedTeacher(teacher: String)-> Bool {
+        let savedTeacher = settingsManager.getSavedID()
+        if savedTeacher == teacher {
+            return true
+        }
+        return false
     }
 }

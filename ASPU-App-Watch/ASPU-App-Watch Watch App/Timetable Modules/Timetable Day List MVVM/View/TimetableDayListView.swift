@@ -12,15 +12,9 @@ struct TimetableDayListView: View {
     @ObservedObject var viewModel = TimetableDayListViewModel()
     
     var body: some View {
-        VStack {
-            if !viewModel.timetable.disciplines.isEmpty {
-                List(viewModel.timetable.disciplines) { pair in
-                    PairCell(discipline: pair)
-                }.listStyle(.carousel)
-            } else {
-                Text("Нет расписания")
-            }
-        }
+        List(viewModel.timetable.disciplines) { pair in
+            PairCell(discipline: pair)
+        }.listStyle(.carousel)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {

@@ -14,7 +14,7 @@ struct TeachersListView: View {
     
     var body: some View {
         List(viewModel.teachers, id: \.self) { teacher in
-            Text(viewModel.configure(teacher: teacher))
+            TeacherCell(teacher: viewModel.configure(teacher: teacher), isSelected: viewModel.isSavedTeacher(teacher: viewModel.configure(teacher: teacher)))
                 .onTapGesture {
                     viewModel.currentTeacher = viewModel.configure(teacher: teacher)
                     viewModel.isPresented.toggle()

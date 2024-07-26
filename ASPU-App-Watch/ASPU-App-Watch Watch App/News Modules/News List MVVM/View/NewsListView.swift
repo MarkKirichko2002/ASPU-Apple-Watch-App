@@ -13,16 +13,10 @@ struct NewsListView: View {
     @State var isDisappear = false
     
     var body: some View {
-        VStack {
-            if viewModel.newsResponse.articles?.count ?? 0 > 0 {
-                List(viewModel.newsResponse.articles ?? []) { article in
-                    ArticleCell(article: article, abbreviation: viewModel.currentCategory.abbreviation)
-                }
-                .listStyle(.carousel)
-            } else {
-                Text("Загрузка...")
-            }
+        List(viewModel.newsResponse.articles ?? []) { article in
+            ArticleCell(article: article, abbreviation: viewModel.currentCategory.abbreviation)
         }
+        .listStyle(.carousel)
         .onAppear {
             viewModel.getNews()
         }

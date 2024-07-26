@@ -24,7 +24,7 @@
 		8255E4482C3861ED009D24B1 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255E4472C3861ED009D24B1 /* ArticleDetailView.swift */; };
 		827674D32C4861A10083A849 /* CorpsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827674D22C4861A10083A849 /* CorpsListViewModel.swift */; };
 		827674D72C4863420083A849 /* CorpsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827674D62C4863420083A849 /* CorpsListView.swift */; };
-		827674DA2C48ACE20083A849 /* AudenciesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827674D92C48ACE20083A849 /* AudenciesListView.swift */; };
+		827674DA2C48ACE20083A849 /* AudiencesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827674D92C48ACE20083A849 /* AudiencesListView.swift */; };
 		828C1A3C2C39773B00151AFA /* NewsOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C1A3B2C39773B00151AFA /* NewsOptionModel.swift */; };
 		828C1A3E2C3977E500151AFA /* NewsOptionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C1A3D2C3977E500151AFA /* NewsOptionsListView.swift */; };
 		828C1A412C397BBB00151AFA /* NewsOptionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C1A402C397BBB00151AFA /* NewsOptionsListViewModel.swift */; };
@@ -85,6 +85,11 @@
 		82FAEBC72C5325C700FB8B15 /* WeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBC62C5325C700FB8B15 /* WeekCell.swift */; };
 		82FAEBCB2C532AAE00FB8B15 /* WeekDaysListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBCA2C532AAE00FB8B15 /* WeekDaysListView.swift */; };
 		82FAEBCE2C53346F00FB8B15 /* WeekDaysListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBCD2C53346F00FB8B15 /* WeekDaysListViewModel.swift */; };
+		82FAEBD12C53407B00FB8B15 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBD02C53407B00FB8B15 /* GroupCell.swift */; };
+		82FAEBD42C53415F00FB8B15 /* FacultyGroupsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBD32C53415F00FB8B15 /* FacultyGroupsListViewModel.swift */; };
+		82FAEBD72C53430D00FB8B15 /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBD62C53430D00FB8B15 /* TeacherCell.swift */; };
+		82FAEBDE2C53443100FB8B15 /* AudienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBDD2C53443100FB8B15 /* AudienceCell.swift */; };
+		82FAEBE12C5344CA00FB8B15 /* AudiencesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBE02C5344CA00FB8B15 /* AudiencesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,7 +134,7 @@
 		8255E4472C3861ED009D24B1 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		827674D22C4861A10083A849 /* CorpsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorpsListViewModel.swift; sourceTree = "<group>"; };
 		827674D62C4863420083A849 /* CorpsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorpsListView.swift; sourceTree = "<group>"; };
-		827674D92C48ACE20083A849 /* AudenciesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudenciesListView.swift; sourceTree = "<group>"; };
+		827674D92C48ACE20083A849 /* AudiencesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiencesListView.swift; sourceTree = "<group>"; };
 		828C1A3B2C39773B00151AFA /* NewsOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsOptionModel.swift; sourceTree = "<group>"; };
 		828C1A3D2C3977E500151AFA /* NewsOptionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsOptionsListView.swift; sourceTree = "<group>"; };
 		828C1A402C397BBB00151AFA /* NewsOptionsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsOptionsListViewModel.swift; sourceTree = "<group>"; };
@@ -190,6 +195,11 @@
 		82FAEBC62C5325C700FB8B15 /* WeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCell.swift; sourceTree = "<group>"; };
 		82FAEBCA2C532AAE00FB8B15 /* WeekDaysListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysListView.swift; sourceTree = "<group>"; };
 		82FAEBCD2C53346F00FB8B15 /* WeekDaysListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysListViewModel.swift; sourceTree = "<group>"; };
+		82FAEBD02C53407B00FB8B15 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		82FAEBD32C53415F00FB8B15 /* FacultyGroupsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyGroupsListViewModel.swift; sourceTree = "<group>"; };
+		82FAEBD62C53430D00FB8B15 /* TeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
+		82FAEBDD2C53443100FB8B15 /* AudienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudienceCell.swift; sourceTree = "<group>"; };
+		82FAEBE02C5344CA00FB8B15 /* AudiencesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiencesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,12 +391,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		827674D82C48ACA70083A849 /* Audencies List  */ = {
+		827674D82C48ACA70083A849 /* Audiences List MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				827674D92C48ACE20083A849 /* AudenciesListView.swift */,
+				82FAEBDB2C53442000FB8B15 /* View */,
+				82FAEBDC2C53442600FB8B15 /* Cell */,
+				82FAEBDF2C5344B300FB8B15 /* ViewModel */,
 			);
-			path = "Audencies List ";
+			path = "Audiences List MVVM";
 			sourceTree = "<group>";
 		};
 		828C1A382C39771300151AFA /* News Options List MVVM */ = {
@@ -792,12 +804,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		82C919682C50408200848231 /* Faculty Groups List */ = {
+		82C919682C50408200848231 /* Faculty Groups List MVVM */ = {
 			isa = PBXGroup;
 			children = (
 				82C919692C50409500848231 /* View */,
+				82FAEBCF2C53406B00FB8B15 /* Cell */,
+				82FAEBD22C53413D00FB8B15 /* ViewModel */,
 			);
-			path = "Faculty Groups List";
+			path = "Faculty Groups List MVVM";
 			sourceTree = "<group>";
 		};
 		82C919692C50409500848231 /* View */ = {
@@ -847,11 +861,11 @@
 				82A608E42C3758800005EDC3 /* Timetable Day List MVVM */,
 				82E8A1092C47633A00CF2179 /* Timetable Owners List */,
 				82C9195F2C503E9800848231 /* Faculties List MVVM */,
-				82C919682C50408200848231 /* Faculty Groups List */,
+				82C919682C50408200848231 /* Faculty Groups List MVVM */,
 				82E8A0F72C4748CE00CF2179 /* Departments List MVVM */,
 				82E8A0FF2C474C3E00CF2179 /* Teachers List MVVM */,
 				827674CF2C4861370083A849 /* Сorps List MVVM */,
-				827674D82C48ACA70083A849 /* Audencies List  */,
+				827674D82C48ACA70083A849 /* Audiences List MVVM */,
 				82FAEBBB2C5322F100FB8B15 /* Weeks List MVVM */,
 				82FAEBC82C532A8800FB8B15 /* Week Days List */,
 				82F315AF2C405C7900E826F9 /* Timetable Day Result List */,
@@ -863,6 +877,7 @@
 			isa = PBXGroup;
 			children = (
 				82E8A1012C474C5000CF2179 /* View */,
+				82FAEBD52C5342F500FB8B15 /* Cell */,
 				82E8A1002C474C4E00CF2179 /* ViewModel */,
 			);
 			path = "Teachers List MVVM";
@@ -1033,6 +1048,54 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		82FAEBCF2C53406B00FB8B15 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				82FAEBD02C53407B00FB8B15 /* GroupCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		82FAEBD22C53413D00FB8B15 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82FAEBD32C53415F00FB8B15 /* FacultyGroupsListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82FAEBD52C5342F500FB8B15 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				82FAEBD62C53430D00FB8B15 /* TeacherCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		82FAEBDB2C53442000FB8B15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				827674D92C48ACE20083A849 /* AudiencesListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82FAEBDC2C53442600FB8B15 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				82FAEBDD2C53443100FB8B15 /* AudienceCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		82FAEBDF2C5344B300FB8B15 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82FAEBE02C5344CA00FB8B15 /* AudiencesListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1159,15 +1222,19 @@
 				82A608F22C3759350005EDC3 /* Article.swift in Sources */,
 				8294CFAF2C360432006E7EDA /* SettingSectionModel.swift in Sources */,
 				8255E4442C385DB5009D24B1 /* ArticleCell.swift in Sources */,
+				82FAEBD72C53430D00FB8B15 /* TeacherCell.swift in Sources */,
+				82FAEBD42C53415F00FB8B15 /* FacultyGroupsListViewModel.swift in Sources */,
 				82160F582C38A32200017A1F /* Buildings.swift in Sources */,
 				8294CFB12C36045D006E7EDA /* SettingSections.swift in Sources */,
 				82A608FA2C3759D30005EDC3 /* TimeTableService.swift in Sources */,
 				828C1A412C397BBB00151AFA /* NewsOptionsListViewModel.swift in Sources */,
 				82160F542C38A13600017A1F /* BuildingsMapView.swift in Sources */,
 				82E8A0FD2C47499A00CF2179 /* DepartmentsListView.swift in Sources */,
+				82FAEBDE2C53443100FB8B15 /* AudienceCell.swift in Sources */,
 				821BAAA12C4C9AE6002470F2 /* CurrentPageNewsListView.swift in Sources */,
 				8294CFA42C34B7BC006E7EDA /* AppSections.swift in Sources */,
 				82E8A10D2C47635C00CF2179 /* TimetableOwnersListView.swift in Sources */,
+				82FAEBD12C53407B00FB8B15 /* GroupCell.swift in Sources */,
 				82FAEBC02C53233B00FB8B15 /* WeeksListView.swift in Sources */,
 				8294CF892C34B579006E7EDA /* ASPU_App_WatchApp.swift in Sources */,
 				82E8A10F2C47637700CF2179 /* TimetableOwners.swift in Sources */,
@@ -1181,6 +1248,7 @@
 				82FAEBC42C53236A00FB8B15 /* WeekModel.swift in Sources */,
 				82C9196E2C50ACE900848231 /* SavedNewsCategoryCell.swift in Sources */,
 				8255E4482C3861ED009D24B1 /* ArticleDetailView.swift in Sources */,
+				82FAEBE12C5344CA00FB8B15 /* AudiencesListViewModel.swift in Sources */,
 				828C1A3E2C3977E500151AFA /* NewsOptionsListView.swift in Sources */,
 				828C1A542C39C4E400151AFA /* CurrentCategoryNewsListViewModel.swift in Sources */,
 				828C1A522C39C4DB00151AFA /* CurrentCategoryNewsListView.swift in Sources */,
@@ -1204,7 +1272,7 @@
 				82FAEBC72C5325C700FB8B15 /* WeekCell.swift in Sources */,
 				82E8A1052C474C7000CF2179 /* TeachersListViewModel.swift in Sources */,
 				82E8A1122C4772C500CF2179 /* TimetableOwnerCell.swift in Sources */,
-				827674DA2C48ACE20083A849 /* AudenciesListView.swift in Sources */,
+				827674DA2C48ACE20083A849 /* AudiencesListView.swift in Sources */,
 				82A609032C375A4D0005EDC3 /* TimetableDayListViewModel.swift in Sources */,
 				8294CFD32C371A60006E7EDA /* NewsListView.swift in Sources */,
 				82E8A0FB2C47491100CF2179 /* DepartmentsListViewModel.swift in Sources */,

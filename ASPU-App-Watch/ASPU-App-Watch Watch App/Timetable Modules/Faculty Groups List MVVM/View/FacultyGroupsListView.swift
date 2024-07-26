@@ -9,26 +9,23 @@ import SwiftUI
 
 struct FacultyGroupsListView: View {
     
-    @State var currentGroup = ""
-    @State var isPresented = false
-    @State var isSelected = false
-    
+    @ObservedObject var viewModel = FacultyGroupsListViewModel()
     var faculty: FacultyModel
     
     var body: some View {
         List(faculty.groups, id: \.self) { group in
-            Text(group)
+            GroupCell(group: group, isSelected: viewModel.isSavedGroup(group: group))
                 .onTapGesture {
-                    currentGroup = group
-                    isSelected.toggle()
+                    viewModel.currentGroup = group
+                    viewModel.isSelected.toggle()
               }
         }
         .navigationTitle("Группы")
-        .onChange(of: isSelected) {
-            isPresented.toggle()
+        .onChange(of: viewModel.isSelected) {
+            viewModel.isPresented.toggle()
         }
-        .sheet(isPresented: $isPresented, content: {
-            TimetableDayResultListView(id: currentGroup, owner: "GROUP")
+        .sheet(isPresented: $viewModel.isPresented, content: {
+            TimetableDayResultListView(id: viewModel.currentGroup, owner: "GROUP")
         })
     }
 }
