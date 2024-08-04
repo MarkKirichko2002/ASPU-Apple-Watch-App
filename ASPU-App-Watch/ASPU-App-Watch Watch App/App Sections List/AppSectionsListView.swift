@@ -14,7 +14,13 @@ struct AppSectionsListView: View {
             List(AppSections.sections) { section in
                 NavigationLink {
                     switch section.id {
+                    case 1:
+                        NewsListView()
+                    case 2:
+                        TimetableDayListView()
                     case 3:
+                        BuildingsMapView()
+                    case 4:
                         SettingsListView()
                     default:
                         EmptyView()
