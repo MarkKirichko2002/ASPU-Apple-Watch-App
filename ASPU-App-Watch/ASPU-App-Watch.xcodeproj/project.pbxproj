@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		820A2A542C61767A005FF3D9 /* PairInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A2A532C61767A005FF3D9 /* PairInfoView.swift */; };
+		820A2A562C61768C005FF3D9 /* PairInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A2A552C61768C005FF3D9 /* PairInfoViewModel.swift */; };
 		82160F542C38A13600017A1F /* BuildingsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F532C38A13600017A1F /* BuildingsMapView.swift */; };
 		82160F582C38A32200017A1F /* Buildings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F572C38A32200017A1F /* Buildings.swift */; };
 		82160F5B2C38D61C00017A1F /* BuildingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F5A2C38D61C00017A1F /* BuildingDetailView.swift */; };
@@ -117,6 +119,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		820A2A532C61767A005FF3D9 /* PairInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInfoView.swift; sourceTree = "<group>"; };
+		820A2A552C61768C005FF3D9 /* PairInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInfoViewModel.swift; sourceTree = "<group>"; };
 		82160F532C38A13600017A1F /* BuildingsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsMapView.swift; sourceTree = "<group>"; };
 		82160F572C38A32200017A1F /* Buildings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildings.swift; sourceTree = "<group>"; };
 		82160F5A2C38D61C00017A1F /* BuildingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingDetailView.swift; sourceTree = "<group>"; };
@@ -215,6 +219,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		820A2A502C617659005FF3D9 /* Pair Info MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				820A2A522C617669005FF3D9 /* View */,
+				820A2A512C617668005FF3D9 /* ViewModel */,
+			);
+			path = "Pair Info MVVM";
+			sourceTree = "<group>";
+		};
+		820A2A512C617668005FF3D9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				820A2A552C61768C005FF3D9 /* PairInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		820A2A522C617669005FF3D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				820A2A532C61767A005FF3D9 /* PairInfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		82160F512C38A11600017A1F /* Article Detail MVVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -868,6 +897,7 @@
 				827674D82C48ACA70083A849 /* Audiences List MVVM */,
 				82FAEBBB2C5322F100FB8B15 /* Weeks List MVVM */,
 				82FAEBC82C532A8800FB8B15 /* Week Days List */,
+				820A2A502C617659005FF3D9 /* Pair Info MVVM */,
 				82F315AF2C405C7900E826F9 /* Timetable Day Result List */,
 			);
 			path = "Timetable Modules";
@@ -1209,6 +1239,7 @@
 				82C9196B2C5040A400848231 /* FacultyGroupsListView.swift in Sources */,
 				8294CFC62C3607CF006E7EDA /* NewsCategoryCell.swift in Sources */,
 				8294CF8B2C34B579006E7EDA /* ContentView.swift in Sources */,
+				820A2A542C61767A005FF3D9 /* PairInfoView.swift in Sources */,
 				82A608F82C3759A10005EDC3 /* ASPUNewsService.swift in Sources */,
 				82A608EE2C3758FE0005EDC3 /* HostName.swift in Sources */,
 				82FAEBC22C53234900FB8B15 /* WeeksListViewModel.swift in Sources */,
@@ -1239,6 +1270,7 @@
 				8294CF892C34B579006E7EDA /* ASPU_App_WatchApp.swift in Sources */,
 				82E8A10F2C47637700CF2179 /* TimetableOwners.swift in Sources */,
 				82A609012C375A2B0005EDC3 /* TimetableDayListView.swift in Sources */,
+				820A2A562C61768C005FF3D9 /* PairInfoViewModel.swift in Sources */,
 				82A608F02C3759190005EDC3 /* Discipline.swift in Sources */,
 				8294CFC12C3606CF006E7EDA /* NewsCategories.swift in Sources */,
 				8294CFC32C3607B9006E7EDA /* SavedNewsCategoriesListView.swift in Sources */,
@@ -1420,13 +1452,16 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ASPU-App-Watch-Watch-App-Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Необходимо для точного определения вашего местоположения и предоставления персонализированной информации о ближайших корпусах университета. Постоянный доступ к геопозиции требуется для надежного отображения текущего местоположения и временной информации о зданиях, даже когда приложение неактивно.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Для обеспечения постоянного отображения вашей геопозиции и уточнения расположения корпусов университета на карте даже в неактивном режиме приложения.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Для отображения вашей текущей геопозиции и указания расположения корпусов университета на карте.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -1450,13 +1485,16 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ASPU-App-Watch-Watch-App-Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Необходимо для точного определения вашего местоположения и предоставления персонализированной информации о ближайших корпусах университета. Постоянный доступ к геопозиции требуется для надежного отображения текущего местоположения и временной информации о зданиях, даже когда приложение неактивно.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Для обеспечения постоянного отображения вашей геопозиции и уточнения расположения корпусов университета на карте даже в неактивном режиме приложения.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Для отображения вашей текущей геопозиции и указания расположения корпусов университета на карте.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;

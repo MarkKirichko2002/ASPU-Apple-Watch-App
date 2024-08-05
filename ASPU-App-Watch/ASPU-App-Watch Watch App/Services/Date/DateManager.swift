@@ -21,9 +21,19 @@ final class DateManager  {
         return currentDate
     }
     
-    func getCurrentTime()-> String {
+    func getCurrentMonth()-> Int {
         let date = Date()
-        dateFormatter.dateFormat = "HH:mm:ss"
+        let calendar = Calendar.current
+        return calendar.component(.month, from: date)
+    }
+    
+    func getCurrentTime(isFullFormat: Bool)-> String {
+        let date = Date()
+        if isFullFormat {
+            dateFormatter.dateFormat = "HH:mm:ss"
+        } else {
+            dateFormatter.dateFormat = "HH:mm"
+        }
         let timeString = dateFormatter.string(from: date)
         return timeString
     }
@@ -137,7 +147,7 @@ final class DateManager  {
     func timeRange(startTime: String, endTime: String, currentTime: String)-> Bool {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm"
+        dateFormatter.dateFormat = "HH:mm"
         
         if let startTime = dateFormatter.date(from: startTime),
            let endTime = dateFormatter.date(from: endTime),
