@@ -19,6 +19,10 @@ final class NewsOptionsListViewModel: ObservableObject {
     private let newsService = ASPUNewsService()
     private let settingsManager = SettingsManager()
     
+    init() {
+        observeCategory()
+    }
+    
     func getData() {
         let abbreviation = settingsManager.getSavedCategory()
         guard let category = NewsCategories.categories.first(where: { $0.abbreviation ==  abbreviation}) else {return}
@@ -53,6 +57,16 @@ final class NewsOptionsListViewModel: ObservableObject {
                     }
                 case .failure(let error):
                     print(error)
+                }
+            }
+        }
+    }
+    
+    func observeCategory() {
+        NotificationCenter.default.addObserver(forName: Notification.Name("category"), object: nil, queue: nil) { notification in
+            if let category = notification.object as? NewsCategoryModel {
+                if self.currentCategory.id != category.id {
+                    self.getData()
                 }
             }
         }

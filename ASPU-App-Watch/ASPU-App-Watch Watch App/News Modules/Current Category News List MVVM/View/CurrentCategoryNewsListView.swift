@@ -30,6 +30,9 @@ struct CurrentCategoryNewsListView: View {
         .onAppear {
             viewModel.getNews(category: category)
         }
+        .onDisappear {
+            NotificationCenter.default.post(name: Notification.Name("category"), object: category)
+        }
     }
 }
 

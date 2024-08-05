@@ -19,7 +19,6 @@ final class CurrentCategoryNewsListViewModel: ObservableObject {
     func getNews(category: NewsCategoryModel) {
         isLoading = true
         settingsManager.saveCategory(abbreviation: category.abbreviation)
-        NotificationCenter.default.post(name: Notification.Name("category"), object: nil)
         if category.abbreviation != "-" {
             Task {
                 let result = try await newsService.getNews(abbreviation: category.abbreviation)
