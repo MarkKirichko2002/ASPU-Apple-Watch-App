@@ -10,8 +10,11 @@ import Foundation
 final class TimetableDayListViewModel: ObservableObject {
     
     @Published var timetable = TimeTable(id: "", date: "", disciplines: [])
-    @Published var isPresented = false
+    @Published var currentDiscipline = Discipline(id: "", time: "", name: "", groupName: "", teacherName: "", audienceID: "", subgroup: 0, type: .all)
     @Published var isLoading = true
+    @Published var isPresented = false
+    @Published var isPresentedInfo = false
+    @Published var isSelected = false
     
     // MARK: - сервисы
     private let service = TimeTableService()

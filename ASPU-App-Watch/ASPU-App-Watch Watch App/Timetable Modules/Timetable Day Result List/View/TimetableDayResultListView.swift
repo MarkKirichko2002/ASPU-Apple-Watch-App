@@ -32,14 +32,14 @@ struct TimetableDayResultListView: View {
                 }.listStyle(.carousel)
             }
         }
+        .onAppear {
+            viewModel.getTimetable(id: id, date: date, owner: owner)
+        }
         .onChange(of: viewModel.isSelected) {
             viewModel.isPresented.toggle()
         }
         .sheet(isPresented: $viewModel.isPresented) {
-            PairInfoView(viewModel: PairInfoViewModel(pair: viewModel.currentDiscipline, id: id, date: date))
-        }
-        .onAppear {
-            viewModel.getTimetable(id: id, date: date, owner: owner)
+            PairInfoView(viewModel: PairInfoViewModel(pair: viewModel.currentDiscipline, date: date))
         }
         .navigationTitle(id)
     }

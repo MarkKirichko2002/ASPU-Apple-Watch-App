@@ -12,15 +12,13 @@ final class PairInfoViewModel: ObservableObject {
     @Published var pairInfo = [String]()
     
     var pair: Discipline!
-    var id: String = ""
     var date: String = ""
     
     var timer: Timer?
     
     // MARK: - Init
-    init(pair: Discipline, id: String, date: String) {
+    init(pair: Discipline, date: String) {
         self.pair = pair
-        self.id = id
         self.date = date
     }
     

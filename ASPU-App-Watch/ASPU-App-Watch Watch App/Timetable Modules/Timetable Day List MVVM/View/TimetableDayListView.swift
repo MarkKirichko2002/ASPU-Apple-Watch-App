@@ -22,6 +22,10 @@ struct TimetableDayListView: View {
             } else {
                 List(viewModel.timetable.disciplines, id: \.self) { pair in
                     PairCell(discipline: pair)
+                        .onTapGesture {
+                            viewModel.currentDiscipline = pair
+                            viewModel.isSelected.toggle()
+                        }
                 }.listStyle(.carousel)
             }
         }
@@ -36,6 +40,12 @@ struct TimetableDayListView: View {
         }
         .onAppear {
             viewModel.getTimetable()
+        }
+        .onChange(of: viewModel.isSelected) {
+            viewModel.isPresentedInfo.toggle()
+        }
+        .sheet(isPresented: $viewModel.isPresentedInfo) {
+            PairInfoView(viewModel: PairInfoViewModel(pair: viewModel.currentDiscipline, date: viewModel.timetable.date ?? viewModel.getCurrentDate()))
         }
         .sheet(isPresented: $viewModel.isPresented) {
             TimetableOwnersListView()
