@@ -10,21 +10,24 @@ import Foundation
 final class ArticleDetailViewModel: ObservableObject {
     
     @Published var articleInfo = ArticleInfo(id: 0, title: "", description: "", date: "", images: [])
+    @Published var isLoading = true
     
     // MARK: - сервисы
     private let newsService = ASPUNewsService()
     
     func getArticleInfo(abbreviation: String, id: Int) {
+        isLoading = true
         Task {
             let result = try await newsService.getArticleInfo(abbreviation: abbreviation, id: id)
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
                     self.articleInfo = data
-                    print(data.images)
+                    self.isLoading = false
                 }
             case .failure(let error):
                 print(error)
+                self.isLoading = false
             }
         }
     }

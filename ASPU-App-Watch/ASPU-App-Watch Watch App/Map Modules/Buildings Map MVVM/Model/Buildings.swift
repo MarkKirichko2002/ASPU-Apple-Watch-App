@@ -11,6 +11,7 @@ struct BuildingModel: Identifiable {
     let id: UUID
     let name: String
     let image: [String]
+    let type: BuildingType
     let audiences: [String]?
     let pin: CLLocationCoordinate2D
 }
@@ -22,6 +23,7 @@ struct Buildings {
             id: UUID(),
             name: "Главный корпус",
             image: ["главный корпус"],
+            type: .building,
             audiences: [
                 "1",
                 "2",
@@ -57,6 +59,7 @@ struct Buildings {
             id: UUID(),
             name: "Корпус и Общежитие №1",
             image: ["общежитие 1"],
+            type: .buildingAndHostel,
             audiences: [
                 "30",
                 "31",
@@ -95,6 +98,7 @@ struct Buildings {
             id: UUID(),
             name: "Корпус №2",
             image: [],
+            type: .building,
             audiences: [
                 "24",
                 "25",
@@ -108,6 +112,7 @@ struct Buildings {
             id: UUID(),
             name: "Корпус №3 (СПФ)",
             image: ["СПФ"],
+            type: .building,
             audiences: [
                 "40",
                 "41",
@@ -127,6 +132,7 @@ struct Buildings {
             id: UUID(),
             name: "Корпус №4 (ФТЭиД)",
             image: ["ФТЭиД"],
+            type: .building,
             audiences: [
                 "51",
                 "52",
@@ -151,6 +157,7 @@ struct Buildings {
             id: UUID(),
             name: "Корпус №5 (ЕБД)",
             image: [],
+            type: .building,
             audiences: [
                 "80",
                 "81",
@@ -165,6 +172,7 @@ struct Buildings {
             id: UUID(),
             name: "Корпус №6 (ФОК)",
             image: ["ФОК"],
+            type: .building,
             audiences: [
                 "85",
                 "85а",
@@ -178,6 +186,7 @@ struct Buildings {
             id: UUID(),
             name: "ИСТФАК",
             image: ["истфак"],
+            type: .building,
             audiences: [
                 "201",
                 "202",
@@ -196,6 +205,7 @@ struct Buildings {
             id: UUID(),
             name: "Общежитие №2",
             image: ["общежитие 2"],
+            type: .hostel,
             audiences: nil,
             pin: CLLocationCoordinate2D(latitude: 44.972907, longitude: 41.149784)
         )

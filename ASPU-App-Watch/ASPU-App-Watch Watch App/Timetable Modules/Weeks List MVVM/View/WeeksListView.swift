@@ -17,10 +17,7 @@ struct WeeksListView: View {
             if viewModel.isLoading {
                 Text("Загрузка...")
                     .fontWeight(.bold)
-            } else if viewModel.weeks.isEmpty {
-                Text("Нет недель")
-                    .fontWeight(.bold)
-            } else {
+            } else if !viewModel.weeks.isEmpty {
                 List(viewModel.weeks) { week in
                     WeekCell(week: week)
                         .onTapGesture {
@@ -28,6 +25,9 @@ struct WeeksListView: View {
                             viewModel.isSelected.toggle()
                      }
                 }.listStyle(.carousel)
+            } else {
+                Text("Нет недель")
+                    .fontWeight(.bold)
             }
         }
         .navigationTitle("Недели")

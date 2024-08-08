@@ -21,13 +21,20 @@ struct ArticleDetailView: View {
             Section("Изображения") {
                 ScrollView(.horizontal, showsIndicators: true) {
                     LazyHStack {
-                        ForEach(viewModel.articleInfo.images, id: \.self) { image in
-                            WebImage(url: URL(string: image))
-                                .resizable()
-                                .frame(width: 160, height: 160)
-                                .aspectRatio(contentMode: .fill)
-                                .cornerRadius(10)
-                        }.listStyle(.carousel)
+                        if viewModel.isLoading {
+                            Text("Загрузка...")
+                        } else if !viewModel.articleInfo.images.isEmpty {
+                            ForEach(viewModel.articleInfo.images, id: \.self) { image in
+                                WebImage(url: URL(string: image))
+                                    .resizable()
+                                    .frame(width: 160, height: 160)
+                                    .aspectRatio(contentMode: .fill)
+                                    .cornerRadius(10)
+                            }.listStyle(.carousel)
+                        } else {
+                            Text("Нет изображений")
+                                .fontWeight(.bold)
+                        }
                     }
                     .padding()
                 }

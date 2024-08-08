@@ -31,14 +31,14 @@ final class PairInfoViewModel: ObservableObject {
         let pairType = pair.type.title
         let subGroup = checkSubGroup(subgroup: pair.subgroup)
         pairInfo.append("дата: \(date)")
+        pairInfo.append("дисциплина: \(pair.name)")
         pairInfo.append("начало: \(startTime)")
         pairInfo.append("конец: \(endTime)")
+        pairInfo.append("преподаватель: \(pair.teacherName)")
+        pairInfo.append("группа: \(pair.groupName)")
         pairInfo.append(subGroup)
         pairInfo.append("тип пары: \(pairType)")
         pairInfo.append("аудитория: \(pair.audienceID)")
-        pairInfo.append("дисциплина: \(pair.name)")
-        pairInfo.append("преподаватель: \(pair.teacherName)")
-        pairInfo.append("группа: \(pair.groupName)")
         pairInfo.append("вычисляем время...")
         checkCurrentTime()
     }

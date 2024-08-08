@@ -21,7 +21,7 @@ struct PairCell: View {
                 Text(discipline.name)
                     .foregroundStyle(Color.black)
                     .multilineTextAlignment(.center)
-                Text(discipline.teacherName)
+                Text("\(discipline.teacherName), \(discipline.audienceID)")
                     .foregroundStyle(Color.black).multilineTextAlignment(.center)
                     .multilineTextAlignment(.center)
                 Text("(\(discipline.groupName))")
@@ -30,6 +30,12 @@ struct PairCell: View {
                 Text("(\(discipline.type.title))")
                     .foregroundStyle(Color.black)
                     .multilineTextAlignment(.center)
+                if discipline.subgroup != 0 {
+                    Text("Подгруппа: \(discipline.subgroup)")
+                        .foregroundStyle(Color.black)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                }
             }
             Spacer()
         }

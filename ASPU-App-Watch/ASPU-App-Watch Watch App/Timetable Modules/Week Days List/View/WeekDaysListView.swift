@@ -23,18 +23,18 @@ struct WeekDaysListView: View {
             if viewModel.isLoading {
                 Text("Загрузка...")
                     .fontWeight(.bold)
-            } else if viewModel.days.isEmpty {
-                Text("Нет дней")
-                    .fontWeight(.bold)
-            } else {
+            } else if !viewModel.days.isEmpty {
                 List(viewModel.days) { day in
                     Text("\(day.name) \(day.date)")
                         .fontWeight(.bold)
                         .onTapGesture {
                             viewModel.currentDay = day
                             viewModel.isSelected.toggle()
-                     }
+                        }
                 }
+            } else {
+                Text("Нет дней")
+                    .fontWeight(.bold)
             }
         }
         .navigationTitle("Неделя: \(week.id)")
