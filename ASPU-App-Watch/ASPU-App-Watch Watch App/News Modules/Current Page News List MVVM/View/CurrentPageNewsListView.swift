@@ -21,7 +21,7 @@ struct CurrentPageNewsListView: View {
                     .fontWeight(.bold)
             } else {
                 List(viewModel.articles) { article in
-                    ArticleCell(article: article, abbreviation: viewModel.abbreviation)
+                    ArticleCell(article: article, abbreviation: viewModel.abbreviation, isSavedArticle: false)
                 }.listStyle(.carousel)
             }
         }

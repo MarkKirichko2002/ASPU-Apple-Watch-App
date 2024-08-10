@@ -7,16 +7,18 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import SwiftData
 
 struct ArticleDetailView: View {
     
     var article: Article
     var abbreviation: String
     
+    @Query var articles: [ArticleModel]
     @ObservedObject var viewModel = ArticleDetailViewModel()
+    @Environment(\.modelContext) var modelContext
     
     var body: some View {
-        
         Form() {
             Section("Изображения") {
                 ScrollView(.horizontal, showsIndicators: true) {
@@ -56,6 +58,19 @@ struct ArticleDetailView: View {
                         .fontWeight(.bold)
                 } else {
                     Text("Нет описания")
+                        .fontWeight(.bold)
+                }
+            }
+            Section() {
+                Button {
+                    let model = ArticleModel(id: viewModel.articleInfo.id ?? 0, title: viewModel.articleInfo.title, desc: viewModel.articleInfo.description, date: viewModel.articleInfo.date, images: viewModel.articleInfo.images)
+                    if !articles.contains(where: { $0.id == model.id }) {
+                        modelContext.insert(model)
+                    } else {
+                        print("уже есть")
+                    }
+                } label: {
+                    Text("Сохранить")
                         .fontWeight(.bold)
                 }
             }

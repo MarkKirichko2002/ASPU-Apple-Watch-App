@@ -27,6 +27,7 @@ struct NewsOptionsListView: View {
             switch viewModel.currentId {
             case 1: NewsCategoriesListView()
             case 2: NewsPagesListView(count: viewModel.newsResponse.countPages ?? 0, category: viewModel.currentCategory)
+            case 3: SavedNewsListView(abbreviation: viewModel.currentCategory.abbreviation)
             default:
                 EmptyView()
             }

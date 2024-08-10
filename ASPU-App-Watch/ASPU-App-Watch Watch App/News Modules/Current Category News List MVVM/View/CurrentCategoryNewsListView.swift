@@ -22,7 +22,7 @@ struct CurrentCategoryNewsListView: View {
                     .fontWeight(.bold)
             } else {
                 List(viewModel.newsResponse.articles ?? []) { article in
-                    ArticleCell(article: article, abbreviation: category.abbreviation)
+                    ArticleCell(article: article, abbreviation: category.abbreviation, isSavedArticle: false)
                 }.listStyle(.carousel)
             }
         }

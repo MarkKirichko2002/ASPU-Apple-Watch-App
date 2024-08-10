@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct ASPU_App_Watch_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
             AppSectionsListView()
-        }
+        }.modelContainer(for: ArticleModel.self)
     }
 }
