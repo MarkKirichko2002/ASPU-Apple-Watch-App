@@ -16,6 +16,7 @@ struct ArticleDetailView: View {
     
     @Query var articles: [ArticleModel]
     @ObservedObject var viewModel = ArticleDetailViewModel()
+    @State var alert = false
     @Environment(\.modelContext) var modelContext
     
     var body: some View {
@@ -25,6 +26,7 @@ struct ArticleDetailView: View {
                     LazyHStack {
                         if viewModel.isLoading {
                             Text("Загрузка...")
+                                .fontWeight(.bold)
                         } else if !viewModel.articleInfo.images.isEmpty {
                             ForEach(viewModel.articleInfo.images, id: \.self) { image in
                                 WebImage(url: URL(string: image))
@@ -67,17 +69,20 @@ struct ArticleDetailView: View {
                     if !articles.contains(where: { $0.id == model.id }) {
                         modelContext.insert(model)
                     } else {
-                        print("уже есть")
+                        alert.toggle()
                     }
                 } label: {
                     Text("Сохранить")
                         .fontWeight(.bold)
                 }
             }
-        }.onAppear {
+        }.navigationTitle("Подробнее")
+            .alert(isPresented: $alert) {
+                Alert(title: Text("Новость уже сохранена"))
+            }
+        .onAppear {
             viewModel.getArticleInfo(abbreviation: abbreviation, id: article.id)
         }
-        .navigationTitle("Подробнее")
     }
 }
 

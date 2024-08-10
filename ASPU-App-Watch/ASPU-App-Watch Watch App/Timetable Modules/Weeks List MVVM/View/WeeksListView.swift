@@ -12,7 +12,6 @@ struct WeeksListView: View {
     @ObservedObject var viewModel = WeeksListViewModel()
     
     var body: some View {
-        
         VStack {
             if viewModel.isLoading {
                 Text("Загрузка...")

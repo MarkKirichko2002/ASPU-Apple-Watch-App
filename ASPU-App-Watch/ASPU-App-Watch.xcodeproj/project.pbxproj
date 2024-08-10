@@ -500,6 +500,7 @@
 		828C1A442C39C20400151AFA /* News */ = {
 			isa = PBXGroup;
 			children = (
+				82F2E7572C678897002E0A70 /* ArticleModel.swift */,
 				8294CFBE2C360696006E7EDA /* NewsCategoryModel.swift */,
 				8294CFC02C3606CF006E7EDA /* NewsCategories.swift */,
 			);
@@ -589,7 +590,6 @@
 				822D84F42C37766200148062 /* ASPU-App-Watch-Watch-App-Info.plist */,
 				8294CF8C2C34B57F006E7EDA /* Assets.xcassets */,
 				8294CF8E2C34B57F006E7EDA /* Preview Content */,
-				82F2E7572C678897002E0A70 /* ArticleModel.swift */,
 			);
 			path = "ASPU-App-Watch Watch App";
 			sourceTree = "<group>";

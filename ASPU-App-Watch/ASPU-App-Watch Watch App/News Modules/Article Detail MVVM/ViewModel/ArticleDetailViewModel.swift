@@ -16,7 +16,6 @@ final class ArticleDetailViewModel: ObservableObject {
     private let newsService = ASPUNewsService()
     
     func getArticleInfo(abbreviation: String, id: Int) {
-        isLoading = true
         Task {
             let result = try await newsService.getArticleInfo(abbreviation: abbreviation, id: id)
             switch result {
