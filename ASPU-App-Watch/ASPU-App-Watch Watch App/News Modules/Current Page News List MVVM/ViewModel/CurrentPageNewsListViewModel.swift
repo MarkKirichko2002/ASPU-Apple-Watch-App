@@ -12,8 +12,15 @@ final class CurrentPageNewsListViewModel: ObservableObject {
     @Published var articles = [Article]()
     @Published var isLoading = true
     
+    var abbreviation: String = ""
+    
     // MARK: - сервисы
     private let newsService = ASPUNewsService()
+    
+    init(page: Int, abbreviation: String) {
+        self.abbreviation = abbreviation
+        getNews(page: page, abbreviation: abbreviation)
+    }
     
     func getNews(page: Int, abbreviation: String) {
         isLoading = true
@@ -32,5 +39,9 @@ final class CurrentPageNewsListViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+    
+    func getCategoryName()-> String {
+        return NewsCategories.categories.first { $0.abbreviation == abbreviation}?.name ?? ""
     }
 }

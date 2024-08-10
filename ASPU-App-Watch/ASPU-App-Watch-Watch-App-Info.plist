@@ -2,10 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Для отображения вашей текущей геопозиции и указания расположения корпусов университета на карте.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Необходимо для точного определения вашего местоположения и предоставления персонализированной информации о ближайших корпусах университета. Постоянный доступ к геопозиции требуется для надежного отображения текущего местоположения и временной информации о зданиях, даже когда приложение неактивно.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Для отображения вашей текущей геопозиции и указания расположения корпусов университета на карте.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Для обеспечения постоянного отображения вашей геопозиции и уточнения расположения корпусов университета на карте даже в неактивном режиме приложения.</string>
 	<key>NSAppTransportSecurity</key>

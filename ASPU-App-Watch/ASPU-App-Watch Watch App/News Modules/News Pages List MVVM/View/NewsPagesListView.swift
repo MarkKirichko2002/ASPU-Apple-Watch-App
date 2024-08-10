@@ -13,13 +13,12 @@ struct NewsPagesListView: View {
     var category: NewsCategoryModel
     
     var body: some View {
-        
         VStack {
             if count > 0 {
                 NavigationView {
                     List(1...count, id: \.self) { number in
                         NavigationLink {
-                            CurrentPageNewsListView(page: number, category: category)
+                            CurrentPageNewsListView(viewModel: CurrentPageNewsListViewModel(page: number, abbreviation: category.abbreviation))
                         } label: {
                             Text("Страница: \(number)")
                                 .fontWeight(.bold)
