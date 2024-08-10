@@ -9,7 +9,9 @@ import SwiftUI
 
 struct CurrentPageNewsListView: View {
     
-    @ObservedObject var viewModel: CurrentPageNewsListViewModel
+    @ObservedObject var viewModel = CurrentPageNewsListViewModel()
+    var page: Int
+    var abbreviation: String
     
     var body: some View {
         VStack {
@@ -25,10 +27,15 @@ struct CurrentPageNewsListView: View {
                 }.listStyle(.carousel)
             }
         }
-        .navigationTitle(viewModel.getCategoryName())
+        .navigationTitle("Страница: \(page)")
+        .onAppear {
+            if viewModel.isLoading {
+                viewModel.getNews(page: page, abbreviation: abbreviation)
+            }
+        }
     }
 }
 
 #Preview {
-    CurrentPageNewsListView(viewModel: CurrentPageNewsListViewModel(page: 1, abbreviation: "-"))
+    CurrentPageNewsListView(page: 0, abbreviation: "")
 }

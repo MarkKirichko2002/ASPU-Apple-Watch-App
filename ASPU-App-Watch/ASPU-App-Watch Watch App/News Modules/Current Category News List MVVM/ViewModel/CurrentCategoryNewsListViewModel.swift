@@ -17,7 +17,6 @@ final class CurrentCategoryNewsListViewModel: ObservableObject {
     private let settingsManager = SettingsManager()
     
     func getNews(category: NewsCategoryModel) {
-        isLoading = true
         settingsManager.saveCategory(abbreviation: category.abbreviation)
         if category.abbreviation != "-" {
             Task {

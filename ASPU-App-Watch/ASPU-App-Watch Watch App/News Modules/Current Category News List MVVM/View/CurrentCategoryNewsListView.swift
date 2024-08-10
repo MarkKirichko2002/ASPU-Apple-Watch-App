@@ -28,7 +28,9 @@ struct CurrentCategoryNewsListView: View {
         }
         .navigationTitle(category.name)
         .onAppear {
-            viewModel.getNews(category: category)
+            if viewModel.isLoading {
+                viewModel.getNews(category: category)
+            }
         }
         .onDisappear {
             NotificationCenter.default.post(name: Notification.Name("category"), object: category)

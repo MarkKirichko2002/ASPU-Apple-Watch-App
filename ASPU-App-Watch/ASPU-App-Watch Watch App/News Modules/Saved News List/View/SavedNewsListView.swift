@@ -34,7 +34,7 @@ struct SavedNewsListView: View {
                         .fontWeight(.bold)
                 }
             }
-            .navigationTitle("Сохраненное")
+            .navigationTitle("Новости")
         }
     }
 }

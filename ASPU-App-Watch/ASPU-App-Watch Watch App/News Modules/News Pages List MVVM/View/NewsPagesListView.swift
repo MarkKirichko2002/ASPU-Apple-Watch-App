@@ -18,7 +18,7 @@ struct NewsPagesListView: View {
                 NavigationView {
                     List(1...count, id: \.self) { number in
                         NavigationLink {
-                            CurrentPageNewsListView(viewModel: CurrentPageNewsListViewModel(page: number, abbreviation: category.abbreviation))
+                            CurrentPageNewsListView(page: number, abbreviation: category.abbreviation)
                         } label: {
                             Text("Страница: \(number)")
                                 .fontWeight(.bold)

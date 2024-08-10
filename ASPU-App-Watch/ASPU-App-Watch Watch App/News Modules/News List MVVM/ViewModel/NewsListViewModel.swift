@@ -19,7 +19,6 @@ final class NewsListViewModel: ObservableObject {
     private let settingsManager = SettingsManager()
     
     init() {
-        getNews()
         observeCategory()
     }
     
@@ -27,8 +26,6 @@ final class NewsListViewModel: ObservableObject {
         
         let abbreviation = settingsManager.getSavedCategory()
         currentCategory = NewsCategories.categories.first(where: { $0.abbreviation == abbreviation})!
-        
-        self.isLoading = true
         
         if currentCategory.abbreviation != "-" {
             Task {

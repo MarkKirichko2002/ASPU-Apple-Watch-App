@@ -34,6 +34,11 @@ struct NewsListView: View {
                 }
             }
         }
+        .onAppear {
+            if viewModel.isLoading {
+                viewModel.getNews()
+            }
+        }
         .onChange(of: isDisappear) {
             viewModel.getNews()
         }

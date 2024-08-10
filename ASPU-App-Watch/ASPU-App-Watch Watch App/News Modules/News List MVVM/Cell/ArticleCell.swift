@@ -35,9 +35,9 @@ struct ArticleCell: View {
             } else {
                 HStack {
                     VStack(alignment: .leading, spacing: 10) {
-                        Text(article.title)
+                        Text(article.title ?? "Нет заголовка")
                             .fontWeight(.black)
-                        Text(article.date)
+                        Text(article.date ?? "Нет даты")
                             .fontWeight(.medium)
                     }
                 }

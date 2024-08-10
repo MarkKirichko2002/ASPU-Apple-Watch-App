@@ -17,13 +17,7 @@ final class CurrentPageNewsListViewModel: ObservableObject {
     // MARK: - сервисы
     private let newsService = ASPUNewsService()
     
-    init(page: Int, abbreviation: String) {
-        self.abbreviation = abbreviation
-        getNews(page: page, abbreviation: abbreviation)
-    }
-    
     func getNews(page: Int, abbreviation: String) {
-        isLoading = true
         Task {
             let result = try await newsService.getNews(by: page, abbreviation: abbreviation)
             switch result {
@@ -39,9 +33,5 @@ final class CurrentPageNewsListViewModel: ObservableObject {
                 print(error)
             }
         }
-    }
-    
-    func getCategoryName()-> String {
-        return NewsCategories.categories.first { $0.abbreviation == abbreviation}?.name ?? ""
     }
 }

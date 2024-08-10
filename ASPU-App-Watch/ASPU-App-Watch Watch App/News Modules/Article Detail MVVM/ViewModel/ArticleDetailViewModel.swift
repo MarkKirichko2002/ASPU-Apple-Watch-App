@@ -27,7 +27,9 @@ final class ArticleDetailViewModel: ObservableObject {
                 }
             case .failure(let error):
                 print(error)
-                self.isLoading = false
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                }
             }
         }
     }
