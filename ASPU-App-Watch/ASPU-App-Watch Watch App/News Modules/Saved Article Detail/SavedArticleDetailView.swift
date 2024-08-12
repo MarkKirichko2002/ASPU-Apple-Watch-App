@@ -15,6 +15,9 @@ struct SavedArticleDetailView: View {
     
     @Query var articles: [ArticleModel]
     @Environment(\.modelContext) var modelContext
+    @State var isSelected = false
+    @State var isPresented = false
+    @State var currentImageURL = ""
     
     var body: some View {
         Form() {
@@ -28,6 +31,10 @@ struct SavedArticleDetailView: View {
                                     .frame(width: 160, height: 160)
                                     .aspectRatio(contentMode: .fill)
                                     .cornerRadius(10)
+                                    .onTapGesture {
+                                        currentImageURL = image
+                                        isSelected.toggle()
+                                    }
                             }.listStyle(.carousel)
                         } else {
                             Text("Нет изображений")
@@ -59,6 +66,12 @@ struct SavedArticleDetailView: View {
             }
         }
         .navigationTitle("Подробнее")
+        .onChange(of: isSelected) {
+            self.isPresented.toggle()
+        }
+        .sheet(isPresented: $isPresented) {
+            ZoomImageView(url: currentImageURL)
+        }
     }
 }
 

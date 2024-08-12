@@ -18,6 +18,7 @@ final class CurrentPageNewsListViewModel: ObservableObject {
     private let newsService = ASPUNewsService()
     
     func getNews(page: Int, abbreviation: String) {
+        self.abbreviation = abbreviation
         Task {
             let result = try await newsService.getNews(by: page, abbreviation: abbreviation)
             switch result {

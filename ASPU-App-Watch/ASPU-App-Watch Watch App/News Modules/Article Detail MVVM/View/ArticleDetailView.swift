@@ -34,6 +34,10 @@ struct ArticleDetailView: View {
                                     .frame(width: 160, height: 160)
                                     .aspectRatio(contentMode: .fill)
                                     .cornerRadius(10)
+                                    .onTapGesture {
+                                        viewModel.currentImageURL = image
+                                        viewModel.isSelected.toggle()
+                                    }
                             }.listStyle(.carousel)
                         } else {
                             Text("Нет изображений")
@@ -77,9 +81,15 @@ struct ArticleDetailView: View {
                 }
             }
         }.navigationTitle("Подробнее")
-            .alert(isPresented: $alert) {
-                Alert(title: Text("Новость уже сохранена"))
-            }
+        .alert(isPresented: $alert) {
+            Alert(title: Text("Новость уже сохранена"))
+        }
+        .onChange(of: viewModel.isSelected) {
+            self.viewModel.isPresented.toggle()
+        }
+        .sheet(isPresented: $viewModel.isPresented) {
+            ZoomImageView(url: viewModel.currentImageURL)
+        }
         .onAppear {
             viewModel.getArticleInfo(abbreviation: abbreviation, id: article.id)
         }

@@ -11,6 +11,9 @@ final class ArticleDetailViewModel: ObservableObject {
     
     @Published var articleInfo = ArticleInfo(id: 0, title: "", description: "", date: "", images: [])
     @Published var isLoading = true
+    @Published var isSelected = false
+    @Published var isPresented = false
+    @Published var currentImageURL = ""
     
     // MARK: - сервисы
     private let newsService = ASPUNewsService()
