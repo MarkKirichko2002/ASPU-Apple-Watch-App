@@ -12,8 +12,11 @@ struct BuildingDetailView: View {
     
     var building: BuildingModel
     @State var currentAudience = ""
+    @State var isImagePresented = false
     @State var isPresented = false
     @State var isSelected = false
+    @State var isImageSelected = false
+    @State var currentImage = ""
     
     var body: some View {
         
@@ -29,6 +32,10 @@ struct BuildingDetailView: View {
                                     .frame(width: 160, height: 160)
                                     .aspectRatio(contentMode: .fill)
                                     .cornerRadius(10)
+                                    .onTapGesture {
+                                        currentImage = image
+                                        isImageSelected.toggle()
+                                    }
                             }.listStyle(.carousel)
                         } else {
                             Text("Нет изображений")
@@ -75,8 +82,14 @@ struct BuildingDetailView: View {
         .onChange(of: isSelected) {
             self.isPresented.toggle()
         }
+        .onChange(of: isImageSelected) {
+            self.isImagePresented.toggle()
+        }
         .sheet(isPresented: $isPresented, content: {
             TimetableDayResultListView(id: currentAudience, owner: "CLASSROOM")
+        })
+        .sheet(isPresented: $isImagePresented, content: {
+           ZoomImageView(url: currentImage)
         })
     }
 }
