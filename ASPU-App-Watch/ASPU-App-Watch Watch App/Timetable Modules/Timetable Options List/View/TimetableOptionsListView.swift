@@ -1,5 +1,5 @@
 //
-//  TimetableOwnersListView.swift
+//  TimetableOptionsListView.swift
 //  ASPU-App-Watch Watch App
 //
 //  Created by Марк Киричко on 17.07.2024.
@@ -7,24 +7,31 @@
 
 import SwiftUI
 
-struct TimetableOwnersListView: View {
+struct TimetableOptionsListView: View {
+    
+    var date: String
+    var disciplines: [Discipline]
     
     var body: some View {
         NavigationView {
-            List(TimetableOwners.owners) { owner in
+            List(TimetableOptions.options) { option in
                 NavigationLink {
-                    switch owner.id {
+                    switch option.id {
                     case 1:
                         FacultiesListView()
                     case 2:
                         DepartmentsListView()
                     case 3:
                         CorpsListView()
+                    case 4:
+                        WeeksListView()
+                    case 5:
+                        PairFilterTypeListView(date: date, disciplines: disciplines)
                     default:
                         WeeksListView()
                     }
                 } label: {
-                    TimetableOwnerCell(owner: owner)
+                    TimetableOptionCell(option: option)
                 }
             }
             .navigationTitle("Расписание")
@@ -33,5 +40,5 @@ struct TimetableOwnersListView: View {
 }
 
 #Preview {
-    TimetableOwnersListView()
+    TimetableOptionsListView(date: "", disciplines: [])
 }

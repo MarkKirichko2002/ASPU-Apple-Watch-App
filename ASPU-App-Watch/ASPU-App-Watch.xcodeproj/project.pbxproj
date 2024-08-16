@@ -35,6 +35,11 @@
 		828C1A522C39C4DB00151AFA /* CurrentCategoryNewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C1A512C39C4DB00151AFA /* CurrentCategoryNewsListView.swift */; };
 		828C1A542C39C4E400151AFA /* CurrentCategoryNewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C1A532C39C4E400151AFA /* CurrentCategoryNewsListViewModel.swift */; };
 		828DD7462C6A8113006F15DF /* ZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828DD7452C6A8112006F15DF /* ZoomImageView.swift */; };
+		8294C3A42C6EB39600C9DFBE /* PairFilterTypeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294C3A32C6EB39600C9DFBE /* PairFilterTypeListView.swift */; };
+		8294C3A62C6EB3A500C9DFBE /* PairFilterTypeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294C3A52C6EB3A500C9DFBE /* PairFilterTypeListViewModel.swift */; };
+		8294C3AF2C6EB83900C9DFBE /* PairTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294C3AE2C6EB83900C9DFBE /* PairTypeView.swift */; };
+		8294C3B12C6EB86700C9DFBE /* PairTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294C3B02C6EB86700C9DFBE /* PairTypeViewModel.swift */; };
+		8294C3B52C6EC80C00C9DFBE /* PairTypeFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294C3B42C6EC80C00C9DFBE /* PairTypeFilterModel.swift */; };
 		8294CF842C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8294CF832C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8294CF892C34B579006E7EDA /* ASPU_App_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */; };
 		8294CF8B2C34B579006E7EDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294CF8A2C34B579006E7EDA /* ContentView.swift */; };
@@ -76,9 +81,9 @@
 		82E8A1032C474C6400CF2179 /* TeachersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1022C474C6400CF2179 /* TeachersListView.swift */; };
 		82E8A1052C474C7000CF2179 /* TeachersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1042C474C7000CF2179 /* TeachersListViewModel.swift */; };
 		82E8A1082C47509200CF2179 /* String + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1072C47509200CF2179 /* String + Extensions.swift */; };
-		82E8A10D2C47635C00CF2179 /* TimetableOwnersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A10C2C47635C00CF2179 /* TimetableOwnersListView.swift */; };
-		82E8A10F2C47637700CF2179 /* TimetableOwners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A10E2C47637700CF2179 /* TimetableOwners.swift */; };
-		82E8A1122C4772C500CF2179 /* TimetableOwnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1112C4772C500CF2179 /* TimetableOwnerCell.swift */; };
+		82E8A10D2C47635C00CF2179 /* TimetableOptionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A10C2C47635C00CF2179 /* TimetableOptionsListView.swift */; };
+		82E8A10F2C47637700CF2179 /* TimetableOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A10E2C47637700CF2179 /* TimetableOptions.swift */; };
+		82E8A1122C4772C500CF2179 /* TimetableOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E8A1112C4772C500CF2179 /* TimetableOptionCell.swift */; };
 		82F2E7482C6557F8002E0A70 /* BuildingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2E7472C6557F8002E0A70 /* BuildingType.swift */; };
 		82F2E74A2C655AB3002E0A70 /* BuildingFilterTypeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2E7492C655AB3002E0A70 /* BuildingFilterTypeListView.swift */; };
 		82F2E74C2C655ACA002E0A70 /* BuildingFilterTypeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2E74B2C655ACA002E0A70 /* BuildingFilterTypeListViewModel.swift */; };
@@ -156,6 +161,11 @@
 		828C1A512C39C4DB00151AFA /* CurrentCategoryNewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCategoryNewsListView.swift; sourceTree = "<group>"; };
 		828C1A532C39C4E400151AFA /* CurrentCategoryNewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCategoryNewsListViewModel.swift; sourceTree = "<group>"; };
 		828DD7452C6A8112006F15DF /* ZoomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomImageView.swift; sourceTree = "<group>"; };
+		8294C3A32C6EB39600C9DFBE /* PairFilterTypeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairFilterTypeListView.swift; sourceTree = "<group>"; };
+		8294C3A52C6EB3A500C9DFBE /* PairFilterTypeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairFilterTypeListViewModel.swift; sourceTree = "<group>"; };
+		8294C3AE2C6EB83900C9DFBE /* PairTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairTypeView.swift; sourceTree = "<group>"; };
+		8294C3B02C6EB86700C9DFBE /* PairTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairTypeViewModel.swift; sourceTree = "<group>"; };
+		8294C3B42C6EC80C00C9DFBE /* PairTypeFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairTypeFilterModel.swift; sourceTree = "<group>"; };
 		8294CF7D2C34B579006E7EDA /* ASPU-App-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ASPU-App-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8294CF832C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ФГБОУ ВО «АГПУ».app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPU_App_WatchApp.swift; sourceTree = "<group>"; };
@@ -197,9 +207,9 @@
 		82E8A1022C474C6400CF2179 /* TeachersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersListView.swift; sourceTree = "<group>"; };
 		82E8A1042C474C7000CF2179 /* TeachersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersListViewModel.swift; sourceTree = "<group>"; };
 		82E8A1072C47509200CF2179 /* String + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extensions.swift"; sourceTree = "<group>"; };
-		82E8A10C2C47635C00CF2179 /* TimetableOwnersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableOwnersListView.swift; sourceTree = "<group>"; };
-		82E8A10E2C47637700CF2179 /* TimetableOwners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableOwners.swift; sourceTree = "<group>"; };
-		82E8A1112C4772C500CF2179 /* TimetableOwnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableOwnerCell.swift; sourceTree = "<group>"; };
+		82E8A10C2C47635C00CF2179 /* TimetableOptionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableOptionsListView.swift; sourceTree = "<group>"; };
+		82E8A10E2C47637700CF2179 /* TimetableOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableOptions.swift; sourceTree = "<group>"; };
+		82E8A1112C4772C500CF2179 /* TimetableOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableOptionCell.swift; sourceTree = "<group>"; };
 		82F2E7472C6557F8002E0A70 /* BuildingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingType.swift; sourceTree = "<group>"; };
 		82F2E7492C655AB3002E0A70 /* BuildingFilterTypeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingFilterTypeListView.swift; sourceTree = "<group>"; };
 		82F2E74B2C655ACA002E0A70 /* BuildingFilterTypeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingFilterTypeListViewModel.swift; sourceTree = "<group>"; };
@@ -567,6 +577,65 @@
 			path = "Zoom Image";
 			sourceTree = "<group>";
 		};
+		8294C3A02C6EB15A00C9DFBE /* Pair Filter Type List MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				8294C3B22C6EC7F300C9DFBE /* Model */,
+				8294C3A22C6EB38100C9DFBE /* View */,
+				8294C3A12C6EB37F00C9DFBE /* ViewModel */,
+			);
+			path = "Pair Filter Type List MVVM";
+			sourceTree = "<group>";
+		};
+		8294C3A12C6EB37F00C9DFBE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8294C3A52C6EB3A500C9DFBE /* PairFilterTypeListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8294C3A22C6EB38100C9DFBE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8294C3A32C6EB39600C9DFBE /* PairFilterTypeListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8294C3AB2C6EB81600C9DFBE /* Pair Type MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				8294C3AD2C6EB82800C9DFBE /* View */,
+				8294C3AC2C6EB82600C9DFBE /* ViewModel */,
+			);
+			path = "Pair Type MVVM";
+			sourceTree = "<group>";
+		};
+		8294C3AC2C6EB82600C9DFBE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8294C3B02C6EB86700C9DFBE /* PairTypeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8294C3AD2C6EB82800C9DFBE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8294C3AE2C6EB83900C9DFBE /* PairTypeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8294C3B22C6EC7F300C9DFBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8294C3B42C6EC80C00C9DFBE /* PairTypeFilterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8294CF762C34B579006E7EDA = {
 			isa = PBXGroup;
 			children = (
@@ -916,7 +985,7 @@
 			isa = PBXGroup;
 			children = (
 				82A608E42C3758800005EDC3 /* Timetable Day List MVVM */,
-				82E8A1092C47633A00CF2179 /* Timetable Owners List */,
+				82E8A1092C47633A00CF2179 /* Timetable Options List */,
 				82C9195F2C503E9800848231 /* Faculties List MVVM */,
 				82C919682C50408200848231 /* Faculty Groups List MVVM */,
 				82E8A0F72C4748CE00CF2179 /* Departments List MVVM */,
@@ -927,6 +996,8 @@
 				82FAEBC82C532A8800FB8B15 /* Week Days List */,
 				820A2A502C617659005FF3D9 /* Pair Info MVVM */,
 				82F315AF2C405C7900E826F9 /* Timetable Day Result List */,
+				8294C3A02C6EB15A00C9DFBE /* Pair Filter Type List MVVM */,
+				8294C3AB2C6EB81600C9DFBE /* Pair Type MVVM */,
 			);
 			path = "Timetable Modules";
 			sourceTree = "<group>";
@@ -965,20 +1036,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		82E8A1092C47633A00CF2179 /* Timetable Owners List */ = {
+		82E8A1092C47633A00CF2179 /* Timetable Options List */ = {
 			isa = PBXGroup;
 			children = (
 				82E8A10A2C47634800CF2179 /* Model */,
 				82E8A10B2C47634D00CF2179 /* View */,
 				82E8A1102C4772B300CF2179 /* Cell */,
 			);
-			path = "Timetable Owners List";
+			path = "Timetable Options List";
 			sourceTree = "<group>";
 		};
 		82E8A10A2C47634800CF2179 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				82E8A10E2C47637700CF2179 /* TimetableOwners.swift */,
+				82E8A10E2C47637700CF2179 /* TimetableOptions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -986,7 +1057,7 @@
 		82E8A10B2C47634D00CF2179 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				82E8A10C2C47635C00CF2179 /* TimetableOwnersListView.swift */,
+				82E8A10C2C47635C00CF2179 /* TimetableOptionsListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -994,7 +1065,7 @@
 		82E8A1102C4772B300CF2179 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				82E8A1112C4772C500CF2179 /* TimetableOwnerCell.swift */,
+				82E8A1112C4772C500CF2179 /* TimetableOptionCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1377,10 +1448,12 @@
 				8294CFAF2C360432006E7EDA /* SettingSectionModel.swift in Sources */,
 				8255E4442C385DB5009D24B1 /* ArticleCell.swift in Sources */,
 				82FAEBD72C53430D00FB8B15 /* TeacherCell.swift in Sources */,
+				8294C3A42C6EB39600C9DFBE /* PairFilterTypeListView.swift in Sources */,
 				82FAEBD42C53415F00FB8B15 /* FacultyGroupsListViewModel.swift in Sources */,
 				82160F582C38A32200017A1F /* Buildings.swift in Sources */,
 				82F2E7532C6577A5002E0A70 /* BuildingTypeViewModel.swift in Sources */,
 				8294CFB12C36045D006E7EDA /* SettingSections.swift in Sources */,
+				8294C3B52C6EC80C00C9DFBE /* PairTypeFilterModel.swift in Sources */,
 				82A608FA2C3759D30005EDC3 /* TimeTableService.swift in Sources */,
 				828C1A412C397BBB00151AFA /* NewsOptionsListViewModel.swift in Sources */,
 				82160F542C38A13600017A1F /* BuildingsMapView.swift in Sources */,
@@ -1389,20 +1462,22 @@
 				82F2E74A2C655AB3002E0A70 /* BuildingFilterTypeListView.swift in Sources */,
 				821BAAA12C4C9AE6002470F2 /* CurrentPageNewsListView.swift in Sources */,
 				8294CFA42C34B7BC006E7EDA /* AppSections.swift in Sources */,
-				82E8A10D2C47635C00CF2179 /* TimetableOwnersListView.swift in Sources */,
+				82E8A10D2C47635C00CF2179 /* TimetableOptionsListView.swift in Sources */,
 				82FAEBD12C53407B00FB8B15 /* GroupCell.swift in Sources */,
 				82FAEBC02C53233B00FB8B15 /* WeeksListView.swift in Sources */,
 				828DD7462C6A8113006F15DF /* ZoomImageView.swift in Sources */,
 				8294CF892C34B579006E7EDA /* ASPU_App_WatchApp.swift in Sources */,
-				82E8A10F2C47637700CF2179 /* TimetableOwners.swift in Sources */,
+				82E8A10F2C47637700CF2179 /* TimetableOptions.swift in Sources */,
 				82A609012C375A2B0005EDC3 /* TimetableDayListView.swift in Sources */,
 				820A2A562C61768C005FF3D9 /* PairInfoViewModel.swift in Sources */,
+				8294C3A62C6EB3A500C9DFBE /* PairFilterTypeListViewModel.swift in Sources */,
 				82A608F02C3759190005EDC3 /* Discipline.swift in Sources */,
 				8294CFC12C3606CF006E7EDA /* NewsCategories.swift in Sources */,
 				8294CFC32C3607B9006E7EDA /* SavedNewsCategoriesListView.swift in Sources */,
 				82FAEBCE2C53346F00FB8B15 /* WeekDaysListViewModel.swift in Sources */,
 				8294CFB62C3604DD006E7EDA /* AppSectionCell.swift in Sources */,
 				82F2E75C2C6789D7002E0A70 /* SavedNewsListView.swift in Sources */,
+				8294C3AF2C6EB83900C9DFBE /* PairTypeView.swift in Sources */,
 				82FAEBCB2C532AAE00FB8B15 /* WeekDaysListView.swift in Sources */,
 				82FAEBC42C53236A00FB8B15 /* WeekModel.swift in Sources */,
 				82F2E7482C6557F8002E0A70 /* BuildingType.swift in Sources */,
@@ -1433,11 +1508,12 @@
 				82C919672C503F7800848231 /* FacultiesListView.swift in Sources */,
 				82FAEBC72C5325C700FB8B15 /* WeekCell.swift in Sources */,
 				82E8A1052C474C7000CF2179 /* TeachersListViewModel.swift in Sources */,
-				82E8A1122C4772C500CF2179 /* TimetableOwnerCell.swift in Sources */,
+				82E8A1122C4772C500CF2179 /* TimetableOptionCell.swift in Sources */,
 				827674DA2C48ACE20083A849 /* AudiencesListView.swift in Sources */,
 				82A609032C375A4D0005EDC3 /* TimetableDayListViewModel.swift in Sources */,
 				8294CFD32C371A60006E7EDA /* NewsListView.swift in Sources */,
 				82E8A0FB2C47491100CF2179 /* DepartmentsListViewModel.swift in Sources */,
+				8294C3B12C6EB86700C9DFBE /* PairTypeViewModel.swift in Sources */,
 				827674D72C4863420083A849 /* CorpsListView.swift in Sources */,
 				82F2E74C2C655ACA002E0A70 /* BuildingFilterTypeListViewModel.swift in Sources */,
 				82F2E7502C657736002E0A70 /* BuildingTypeView.swift in Sources */,
@@ -1584,6 +1660,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ASPU-App-Watch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "АГПУ";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Необходимо для точного определения вашего местоположения и предоставления персонализированной информации о ближайших корпусах университета. Постоянный доступ к геопозиции требуется для надежного отображения текущего местоположения и временной информации о зданиях, даже когда приложение неактивно.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Для обеспечения постоянного отображения вашей геопозиции и уточнения расположения корпусов университета на карте даже в неактивном режиме приложения.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Для отображения вашей текущей геопозиции и указания расположения корпусов университета на карте.";
@@ -1593,7 +1670,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -1617,6 +1694,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ASPU-App-Watch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "АГПУ";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Необходимо для точного определения вашего местоположения и предоставления персонализированной информации о ближайших корпусах университета. Постоянный доступ к геопозиции требуется для надежного отображения текущего местоположения и временной информации о зданиях, даже когда приложение неактивно.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Для обеспечения постоянного отображения вашей геопозиции и уточнения расположения корпусов университета на карте даже в неактивном режиме приложения.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Для отображения вашей текущей геопозиции и указания расположения корпусов университета на карте.";
@@ -1626,7 +1704,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -1647,7 +1725,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1666,7 +1744,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

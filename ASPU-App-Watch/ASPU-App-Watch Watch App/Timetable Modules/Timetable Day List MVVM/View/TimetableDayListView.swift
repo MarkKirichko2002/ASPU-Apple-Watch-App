@@ -48,7 +48,7 @@ struct TimetableDayListView: View {
             PairInfoView(viewModel: PairInfoViewModel(pair: viewModel.currentDiscipline, date: viewModel.timetable.date ?? viewModel.getCurrentDate()))
         }
         .sheet(isPresented: $viewModel.isPresented) {
-            TimetableOwnersListView()
+            TimetableOptionsListView(date: viewModel.getCurrentDate(), disciplines: viewModel.timetable.disciplines)
         }
         .navigationTitle(viewModel.getCurrentDate())
     }
