@@ -31,7 +31,7 @@ final class BuildingsMapViewModel: ObservableObject {
                 self.locationManager.registerLocationHandler { location in
                     self.camera = .region(MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 200, longitudinalMeters: 200))
                     if !self.buildings.contains(where: { $0.name == "Вы" }) {
-                        self.buildings.append(BuildingModel(id: UUID(), name: "Вы", image: [], type: .all, audiences: nil, pin: location.coordinate))
+                        self.buildings.append(BuildingModel(id: UUID(), name: "Вы", address: "", image: [], type: .all, audiences: nil, pin: location.coordinate))
                     }
                 }
             }

@@ -19,10 +19,8 @@ struct BuildingDetailView: View {
     @State var currentImage = ""
     
     var body: some View {
-        
         Form() {
-            
-            Section("Изображение") {
+            Section("Изображения") {
                 ScrollView(.horizontal, showsIndicators: true) {
                     LazyHStack {
                         if !building.image.isEmpty {
@@ -51,6 +49,16 @@ struct BuildingDetailView: View {
                     .fontWeight(.bold)
             }
             
+            Section("Адрес") {
+                Text(building.address)
+                    .fontWeight(.bold)
+                    .onTapGesture {
+                        if let url = URL(string: "http://maps.apple.com/?q=\(building.pin.latitude),\(building.pin.longitude)") {
+                            WKExtension.shared().openSystemURL(url)
+                        }
+                    }
+            }
+            
             Section("Аудитории") {
                 if building.audiences?.count ?? 0 > 0 {
                     List(building.audiences ?? [], id: \.self) { audience in
@@ -59,7 +67,7 @@ struct BuildingDetailView: View {
                             .onTapGesture {
                                 currentAudience = audience
                                 isSelected.toggle()
-                          }
+                            }
                     }
                 } else {
                     Text("Нет аудиторий")
@@ -89,7 +97,7 @@ struct BuildingDetailView: View {
             TimetableDayResultListView(id: currentAudience, owner: "CLASSROOM")
         })
         .sheet(isPresented: $isImagePresented, content: {
-           ZoomImageView(url: currentImage)
+            ZoomImageView(url: currentImage)
         })
     }
 }

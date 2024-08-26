@@ -10,6 +10,7 @@ import MapKit
 struct BuildingModel: Identifiable {
     let id: UUID
     let name: String
+    let address: String
     let image: [String]
     let type: BuildingType
     let audiences: [String]?
@@ -22,6 +23,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Главный корпус",
+            address: "ул. Розы Люксембург, 159, Армавир",
             image: ["главный корпус"],
             type: .building,
             audiences: [
@@ -58,6 +60,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Корпус и Общежитие №1",
+            address: "улица Карла Маркса, 49, Армавир",
             image: ["общежитие 1"],
             type: .buildingAndHostel,
             audiences: [
@@ -97,6 +100,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Корпус №2",
+            address: "улица Кирова, 48, Армавир",
             image: [],
             type: .building,
             audiences: [
@@ -111,6 +115,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Корпус №3 (СПФ)",
+            address: "улица Ленина, 79, Армавир",
             image: ["СПФ"],
             type: .building,
             audiences: [
@@ -131,6 +136,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Корпус №4 (ФТЭиД)",
+            address: "Комсомольская улица, 93/1, Армавир",
             image: ["ФТЭиД"],
             type: .building,
             audiences: [
@@ -156,6 +162,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Корпус №5 (ЕБД)",
+            address: "улица Ефремова, 35, Армавир",
             image: [],
             type: .building,
             audiences: [
@@ -171,6 +178,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Корпус №6 (ФОК)",
+            address: "улица Полины Осипенко, 83/1, Армавир",
             image: ["ФОК"],
             type: .building,
             audiences: [
@@ -185,6 +193,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "ИСТФАК",
+            address: "улица Володарского, 120Б, Армавир",
             image: ["истфак"],
             type: .building,
             audiences: [
@@ -204,6 +213,7 @@ struct Buildings {
         BuildingModel(
             id: UUID(),
             name: "Общежитие №2",
+            address: "улица Чернышевского, 3, Армавир",
             image: ["общежитие 2"],
             type: .hostel,
             audiences: nil,

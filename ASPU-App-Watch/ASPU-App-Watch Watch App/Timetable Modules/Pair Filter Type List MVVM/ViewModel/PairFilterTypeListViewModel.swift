@@ -46,17 +46,12 @@ final class PairFilterTypeListViewModel: ObservableObject {
             filteredData = disciplines
         }
         
-        if type != .all {
+        for pair in filteredData {
             
-            for pair in filteredData {
-                
-                let times = pair.time.components(separatedBy: "-")
-                let startTime = times[0]
-                
-                uniqueTimes.insert(startTime)
-            }
-        } else {
-            return disciplines.count
+            let times = pair.time.components(separatedBy: "-")
+            let startTime = times[0]
+            
+            uniqueTimes.insert(startTime)
         }
         
         return uniqueTimes.count
