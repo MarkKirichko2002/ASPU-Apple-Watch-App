@@ -37,8 +37,8 @@ struct ArticleDetailView: View {
                                     .onTapGesture {
                                         viewModel.currentImageURL = image
                                         viewModel.isSelected.toggle()
-                                    }
-                            }.listStyle(.carousel)
+                                  }
+                            }
                         } else {
                             Text("Нет изображений")
                                 .fontWeight(.bold)

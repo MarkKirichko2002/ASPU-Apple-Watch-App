@@ -28,7 +28,7 @@ struct SavedNewsListView: View {
                                     Image(systemName: "trash")
                               }
                          })
-                    }
+                    }.modifier(CustomListStyle())
                 } else {
                     Text("Нет новостей")
                         .fontWeight(.bold)

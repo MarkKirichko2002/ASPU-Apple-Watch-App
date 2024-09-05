@@ -15,6 +15,11 @@ final class FacultyGroupsListViewModel: ObservableObject {
     
     // MARK: - сервисы
     private let settingsManager = SettingsManager()
+    private let dateManager = DateManager()
+    
+    func getCurrentDate()-> String {
+        return dateManager.getCurrentDate()
+    }
     
     func isSavedGroup(group: String)-> Bool {
         let savedGroup = settingsManager.getSavedID()

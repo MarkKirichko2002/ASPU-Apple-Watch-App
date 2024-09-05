@@ -29,7 +29,7 @@ struct TimetableDayResultListView: View {
                             viewModel.currentDiscipline = pair
                             viewModel.isSelected.toggle()
                         }
-                }.listStyle(.carousel)
+                }.modifier(CustomListStyle())
             }
         }
         .toolbar {

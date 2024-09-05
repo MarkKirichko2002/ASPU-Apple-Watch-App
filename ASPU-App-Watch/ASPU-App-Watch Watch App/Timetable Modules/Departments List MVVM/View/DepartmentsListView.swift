@@ -19,9 +19,8 @@ struct DepartmentsListView: View {
                     self.viewModel.isPresented.toggle()
                     self.viewModel.currentId = department.id
                 }
-        }
+        }.modifier(CustomListStyle())
         .navigationTitle("Кафедры")
-        .listStyle(.carousel)
         .sheet(isPresented: $viewModel.isPresented) {
             TeachersListView(id: viewModel.currentId)
         }

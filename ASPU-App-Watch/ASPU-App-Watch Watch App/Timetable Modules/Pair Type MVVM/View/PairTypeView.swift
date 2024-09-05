@@ -26,7 +26,7 @@ struct PairTypeView: View {
                             viewModel.currentDiscipline = pair
                             viewModel.isSelected.toggle()
                         }
-                }.listStyle(.carousel)
+                }
             }
         }
         .navigationTitle("\(type.title): \(viewModel.disciplinesCount())")

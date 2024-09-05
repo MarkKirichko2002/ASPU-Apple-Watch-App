@@ -24,9 +24,9 @@ struct FacultiesListView: View {
                             viewModel.currentFaculty = faculty
                             viewModel.isSelected.toggle()
                      }
-                }.listStyle(.carousel)
+                }
             }
-        }
+        }.modifier(CustomListStyle())
         .navigationTitle("Факультеты")
         .onChange(of: viewModel.isSelected) {
             viewModel.isPresented.toggle()

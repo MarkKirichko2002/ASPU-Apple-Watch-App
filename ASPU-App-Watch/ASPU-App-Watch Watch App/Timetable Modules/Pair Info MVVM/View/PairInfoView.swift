@@ -14,7 +14,9 @@ struct PairInfoView: View {
     var body: some View {
         List(viewModel.pairInfo, id: \.self) { item in
             Text(item)
-        }.navigationTitle("Информация")
+                .fontWeight(.bold)
+        }
+        .navigationTitle("Информация")
         .onAppear {
             viewModel.setUpData()
         }.onDisappear {

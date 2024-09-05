@@ -24,7 +24,7 @@ struct CurrentPageNewsListView: View {
             } else {
                 List(viewModel.articles) { article in
                     ArticleCell(article: article, abbreviation: viewModel.abbreviation, isSavedArticle: false)
-                }.listStyle(.carousel)
+                }.modifier(CustomListStyle())
             }
         }
         .navigationTitle("Страница: \(page)")

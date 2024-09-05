@@ -15,6 +15,11 @@ final class AudiencesListViewModel: ObservableObject {
     
     // MARK: - сервисы
     private let settingsManager = SettingsManager()
+    private let dateManager = DateManager()
+    
+    func getCurrentDate()-> String {
+        return dateManager.getCurrentDate()
+    }
     
     func isSavedAudience(audience: String)-> Bool {
         let savedAudience = settingsManager.getSavedID()

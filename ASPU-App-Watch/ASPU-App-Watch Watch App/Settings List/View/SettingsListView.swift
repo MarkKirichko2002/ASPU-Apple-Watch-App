@@ -29,6 +29,7 @@ struct SettingsListView: View {
             
             Section("Другое") {
                 ShowSplashOptionCell()
+                CellStyleOptionCell()
             }
         }
         .navigationTitle("Настройки")

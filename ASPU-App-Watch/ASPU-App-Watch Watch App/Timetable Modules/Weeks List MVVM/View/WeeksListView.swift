@@ -23,7 +23,7 @@ struct WeeksListView: View {
                             viewModel.currentWeek = week
                             viewModel.isSelected.toggle()
                      }
-                }.listStyle(.carousel)
+                }.modifier(CustomListStyle())
             } else {
                 Text("Нет недель")
                     .fontWeight(.bold)

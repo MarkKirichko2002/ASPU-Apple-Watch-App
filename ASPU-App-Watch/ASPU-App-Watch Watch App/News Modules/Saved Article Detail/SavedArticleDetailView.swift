@@ -35,7 +35,7 @@ struct SavedArticleDetailView: View {
                                         currentImageURL = image
                                         isSelected.toggle()
                                     }
-                            }.listStyle(.carousel)
+                            }
                         } else {
                             Text("Нет изображений")
                                 .fontWeight(.bold)

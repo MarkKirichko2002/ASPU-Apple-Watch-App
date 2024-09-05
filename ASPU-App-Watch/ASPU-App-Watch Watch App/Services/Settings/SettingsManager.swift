@@ -25,4 +25,8 @@ final class SettingsManager {
     func getSavedOwner()-> String {
         return UserDefaults.standard.object(forKey: "owner") as? String ?? "GROUP"
     }
+    
+    func getSavedListStyle()-> CellStyle {
+        return UserDefaults.loadData(type: CellStyle.self, key: "list style") ?? CellStyle.carousel
+    }
 }

@@ -15,6 +15,7 @@ final class TeachersListViewModel: ObservableObject {
     
     // MARK: - сервисы
     private let settingsManager = SettingsManager()
+    private let dateManager = DateManager()
     
     func getData(id: Int) {
         teachers = Departments.departments[id - 1].teachers
@@ -22,6 +23,10 @@ final class TeachersListViewModel: ObservableObject {
     
     func configure(teacher: String)-> String {
         return teacher.abbreviation()
+    }
+    
+    func getCurrentDate()-> String {
+        return dateManager.getCurrentDate()
     }
     
     func isSavedTeacher(teacher: String)-> Bool {

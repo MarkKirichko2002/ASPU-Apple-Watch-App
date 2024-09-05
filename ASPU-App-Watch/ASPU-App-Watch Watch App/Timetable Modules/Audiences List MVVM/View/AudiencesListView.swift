@@ -33,7 +33,7 @@ struct AudiencesListView: View {
             viewModel.isPresented.toggle()
         }
         .sheet(isPresented: $viewModel.isPresented, content: {
-            TimetableDayResultListView(id: viewModel.currentAudience, owner: "CLASSROOM")
+            TimetableDayResultListView(id: viewModel.currentAudience, date: viewModel.getCurrentDate(), owner: "CLASSROOM")
         })
     }
 }

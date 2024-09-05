@@ -25,7 +25,7 @@ struct TeachersListView: View {
             viewModel.getData(id: id)
         }
         .sheet(isPresented: $viewModel.isPresented, content: {
-            TimetableDayResultListView(id: viewModel.currentTeacher, owner: "TEACHER")
+            TimetableDayResultListView(id: viewModel.currentTeacher, date: viewModel.getCurrentDate(), owner: "TEACHER")
         })
     }
 }

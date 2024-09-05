@@ -21,8 +21,7 @@ struct NewsListView: View {
             } else {
                 List(viewModel.newsResponse.articles ?? []) { article in
                     ArticleCell(article: article, abbreviation: viewModel.currentCategory.abbreviation, isSavedArticle: false)
-                }
-                .listStyle(.carousel)
+                }.modifier(CustomListStyle())
             }
         }
         .toolbar {

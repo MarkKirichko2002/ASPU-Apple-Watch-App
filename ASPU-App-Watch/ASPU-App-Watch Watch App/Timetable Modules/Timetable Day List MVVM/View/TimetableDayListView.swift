@@ -26,7 +26,7 @@ struct TimetableDayListView: View {
                             viewModel.currentDiscipline = pair
                             viewModel.isSelected.toggle()
                         }
-                }.listStyle(.carousel)
+                }.modifier(CustomListStyle())
             }
         }
         .toolbar {

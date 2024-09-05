@@ -18,6 +18,8 @@ struct BuildingDetailView: View {
     @State var isImageSelected = false
     @State var currentImage = ""
     
+    let dateManager = DateManager()
+    
     var body: some View {
         Form() {
             Section("Изображения") {
@@ -34,7 +36,7 @@ struct BuildingDetailView: View {
                                         currentImage = image
                                         isImageSelected.toggle()
                                     }
-                            }.listStyle(.carousel)
+                            }
                         } else {
                             Text("Нет изображений")
                                 .fontWeight(.bold)
@@ -67,7 +69,7 @@ struct BuildingDetailView: View {
                             .onTapGesture {
                                 currentAudience = audience
                                 isSelected.toggle()
-                            }
+                         }
                     }
                 } else {
                     Text("Нет аудиторий")
@@ -94,7 +96,7 @@ struct BuildingDetailView: View {
             self.isImagePresented.toggle()
         }
         .sheet(isPresented: $isPresented, content: {
-            TimetableDayResultListView(id: currentAudience, owner: "CLASSROOM")
+            TimetableDayResultListView(id: currentAudience, date: dateManager.getCurrentDate(), owner: "CLASSROOM")
         })
         .sheet(isPresented: $isImagePresented, content: {
             ZoomImageView(url: currentImage)

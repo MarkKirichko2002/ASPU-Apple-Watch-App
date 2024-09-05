@@ -23,7 +23,7 @@ struct CurrentCategoryNewsListView: View {
             } else {
                 List(viewModel.newsResponse.articles ?? []) { article in
                     ArticleCell(article: article, abbreviation: category.abbreviation, isSavedArticle: false)
-                }.listStyle(.carousel)
+                }.modifier(CustomListStyle())
             }
         }
         .navigationTitle(category.name)

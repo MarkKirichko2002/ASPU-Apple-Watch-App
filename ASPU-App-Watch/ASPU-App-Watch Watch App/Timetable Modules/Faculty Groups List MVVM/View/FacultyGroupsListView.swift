@@ -25,7 +25,7 @@ struct FacultyGroupsListView: View {
             viewModel.isPresented.toggle()
         }
         .sheet(isPresented: $viewModel.isPresented, content: {
-            TimetableDayResultListView(id: viewModel.currentGroup, owner: "GROUP")
+            TimetableDayResultListView(id: viewModel.currentGroup, date: viewModel.getCurrentDate(), owner: "GROUP")
         })
     }
 }
