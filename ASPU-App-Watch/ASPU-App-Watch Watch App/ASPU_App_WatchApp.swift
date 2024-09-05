@@ -12,7 +12,7 @@ import SwiftData
 struct ASPU_App_Watch_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            ContentView()
         }.modelContainer(for: ArticleModel.self)
     }
 }

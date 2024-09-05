@@ -12,7 +12,6 @@ struct SettingsListView: View {
     var body: some View {
         
         Form() {
-            
             Section("Основое") {
                 List(SettingSections.sections) { section in
                     NavigationLink {
@@ -28,6 +27,9 @@ struct SettingsListView: View {
                 }
             }
             
+            Section("Другое") {
+                ShowSplashOptionCell()
+            }
         }
         .navigationTitle("Настройки")
     }
