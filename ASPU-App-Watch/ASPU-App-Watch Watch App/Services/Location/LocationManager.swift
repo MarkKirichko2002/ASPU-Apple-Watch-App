@@ -10,6 +10,7 @@ import CoreLocation
 final class LocationManager: NSObject {
     
     var manager = CLLocationManager()
+    var isUpdates = false
     
     var locationHandler: ((CLLocation)->Void)?
     
@@ -42,7 +43,11 @@ extension LocationManager: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            manager.stopUpdatingLocation()
+            if isUpdates {
+                manager.startUpdatingLocation()
+            } else {
+                manager.stopUpdatingLocation()
+            }
             locationHandler?(location)
         }
     }

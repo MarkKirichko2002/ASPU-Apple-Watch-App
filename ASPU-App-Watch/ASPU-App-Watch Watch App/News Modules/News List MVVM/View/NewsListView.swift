@@ -11,9 +11,9 @@ struct NewsListView: View {
     
     @ObservedObject var viewModel = NewsListViewModel()
     @State var isDisappear = false
+    @State var button = false
     
     var body: some View {
-        
         VStack {
             if viewModel.isLoading {
                 Text("Загрузка...")

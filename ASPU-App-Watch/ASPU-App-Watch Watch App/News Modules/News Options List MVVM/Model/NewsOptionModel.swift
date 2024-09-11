@@ -17,6 +17,6 @@ struct NewsOptions {
     static let options = [
         NewsOptionModel(id: 1, name: "Категория: ..."),
         NewsOptionModel(id: 2, name: "Страниц: ..."),
-        NewsOptionModel(id: 3, name: "Сохраненное")
+        NewsOptionModel(id: 3, name: "Избранное")
     ]
 }

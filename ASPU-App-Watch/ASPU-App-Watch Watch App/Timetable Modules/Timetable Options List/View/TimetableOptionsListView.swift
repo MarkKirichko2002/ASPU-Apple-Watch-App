@@ -12,6 +12,9 @@ struct TimetableOptionsListView: View {
     var date: String
     var disciplines: [Discipline]
     
+    @Binding var isPresented: Bool
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
             List(TimetableOptions.options) { option in
@@ -35,10 +38,19 @@ struct TimetableOptionsListView: View {
                 }
             }
             .navigationTitle("Расписание")
+            .onDisappear {
+                check()
+            }
+        }
+    }
+    
+    func check() {
+        if !presentationMode.wrappedValue.isPresented {
+            isPresented.toggle()
         }
     }
 }
 
-#Preview {
-    TimetableOptionsListView(date: "", disciplines: [])
-}
+//#Preview {
+//    TimetableOptionsListView(date: "", disciplines: [])
+//}

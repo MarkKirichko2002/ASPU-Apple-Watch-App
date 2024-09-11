@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShowSplashOptionCell: View {
     
-    @State var isSplashOn = UserDefaults.standard.object(forKey: "isSplashOn") as? Bool ?? true
+    @State var isSplashOn = UserDefaults.standard.object(forKey: "isSplashOn") as? Bool ?? false
     
     var body: some View {
         HStack {

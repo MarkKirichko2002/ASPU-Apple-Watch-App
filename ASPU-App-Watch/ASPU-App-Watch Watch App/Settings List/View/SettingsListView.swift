@@ -10,7 +10,6 @@ import SwiftUI
 struct SettingsListView: View {
     
     var body: some View {
-        
         Form() {
             Section("Основое") {
                 List(SettingSections.sections) { section in

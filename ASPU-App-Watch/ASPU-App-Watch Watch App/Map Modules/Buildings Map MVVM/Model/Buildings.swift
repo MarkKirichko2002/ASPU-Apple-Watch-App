@@ -13,7 +13,7 @@ struct BuildingModel: Identifiable {
     let address: String
     let image: [String]
     let type: BuildingType
-    let audiences: [String]?
+    let audiences: [String]
     let pin: CLLocationCoordinate2D
 }
 
@@ -185,7 +185,7 @@ struct Buildings {
                 "85",
                 "85а",
                 "86",
-                "86a",
+                "86а",
                 "Спортзал ФОК"
             ],
             pin: CLLocationCoordinate2D(latitude: 45.006374, longitude: 41.128629)
@@ -216,7 +216,7 @@ struct Buildings {
             address: "улица Чернышевского, 3, Армавир",
             image: ["общежитие 2"],
             type: .hostel,
-            audiences: nil,
+            audiences: [],
             pin: CLLocationCoordinate2D(latitude: 44.972907, longitude: 41.149784)
         )
     ]

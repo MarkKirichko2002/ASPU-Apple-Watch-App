@@ -17,10 +17,14 @@ struct PairInfoView: View {
                 .fontWeight(.bold)
         }
         .navigationTitle("Информация")
+        .alert(isPresented: $viewModel.isAlert) {
+            Alert(title: Text("Геопозиция выключена"))
+        }
         .onAppear {
             viewModel.setUpData()
         }.onDisappear {
             viewModel.stopTimer()
+            viewModel.stopUpdatingLocation()
         }
     }
 }

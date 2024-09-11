@@ -16,14 +16,23 @@ final class TimetableDayListViewModel: ObservableObject {
     @Published var isPresentedInfo = false
     @Published var isSelected = false
     
+    var currentID: String = ""
+    var currentOwner: String = ""
+    
     // MARK: - сервисы
     private let service = TimeTableService()
     private let settingsManager = SettingsManager()
     private let dateManager = DateManager()
     
+    init() {
+        getTimetable()
+    }
+    
     func getTimetable() {
         isLoading = true
-        service.getTimeTableDay(id: settingsManager.getSavedID(), date: dateManager.getCurrentDate(), owner: settingsManager.getSavedOwner()) { result in
+        currentID = settingsManager.getSavedID()
+        currentOwner = settingsManager.getSavedOwner()
+        service.getTimeTableDay(id: currentID, date: dateManager.getCurrentDate(), owner: currentOwner) { result in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
@@ -41,5 +50,15 @@ final class TimetableDayListViewModel: ObservableObject {
     
     func getCurrentDate()-> String {
         return dateManager.getCurrentDate()
+    }
+    
+    func checkTimetableChanges() {
+        let id = settingsManager.getSavedID()
+        if currentID != id {
+            print("есть изменения")
+            getTimetable()
+        } else {
+            print("нет изменений")
+        }
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var isSplashOn = UserDefaults.standard.object(forKey: "isSplashOn") as? Bool ?? true
+    var isSplashOn = UserDefaults.standard.object(forKey: "isSplashOn") as? Bool ?? false
     
     var body: some View {
         VStack {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		820A2A542C61767A005FF3D9 /* PairInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A2A532C61767A005FF3D9 /* PairInfoView.swift */; };
 		820A2A562C61768C005FF3D9 /* PairInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A2A552C61768C005FF3D9 /* PairInfoViewModel.swift */; };
+		820BFB262C92362A006CE801 /* AppSectionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BFB252C92362A006CE801 /* AppSectionsListViewModel.swift */; };
 		8212BDCC2C82E70300CBD5A3 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8212BDCB2C82E70300CBD5A3 /* SplashView.swift */; };
 		82160F542C38A13600017A1F /* BuildingsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F532C38A13600017A1F /* BuildingsMapView.swift */; };
 		82160F582C38A32200017A1F /* Buildings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F572C38A32200017A1F /* Buildings.swift */; };
@@ -73,6 +74,7 @@
 		82A609012C375A2B0005EDC3 /* TimetableDayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A609002C375A2B0005EDC3 /* TimetableDayListView.swift */; };
 		82A609032C375A4D0005EDC3 /* TimetableDayListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A609022C375A4D0005EDC3 /* TimetableDayListViewModel.swift */; };
 		82A609062C375C8B0005EDC3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 82A609052C375C8B0005EDC3 /* Alamofire */; };
+		82A7ECA72C90B93D00EBFFBE /* TimetableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A7ECA62C90B93D00EBFFBE /* TimetableItem.swift */; };
 		82B40BDF2C88E075003FCF07 /* ShowSplashOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B40BDE2C88E075003FCF07 /* ShowSplashOptionCell.swift */; };
 		82B40BE12C89E001003FCF07 /* CellStyleOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B40BE02C89E001003FCF07 /* CellStyleOptionCell.swift */; };
 		82B40BE32C89E5A7003FCF07 /* UserDefaults + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B40BE22C89E5A7003FCF07 /* UserDefaults + Extensions.swift */; };
@@ -140,6 +142,7 @@
 /* Begin PBXFileReference section */
 		820A2A532C61767A005FF3D9 /* PairInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInfoView.swift; sourceTree = "<group>"; };
 		820A2A552C61768C005FF3D9 /* PairInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInfoViewModel.swift; sourceTree = "<group>"; };
+		820BFB252C92362A006CE801 /* AppSectionsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSectionsListViewModel.swift; sourceTree = "<group>"; };
 		8212BDCB2C82E70300CBD5A3 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		82160F532C38A13600017A1F /* BuildingsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsMapView.swift; sourceTree = "<group>"; };
 		82160F572C38A32200017A1F /* Buildings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildings.swift; sourceTree = "<group>"; };
@@ -204,6 +207,7 @@
 		82A608F92C3759D30005EDC3 /* TimeTableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableService.swift; sourceTree = "<group>"; };
 		82A609002C375A2B0005EDC3 /* TimetableDayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayListView.swift; sourceTree = "<group>"; };
 		82A609022C375A4D0005EDC3 /* TimetableDayListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayListViewModel.swift; sourceTree = "<group>"; };
+		82A7ECA62C90B93D00EBFFBE /* TimetableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableItem.swift; sourceTree = "<group>"; };
 		82B40BDE2C88E075003FCF07 /* ShowSplashOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSplashOptionCell.swift; sourceTree = "<group>"; };
 		82B40BE02C89E001003FCF07 /* CellStyleOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellStyleOptionCell.swift; sourceTree = "<group>"; };
 		82B40BE22C89E5A7003FCF07 /* UserDefaults + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Extensions.swift"; sourceTree = "<group>"; };
@@ -280,6 +284,14 @@
 				820A2A532C61767A005FF3D9 /* PairInfoView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		820BFB242C923619006CE801 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				820BFB252C92362A006CE801 /* AppSectionsListViewModel.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		8212BDCA2C82E6F100CBD5A3 /* Splash View */ = {
@@ -523,6 +535,7 @@
 		828C1A432C39C1FD00151AFA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				82A7ECA52C90B92E00EBFFBE /* Timetable */,
 				828C1A442C39C20400151AFA /* News */,
 			);
 			path = Models;
@@ -679,7 +692,7 @@
 				828C1A432C39C1FD00151AFA /* Models */,
 				8255E4462C3861B9009D24B1 /* Views */,
 				8294CFC92C371771006E7EDA /* Services */,
-				8294CF9E2C34B747006E7EDA /* App Sections List */,
+				8294CF9E2C34B747006E7EDA /* App Sections List MVVM */,
 				82F315AD2C405BDE00E826F9 /* News Modules */,
 				82E8A0FE2C474BFE00CF2179 /* Timetable Modules */,
 				82F2E7422C6557A2002E0A70 /* Map Modules */,
@@ -701,14 +714,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8294CF9E2C34B747006E7EDA /* App Sections List */ = {
+		8294CF9E2C34B747006E7EDA /* App Sections List MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				820BFB242C923619006CE801 /* ViewModel */,
 				8294CFA22C34B7B1006E7EDA /* Model */,
 				8294CF9F2C34B75A006E7EDA /* View */,
 				8294CFB42C3604CD006E7EDA /* Cell */,
 			);
-			path = "App Sections List";
+			path = "App Sections List MVVM";
 			sourceTree = "<group>";
 		};
 		8294CF9F2C34B75A006E7EDA /* View */ = {
@@ -932,6 +946,14 @@
 				82A608F72C3759A00005EDC3 /* ASPUNewsService.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		82A7ECA52C90B92E00EBFFBE /* Timetable */ = {
+			isa = PBXGroup;
+			children = (
+				82A7ECA62C90B93D00EBFFBE /* TimetableItem.swift */,
+			);
+			path = Timetable;
 			sourceTree = "<group>";
 		};
 		82C9195F2C503E9800848231 /* Faculties List MVVM */ = {
@@ -1449,6 +1471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82A7ECA72C90B93D00EBFFBE /* TimetableItem.swift in Sources */,
 				82160F5B2C38D61C00017A1F /* BuildingDetailView.swift in Sources */,
 				828C1A482C39C24000151AFA /* NewsCategoriesListView.swift in Sources */,
 				821BAA9F2C4C9A2C002470F2 /* CurrentPageNewsListViewModel.swift in Sources */,
@@ -1533,6 +1556,7 @@
 				8294CFC82C360957006E7EDA /* SavedNewsCategoriesListViewModel.swift in Sources */,
 				8294CFBF2C360696006E7EDA /* NewsCategoryModel.swift in Sources */,
 				82C919672C503F7800848231 /* FacultiesListView.swift in Sources */,
+				820BFB262C92362A006CE801 /* AppSectionsListViewModel.swift in Sources */,
 				82FAEBC72C5325C700FB8B15 /* WeekCell.swift in Sources */,
 				82E8A1052C474C7000CF2179 /* TeachersListViewModel.swift in Sources */,
 				82E8A1122C4772C500CF2179 /* TimetableOptionCell.swift in Sources */,
@@ -1698,7 +1722,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.9;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -1732,7 +1756,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.9;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -1753,7 +1777,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.0.9;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1772,7 +1796,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.0.9;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

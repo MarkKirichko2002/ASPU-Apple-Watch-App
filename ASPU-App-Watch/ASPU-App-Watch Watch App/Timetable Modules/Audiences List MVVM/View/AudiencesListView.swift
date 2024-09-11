@@ -15,8 +15,8 @@ struct AudiencesListView: View {
     var body: some View {
         
         VStack {
-            if building.audiences?.count ?? 0 > 0 {
-                List(building.audiences ?? [], id: \.self) { audience in
+            if building.audiences.count > 0 {
+                List(building.audiences, id: \.self) { audience in
                     AudienceCell(audience: audience, isSelected: viewModel.isSavedAudience(audience: audience))
                         .onTapGesture {
                             viewModel.currentAudience = audience

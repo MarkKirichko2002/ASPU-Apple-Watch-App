@@ -19,14 +19,26 @@ final class SettingsManager {
     }
     
     func getSavedID()-> String {
-        return UserDefaults.standard.object(forKey: "id") as? String ?? "ВМ-ИВТ-2-1"
+        return UserDefaults.standard.object(forKey: "id") as? String ?? "ВМ-ИВТ-3-1"
     }
     
     func getSavedOwner()-> String {
         return UserDefaults.standard.object(forKey: "owner") as? String ?? "GROUP"
     }
     
+    func getSplashOnOption()-> Bool {
+        return UserDefaults.standard.object(forKey: "isSplashOn") as? Bool ?? false
+    }
+    
     func getSavedListStyle()-> CellStyle {
         return UserDefaults.loadData(type: CellStyle.self, key: "list style") ?? CellStyle.carousel
+    }
+    
+    func resetAll() {
+        UserDefaults.standard.setValue("-", forKey: "news category")
+        UserDefaults.standard.setValue("ВМ-ИВТ-3-1", forKey: "id")
+        UserDefaults.standard.setValue("GROUP", forKey: "owner")
+        UserDefaults.standard.setValue(false, forKey: "isSplashOn")
+        UserDefaults.saveData(object: CellStyle.carousel, key: "list style") {}
     }
 }

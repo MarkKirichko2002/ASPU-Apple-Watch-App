@@ -44,6 +44,9 @@ struct TimetableDayResultListView: View {
         .onAppear {
             viewModel.getTimetable(id: id, date: date, owner: owner)
         }
+        .onDisappear {
+            viewModel.sendNotification(id: id, owner: owner)
+        }
         .onChange(of: viewModel.isSelected) {
             viewModel.isPresentedInfo.toggle()
         }
@@ -60,5 +63,5 @@ struct TimetableDayResultListView: View {
 }
 
 #Preview {
-    TimetableDayResultListView(id: "ВМ-ИВТ-2-1", owner: "GROUP")
+    TimetableDayResultListView(id: "ВМ-ИВТ-3-1", owner: "GROUP")
 }

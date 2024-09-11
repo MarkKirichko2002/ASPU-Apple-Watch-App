@@ -44,6 +44,11 @@ final class TimetableDayResultListViewModel: ObservableObject {
         UserDefaults.standard.setValue(owner, forKey: "owner")
     }
     
+    func sendNotification(id: String, owner: String) {
+        let item = TimetableItem(id: id, owner: owner)
+        NotificationCenter.default.post(name: Notification.Name("timetable item"), object: item)
+    }
+    
     func getCurrentDate()-> String {
         return dateManager.getCurrentDate()
     }

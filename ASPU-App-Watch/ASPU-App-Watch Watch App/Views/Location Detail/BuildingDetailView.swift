@@ -62,8 +62,8 @@ struct BuildingDetailView: View {
             }
             
             Section("Аудитории") {
-                if building.audiences?.count ?? 0 > 0 {
-                    List(building.audiences ?? [], id: \.self) { audience in
+                if building.audiences.count > 0 {
+                    List(building.audiences, id: \.self) { audience in
                         Text(audience)
                             .fontWeight(.bold)
                             .onTapGesture {
