@@ -32,7 +32,8 @@ struct AppSectionsListView: View {
                         AppSectionCell(section: section)
                             .swipeActions {
                                 Button {
-                                    viewModel.checkWhatsNew()
+                                    viewModel.currentId = 1
+                                    viewModel.toggleAlert()
                                 } label: {
                                     Image("info")
                                 }
@@ -41,7 +42,8 @@ struct AppSectionsListView: View {
                         AppSectionCell(section: section)
                             .swipeActions {
                                 Button {
-                                    viewModel.getTimetable()
+                                    viewModel.currentId = 2
+                                    viewModel.toggleAlert()
                                 } label: {
                                     Image("info")
                                 }
@@ -52,8 +54,8 @@ struct AppSectionsListView: View {
                 }
             }
             .navigationTitle("Разделы")
-            .alert(isPresented: $viewModel.alert) {
-                Alert(title: Text(viewModel.info[0]))
+            .sheet(isPresented: $viewModel.alert) {
+                InfoView(id: viewModel.currentId)
             }
         }
     }

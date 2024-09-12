@@ -10,6 +10,8 @@
 		820A2A542C61767A005FF3D9 /* PairInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A2A532C61767A005FF3D9 /* PairInfoView.swift */; };
 		820A2A562C61768C005FF3D9 /* PairInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A2A552C61768C005FF3D9 /* PairInfoViewModel.swift */; };
 		820BFB262C92362A006CE801 /* AppSectionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BFB252C92362A006CE801 /* AppSectionsListViewModel.swift */; };
+		820BFB2B2C931168006CE801 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BFB2A2C931168006CE801 /* InfoView.swift */; };
+		820BFB2D2C931175006CE801 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BFB2C2C931175006CE801 /* InfoViewModel.swift */; };
 		8212BDCC2C82E70300CBD5A3 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8212BDCB2C82E70300CBD5A3 /* SplashView.swift */; };
 		82160F542C38A13600017A1F /* BuildingsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F532C38A13600017A1F /* BuildingsMapView.swift */; };
 		82160F582C38A32200017A1F /* Buildings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F572C38A32200017A1F /* Buildings.swift */; };
@@ -143,6 +145,8 @@
 		820A2A532C61767A005FF3D9 /* PairInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInfoView.swift; sourceTree = "<group>"; };
 		820A2A552C61768C005FF3D9 /* PairInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInfoViewModel.swift; sourceTree = "<group>"; };
 		820BFB252C92362A006CE801 /* AppSectionsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSectionsListViewModel.swift; sourceTree = "<group>"; };
+		820BFB2A2C931168006CE801 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		820BFB2C2C931175006CE801 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 		8212BDCB2C82E70300CBD5A3 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		82160F532C38A13600017A1F /* BuildingsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsMapView.swift; sourceTree = "<group>"; };
 		82160F572C38A32200017A1F /* Buildings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildings.swift; sourceTree = "<group>"; };
@@ -292,6 +296,31 @@
 				820BFB252C92362A006CE801 /* AppSectionsListViewModel.swift */,
 			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		820BFB272C931135006CE801 /* Info MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				820BFB292C931154006CE801 /* View */,
+				820BFB282C93114B006CE801 /* ViewModel */,
+			);
+			path = "Info MVVM";
+			sourceTree = "<group>";
+		};
+		820BFB282C93114B006CE801 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				820BFB2C2C931175006CE801 /* InfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		820BFB292C931154006CE801 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				820BFB2A2C931168006CE801 /* InfoView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8212BDCA2C82E6F100CBD5A3 /* Splash View */ = {
@@ -693,6 +722,7 @@
 				8255E4462C3861B9009D24B1 /* Views */,
 				8294CFC92C371771006E7EDA /* Services */,
 				8294CF9E2C34B747006E7EDA /* App Sections List MVVM */,
+				820BFB272C931135006CE801 /* Info MVVM */,
 				82F315AD2C405BDE00E826F9 /* News Modules */,
 				82E8A0FE2C474BFE00CF2179 /* Timetable Modules */,
 				82F2E7422C6557A2002E0A70 /* Map Modules */,
@@ -1475,12 +1505,14 @@
 				82160F5B2C38D61C00017A1F /* BuildingDetailView.swift in Sources */,
 				828C1A482C39C24000151AFA /* NewsCategoriesListView.swift in Sources */,
 				821BAA9F2C4C9A2C002470F2 /* CurrentPageNewsListViewModel.swift in Sources */,
+				820BFB2B2C931168006CE801 /* InfoView.swift in Sources */,
 				82FAEBBA2C531F9F00FB8B15 /* FacultiesListViewModel.swift in Sources */,
 				82C9196B2C5040A400848231 /* FacultyGroupsListView.swift in Sources */,
 				8294CFC62C3607CF006E7EDA /* NewsCategoryCell.swift in Sources */,
 				8294CF8B2C34B579006E7EDA /* ContentView.swift in Sources */,
 				820A2A542C61767A005FF3D9 /* PairInfoView.swift in Sources */,
 				82B40BE52C89E723003FCF07 /* ViewConfigurator.swift in Sources */,
+				820BFB2D2C931175006CE801 /* InfoViewModel.swift in Sources */,
 				82A608F82C3759A10005EDC3 /* ASPUNewsService.swift in Sources */,
 				82A608EE2C3758FE0005EDC3 /* HostName.swift in Sources */,
 				82FAEBC22C53234900FB8B15 /* WeeksListViewModel.swift in Sources */,
