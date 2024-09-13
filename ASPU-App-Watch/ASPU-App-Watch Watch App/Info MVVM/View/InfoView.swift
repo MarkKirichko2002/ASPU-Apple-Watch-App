@@ -20,7 +20,7 @@ struct InfoView: View {
             Text(viewModel.info[0])
                 .fontWeight(.bold)
         }.onAppear {
-            viewModel.checkInfo(id: id)
+            viewModel.getTimetable()
         }
     }
 }

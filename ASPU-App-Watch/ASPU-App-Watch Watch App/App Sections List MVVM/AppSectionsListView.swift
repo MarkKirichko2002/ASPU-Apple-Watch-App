@@ -55,7 +55,11 @@ struct AppSectionsListView: View {
             }
             .navigationTitle("Разделы")
             .sheet(isPresented: $viewModel.alert) {
-                InfoView(id: viewModel.currentId)
+                if viewModel.currentId == 1 {
+                    TodayNewsInfoView()
+                } else {
+                    InfoView(id: 2)
+                }
             }
         }
     }
