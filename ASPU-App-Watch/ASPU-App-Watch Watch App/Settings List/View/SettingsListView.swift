@@ -30,8 +30,20 @@ struct SettingsListView: View {
                 ShowSplashOptionCell()
                 CellStyleOptionCell()
             }
+            
+            Section("О приложении (версия: \(getAppVersion()))") {
+                AppFeaturesCell()
+            }
         }
         .navigationTitle("Настройки")
+    }
+    
+    func getAppVersion()-> String {
+        var appVersion = ""
+        if let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            appVersion = currentVersion
+        }
+        return appVersion
     }
 }
 

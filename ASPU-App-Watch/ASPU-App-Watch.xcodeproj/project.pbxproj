@@ -33,6 +33,10 @@
 		8255E4412C385DA3009D24B1 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8255E4402C385DA3009D24B1 /* SDWebImageSwiftUI */; };
 		8255E4442C385DB5009D24B1 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255E4432C385DB5009D24B1 /* ArticleCell.swift */; };
 		8255E4482C3861ED009D24B1 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255E4472C3861ED009D24B1 /* ArticleDetailView.swift */; };
+		8265586C2C95652A00E52D0D /* AppFeaturesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265586B2C95652A00E52D0D /* AppFeaturesCell.swift */; };
+		8265586F2C9565AA00E52D0D /* FeaturesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265586E2C9565AA00E52D0D /* FeaturesList.swift */; };
+		826558732C9565C400E52D0D /* FeatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826558722C9565C400E52D0D /* FeatureModel.swift */; };
+		826558772C95699300E52D0D /* FeatureInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826558762C95699300E52D0D /* FeatureInfoView.swift */; };
 		827674D32C4861A10083A849 /* CorpsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827674D22C4861A10083A849 /* CorpsListViewModel.swift */; };
 		827674D72C4863420083A849 /* CorpsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827674D62C4863420083A849 /* CorpsListView.swift */; };
 		827674DA2C48ACE20083A849 /* AudiencesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827674D92C48ACE20083A849 /* AudiencesListView.swift */; };
@@ -173,6 +177,10 @@
 		8255E43D2C385C11009D24B1 /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
 		8255E4432C385DB5009D24B1 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		8255E4472C3861ED009D24B1 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
+		8265586B2C95652A00E52D0D /* AppFeaturesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeaturesCell.swift; sourceTree = "<group>"; };
+		8265586E2C9565AA00E52D0D /* FeaturesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesList.swift; sourceTree = "<group>"; };
+		826558722C9565C400E52D0D /* FeatureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureModel.swift; sourceTree = "<group>"; };
+		826558762C95699300E52D0D /* FeatureInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureInfoView.swift; sourceTree = "<group>"; };
 		827674D22C4861A10083A849 /* CorpsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorpsListViewModel.swift; sourceTree = "<group>"; };
 		827674D62C4863420083A849 /* CorpsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorpsListView.swift; sourceTree = "<group>"; };
 		827674D92C48ACE20083A849 /* AudiencesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiencesListView.swift; sourceTree = "<group>"; };
@@ -536,6 +544,8 @@
 		8255E4462C3861B9009D24B1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8265586D2C95659000E52D0D /* Features List */,
+				826558742C95696B00E52D0D /* Feature Info */,
 				820BFB3B2C949174006CE801 /* Fill News List */,
 				828DD7442C6A80F9006F15DF /* Zoom Image */,
 				828C1A492C39C24F00151AFA /* News Category Cell */,
@@ -543,6 +553,39 @@
 				8255E4362C378D6D009D24B1 /* Pair Cell */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8265586D2C95659000E52D0D /* Features List */ = {
+			isa = PBXGroup;
+			children = (
+				826558712C9565B200E52D0D /* View */,
+				826558702C9565B000E52D0D /* Model */,
+			);
+			path = "Features List";
+			sourceTree = "<group>";
+		};
+		826558702C9565B000E52D0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				826558722C9565C400E52D0D /* FeatureModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		826558712C9565B200E52D0D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8265586E2C9565AA00E52D0D /* FeaturesList.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		826558742C95696B00E52D0D /* Feature Info */ = {
+			isa = PBXGroup;
+			children = (
+				826558762C95699300E52D0D /* FeatureInfoView.swift */,
+			);
+			path = "Feature Info";
 			sourceTree = "<group>";
 		};
 		827674CF2C4861370083A849 /* Сorps List MVVM */ = {
@@ -876,6 +919,7 @@
 				8294CFB82C360564006E7EDA /* SettingSectionCell.swift */,
 				82B40BDE2C88E075003FCF07 /* ShowSplashOptionCell.swift */,
 				82B40BE02C89E001003FCF07 /* CellStyleOptionCell.swift */,
+				8265586B2C95652A00E52D0D /* AppFeaturesCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1565,6 +1609,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82A7ECA72C90B93D00EBFFBE /* TimetableItem.swift in Sources */,
+				8265586C2C95652A00E52D0D /* AppFeaturesCell.swift in Sources */,
 				82160F5B2C38D61C00017A1F /* BuildingDetailView.swift in Sources */,
 				828C1A482C39C24000151AFA /* NewsCategoriesListView.swift in Sources */,
 				821BAA9F2C4C9A2C002470F2 /* CurrentPageNewsListViewModel.swift in Sources */,
@@ -1582,6 +1627,7 @@
 				82E8A1082C47509200CF2179 /* String + Extensions.swift in Sources */,
 				82C919632C503F1700848231 /* FacultyModel.swift in Sources */,
 				82A608F62C3759620005EDC3 /* TimeTable.swift in Sources */,
+				826558772C95699300E52D0D /* FeatureInfoView.swift in Sources */,
 				8294CFA92C36022A006E7EDA /* SettingsListView.swift in Sources */,
 				820BFB342C9471FE006CE801 /* TodayNewsInfoViewModel.swift in Sources */,
 				820BFB3A2C94908A006CE801 /* TodayNewsCategoryCell.swift in Sources */,
@@ -1589,6 +1635,7 @@
 				82B40BE32C89E5A7003FCF07 /* UserDefaults + Extensions.swift in Sources */,
 				82160F612C38EEC800017A1F /* LocationManager.swift in Sources */,
 				827674D32C4861A10083A849 /* CorpsListViewModel.swift in Sources */,
+				8265586F2C9565AA00E52D0D /* FeaturesList.swift in Sources */,
 				82A608F22C3759350005EDC3 /* Article.swift in Sources */,
 				8294CFAF2C360432006E7EDA /* SettingSectionModel.swift in Sources */,
 				8255E4442C385DB5009D24B1 /* ArticleCell.swift in Sources */,
@@ -1623,6 +1670,7 @@
 				8294CFC12C3606CF006E7EDA /* NewsCategories.swift in Sources */,
 				8294CFC32C3607B9006E7EDA /* SavedNewsCategoriesListView.swift in Sources */,
 				82FAEBCE2C53346F00FB8B15 /* WeekDaysListViewModel.swift in Sources */,
+				826558732C9565C400E52D0D /* FeatureModel.swift in Sources */,
 				8294CFB62C3604DD006E7EDA /* AppSectionCell.swift in Sources */,
 				820BFB372C948E27006CE801 /* TodayNewsSectionModel.swift in Sources */,
 				82F2E75C2C6789D7002E0A70 /* SavedNewsListView.swift in Sources */,
@@ -1822,7 +1870,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -1856,7 +1904,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -1877,7 +1925,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1896,7 +1944,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
