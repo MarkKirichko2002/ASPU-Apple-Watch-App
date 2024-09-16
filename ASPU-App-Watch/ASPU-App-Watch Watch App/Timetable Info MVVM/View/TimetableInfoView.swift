@@ -1,5 +1,5 @@
 //
-//  InfoView.swift
+//  TimetableInfoView.swift
 //  ASPU-App-Watch Watch App
 //
 //  Created by Марк Киричко on 12.09.2024.
@@ -7,14 +7,13 @@
 
 import SwiftUI
 
-struct InfoView: View {
+struct TimetableInfoView: View {
     
-    @ObservedObject var viewModel = InfoViewModel()
-    var id: Int
+    @ObservedObject var viewModel = TimetableInfoViewModel()
     
     var body: some View {
         VStack(spacing: 20) {
-            Image(viewModel.infoIcon(id: id))
+            Image("clock")
                 .resizable()
                 .frame(width: 55, height: 55)
             Text(viewModel.info[0])
@@ -26,5 +25,5 @@ struct InfoView: View {
 }
 
 #Preview {
-    InfoView(id: 1)
+    TimetableInfoView()
 }

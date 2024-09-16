@@ -1,5 +1,5 @@
 //
-//  InfoViewModel.swift
+//  TimetableInfoViewModel.swift
 //  ASPU-App-Watch Watch App
 //
 //  Created by Марк Киричко on 12.09.2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class InfoViewModel: ObservableObject {
+final class TimetableInfoViewModel: ObservableObject {
     
     @Published var isChanged = false
     
@@ -17,14 +17,6 @@ final class InfoViewModel: ObservableObject {
     let dateManager = DateManager()
     
     var info = ["Загрузка..."]
-    
-    func infoIcon(id: Int)-> String {
-        if id == 1 {
-            return "mail"
-        } else {
-            return "clock"
-        }
-    }
     
     // Расписание
     func getTimetable() {

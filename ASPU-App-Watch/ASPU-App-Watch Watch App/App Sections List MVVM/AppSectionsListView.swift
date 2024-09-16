@@ -28,7 +28,8 @@ struct AppSectionsListView: View {
                         EmptyView()
                     }
                 } label: {
-                    if section.id == 1 {
+                    switch section.id {
+                    case 1:
                         AppSectionCell(section: section)
                             .swipeActions {
                                 Button {
@@ -38,7 +39,8 @@ struct AppSectionsListView: View {
                                     Image("info")
                                 }
                             }
-                    } else if section.id == 2 {
+                        
+                    case 2:
                         AppSectionCell(section: section)
                             .swipeActions {
                                 Button {
@@ -48,17 +50,34 @@ struct AppSectionsListView: View {
                                     Image("info")
                                 }
                             }
-                    } else {
+                        
+                    case 3:
+                        AppSectionCell(section: section)
+                            .swipeActions {
+                                Button {
+                                    viewModel.currentId = 3
+                                    viewModel.toggleAlert()
+                                } label: {
+                                    Image("info")
+                                }
+                            }
+                        
+                    default:
                         AppSectionCell(section: section)
                     }
                 }
             }
             .navigationTitle("Разделы")
             .sheet(isPresented: $viewModel.alert) {
-                if viewModel.currentId == 1 {
+                switch viewModel.currentId {
+                case 1:
                     TodayNewsInfoView()
-                } else {
-                    InfoView(id: 2)
+                case 2:
+                    TimetableInfoView()
+                case 3:
+                    MapsInfoView()
+                default:
+                    EmptyView()
                 }
             }
         }
