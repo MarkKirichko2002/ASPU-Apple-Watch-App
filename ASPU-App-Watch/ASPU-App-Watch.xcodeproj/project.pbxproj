@@ -50,6 +50,8 @@
 		828C1A522C39C4DB00151AFA /* CurrentCategoryNewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C1A512C39C4DB00151AFA /* CurrentCategoryNewsListView.swift */; };
 		828C1A542C39C4E400151AFA /* CurrentCategoryNewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C1A532C39C4E400151AFA /* CurrentCategoryNewsListViewModel.swift */; };
 		828DD7462C6A8113006F15DF /* ZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828DD7452C6A8112006F15DF /* ZoomImageView.swift */; };
+		828F7D3D2C9B895E00C27210 /* AppVersionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F7D3C2C9B895E00C27210 /* AppVersionInfoView.swift */; };
+		828F7D3F2C9B896600C27210 /* AppVersionInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F7D3E2C9B896600C27210 /* AppVersionInfoViewModel.swift */; };
 		8294C3A42C6EB39600C9DFBE /* PairFilterTypeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294C3A32C6EB39600C9DFBE /* PairFilterTypeListView.swift */; };
 		8294C3A62C6EB3A500C9DFBE /* PairFilterTypeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294C3A52C6EB3A500C9DFBE /* PairFilterTypeListViewModel.swift */; };
 		8294C3AF2C6EB83900C9DFBE /* PairTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294C3AE2C6EB83900C9DFBE /* PairTypeView.swift */; };
@@ -196,6 +198,8 @@
 		828C1A512C39C4DB00151AFA /* CurrentCategoryNewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCategoryNewsListView.swift; sourceTree = "<group>"; };
 		828C1A532C39C4E400151AFA /* CurrentCategoryNewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCategoryNewsListViewModel.swift; sourceTree = "<group>"; };
 		828DD7452C6A8112006F15DF /* ZoomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomImageView.swift; sourceTree = "<group>"; };
+		828F7D3C2C9B895E00C27210 /* AppVersionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionInfoView.swift; sourceTree = "<group>"; };
+		828F7D3E2C9B896600C27210 /* AppVersionInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionInfoViewModel.swift; sourceTree = "<group>"; };
 		8294C3A32C6EB39600C9DFBE /* PairFilterTypeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairFilterTypeListView.swift; sourceTree = "<group>"; };
 		8294C3A52C6EB3A500C9DFBE /* PairFilterTypeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairFilterTypeListViewModel.swift; sourceTree = "<group>"; };
 		8294C3AE2C6EB83900C9DFBE /* PairTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairTypeView.swift; sourceTree = "<group>"; };
@@ -513,13 +517,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		8231AEF12C98B00C004B93C6 /* Maps Info */ = {
+		8231AEF12C98B00C004B93C6 /* Maps Info MVVM */ = {
 			isa = PBXGroup;
 			children = (
 				8231AEF32C98B026004B93C6 /* View */,
 				8231AEF22C98B024004B93C6 /* ViewModel */,
 			);
-			path = "Maps Info";
+			path = "Maps Info MVVM";
 			sourceTree = "<group>";
 		};
 		8231AEF22C98B024004B93C6 /* ViewModel */ = {
@@ -771,6 +775,31 @@
 			path = "Zoom Image";
 			sourceTree = "<group>";
 		};
+		828F7D392C9B892500C27210 /* App Version Info MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				828F7D3B2C9B894600C27210 /* View */,
+				828F7D3A2C9B894400C27210 /* ViewModel */,
+			);
+			path = "App Version Info MVVM";
+			sourceTree = "<group>";
+		};
+		828F7D3A2C9B894400C27210 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				828F7D3E2C9B896600C27210 /* AppVersionInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		828F7D3B2C9B894600C27210 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				828F7D3C2C9B895E00C27210 /* AppVersionInfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8294C3A02C6EB15A00C9DFBE /* Pair Filter Type List MVVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -858,7 +887,8 @@
 				8294CF9E2C34B747006E7EDA /* App Sections List MVVM */,
 				820BFB2E2C9471BB006CE801 /* Today News Info View */,
 				820BFB272C931135006CE801 /* Timetable Info MVVM */,
-				8231AEF12C98B00C004B93C6 /* Maps Info */,
+				8231AEF12C98B00C004B93C6 /* Maps Info MVVM */,
+				828F7D392C9B892500C27210 /* App Version Info MVVM */,
 				82F315AD2C405BDE00E826F9 /* News Modules */,
 				82E8A0FE2C474BFE00CF2179 /* Timetable Modules */,
 				82F2E7422C6557A2002E0A70 /* Map Modules */,
@@ -883,10 +913,10 @@
 		8294CF9E2C34B747006E7EDA /* App Sections List MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				820BFB242C923619006CE801 /* ViewModel */,
 				8294CFA22C34B7B1006E7EDA /* Model */,
 				8294CF9F2C34B75A006E7EDA /* View */,
 				8294CFB42C3604CD006E7EDA /* Cell */,
+				820BFB242C923619006CE801 /* ViewModel */,
 			);
 			path = "App Sections List MVVM";
 			sourceTree = "<group>";
@@ -1645,7 +1675,9 @@
 				821BAA9F2C4C9A2C002470F2 /* CurrentPageNewsListViewModel.swift in Sources */,
 				820BFB2B2C931168006CE801 /* TimetableInfoView.swift in Sources */,
 				82FAEBBA2C531F9F00FB8B15 /* FacultiesListViewModel.swift in Sources */,
+				828F7D3F2C9B896600C27210 /* AppVersionInfoViewModel.swift in Sources */,
 				82C9196B2C5040A400848231 /* FacultyGroupsListView.swift in Sources */,
+				828F7D3D2C9B895E00C27210 /* AppVersionInfoView.swift in Sources */,
 				8294CFC62C3607CF006E7EDA /* NewsCategoryCell.swift in Sources */,
 				8294CF8B2C34B579006E7EDA /* ContentView.swift in Sources */,
 				820A2A542C61767A005FF3D9 /* PairInfoView.swift in Sources */,
@@ -1902,7 +1934,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -1936,7 +1968,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -1957,7 +1989,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1976,7 +2008,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

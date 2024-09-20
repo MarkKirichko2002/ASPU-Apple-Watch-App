@@ -13,7 +13,7 @@ struct AppSectionsListView: View {
     
     var body: some View {
         NavigationView {
-            List(AppSections.sections) { section in
+            List(viewModel.sections) { section in
                 NavigationLink {
                     switch section.id {
                     case 1:
@@ -34,9 +34,17 @@ struct AppSectionsListView: View {
                             .swipeActions {
                                 Button {
                                     viewModel.currentId = 1
-                                    viewModel.toggleAlert()
+                                    viewModel.toggleInfo()
                                 } label: {
                                     Image("info")
+                                }
+                            }
+                        
+                            .swipeActions(edge: .leading) {
+                                Button {
+                                    viewModel.makeImportantSection(index: 0)
+                                } label: {
+                                    Image("up")
                                 }
                             }
                         
@@ -45,9 +53,17 @@ struct AppSectionsListView: View {
                             .swipeActions {
                                 Button {
                                     viewModel.currentId = 2
-                                    viewModel.toggleAlert()
+                                    viewModel.toggleInfo()
                                 } label: {
                                     Image("info")
+                                }
+                            }
+                        
+                            .swipeActions(edge: .leading) {
+                                Button {
+                                    viewModel.makeImportantSection(index: 1)
+                                } label: {
+                                    Image("up")
                                 }
                             }
                         
@@ -56,9 +72,36 @@ struct AppSectionsListView: View {
                             .swipeActions {
                                 Button {
                                     viewModel.currentId = 3
-                                    viewModel.toggleAlert()
+                                    viewModel.toggleInfo()
                                 } label: {
                                     Image("info")
+                                }
+                            }
+                        
+                            .swipeActions(edge: .leading) {
+                                Button {
+                                    viewModel.makeImportantSection(index: 2)
+                                } label: {
+                                    Image("up")
+                                }
+                            }
+                        
+                    case 4:
+                        AppSectionCell(section: section)
+                            .swipeActions {
+                                Button {
+                                    viewModel.currentId = 4
+                                    viewModel.toggleInfo()
+                                } label: {
+                                    Image("info")
+                                }
+                            }
+                        
+                            .swipeActions(edge: .leading) {
+                                Button {
+                                    viewModel.makeImportantSection(index: 3)
+                                } label: {
+                                    Image("up")
                                 }
                             }
                         
@@ -68,7 +111,8 @@ struct AppSectionsListView: View {
                 }
             }
             .navigationTitle("Разделы")
-            .sheet(isPresented: $viewModel.alert) {
+            .onChange(of: viewModel.isChanged) {}
+            .sheet(isPresented: $viewModel.info) {
                 switch viewModel.currentId {
                 case 1:
                     TodayNewsInfoView()
@@ -76,6 +120,8 @@ struct AppSectionsListView: View {
                     TimetableInfoView()
                 case 3:
                     MapsInfoView()
+                case 4:
+                    AppVersionInfoView()
                 default:
                     EmptyView()
                 }

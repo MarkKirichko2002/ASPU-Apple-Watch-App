@@ -12,13 +12,14 @@ struct TimetableInfoView: View {
     @ObservedObject var viewModel = TimetableInfoViewModel()
     
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 25) {
             Image("clock")
                 .resizable()
                 .frame(width: 55, height: 55)
             Text(viewModel.info[0])
                 .fontWeight(.bold)
-        }.onAppear {
+        }.navigationTitle("Расписание")
+        .onAppear {
             viewModel.getTimetable()
         }
     }

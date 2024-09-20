@@ -19,6 +19,7 @@ struct BuildingFilterTypeListView: View {
                     BuildingTypeView(buildings: viewModel.filterBuildings(type: type))
                 } label: {
                     Text("\(type.name) (\(type.count))")
+                        .fontWeight(.bold)
                 }
             }
             .navigationTitle("Фильтрация")
