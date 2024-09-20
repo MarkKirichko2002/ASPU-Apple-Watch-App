@@ -10,15 +10,13 @@ import SwiftUI
 struct SettingsListView: View {
     
     var body: some View {
-        
         Form() {
-            
             Section("Основое") {
                 List(SettingSections.sections) { section in
                     NavigationLink {
                         switch section.id {
                         case 1:
-                            NewsCategoriesListView()
+                            SavedNewsCategoriesListView()
                         default:
                             EmptyView()
                         }
@@ -28,8 +26,24 @@ struct SettingsListView: View {
                 }
             }
             
+            Section("Другое") {
+                ShowSplashOptionCell()
+                CellStyleOptionCell()
+            }
+            
+            Section("О приложении (версия: \(getAppVersion()))") {
+                AppFeaturesCell()
+            }
         }
         .navigationTitle("Настройки")
+    }
+    
+    func getAppVersion()-> String {
+        var appVersion = ""
+        if let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            appVersion = currentVersion
+        }
+        return appVersion
     }
 }
 

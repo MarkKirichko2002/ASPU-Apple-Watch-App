@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var isSplashOn = UserDefaults.standard.object(forKey: "isSplashOn") as? Bool ?? false
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            if isSplashOn {
+                SplashView()
+            } else {
+                AppSectionsListView()
+            }
         }
-        .padding()
     }
 }
 
