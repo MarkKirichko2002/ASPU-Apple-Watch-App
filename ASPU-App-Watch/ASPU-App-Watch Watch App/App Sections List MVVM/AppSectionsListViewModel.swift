@@ -15,6 +15,9 @@ final class AppSectionsListViewModel: ObservableObject {
     var sections = AppSections.sections
     var currentId = 1
     
+    // MARK: - сервисы
+    private let settingsManager = SettingsManager()
+    
     init() {
         getData()
     }
@@ -38,11 +41,14 @@ final class AppSectionsListViewModel: ObservableObject {
     }
         
     func saveImportantSection(index: Int) {
-        UserDefaults.standard.set(index, forKey: "section id")
+        settingsManager.saveSection(index: index)
     }
     
     func getData() {
-        let index = UserDefaults.standard.object(forKey: "section id") as? Int ?? 0
-        makeImportantSection(index: index)
+        makeImportantSection(index: settingsManager.getSectionId())
+    }
+    
+    func checkSwipeOption()-> Bool {
+        return settingsManager.getSwipeOnOption()
     }
 }

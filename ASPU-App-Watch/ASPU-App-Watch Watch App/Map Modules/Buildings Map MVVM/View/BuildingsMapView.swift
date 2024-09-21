@@ -29,6 +29,7 @@ struct BuildingsMapView: View {
                 }
             }
         }
+        
         .onAppear {
             viewModel.getLocation()
         }

@@ -17,6 +17,7 @@
 		820BFB372C948E27006CE801 /* TodayNewsSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BFB362C948E27006CE801 /* TodayNewsSectionModel.swift */; };
 		820BFB3A2C94908A006CE801 /* TodayNewsCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BFB392C94908A006CE801 /* TodayNewsCategoryCell.swift */; };
 		820BFB3D2C94918C006CE801 /* FillNewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BFB3C2C94918C006CE801 /* FillNewsListView.swift */; };
+		821197C42C9F7045006A94E6 /* SwipeOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821197C32C9F7045006A94E6 /* SwipeOptionCell.swift */; };
 		8212BDCC2C82E70300CBD5A3 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8212BDCB2C82E70300CBD5A3 /* SplashView.swift */; };
 		82160F542C38A13600017A1F /* BuildingsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F532C38A13600017A1F /* BuildingsMapView.swift */; };
 		82160F582C38A32200017A1F /* Buildings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F572C38A32200017A1F /* Buildings.swift */; };
@@ -165,6 +166,7 @@
 		820BFB362C948E27006CE801 /* TodayNewsSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayNewsSectionModel.swift; sourceTree = "<group>"; };
 		820BFB392C94908A006CE801 /* TodayNewsCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayNewsCategoryCell.swift; sourceTree = "<group>"; };
 		820BFB3C2C94918C006CE801 /* FillNewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillNewsListView.swift; sourceTree = "<group>"; };
+		821197C32C9F7045006A94E6 /* SwipeOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeOptionCell.swift; sourceTree = "<group>"; };
 		8212BDCB2C82E70300CBD5A3 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		82160F532C38A13600017A1F /* BuildingsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsMapView.swift; sourceTree = "<group>"; };
 		82160F572C38A32200017A1F /* Buildings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildings.swift; sourceTree = "<group>"; };
@@ -978,6 +980,7 @@
 			children = (
 				8294CFB82C360564006E7EDA /* SettingSectionCell.swift */,
 				82B40BDE2C88E075003FCF07 /* ShowSplashOptionCell.swift */,
+				821197C32C9F7045006A94E6 /* SwipeOptionCell.swift */,
 				82B40BE02C89E001003FCF07 /* CellStyleOptionCell.swift */,
 				8265586B2C95652A00E52D0D /* AppFeaturesCell.swift */,
 			);
@@ -1700,6 +1703,7 @@
 				8265586F2C9565AA00E52D0D /* FeaturesList.swift in Sources */,
 				82A608F22C3759350005EDC3 /* Article.swift in Sources */,
 				8294CFAF2C360432006E7EDA /* SettingSectionModel.swift in Sources */,
+				821197C42C9F7045006A94E6 /* SwipeOptionCell.swift in Sources */,
 				8255E4442C385DB5009D24B1 /* ArticleCell.swift in Sources */,
 				8231AEF72C98B076004B93C6 /* MapsInfoViewModel.swift in Sources */,
 				82FAEBD72C53430D00FB8B15 /* TeacherCell.swift in Sources */,
@@ -1934,7 +1938,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.6;
+				MARKETING_VERSION = 1.1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -1968,7 +1972,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.6;
+				MARKETING_VERSION = 1.1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -1989,7 +1993,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.1.6;
+				MARKETING_VERSION = 1.1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -2008,7 +2012,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.1.6;
+				MARKETING_VERSION = 1.1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

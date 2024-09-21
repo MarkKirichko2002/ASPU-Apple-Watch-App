@@ -30,6 +30,18 @@ final class SettingsManager {
         return UserDefaults.standard.object(forKey: "isSplashOn") as? Bool ?? false
     }
     
+    func saveSection(index: Int) {
+        UserDefaults.standard.set(index, forKey: "section id")
+    }
+    
+    func getSectionId()-> Int {
+        return UserDefaults.standard.object(forKey: "section id") as? Int ?? 0
+    }
+    
+    func getSwipeOnOption()-> Bool {
+        return UserDefaults.standard.object(forKey: "isSwipeOn") as? Bool ?? true
+    }
+    
     func getSavedListStyle()-> CellStyle {
         return UserDefaults.loadData(type: CellStyle.self, key: "list style") ?? CellStyle.carousel
     }
