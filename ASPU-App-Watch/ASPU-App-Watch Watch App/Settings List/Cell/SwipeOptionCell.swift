@@ -13,7 +13,7 @@ struct SwipeOptionCell: View {
     
     var body: some View {
         HStack {
-            Text("Свайпы")
+            Text("Жесты")
                 .foregroundColor(isSwipeOn ? .green : .gray)
                 .fontWeight(.bold)
             Toggle("", isOn: $isSwipeOn)

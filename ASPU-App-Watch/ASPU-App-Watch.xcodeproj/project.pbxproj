@@ -18,6 +18,12 @@
 		820BFB3A2C94908A006CE801 /* TodayNewsCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BFB392C94908A006CE801 /* TodayNewsCategoryCell.swift */; };
 		820BFB3D2C94918C006CE801 /* FillNewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BFB3C2C94918C006CE801 /* FillNewsListView.swift */; };
 		821197C42C9F7045006A94E6 /* SwipeOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821197C32C9F7045006A94E6 /* SwipeOptionCell.swift */; };
+		821197C62CA00FD5006A94E6 /* SwipeOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821197C52CA00FD5006A94E6 /* SwipeOptionsCell.swift */; };
+		821197CA2CA010B3006A94E6 /* SwipeOptionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821197C92CA010B3006A94E6 /* SwipeOptionsListView.swift */; };
+		821197CF2CA01A1E006A94E6 /* DaysListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821197CE2CA01A1E006A94E6 /* DaysListView.swift */; };
+		821197D12CA01ABF006A94E6 /* DaysListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821197D02CA01ABF006A94E6 /* DaysListViewModel.swift */; };
+		821197D42CA01AF8006A94E6 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821197D32CA01AF8006A94E6 /* DayModel.swift */; };
+		821197D62CA01B8F006A94E6 /* DaysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821197D52CA01B8F006A94E6 /* DaysList.swift */; };
 		8212BDCC2C82E70300CBD5A3 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8212BDCB2C82E70300CBD5A3 /* SplashView.swift */; };
 		82160F542C38A13600017A1F /* BuildingsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F532C38A13600017A1F /* BuildingsMapView.swift */; };
 		82160F582C38A32200017A1F /* Buildings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82160F572C38A32200017A1F /* Buildings.swift */; };
@@ -167,6 +173,12 @@
 		820BFB392C94908A006CE801 /* TodayNewsCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayNewsCategoryCell.swift; sourceTree = "<group>"; };
 		820BFB3C2C94918C006CE801 /* FillNewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillNewsListView.swift; sourceTree = "<group>"; };
 		821197C32C9F7045006A94E6 /* SwipeOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeOptionCell.swift; sourceTree = "<group>"; };
+		821197C52CA00FD5006A94E6 /* SwipeOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeOptionsCell.swift; sourceTree = "<group>"; };
+		821197C92CA010B3006A94E6 /* SwipeOptionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeOptionsListView.swift; sourceTree = "<group>"; };
+		821197CE2CA01A1E006A94E6 /* DaysListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysListView.swift; sourceTree = "<group>"; };
+		821197D02CA01ABF006A94E6 /* DaysListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysListViewModel.swift; sourceTree = "<group>"; };
+		821197D32CA01AF8006A94E6 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
+		821197D52CA01B8F006A94E6 /* DaysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysList.swift; sourceTree = "<group>"; };
 		8212BDCB2C82E70300CBD5A3 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		82160F532C38A13600017A1F /* BuildingsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsMapView.swift; sourceTree = "<group>"; };
 		82160F572C38A32200017A1F /* Buildings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildings.swift; sourceTree = "<group>"; };
@@ -400,6 +412,57 @@
 				820BFB3C2C94918C006CE801 /* FillNewsListView.swift */,
 			);
 			path = "Fill News List";
+			sourceTree = "<group>";
+		};
+		821197C72CA0108C006A94E6 /* Swipe Options List */ = {
+			isa = PBXGroup;
+			children = (
+				821197C82CA0109E006A94E6 /* View */,
+			);
+			path = "Swipe Options List";
+			sourceTree = "<group>";
+		};
+		821197C82CA0109E006A94E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				821197C92CA010B3006A94E6 /* SwipeOptionsListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		821197CB2CA019D0006A94E6 /* Days List MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				821197D22CA01AF1006A94E6 /* Model */,
+				821197CD2CA019E0006A94E6 /* View */,
+				821197CC2CA019DE006A94E6 /* ViewModel */,
+			);
+			path = "Days List MVVM";
+			sourceTree = "<group>";
+		};
+		821197CC2CA019DE006A94E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				821197D02CA01ABF006A94E6 /* DaysListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		821197CD2CA019E0006A94E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				821197CE2CA01A1E006A94E6 /* DaysListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		821197D22CA01AF1006A94E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				821197D32CA01AF8006A94E6 /* DayModel.swift */,
+				821197D52CA01B8F006A94E6 /* DaysList.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8212BDCA2C82E6F100CBD5A3 /* Splash View */ = {
@@ -895,6 +958,7 @@
 				82E8A0FE2C474BFE00CF2179 /* Timetable Modules */,
 				82F2E7422C6557A2002E0A70 /* Map Modules */,
 				8294CFA52C36020C006E7EDA /* Settings List */,
+				821197C72CA0108C006A94E6 /* Swipe Options List */,
 				8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */,
 				8294CF8A2C34B579006E7EDA /* ContentView.swift */,
 				822D84F42C37766200148062 /* ASPU-App-Watch-Watch-App-Info.plist */,
@@ -980,6 +1044,7 @@
 			children = (
 				8294CFB82C360564006E7EDA /* SettingSectionCell.swift */,
 				82B40BDE2C88E075003FCF07 /* ShowSplashOptionCell.swift */,
+				821197C52CA00FD5006A94E6 /* SwipeOptionsCell.swift */,
 				821197C32C9F7045006A94E6 /* SwipeOptionCell.swift */,
 				82B40BE02C89E001003FCF07 /* CellStyleOptionCell.swift */,
 				8265586B2C95652A00E52D0D /* AppFeaturesCell.swift */,
@@ -1235,10 +1300,11 @@
 				82E8A0FF2C474C3E00CF2179 /* Teachers List MVVM */,
 				827674CF2C4861370083A849 /* Сorps List MVVM */,
 				827674D82C48ACA70083A849 /* Audiences List MVVM */,
+				821197CB2CA019D0006A94E6 /* Days List MVVM */,
 				82FAEBBB2C5322F100FB8B15 /* Weeks List MVVM */,
-				82FAEBC82C532A8800FB8B15 /* Week Days List */,
+				82FAEBC82C532A8800FB8B15 /* Week Days List MVVM */,
 				820A2A502C617659005FF3D9 /* Pair Info MVVM */,
-				82F315AF2C405C7900E826F9 /* Timetable Day Result List */,
+				82F315AF2C405C7900E826F9 /* Timetable Day Result List MVVM */,
 				8294C3A02C6EB15A00C9DFBE /* Pair Filter Type List MVVM */,
 				8294C3AB2C6EB81600C9DFBE /* Pair Type MVVM */,
 			);
@@ -1425,13 +1491,13 @@
 			path = "News Modules";
 			sourceTree = "<group>";
 		};
-		82F315AF2C405C7900E826F9 /* Timetable Day Result List */ = {
+		82F315AF2C405C7900E826F9 /* Timetable Day Result List MVVM */ = {
 			isa = PBXGroup;
 			children = (
 				82F315B12C405C9F00E826F9 /* View */,
 				82F315B02C405C9D00E826F9 /* ViewModel */,
 			);
-			path = "Timetable Day Result List";
+			path = "Timetable Day Result List MVVM";
 			sourceTree = "<group>";
 		};
 		82F315B02C405C9D00E826F9 /* ViewModel */ = {
@@ -1492,13 +1558,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		82FAEBC82C532A8800FB8B15 /* Week Days List */ = {
+		82FAEBC82C532A8800FB8B15 /* Week Days List MVVM */ = {
 			isa = PBXGroup;
 			children = (
 				82FAEBC92C532A9B00FB8B15 /* View */,
 				82FAEBCC2C53345F00FB8B15 /* ViewModel */,
 			);
-			path = "Week Days List";
+			path = "Week Days List MVVM";
 			sourceTree = "<group>";
 		};
 		82FAEBC92C532A9B00FB8B15 /* View */ = {
@@ -1679,6 +1745,7 @@
 				820BFB2B2C931168006CE801 /* TimetableInfoView.swift in Sources */,
 				82FAEBBA2C531F9F00FB8B15 /* FacultiesListViewModel.swift in Sources */,
 				828F7D3F2C9B896600C27210 /* AppVersionInfoViewModel.swift in Sources */,
+				821197D12CA01ABF006A94E6 /* DaysListViewModel.swift in Sources */,
 				82C9196B2C5040A400848231 /* FacultyGroupsListView.swift in Sources */,
 				828F7D3D2C9B895E00C27210 /* AppVersionInfoView.swift in Sources */,
 				8294CFC62C3607CF006E7EDA /* NewsCategoryCell.swift in Sources */,
@@ -1694,6 +1761,7 @@
 				82A608F62C3759620005EDC3 /* TimeTable.swift in Sources */,
 				826558772C95699300E52D0D /* FeatureInfoView.swift in Sources */,
 				8294CFA92C36022A006E7EDA /* SettingsListView.swift in Sources */,
+				821197CA2CA010B3006A94E6 /* SwipeOptionsListView.swift in Sources */,
 				820BFB342C9471FE006CE801 /* TodayNewsInfoViewModel.swift in Sources */,
 				820BFB3A2C94908A006CE801 /* TodayNewsCategoryCell.swift in Sources */,
 				82160F5E2C38EDFB00017A1F /* BuildingsMapViewModel.swift in Sources */,
@@ -1730,6 +1798,7 @@
 				82FAEBC02C53233B00FB8B15 /* WeeksListView.swift in Sources */,
 				828DD7462C6A8113006F15DF /* ZoomImageView.swift in Sources */,
 				8294CF892C34B579006E7EDA /* ASPU_App_WatchApp.swift in Sources */,
+				821197C62CA00FD5006A94E6 /* SwipeOptionsCell.swift in Sources */,
 				82E8A10F2C47637700CF2179 /* TimetableOptions.swift in Sources */,
 				82A609012C375A2B0005EDC3 /* TimetableDayListView.swift in Sources */,
 				820A2A562C61768C005FF3D9 /* PairInfoViewModel.swift in Sources */,
@@ -1750,6 +1819,7 @@
 				8255E4482C3861ED009D24B1 /* ArticleDetailView.swift in Sources */,
 				82F2E75F2C67BE1E002E0A70 /* SavedArticleDetailView.swift in Sources */,
 				82FAEBE12C5344CA00FB8B15 /* AudiencesListViewModel.swift in Sources */,
+				821197D42CA01AF8006A94E6 /* DayModel.swift in Sources */,
 				828C1A3E2C3977E500151AFA /* NewsOptionsListView.swift in Sources */,
 				828C1A542C39C4E400151AFA /* CurrentCategoryNewsListViewModel.swift in Sources */,
 				828C1A522C39C4DB00151AFA /* CurrentCategoryNewsListView.swift in Sources */,
@@ -1762,6 +1832,7 @@
 				82A608F42C3759460005EDC3 /* NewsResponse.swift in Sources */,
 				821BAA9A2C4B3D2B002470F2 /* NewsPagesListViewModel.swift in Sources */,
 				82F315B52C405CC100E826F9 /* TimetableDayResultListViewModel.swift in Sources */,
+				821197CF2CA01A1E006A94E6 /* DaysListView.swift in Sources */,
 				821BAA972C4B38B4002470F2 /* NewsPagesListView.swift in Sources */,
 				8294CFB92C360564006E7EDA /* SettingSectionCell.swift in Sources */,
 				828C1A4D2C39C2A900151AFA /* NewsCategoriesListViewModel.swift in Sources */,
@@ -1770,6 +1841,7 @@
 				8294CFCC2C371786006E7EDA /* SettingsManager.swift in Sources */,
 				8255E43B2C385A58009D24B1 /* DateManager.swift in Sources */,
 				8294CFC82C360957006E7EDA /* SavedNewsCategoriesListViewModel.swift in Sources */,
+				821197D62CA01B8F006A94E6 /* DaysList.swift in Sources */,
 				8294CFBF2C360696006E7EDA /* NewsCategoryModel.swift in Sources */,
 				82C919672C503F7800848231 /* FacultiesListView.swift in Sources */,
 				820BFB262C92362A006CE801 /* AppSectionsListViewModel.swift in Sources */,
@@ -1938,7 +2010,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.7;
+				MARKETING_VERSION = 1.1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -1972,7 +2044,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.7;
+				MARKETING_VERSION = 1.1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -1993,7 +2065,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.1.7;
+				MARKETING_VERSION = 1.1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -2012,7 +2084,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.1.7;
+				MARKETING_VERSION = 1.1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

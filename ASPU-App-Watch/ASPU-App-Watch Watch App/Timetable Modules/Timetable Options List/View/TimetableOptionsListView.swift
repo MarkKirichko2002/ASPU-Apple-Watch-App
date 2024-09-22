@@ -15,6 +15,8 @@ struct TimetableOptionsListView: View {
     @Binding var isPresented: Bool
     @Environment(\.presentationMode) var presentationMode
     
+    let settingsManager = SettingsManager()
+    
     var body: some View {
         NavigationView {
             List(TimetableOptions.options) { option in
@@ -27,8 +29,10 @@ struct TimetableOptionsListView: View {
                     case 3:
                         CorpsListView()
                     case 4:
-                        WeeksListView()
+                        DaysListView(viewModel: DaysListViewModel(id: settingsManager.getSavedID(), currentDate: date, owner: settingsManager.getSavedOwner()))
                     case 5:
+                        WeeksListView()
+                    case 6:
                         PairFilterTypeListView(date: date, disciplines: disciplines)
                     default:
                         WeeksListView()

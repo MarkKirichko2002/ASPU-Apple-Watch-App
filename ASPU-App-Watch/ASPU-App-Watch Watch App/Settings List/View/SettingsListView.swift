@@ -28,7 +28,7 @@ struct SettingsListView: View {
             
             Section("Другое") {
                 ShowSplashOptionCell()
-                SwipeOptionCell()
+                SwipeOptionsCell()
                 CellStyleOptionCell()
             }
             

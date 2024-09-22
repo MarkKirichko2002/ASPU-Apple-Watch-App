@@ -19,7 +19,8 @@ struct TimetableOptions {
         TimetableOptionModel(id: 1, name: "Группы", icon: "group"),
         TimetableOptionModel(id: 2, name: "Препод.", icon: "teacher"),
         TimetableOptionModel(id: 3, name: "Аудитории", icon: "door"),
-        TimetableOptionModel(id: 4, name: "Недели", icon: "calendar"),
-        TimetableOptionModel(id: 5, name: "Фильтрация", icon: "filter")
+        TimetableOptionModel(id: 4, name: "День", icon: "calendar"),
+        TimetableOptionModel(id: 5, name: "Недели", icon: "sections icon"),
+        TimetableOptionModel(id: 6, name: "Фильтрация", icon: "filter")
     ]
 }
