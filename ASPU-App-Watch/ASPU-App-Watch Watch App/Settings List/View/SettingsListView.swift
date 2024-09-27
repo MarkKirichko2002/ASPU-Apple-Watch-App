@@ -17,6 +17,8 @@ struct SettingsListView: View {
                         switch section.id {
                         case 1:
                             SavedNewsCategoriesListView()
+                        case 2:
+                            TimetableSettingsListView()
                         default:
                             EmptyView()
                         }

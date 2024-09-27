@@ -24,10 +24,6 @@ final class TimetableDayListViewModel: ObservableObject {
     private let settingsManager = SettingsManager()
     private let dateManager = DateManager()
     
-    init() {
-        getTimetable()
-    }
-    
     func getTimetable() {
         isLoading = true
         currentID = settingsManager.getSavedID()
@@ -38,6 +34,7 @@ final class TimetableDayListViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.timetable = data
                     self.isLoading = false
+                    self.checkRemainingPairsOn()
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -60,5 +57,46 @@ final class TimetableDayListViewModel: ObservableObject {
         } else {
             print("нет изменений")
         }
+    }
+    
+    func checkRemainingPairsOn() {
+        if settingsManager.getRemainingPairsOnOption() {
+            timetable.disciplines = filterLeftedPairs(pairs: timetable.disciplines)
+        }
+    }
+    
+    func filterLeftedPairs(pairs: [Discipline])-> [Discipline] {
+        
+        var disciplines = [Discipline]()
+        
+        let currentDate = dateManager.getCurrentDate()
+        let currentTime = dateManager.getCurrentTime(isFullFormat: true)
+        
+        for pair in pairs {
+            
+            let pairEndTime = "\(pair.time.components(separatedBy: "-")[1]):00"
+            
+            let timetableDate = dateManager.getCurrentDate()
+            
+            let compareDate = dateManager.compareDates(date1: timetableDate, date2: currentDate)
+            let compareTime = dateManager.compareTimes(time1: pairEndTime, time2: currentTime)
+            
+            // прошлый день
+            if compareDate == .orderedAscending {
+                return disciplines
+            }
+            
+            // время больше и тот же день
+            if compareTime == .orderedDescending && compareDate == .orderedSame {
+                disciplines.append(pair)
+            }
+            
+            // следующий день
+            if compareDate == .orderedDescending {
+                return timetable.disciplines
+            }
+        }
+        
+        return disciplines
     }
 }

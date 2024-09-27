@@ -38,6 +38,10 @@ final class SettingsManager {
         return UserDefaults.standard.object(forKey: "section id") as? Int ?? 0
     }
     
+    func getRemainingPairsOnOption()-> Bool {
+        return UserDefaults.standard.object(forKey: "isRemainingPairsOn") as? Bool ?? false
+    }
+    
     func getSwipeOnOption()-> Bool {
         return UserDefaults.standard.object(forKey: "isSwipeOn") as? Bool ?? true
     }

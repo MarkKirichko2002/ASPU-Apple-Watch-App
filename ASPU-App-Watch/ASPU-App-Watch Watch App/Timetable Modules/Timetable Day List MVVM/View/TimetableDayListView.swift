@@ -39,10 +39,15 @@ struct TimetableDayListView: View {
                 }
             }
         }
+        .onAppear {
+            if viewModel.isLoading {
+                viewModel.getTimetable()
+            }
+        }
         .onChange(of: viewModel.isSelected) {
             viewModel.isPresentedInfo.toggle()
         }
-        .onChange(of: showOptions) { _ in
+        .onChange(of: showOptions) { 
             viewModel.checkTimetableChanges()
         }
         .sheet(isPresented: $viewModel.isPresentedInfo) {

@@ -298,7 +298,11 @@ final class PairInfoViewModel: ObservableObject {
         let kilometers = Int(distance) / 1000
         let metres = Int(distance.truncatingRemainder(dividingBy: 1000))
         
-        return "До корпуса \"\(building.name)\" осталось: \(kilometers) км \(metres) м"
+        if metres <= 100 {
+            return "В корпусе"
+        } else {
+            return "До корпуса \"\(building.name)\" осталось: \(kilometers) км \(metres) м"
+        }
     }
     
     func currentBuilding()-> BuildingModel {

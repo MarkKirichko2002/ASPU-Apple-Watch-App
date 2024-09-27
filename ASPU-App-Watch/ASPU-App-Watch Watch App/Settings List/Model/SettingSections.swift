@@ -10,6 +10,7 @@ import Foundation
 struct SettingSections {
     
     static let sections = [
-        SettingSectionModel(id: 1, name: "Новости", icon: "mail")
+        SettingSectionModel(id: 1, name: "Новости", icon: "mail"),
+        SettingSectionModel(id: 2, name: "Расписание", icon: "clock")
     ]
 }
