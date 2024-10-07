@@ -42,19 +42,25 @@ final class SettingsManager {
         return UserDefaults.standard.object(forKey: "isRemainingPairsOn") as? Bool ?? false
     }
     
+    func getFullPairInfoOption()-> Bool {
+        return UserDefaults.standard.object(forKey: "isFullPairInfoOn") as? Bool ?? false
+    }
+    
     func getSwipeOnOption()-> Bool {
         return UserDefaults.standard.object(forKey: "isSwipeOn") as? Bool ?? true
     }
     
-    func getSavedListStyle()-> CellStyle {
-        return UserDefaults.loadData(type: CellStyle.self, key: "list style") ?? CellStyle.carousel
+    func getSwipeFromLeftOption()-> SwipeActions {
+        let option = UserDefaults.loadData(type: SwipeActions.self, key: "swipe from left")
+        return option ?? SwipeActions.info
     }
     
-    func resetAll() {
-        UserDefaults.standard.setValue("-", forKey: "news category")
-        UserDefaults.standard.setValue("ВМ-ИВТ-3-1", forKey: "id")
-        UserDefaults.standard.setValue("GROUP", forKey: "owner")
-        UserDefaults.standard.setValue(false, forKey: "isSplashOn")
-        UserDefaults.saveData(object: CellStyle.carousel, key: "list style") {}
+    func getSwipeFromRightOption()-> SwipeActions {
+        let option = UserDefaults.loadData(type: SwipeActions.self, key: "swipe from right")
+        return option ?? SwipeActions.up
+    }
+    
+    func getSavedListStyle()-> CellStyle {
+        return UserDefaults.loadData(type: CellStyle.self, key: "list style") ?? CellStyle.carousel
     }
 }

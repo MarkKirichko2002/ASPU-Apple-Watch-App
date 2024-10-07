@@ -27,11 +27,12 @@ struct TimetableDayResultListView: View {
                     PairCell(discipline: pair)
                         .onTapGesture {
                             viewModel.currentDiscipline = pair
-                            viewModel.isSelected.toggle()
+                            viewModel.isPresentedInfo.toggle()
                         }
                 }.modifier(CustomListStyle())
             }
         }
+        .navigationTitle(id)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
@@ -47,9 +48,6 @@ struct TimetableDayResultListView: View {
         .onDisappear {
             viewModel.sendNotification(id: id, owner: owner)
         }
-        .onChange(of: viewModel.isSelected) {
-            viewModel.isPresentedInfo.toggle()
-        }
         .sheet(isPresented: $viewModel.isPresentedInfo) {
             PairInfoView(viewModel: PairInfoViewModel(pair: viewModel.currentDiscipline, date: date))
         }
@@ -58,7 +56,6 @@ struct TimetableDayResultListView: View {
                 PairFilterTypeListView(date: date, disciplines: viewModel.timetable.disciplines)
             }
         }
-        .navigationTitle(id)
     }
 }
 

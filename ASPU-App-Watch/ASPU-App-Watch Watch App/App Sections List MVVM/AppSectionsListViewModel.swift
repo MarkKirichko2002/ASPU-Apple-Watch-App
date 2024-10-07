@@ -11,6 +11,7 @@ final class AppSectionsListViewModel: ObservableObject {
     
     @Published var info = false
     @Published var isChanged = false
+    @Published var alert = false
     
     var sections = AppSections.sections
     var currentId = 1
@@ -20,6 +21,7 @@ final class AppSectionsListViewModel: ObservableObject {
     
     init() {
         getData()
+        observeSectionsPosition()
     }
     
     func toggleInfo() {
@@ -45,10 +47,36 @@ final class AppSectionsListViewModel: ObservableObject {
     }
     
     func getData() {
-        makeImportantSection(index: settingsManager.getSectionId())
+        let id = settingsManager.getSectionId()
+        makeImportantSection(index: id)
+    }
+    
+    func resetSections() {
+        sections = AppSections.sections
+        saveImportantSection(index: 0)
+        isChanged.toggle()
+    }
+    
+    func showInfo(id: Int) {
+        currentId = id
+        toggleInfo()
     }
     
     func checkSwipeOption()-> Bool {
         return settingsManager.getSwipeOnOption()
+    }
+    
+    func checkSwipeFromLeft()-> SwipeActions {
+        return settingsManager.getSwipeFromLeftOption()
+    }
+    
+    func checkSwipeFromRight()-> SwipeActions {
+        return settingsManager.getSwipeFromRightOption()
+    }
+    
+    func observeSectionsPosition() {
+        NotificationCenter.default.addObserver(forName: Notification.Name("reset sections position"), object: nil, queue: nil) { _ in
+            self.resetSections()
+        }
     }
 }

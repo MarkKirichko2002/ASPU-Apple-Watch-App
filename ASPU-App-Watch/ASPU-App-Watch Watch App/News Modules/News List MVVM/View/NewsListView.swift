@@ -24,6 +24,7 @@ struct NewsListView: View {
                 }.modifier(CustomListStyle())
             }
         }
+        .navigationTitle(viewModel.getCurrentCategoryName())
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {

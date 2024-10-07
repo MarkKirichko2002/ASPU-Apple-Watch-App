@@ -21,10 +21,10 @@ struct PairInfoView: View {
             Alert(title: Text("Геопозиция выключена"))
         }
         .onAppear {
-            viewModel.setUpData()
-        }.onDisappear {
-            viewModel.stopTimer()
-            viewModel.stopUpdatingLocation()
+            viewModel.checkSettings()
+        }
+        .onDisappear {
+            viewModel.stopUpdateInfo()
         }
     }
 }

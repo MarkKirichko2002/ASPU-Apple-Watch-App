@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SettingsListView: View {
     
+    @State var alert = false
+    
     var body: some View {
         Form() {
             Section("Основое") {
@@ -30,6 +32,10 @@ struct SettingsListView: View {
             
             Section("Другое") {
                 ShowSplashOptionCell()
+                SectionsPostionOptionCell()
+                    .onTapGesture {
+                        self.alert.toggle()
+                }
                 SwipeOptionsCell()
                 CellStyleOptionCell()
             }
@@ -39,6 +45,17 @@ struct SettingsListView: View {
             }
         }
         .navigationTitle("Настройки")
+        .alert(isPresented: $alert) {
+            Alert(
+                title: Text("Сбросить порядок разделов?"),
+                primaryButton: .destructive(Text("Сбросить")) {
+                    NotificationCenter.default.post(name: Notification.Name("reset sections position"), object: nil)
+                },
+                secondaryButton: .cancel(Text("Отмена")) {
+                    
+                }
+            )
+        }
     }
     
     func getAppVersion()-> String {

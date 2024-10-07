@@ -14,15 +14,19 @@ final class TimetableDayListViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var isPresented = false
     @Published var isPresentedInfo = false
-    @Published var isSelected = false
     
     var currentID: String = ""
     var currentOwner: String = ""
+    var allDisciplines = [Discipline]()
     
     // MARK: - сервисы
     private let service = TimeTableService()
     private let settingsManager = SettingsManager()
     private let dateManager = DateManager()
+    
+    init() {
+        observedOption()
+    }
     
     func getTimetable() {
         isLoading = true
@@ -33,6 +37,7 @@ final class TimetableDayListViewModel: ObservableObject {
             case .success(let data):
                 DispatchQueue.main.async {
                     self.timetable = data
+                    self.allDisciplines = data.disciplines
                     self.isLoading = false
                     self.checkRemainingPairsOn()
                 }
@@ -62,6 +67,8 @@ final class TimetableDayListViewModel: ObservableObject {
     func checkRemainingPairsOn() {
         if settingsManager.getRemainingPairsOnOption() {
             timetable.disciplines = filterLeftedPairs(pairs: timetable.disciplines)
+        } else {
+            timetable.disciplines = allDisciplines
         }
     }
     
@@ -98,5 +105,12 @@ final class TimetableDayListViewModel: ObservableObject {
         }
         
         return disciplines
+    }
+    
+    func observedOption() {
+        NotificationCenter.default.addObserver(forName: Notification.Name("remaining"), object: nil, queue: nil) { _ in
+            print("option")
+            self.getTimetable()
+        }
     }
 }

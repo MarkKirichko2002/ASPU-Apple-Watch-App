@@ -25,7 +25,7 @@ struct TimetableDayListView: View {
                     PairCell(discipline: pair)
                         .onTapGesture {
                             viewModel.currentDiscipline = pair
-                            viewModel.isSelected.toggle()
+                            viewModel.isPresentedInfo.toggle()
                         }
                 }.modifier(CustomListStyle())
             }
@@ -43,9 +43,6 @@ struct TimetableDayListView: View {
             if viewModel.isLoading {
                 viewModel.getTimetable()
             }
-        }
-        .onChange(of: viewModel.isSelected) {
-            viewModel.isPresentedInfo.toggle()
         }
         .onChange(of: showOptions) { 
             viewModel.checkTimetableChanges()

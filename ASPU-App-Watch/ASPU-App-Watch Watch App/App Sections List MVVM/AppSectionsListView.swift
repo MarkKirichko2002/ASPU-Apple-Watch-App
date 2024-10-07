@@ -28,100 +28,32 @@ struct AppSectionsListView: View {
                         EmptyView()
                     }
                 } label: {
-                    switch section.id {
-                    case 1:
-                        if viewModel.checkSwipeOption() {
-                            AppSectionCell(section: section)
-                                .swipeActions {
-                                    Button {
-                                        viewModel.currentId = 1
-                                        viewModel.toggleInfo()
-                                    } label: {
-                                        Image("info")
+                    if viewModel.checkSwipeOption() {
+                        AppSectionCell(section: section)
+                            .swipeActions(edge: .trailing) {
+                                Button {
+                                    if viewModel.checkSwipeFromLeft() == .info {
+                                        viewModel.showInfo(id: section.id)
+                                    } else {
+                                        viewModel.makeImportantSection(index: section.id - 1)
                                     }
+                                } label: {
+                                    Image(viewModel.checkSwipeFromLeft() == .info ? "info" : "up")
                                 }
-                            
-                                .swipeActions(edge: .leading) {
-                                    Button {
-                                        viewModel.makeImportantSection(index: 0)
-                                    } label: {
-                                        Image("up")
-                                    }
-                             }
-                        } else {
-                            AppSectionCell(section: section)
-                        }
+                            }
                         
-                    case 2:
-                        if viewModel.checkSwipeOption() {
-                            AppSectionCell(section: section)
-                                .swipeActions {
-                                    Button {
-                                        viewModel.currentId = 2
-                                        viewModel.toggleInfo()
-                                    } label: {
-                                        Image("info")
+                            .swipeActions(edge: .leading) {
+                                Button {
+                                    if viewModel.checkSwipeFromRight() == .up {
+                                        viewModel.makeImportantSection(index: section.id - 1)
+                                    } else {
+                                        viewModel.showInfo(id: section.id)
                                     }
+                                } label: {
+                                    Image(viewModel.checkSwipeFromRight() == .up ? "up" : "info")
                                 }
-                            
-                                .swipeActions(edge: .leading) {
-                                    Button {
-                                        viewModel.makeImportantSection(index: 1)
-                                    } label: {
-                                        Image("up")
-                                    }
-                              }
-                        } else {
-                            AppSectionCell(section: section)
-                        }
-                        
-                    case 3:
-                        if viewModel.checkSwipeOption() {
-                            AppSectionCell(section: section)
-                                .swipeActions {
-                                    Button {
-                                        viewModel.currentId = 3
-                                        viewModel.toggleInfo()
-                                    } label: {
-                                        Image("info")
-                                    }
-                                }
-                            
-                                .swipeActions(edge: .leading) {
-                                    Button {
-                                        viewModel.makeImportantSection(index: 2)
-                                    } label: {
-                                        Image("up")
-                                    }
-                              }
-                        } else {
-                            AppSectionCell(section: section)
-                        }
-                        
-                    case 4:
-                        if viewModel.checkSwipeOption() {
-                            AppSectionCell(section: section)
-                                .swipeActions {
-                                    Button {
-                                        viewModel.currentId = 4
-                                        viewModel.toggleInfo()
-                                    } label: {
-                                        Image("info")
-                                    }
-                                }
-                            
-                                .swipeActions(edge: .leading) {
-                                    Button {
-                                        viewModel.makeImportantSection(index: 3)
-                                    } label: {
-                                        Image("up")
-                                    }
-                             }
-                        } else {
-                            AppSectionCell(section: section)
-                        }
-                        
-                    default:
+                            }
+                    } else {
                         AppSectionCell(section: section)
                     }
                 }

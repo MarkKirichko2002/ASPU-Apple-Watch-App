@@ -62,6 +62,12 @@ final class NewsListViewModel: ObservableObject {
         }
     }
     
+    func getCurrentCategoryName()-> String {
+        let abbreviation = settingsManager.getSavedCategory()
+        currentCategory = NewsCategories.categories.first(where: { $0.abbreviation == abbreviation})!
+        return currentCategory.name
+    }
+    
     func observeCategory() {
         NotificationCenter.default.addObserver(forName: Notification.Name("category"), object: nil, queue: nil) { _ in
             self.getNews()

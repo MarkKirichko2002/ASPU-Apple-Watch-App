@@ -12,7 +12,7 @@ final class PairInfoViewModel: ObservableObject {
     @Published var pairInfo = [String]()
     @Published var isAlert = false
     
-    var pair: Discipline!
+    var pair: Discipline = Discipline(id: "", time: "8:00-9:30", name: "", groupName: "", teacherName: "", audienceID: "", subgroup: 0, type: .all)
     var date: String = ""
     
     var timer: Timer?
@@ -26,6 +26,22 @@ final class PairInfoViewModel: ObservableObject {
     // MARK: - сервисы
     let dateManager = DateManager()
     let locationManager = LocationManager()
+    let settingsManager = SettingsManager()
+    
+    func checkSettings() {
+        if settingsManager.getFullPairInfoOption() {
+            setUpData()
+        } else {
+            setUpShortData()
+        }
+    }
+    
+    func stopUpdateInfo() {
+        if settingsManager.getFullPairInfoOption() {
+            stopTimer()
+            stopUpdatingLocation()
+        }
+    }
     
     func setUpData() {
         let startTime = getStartTime()
@@ -47,6 +63,22 @@ final class PairInfoViewModel: ObservableObject {
         checkLocationAuthorizationStatus()
     }
     
+    func setUpShortData() {
+        let startTime = getStartTime()
+        let endTime = getEndTime()
+        let pairType = pair.type.title
+        let subGroup = checkSubGroup(subgroup: pair.subgroup)
+        pairInfo.append("Дата: \(date)")
+        pairInfo.append("Дисциплина: \(pair.name)")
+        pairInfo.append("Начало: \(startTime)")
+        pairInfo.append("Конец: \(endTime)")
+        pairInfo.append("Преподаватель: \(pair.teacherName)")
+        pairInfo.append("Группа: \(pair.groupName)")
+        pairInfo.append(subGroup)
+        pairInfo.append("Тип пары: \(pairType)")
+        pairInfo.append("Аудитория: \(pair.audienceID)")
+    }
+    
     func getStartTime()-> String {
         let times = pair.time.components(separatedBy: "-")
         let startTime = times[0] + ":00"
@@ -55,8 +87,8 @@ final class PairInfoViewModel: ObservableObject {
     
     func getEndTime()-> String {
         let times = pair.time.components(separatedBy: "-")
-        let startTime = times[1] + ":00"
-        return startTime
+        let endTime = times[1] + ":00"
+        return endTime
     }
     
     func checkSubGroup(subgroup: Int)-> String {

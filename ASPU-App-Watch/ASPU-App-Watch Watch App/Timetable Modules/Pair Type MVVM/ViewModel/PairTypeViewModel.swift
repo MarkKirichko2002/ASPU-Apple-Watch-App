@@ -11,7 +11,6 @@ final class PairTypeViewModel: ObservableObject {
     
     @Published var disciplines = [Discipline]()
     @Published var currentDiscipline = Discipline(id: "", time: "", name: "", groupName: "", teacherName: "", audienceID: "", subgroup: 0, type: .all)
-    @Published var isSelected = false
     @Published var isPresentedInfo = false
     
     func setUpData(disciplines: [Discipline]) {

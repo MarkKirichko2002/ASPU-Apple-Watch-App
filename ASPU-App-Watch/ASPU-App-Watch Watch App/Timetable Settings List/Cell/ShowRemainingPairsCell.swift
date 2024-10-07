@@ -18,6 +18,7 @@ struct ShowRemainingPairsCell: View {
                 .fontWeight(.bold)
             Toggle("", isOn: $isRemainingPairsOn)
         }.onChange(of: isRemainingPairsOn) { oldValue, newValue in
+            NotificationCenter.default.post(name: Notification.Name("remaining"), object: nil)
             UserDefaults.standard.setValue(newValue, forKey: "isRemainingPairsOn")
         }
     }

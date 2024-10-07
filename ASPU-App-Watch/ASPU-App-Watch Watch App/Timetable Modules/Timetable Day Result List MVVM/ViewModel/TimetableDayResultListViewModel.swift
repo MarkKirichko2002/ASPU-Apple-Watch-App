@@ -14,7 +14,6 @@ final class TimetableDayResultListViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var isPresented = false
     @Published var isPresentedInfo = false
-    @Published var isSelected = false
     
     // MARK: - сервисы
     private let service = TimeTableService()

@@ -24,7 +24,7 @@ struct PairTypeView: View {
                     PairCell(discipline: pair)
                         .onTapGesture {
                             viewModel.currentDiscipline = pair
-                            viewModel.isSelected.toggle()
+                            viewModel.isPresentedInfo.toggle()
                         }
                 }
             }
@@ -32,9 +32,6 @@ struct PairTypeView: View {
         .navigationTitle("\(type.title): \(viewModel.disciplinesCount())")
         .onAppear {
             viewModel.setUpData(disciplines: disciplines)
-        }
-        .onChange(of: viewModel.isSelected) {
-            viewModel.isPresentedInfo.toggle()
         }
         .sheet(isPresented: $viewModel.isPresentedInfo) {
             PairInfoView(viewModel: PairInfoViewModel(pair: viewModel.currentDiscipline, date: date))
