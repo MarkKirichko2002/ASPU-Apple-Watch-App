@@ -39,7 +39,7 @@ struct TimetableDayResultListView: View {
                     self.viewModel.isPresented.toggle()
                 }) {
                     Image("sections")
-                }
+                }.foregroundStyle(Color(UIColor.white))
             }
         }
         .onAppear {

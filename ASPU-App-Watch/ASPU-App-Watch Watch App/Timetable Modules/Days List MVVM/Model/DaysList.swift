@@ -14,19 +14,19 @@ struct DaysList {
             name: "Настоящий",
             date: "",
             dayOfWeek: "",
-            info: ""
+            info: "..."
         ),
         DayModel(
             name: "Следующий",
             date: "",
             dayOfWeek: "",
-            info: ""
+            info: "..."
         ),
         DayModel(
             name: "Предыдущий",
             date: "",
             dayOfWeek: "",
-            info: ""
+            info: "..."
         ),
     ]
 }

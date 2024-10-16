@@ -26,7 +26,7 @@ struct BuildingsMapView: View {
                     viewModel.isPresentedOptions.toggle()
                 }) {
                     Image("sections")
-                }
+                }.foregroundStyle(Color(UIColor.white))
             }
         }
         

@@ -17,6 +17,7 @@ final class MapsInfoViewModel: ObservableObject {
     
     // MARK: - сервисы
     private let locationManager = LocationManager()
+    private let settingsManager = SettingsManager()
     
     func checkLocationAuthorizationStatus() {
         locationManager.checkLocationAuthorization { isAuthorized in
@@ -42,6 +43,7 @@ final class MapsInfoViewModel: ObservableObject {
     }
     
     func getInfo(currentLocation: CLLocation)-> (String, String) {
+        let savedDistance = settingsManager.getDistanceForBuilding()
         for i in Buildings.pins {
             let userLocation = CLLocation(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
             let corpsLocation = CLLocation(latitude: i.pin.latitude, longitude:  i.pin.longitude)
@@ -49,7 +51,7 @@ final class MapsInfoViewModel: ObservableObject {
             let kilometers = Int(distance) / 1000
             let metres = Int(distance.truncatingRemainder(dividingBy: 1000))
             
-            if metres <= 300 {
+            if (kilometers == 0 && metres <= savedDistance) {
                 text = "Близко"
                 currentBuidling = i
                 return ("\"\(convertText(text: i.name))\"", "\(kilometers) км \(metres) м")

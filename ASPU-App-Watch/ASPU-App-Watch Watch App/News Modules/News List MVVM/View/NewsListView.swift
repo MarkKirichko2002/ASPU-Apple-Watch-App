@@ -31,7 +31,7 @@ struct NewsListView: View {
                     self.viewModel.isPresented.toggle()
                 }) {
                     Image("sections")
-                }
+                }.foregroundStyle(Color(UIColor.white))
             }
         }
         .onAppear {

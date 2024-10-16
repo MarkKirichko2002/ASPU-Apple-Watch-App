@@ -32,25 +32,9 @@ struct AppSectionsListView: View {
                         AppSectionCell(section: section)
                             .swipeActions(edge: .trailing) {
                                 Button {
-                                    if viewModel.checkSwipeFromLeft() == .info {
-                                        viewModel.showInfo(id: section.id)
-                                    } else {
-                                        viewModel.makeImportantSection(index: section.id - 1)
-                                    }
+                                    viewModel.showInfo(id: section.id)
                                 } label: {
-                                    Image(viewModel.checkSwipeFromLeft() == .info ? "info" : "up")
-                                }
-                            }
-                        
-                            .swipeActions(edge: .leading) {
-                                Button {
-                                    if viewModel.checkSwipeFromRight() == .up {
-                                        viewModel.makeImportantSection(index: section.id - 1)
-                                    } else {
-                                        viewModel.showInfo(id: section.id)
-                                    }
-                                } label: {
-                                    Image(viewModel.checkSwipeFromRight() == .up ? "up" : "info")
+                                    Image("info")
                                 }
                             }
                     } else {

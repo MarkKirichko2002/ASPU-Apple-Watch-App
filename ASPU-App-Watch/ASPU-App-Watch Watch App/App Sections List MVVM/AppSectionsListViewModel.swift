@@ -30,33 +30,21 @@ final class AppSectionsListViewModel: ObservableObject {
         }
     }
     
-    func makeImportantSection(index: Int) {
-        sections = []
-        sections.append(AppSections.sections[index])
-        for i in 0...AppSections.sections.count - 1 {
-            if !sections.contains(where: { $0.id == AppSections.sections[i].id }) {
-                sections.append(AppSections.sections[i])
-            }
-        }
-        saveImportantSection(index: index)
-        isChanged.toggle()
-    }
-        
-    func saveImportantSection(index: Int) {
-        settingsManager.saveSection(index: index)
-    }
-    
     func getData() {
-        let id = settingsManager.getSectionId()
-        makeImportantSection(index: id)
+        sections = []
+        let first = UserDefaults.standard.string(forKey: "first section") ?? "Новости"
+        let second = UserDefaults.standard.string(forKey: "second section") ?? "Расписание"
+        let third = UserDefaults.standard.string(forKey: "third section") ?? "Карты"
+        let fourth = UserDefaults.standard.string(forKey: "fourth section") ?? "Настройки"
+        
+        let value1 = AppSections.sections.first { $0.name == first }!
+        let value2 = AppSections.sections.first { $0.name == second }!
+        let value3 = AppSections.sections.first { $0.name == third }!
+        let value4 = AppSections.sections.first { $0.name == fourth }!
+        
+        sections = [value1, value2, value3, value4]
+        
     }
-    
-    func resetSections() {
-        sections = AppSections.sections
-        saveImportantSection(index: 0)
-        isChanged.toggle()
-    }
-    
     func showInfo(id: Int) {
         currentId = id
         toggleInfo()
@@ -66,17 +54,9 @@ final class AppSectionsListViewModel: ObservableObject {
         return settingsManager.getSwipeOnOption()
     }
     
-    func checkSwipeFromLeft()-> SwipeActions {
-        return settingsManager.getSwipeFromLeftOption()
-    }
-    
-    func checkSwipeFromRight()-> SwipeActions {
-        return settingsManager.getSwipeFromRightOption()
-    }
-    
     func observeSectionsPosition() {
-        NotificationCenter.default.addObserver(forName: Notification.Name("reset sections position"), object: nil, queue: nil) { _ in
-            self.resetSections()
+        NotificationCenter.default.addObserver(forName: Notification.Name("sections position changed"), object: nil, queue: nil) { _ in
+            self.getData()
         }
     }
 }

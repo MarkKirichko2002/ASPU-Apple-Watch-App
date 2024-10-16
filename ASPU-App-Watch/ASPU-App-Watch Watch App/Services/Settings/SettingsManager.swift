@@ -46,6 +46,10 @@ final class SettingsManager {
         return UserDefaults.standard.object(forKey: "isFullPairInfoOn") as? Bool ?? false
     }
     
+    func getDistanceForBuilding()-> Int {
+        return UserDefaults.standard.object(forKey: "distance") as? Int ?? 300
+    }
+    
     func getSwipeOnOption()-> Bool {
         return UserDefaults.standard.object(forKey: "isSwipeOn") as? Bool ?? true
     }
