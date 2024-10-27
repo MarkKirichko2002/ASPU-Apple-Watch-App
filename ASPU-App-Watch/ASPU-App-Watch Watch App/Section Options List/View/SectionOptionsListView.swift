@@ -23,26 +23,30 @@ struct SectionOptionsListView: View {
             Picker("1-й раздел", selection: $selectedSection1) {
                 ForEach(sections, id: \.self) {
                     Text($0)
-                }
-            }
+                        .fontWeight(.bold)
+                }.navigationTitle("1-й раздел")
+            }.fontWeight(.bold)
             
             Picker("2-й раздел", selection: $selectedSection2) {
                 ForEach(sections, id: \.self) {
                     Text($0)
-                }
-            }
+                        .fontWeight(.bold)
+                }.navigationTitle("2-й раздел")
+            }.fontWeight(.bold)
             
             Picker("3-й раздел", selection: $selectedSection3) {
                 ForEach(sections, id: \.self) {
                     Text($0)
-                }
-            }
+                        .fontWeight(.bold)
+                }.navigationTitle("3-й раздел")
+            }.fontWeight(.bold)
             
             Picker("4-й раздел", selection: $selectedSection4) {
                 ForEach(sections, id: \.self) {
                     Text($0)
-                }
-            }
+                        .fontWeight(.bold)
+                }.navigationTitle("4-й раздел")
+            }.fontWeight(.bold)
         }
         .navigationTitle("Разделы")
         .toolbar {

@@ -5,12 +5,13 @@
 //  Created by Марк Киричко on 06.08.2024.
 //
 
-import CoreLocation
+import Foundation
 
 final class PairInfoViewModel: ObservableObject {
     
     @Published var pairInfo = [String]()
-    @Published var isAlert = false
+    @Published var currentBuilding = Buildings.pins[0]
+    @Published var isPresented = false
     
     var pair: Discipline = Discipline(id: "", time: "8:00-9:30", name: "", groupName: "", teacherName: "", audienceID: "", subgroup: 0, type: .all)
     var date: String = ""
@@ -39,7 +40,6 @@ final class PairInfoViewModel: ObservableObject {
     func stopUpdateInfo() {
         if settingsManager.getFullPairInfoOption() {
             stopTimer()
-            stopUpdatingLocation()
         }
     }
     
@@ -57,10 +57,9 @@ final class PairInfoViewModel: ObservableObject {
         pairInfo.append(subGroup)
         pairInfo.append("Тип пары: \(pairType)")
         pairInfo.append("Аудитория: \(pair.audienceID)")
+        pairInfo.append("\(getCurrentBuilding().name)")
         pairInfo.append("Вычисляем время...")
-        pairInfo.append("Вычисляем растояние...")
         checkCurrentTime()
-        checkLocationAuthorizationStatus()
     }
     
     func setUpShortData() {
@@ -185,7 +184,7 @@ final class PairInfoViewModel: ObservableObject {
                         self.stopTimer()
                         self.getTimeLeftToEnd()
                     } else {
-                        self.pairInfo[9] = "До начала: \(hours) часов \(minutes) минут \(seconds) секунд"
+                        self.pairInfo[10] = "До начала: \(hours) часов \(minutes) минут \(seconds) секунд"
                     }
                 } else {
                     print("Ошибка")
@@ -221,9 +220,9 @@ final class PairInfoViewModel: ObservableObject {
                 if let hours = difference.hour, let minutes = difference.minute, let seconds = difference.second {
                     
                     if hours >= 0 && minutes >= 0 && seconds >= 0 {
-                        self.pairInfo[9] = "До конца пары: \(hours) часов \(minutes) минут \(seconds) секунд"
+                        self.pairInfo[10] = "До конца пары: \(hours) часов \(minutes) минут \(seconds) секунд"
                     } else if hours <= 0 && minutes <= 0 && seconds <= 0 {
-                        self.pairInfo[9] = "Пара закончилась"
+                        self.pairInfo[10] = "Пара закончилась"
                         self.stopTimer()
                         self.getTimeEnded()
                     }
@@ -264,7 +263,7 @@ final class PairInfoViewModel: ObservableObject {
             
             let info = self.dateManager.getInfoFromDates(date: currentDate, date2: startDateString)
             
-            self.pairInfo[9] = "Осталось: \(abs(info.day ?? 0)) дней \(abs(info.hour ?? 0)) часов \(abs(info.minute ?? 0)) минут \(abs(info.second ?? 0)) секунд"
+            self.pairInfo[10] = "Осталось: \(abs(info.day ?? 0)) дней \(abs(info.hour ?? 0)) часов \(abs(info.minute ?? 0)) минут \(abs(info.second ?? 0)) секунд"
         }
     }
     
@@ -296,51 +295,15 @@ final class PairInfoViewModel: ObservableObject {
             
             let info = self.dateManager.getInfoFromDates(date: currentDate, date2: startDateString)
             
-            self.pairInfo[9] = "Прошло с окончания: \(abs(info.day ?? 0)) дней \(abs(info.hour ?? 0)) часов \(abs(info.minute ?? 0)) минут \(abs(info.second ?? 0)) секунд"
+            self.pairInfo[10] = "Прошло с окончания: \(abs(info.day ?? 0)) дней \(abs(info.hour ?? 0)) часов \(abs(info.minute ?? 0)) минут \(abs(info.second ?? 0)) секунд"
         }
     }
     
-    func checkLocationAuthorizationStatus() {
-        locationManager.checkLocationAuthorization { isAuthorized in
-            if isAuthorized {
-                self.getLocation()
-            } else {
-                DispatchQueue.main.async {
-                    self.isAlert.toggle()
-                }
-            }
-        }
-    }
-    
-    func getLocation() {
-        
-        locationManager.isUpdates = true
-        locationManager.getLocations()
-        
-        locationManager.registerLocationHandler { location in
-            let currentBuilding = self.currentBuilding()
-            self.pairInfo[10] = self.getInfo(currentLocation: location, for: currentBuilding)
-        }
-    }
-    
-    func getInfo(currentLocation: CLLocation, for building: BuildingModel)-> String {
-        let locationA = CLLocation(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
-        let locationB = CLLocation(latitude: building.pin.latitude, longitude:  building.pin.longitude)
-        let distance = locationA.distance(from: locationB)
-        let kilometers = Int(distance) / 1000
-        let metres = Int(distance.truncatingRemainder(dividingBy: 1000))
-        
-        if (kilometers == 0 && metres <= 100) {
-            return "В корпусе"
-        } else {
-            return "До корпуса \"\(building.name)\" осталось: \(kilometers) км \(metres) м"
-        }
-    }
-    
-    func currentBuilding()-> BuildingModel {
+    func getCurrentBuilding()-> BuildingModel {
         for building in Buildings.pins {
             for audience in building.audiences {
                 if audience == pair.audienceID {
+                    currentBuilding = building
                     return building
                 }
             }
@@ -348,7 +311,9 @@ final class PairInfoViewModel: ObservableObject {
         return Buildings.pins[0]
     }
     
-    func stopUpdatingLocation() {
-        locationManager.manager.stopUpdatingLocation()
+    func checkCell(item: String) {
+        if item.contains(currentBuilding.name) {
+            self.isPresented.toggle()
+        }
     }
 }

@@ -18,6 +18,9 @@ struct NewsListView: View {
             if viewModel.isLoading {
                 Text("Загрузка...")
                     .fontWeight(.bold)
+            } else if viewModel.newsResponse.articles?.count == 0 {
+                Text("Нет новостей")
+                    .fontWeight(.bold)
             } else {
                 List(viewModel.newsResponse.articles ?? []) { article in
                     ArticleCell(article: article, abbreviation: viewModel.currentCategory.abbreviation, isSavedArticle: false)

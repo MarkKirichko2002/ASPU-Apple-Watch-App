@@ -12,6 +12,7 @@ struct TimetableSettingsListView: View {
         List {
             ShowRemainingPairsCell()
             FullPairInfoOptionCell()
+            TimetableDisplayOptionСell()
         }.navigationTitle("Расписание")
     }
 }

@@ -17,12 +17,11 @@ final class BuildingsMapViewModel: ObservableObject {
     @Published var isPresented = false
     @Published var isPresentedOptions = false
     
+    var index = 0
+    
     // MARK: - сервисы
     private let locationManager = LocationManager()
-    
-    func indexOfBuilding(building: BuildingModel)-> Int {
-        return buildings.firstIndex { $0.name == building.name} ?? 0
-    }
+    private let settingsManager = SettingsManager()
     
     func getLocation() {
         locationManager.checkLocationAuthorization { isAuth in
@@ -31,10 +30,48 @@ final class BuildingsMapViewModel: ObservableObject {
                 self.locationManager.registerLocationHandler { location in
                     self.camera = .region(MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 200, longitudinalMeters: 200))
                     if !self.buildings.contains(where: { $0.name == "Вы" }) {
+                        self.buildings = []
                         self.buildings.append(BuildingModel(id: UUID(), name: "Вы", address: "", image: [], type: .all, audiences: [], pin: location.coordinate))
+                        self.fillArray()
                     }
                 }
             }
         }
+    }
+    
+    func nextLocation()  {
+        if index < buildings.count - 1 {
+            index += 1
+            let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
+            let region = MKCoordinateRegion(center: buildings[index].pin, span: span)
+            self.camera = .region(region)
+        }
+    }
+    
+    func pastLocation() {
+        if index > 0 {
+            index -= 1
+            let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
+            let region = MKCoordinateRegion(center: buildings[index].pin, span: span)
+            self.camera = .region(region)
+        }
+    }
+    
+    func checkNavigationBar()-> Bool {
+        return settingsManager.getNavigationBarOption()
+    }
+    
+    func fillArray() {
+        for building in Buildings.pins {
+            buildings.append(building)
+        }
+    }
+    
+    func getArrowColor()-> AppColors {
+        return settingsManager.getArrowsColor()
+    }
+    
+    func getBuildingID(building: BuildingModel)-> Int {
+        return buildings.firstIndex { $0.name == building.name } ?? 0
     }
 }

@@ -10,6 +10,8 @@ import SwiftUI
 struct TimetableDayResultListView: View {
     
     @ObservedObject var viewModel = TimetableDayResultListViewModel()
+    @State var showOptions = false
+    
     var id: String = ""
     var date: String = ""
     var owner: String = ""
@@ -36,7 +38,8 @@ struct TimetableDayResultListView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
-                    self.viewModel.isPresented.toggle()
+                    self.viewModel.isPresentedOptions.toggle()
+                    print(self.viewModel.isPresentedOptions)
                 }) {
                     Image("sections")
                 }.foregroundStyle(Color(UIColor.white))
@@ -48,13 +51,14 @@ struct TimetableDayResultListView: View {
         .onDisappear {
             viewModel.sendNotification(id: id, owner: owner)
         }
+        .onChange(of: showOptions) {
+            viewModel.checkTimetableChanges()
+        }
         .sheet(isPresented: $viewModel.isPresentedInfo) {
             PairInfoView(viewModel: PairInfoViewModel(pair: viewModel.currentDiscipline, date: date))
         }
-        .sheet(isPresented: $viewModel.isPresented) {
-            NavigationView {
-                PairFilterTypeListView(date: date, disciplines: viewModel.timetable.disciplines)
-            }
+        .sheet(isPresented: $viewModel.isPresentedOptions) {
+            TimetableLessOptionsListView(date: viewModel.getCurrentDate(), disciplines: viewModel.timetable.disciplines, isPresented: $showOptions)
         }
     }
 }

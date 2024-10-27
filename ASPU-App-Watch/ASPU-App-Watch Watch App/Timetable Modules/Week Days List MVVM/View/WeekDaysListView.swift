@@ -39,14 +39,16 @@ struct WeekDaysListView: View {
         }
         .navigationTitle("Неделя: \(week.id)")
         .onAppear {
-            viewModel.getTimetable(week: week)
+            if viewModel.isLoading {
+                viewModel.getTimetable(week: week)
+            }
         }
         .onChange(of: viewModel.isSelected) {
             viewModel.isPresented.toggle()
         }
-        .sheet(isPresented: $viewModel.isPresented, content: {
+        .sheet(isPresented: $viewModel.isPresented) {
             TimetableDayResultListView(id: viewModel.getSavedId(), date: viewModel.currentDay.date, owner: viewModel.getSavedOwner())
-        })
+        }
     }
 }
 

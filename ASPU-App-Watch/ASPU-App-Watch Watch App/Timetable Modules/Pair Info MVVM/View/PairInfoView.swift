@@ -15,16 +15,19 @@ struct PairInfoView: View {
         List(viewModel.pairInfo, id: \.self) { item in
             Text(item)
                 .fontWeight(.bold)
+                .onTapGesture {
+                    viewModel.checkCell(item: item)
+             }
         }
         .navigationTitle("Информация")
-        .alert(isPresented: $viewModel.isAlert) {
-            Alert(title: Text("Геопозиция выключена"))
-        }
         .onAppear {
             viewModel.checkSettings()
         }
         .onDisappear {
             viewModel.stopUpdateInfo()
+        }
+        .sheet(isPresented: $viewModel.isPresented) {
+            BuildingDetailView(building: viewModel.currentBuilding)
         }
     }
 }

@@ -15,6 +15,7 @@ final class WeekDaysListViewModel: ObservableObject {
     private let settingsManager = SettingsManager()
     
     @Published var days = [WeekDayModel]()
+    @Published var isInfoPresented = false
     @Published var isPresented = false
     @Published var isSelected = false
     @Published var currentDay = WeekDayModel(name: "", date: "")
@@ -53,5 +54,9 @@ final class WeekDaysListViewModel: ObservableObject {
     
     func getSavedOwner()-> String {
         return settingsManager.getSavedOwner()
+    }
+    
+    func getSwipeOption()-> Bool {
+        return settingsManager.getSwipeOnOption()
     }
 }

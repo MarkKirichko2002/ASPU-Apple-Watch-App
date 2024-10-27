@@ -12,11 +12,14 @@ final class WeeksListViewModel: ObservableObject {
     @Published var weeks = [WeekModel]()
     @Published var currentWeek = WeekModel(id: 1, from: "", to: "", dayNames: ["" : ""])
     @Published var isPresented = false
+    @Published var isPresentedInfo = false
     @Published var isSelected = false
-    @Published var isLoading = false
+    @Published var isLoading = true
+    @Published var isPresentedOptions = false
     
     // MARK: - сервисы
     private let service = TimeTableService()
+    private let settingsManager = SettingsManager()
     
     func getWeeks() {
         isLoading = true
@@ -34,5 +37,17 @@ final class WeeksListViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+    
+    func getSwipeOption()-> Bool {
+        return settingsManager.getSwipeOnOption()
+    }
+    
+    func getSavedID()-> String {
+        return settingsManager.getSavedID()
+    }
+    
+    func getSavedOwner()-> String {
+        return settingsManager.getSavedOwner()
     }
 }

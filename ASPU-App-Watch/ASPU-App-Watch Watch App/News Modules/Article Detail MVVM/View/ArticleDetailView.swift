@@ -84,8 +84,10 @@ struct ArticleDetailView: View {
         .alert(isPresented: $alert) {
             Alert(title: Text("Новость уже сохранена"))
         }
-        .onChange(of: viewModel.isSelected) {
-            self.viewModel.isPresented.toggle()
+        .onChange(of: viewModel.isSelected) { newValue in
+            if newValue {
+                viewModel.isPresented.toggle()
+            }
         }
         .sheet(isPresented: $viewModel.isPresented) {
             ZoomImageView(url: viewModel.currentImageURL)

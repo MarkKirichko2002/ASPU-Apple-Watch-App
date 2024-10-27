@@ -46,22 +46,20 @@ final class SettingsManager {
         return UserDefaults.standard.object(forKey: "isFullPairInfoOn") as? Bool ?? false
     }
     
-    func getDistanceForBuilding()-> Int {
-        return UserDefaults.standard.object(forKey: "distance") as? Int ?? 300
+    func getTimetableDisplayOption()-> TimetableDisplayOptions {
+        return UserDefaults.loadData(type: TimetableDisplayOptions.self, key: "timetable display option") ?? .day
+    }
+    
+    func getNavigationBarOption()-> Bool {
+        return UserDefaults.standard.object(forKey: "isNavigationBar") as? Bool ?? false
+    }
+    
+    func getArrowsColor()-> AppColors {
+        return UserDefaults.loadData(type: AppColors.self, key: "arrow color") ?? AppColors.system
     }
     
     func getSwipeOnOption()-> Bool {
         return UserDefaults.standard.object(forKey: "isSwipeOn") as? Bool ?? true
-    }
-    
-    func getSwipeFromLeftOption()-> SwipeActions {
-        let option = UserDefaults.loadData(type: SwipeActions.self, key: "swipe from left")
-        return option ?? SwipeActions.info
-    }
-    
-    func getSwipeFromRightOption()-> SwipeActions {
-        let option = UserDefaults.loadData(type: SwipeActions.self, key: "swipe from right")
-        return option ?? SwipeActions.up
     }
     
     func getSavedListStyle()-> CellStyle {

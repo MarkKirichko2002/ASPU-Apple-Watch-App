@@ -13,10 +13,10 @@ struct BuildingsMapView: View {
     @ObservedObject var viewModel = BuildingsMapViewModel()
     
     var body: some View {
+        
         Map(position: $viewModel.camera, selection: $viewModel.selected) {
             ForEach(viewModel.buildings) { building in
-                let index = viewModel.indexOfBuilding(building: building)
-                Marker(building.name, coordinate: building.pin).tag(index)
+                Marker(building.name, coordinate: building.pin).tag(viewModel.getBuildingID(building: building))
             }
         }
         .navigationTitle("Карты")
@@ -29,14 +29,35 @@ struct BuildingsMapView: View {
                 }.foregroundStyle(Color(UIColor.white))
             }
         }
+        .toolbar {
+            if viewModel.checkNavigationBar() {
+                ToolbarItem(placement: .bottomBar) {
+                    HStack {
+                        Button(action: {
+                            viewModel.pastLocation()
+                        }) {
+                            Image(systemName: "arrow.left")
+                        }.foregroundStyle(Color(viewModel.getArrowColor().color))
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            viewModel.nextLocation()
+                        }) {
+                            Image(systemName: "arrow.right")
+                        }.foregroundStyle(Color(viewModel.getArrowColor().color))
+                    }
+                }
+            }
+        }
         
         .onAppear {
             viewModel.getLocation()
         }
         .onChange(of: viewModel.selected) { value in
             guard let index = value else {return}
-            if index != 9 {
-                viewModel.currentLocation = Buildings.pins[index]
+            if index != 0 {
+                viewModel.currentLocation = viewModel.buildings[index]
                 viewModel.isPresented.toggle()
             }
         }

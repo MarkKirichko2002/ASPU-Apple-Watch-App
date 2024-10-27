@@ -186,6 +186,9 @@ struct Buildings {
                 "85а",
                 "86",
                 "86а",
+                "87",
+                "88",
+                "89",
                 "Спортзал ФОК"
             ],
             pin: CLLocationCoordinate2D(latitude: 45.006374, longitude: 41.128629)

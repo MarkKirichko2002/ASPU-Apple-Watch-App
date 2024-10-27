@@ -19,7 +19,7 @@ struct AppSectionsListView: View {
                     case 1:
                         NewsListView()
                     case 2:
-                        TimetableDayListView()
+                        TimetableDisplayView()
                     case 3:
                         BuildingsMapView()
                     case 4:
@@ -52,9 +52,9 @@ struct AppSectionsListView: View {
                 case 1:
                     TodayNewsInfoView()
                 case 2:
-                    TimetableInfoView()
+                    TimetableDayInfoView(id: viewModel.getSavedID(), owner: viewModel.getSavedOwner())
                 case 3:
-                    MapsInfoView()
+                    BuildingListView()
                 case 4:
                     AppVersionInfoView()
                 default:

@@ -54,6 +54,14 @@ final class AppSectionsListViewModel: ObservableObject {
         return settingsManager.getSwipeOnOption()
     }
     
+    func getSavedID()-> String {
+        return settingsManager.getSavedID()
+    }
+    
+    func getSavedOwner()-> String {
+        return settingsManager.getSavedOwner()
+    }
+    
     func observeSectionsPosition() {
         NotificationCenter.default.addObserver(forName: Notification.Name("sections position changed"), object: nil, queue: nil) { _ in
             self.getData()

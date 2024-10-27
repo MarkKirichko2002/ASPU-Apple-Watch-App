@@ -15,12 +15,13 @@ struct BuildingDetailView: View {
     @State var isImagePresented = false
     @State var isPresented = false
     @State var isSelected = false
+    @State var isInfoSelected = false
+    @State var isInfoPresented = false
     @State var isImageSelected = false
     @State var currentImage = ""
-    @State var distanceInfo = "Вычисляем растояние..."
     
     let dateManager = DateManager()
-    let locationManager = LocationManager()
+    let settingsManager = SettingsManager()
     
     var body: some View {
         Form() {
@@ -63,20 +64,40 @@ struct BuildingDetailView: View {
                     }
             }
             
-            Section("Расстояние") {
-                Text(distanceInfo)
-                    .fontWeight(.bold)
-            }
-            
             Section("Аудитории") {
                 if building.audiences.count > 0 {
                     List(building.audiences, id: \.self) { audience in
-                        Text(audience)
-                            .fontWeight(.bold)
-                            .onTapGesture {
-                                currentAudience = audience
-                                isSelected.toggle()
-                         }
+                        if settingsManager.getSwipeOnOption() {
+                            HStack {
+                                Spacer()
+                                Text(audience)
+                                    .fontWeight(.bold)
+                                    .onTapGesture {
+                                        currentAudience = audience
+                                        isSelected.toggle()
+                                    }
+                                Spacer()
+                            }
+                            .swipeActions(edge: .trailing) {
+                                Button {
+                                    currentAudience = audience
+                                    isInfoSelected.toggle()
+                                } label: {
+                                    Image("info")
+                                }
+                            }
+                        } else {
+                            HStack {
+                                Spacer()
+                                Text(audience)
+                                    .fontWeight(.bold)
+                                    .onTapGesture {
+                                        currentAudience = audience
+                                        isSelected.toggle()
+                                    }
+                                Spacer()
+                            }
+                        }
                     }
                 } else {
                     Text("Нет аудиторий")
@@ -96,17 +117,14 @@ struct BuildingDetailView: View {
             }
         }
         .navigationTitle("Подробнее")
-        .onAppear {
-            getLocation()
-        }
-        .onDisappear {
-            locationManager.manager.stopUpdatingLocation()
-        }
         .onChange(of: isSelected) {
             self.isPresented.toggle()
         }
         .onChange(of: isImageSelected) {
             self.isImagePresented.toggle()
+        }
+        .onChange(of: isInfoSelected) {
+            self.isInfoPresented.toggle()
         }
         .sheet(isPresented: $isPresented, content: {
             TimetableDayResultListView(id: currentAudience, date: dateManager.getCurrentDate(), owner: "CLASSROOM")
@@ -114,30 +132,8 @@ struct BuildingDetailView: View {
         .sheet(isPresented: $isImagePresented, content: {
             ZoomImageView(url: currentImage)
         })
-    }
-    
-    func getLocation() {
-        
-        locationManager.isUpdates = true
-        locationManager.getLocations()
-        
-        locationManager.registerLocationHandler { location in
-            print(location.coordinate)
-            self.distanceInfo = self.getInfo(currentLocation: location, for: self.building)
-        }
-    }
-    
-    func getInfo(currentLocation: CLLocation, for building: BuildingModel)-> String {
-        let locationA = CLLocation(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
-        let locationB = CLLocation(latitude: building.pin.latitude, longitude:  building.pin.longitude)
-        let distance = locationA.distance(from: locationB)
-        let kilometers = Int(distance) / 1000
-        let metres = Int(distance.truncatingRemainder(dividingBy: 1000))
-        
-        if (kilometers == 0 && metres <= 100) {
-            return "В корпусе"
-        } else {
-            return "До корпуса осталось: \(kilometers) км \(metres) м"
+        .sheet(isPresented: $isInfoPresented) {
+            TimetableDayInfoView(id: currentAudience, owner: "CLASSROOM")
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  TimetableInfoView.swift
+//  TimetableDayInfoView.swift
 //  ASPU-App-Watch Watch App
 //
 //  Created by Марк Киричко on 12.09.2024.
@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct TimetableInfoView: View {
+struct TimetableDayInfoView: View {
     
     @ObservedObject var viewModel = TimetableInfoViewModel()
+    var id: String
+    var owner: String
     
     var body: some View {
         VStack(spacing: 25) {
@@ -20,11 +22,11 @@ struct TimetableInfoView: View {
                 .fontWeight(.bold)
         }.navigationTitle("Расписание")
         .onAppear {
-            viewModel.getTimetable()
+            viewModel.getTimetable(id: id, owner: owner)
         }
     }
 }
 
 #Preview {
-    TimetableInfoView()
+    TimetableDayInfoView(id: "", owner: "")
 }

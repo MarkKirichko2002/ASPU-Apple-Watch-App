@@ -12,15 +12,20 @@ final class TimetableDayResultListViewModel: ObservableObject {
     @Published var timetable = TimeTable(id: "", date: "", disciplines: [])
     @Published var currentDiscipline = Discipline(id: "", time: "", name: "", groupName: "", teacherName: "", audienceID: "", subgroup: 0, type: .all)
     @Published var isLoading = true
-    @Published var isPresented = false
     @Published var isPresentedInfo = false
+    @Published var isPresentedOptions = false
     
     // MARK: - сервисы
     private let service = TimeTableService()
     private let dateManager = DateManager()
+    private let settingsManager = SettingsManager()
+    
+    var currentID: String = ""
+    var currentOwner: String = ""
     
     func getTimetable(id: String, date: String, owner: String) {
         isLoading = true
+        currentID = settingsManager.getSavedID()
         saveItem(id: id, owner: owner)
         service.getTimeTableDay(id: id, date: date, owner: owner) { result in
             switch result {
@@ -35,6 +40,17 @@ final class TimetableDayResultListViewModel: ObservableObject {
                 }
                 print(error)
             }
+        }
+    }
+    
+    func checkTimetableChanges() {
+        let id = settingsManager.getSavedID()
+        let owner = settingsManager.getSavedOwner()
+        if currentID != id {
+            print("есть изменения")
+            getTimetable(id: id, date: dateManager.getCurrentDate(), owner: owner)
+        } else {
+            print("нет изменений")
         }
     }
     

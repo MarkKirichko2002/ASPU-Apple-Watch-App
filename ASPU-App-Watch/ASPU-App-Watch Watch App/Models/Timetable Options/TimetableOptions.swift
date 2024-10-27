@@ -23,4 +23,17 @@ struct TimetableOptions {
         TimetableOptionModel(id: 5, name: "Недели", icon: "sections icon"),
         TimetableOptionModel(id: 6, name: "Фильтрация", icon: "filter")
     ]
+    
+    static let lessOptions = [
+        TimetableOptionModel(id: 1, name: "Группы", icon: "group"),
+        TimetableOptionModel(id: 2, name: "Препод.", icon: "teacher"),
+        TimetableOptionModel(id: 3, name: "Аудитории", icon: "door"),
+        TimetableOptionModel(id: 4, name: "Фильтрация", icon: "filter")
+    ]
+    
+    static let weekOptions = [
+        TimetableOptionModel(id: 1, name: "Группы", icon: "group"),
+        TimetableOptionModel(id: 2, name: "Препод.", icon: "teacher"),
+        TimetableOptionModel(id: 3, name: "Аудитории", icon: "door")
+    ]
 }

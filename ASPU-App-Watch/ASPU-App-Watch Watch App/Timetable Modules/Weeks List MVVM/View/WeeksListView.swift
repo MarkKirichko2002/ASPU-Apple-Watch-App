@@ -18,11 +18,27 @@ struct WeeksListView: View {
                     .fontWeight(.bold)
             } else if !viewModel.weeks.isEmpty {
                 List(viewModel.weeks) { week in
-                    WeekCell(week: week)
-                        .onTapGesture {
-                            viewModel.currentWeek = week
-                            viewModel.isSelected.toggle()
-                     }
+                    if viewModel.getSwipeOption() {
+                        WeekCell(week: week)
+                            .onTapGesture {
+                                viewModel.currentWeek = week
+                                viewModel.isSelected.toggle()
+                            }
+                            .swipeActions(edge: .trailing) {
+                                Button {
+                                    viewModel.currentWeek = week
+                                    viewModel.isPresentedInfo.toggle()
+                                } label: {
+                                    Image("info")
+                                }
+                            }
+                    } else {
+                        WeekCell(week: week)
+                            .onTapGesture {
+                                viewModel.currentWeek = week
+                                viewModel.isSelected.toggle()
+                            }
+                    }
                 }.modifier(CustomListStyle())
             } else {
                 Text("Нет недель")
@@ -30,15 +46,34 @@ struct WeeksListView: View {
             }
         }
         .navigationTitle("Недели")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    self.viewModel.isPresentedOptions.toggle()
+                }) {
+                    Image("sections")
+                }.foregroundStyle(Color(UIColor.white))
+            }
+        }
         .onAppear() {
-            viewModel.getWeeks()
+            if viewModel.isLoading {
+                viewModel.getWeeks()
+            }
         }
-        .onChange(of: viewModel.isSelected) {
-            viewModel.isPresented.toggle()
+        .onChange(of: viewModel.isSelected) { newValue in
+            if newValue {
+                viewModel.isPresented.toggle()
+            }
         }
-        .sheet(isPresented: $viewModel.isPresented, content: {
+        .sheet(isPresented: $viewModel.isPresented) {
             WeekDaysListView(week: viewModel.currentWeek)
-        })
+        }
+        .sheet(isPresented: $viewModel.isPresentedInfo) {
+            TimetableDaysInfoView(week: viewModel.currentWeek, id: viewModel.getSavedID(), owner: viewModel.getSavedOwner())
+        }
+        .sheet(isPresented: $viewModel.isPresentedOptions) {
+            TimetableWeekOptionsListView()
+        }
     }
 }
 

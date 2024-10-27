@@ -20,8 +20,9 @@ struct CellStyleOptionCell: View {
         Picker("Стиль списка", selection: $currentStyle) {
             ForEach(CellStyle.allCases, id: \.self) {
                 Text($0.rawValue)
-            }
-        }.onChange(of: currentStyle) { style in
+            }.navigationTitle("Стили списка")
+        }.fontWeight(.bold)
+        .onChange(of: currentStyle) { style in
             UserDefaults.saveData(object: style, key: "list style") {}
         }
     }

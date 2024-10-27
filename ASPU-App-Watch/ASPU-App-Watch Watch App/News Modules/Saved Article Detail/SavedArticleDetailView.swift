@@ -66,8 +66,10 @@ struct SavedArticleDetailView: View {
             }
         }
         .navigationTitle("Подробнее")
-        .onChange(of: isSelected) {
-            self.isPresented.toggle()
+        .onChange(of: isSelected) { newValue in
+            if newValue {
+                isPresented.toggle()
+            }
         }
         .sheet(isPresented: $isPresented) {
             ZoomImageView(url: currentImageURL)

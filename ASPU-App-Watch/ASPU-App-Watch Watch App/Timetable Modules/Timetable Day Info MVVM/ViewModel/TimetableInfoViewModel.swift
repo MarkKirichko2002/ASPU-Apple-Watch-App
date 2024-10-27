@@ -9,20 +9,16 @@ import Foundation
 
 final class TimetableInfoViewModel: ObservableObject {
     
-    @Published var isChanged = false
-    
     let service = TimeTableService()
     let newsService = ASPUNewsService()
     let settingsManager = SettingsManager()
     let dateManager = DateManager()
     
-    var info = ["Загрузка..."]
+    @Published var info = ["Загрузка..."]
     
     // Расписание
-    func getTimetable() {
-        let currentID = settingsManager.getSavedID()
-        let currentOwner = settingsManager.getSavedOwner()
-        service.getTimeTableDay(id: currentID, date: dateManager.getCurrentDate(), owner: currentOwner) { result in
+    func getTimetable(id: String, owner: String) {
+        service.getTimeTableDay(id: id, date: dateManager.getCurrentDate(), owner: owner) { result in
             switch result {
             case .success(let data):
                 self.info = []
@@ -31,7 +27,6 @@ final class TimetableInfoViewModel: ObservableObject {
                 } else {
                     self.info.append("Сегодня нет пар")
                 }
-                self.toggleAlert()
             case .failure(let error):
                 print(error)
             }
@@ -51,11 +46,5 @@ final class TimetableInfoViewModel: ObservableObject {
         }
         
         return uniqueTimes.count
-    }
-    
-    func toggleAlert() {
-        DispatchQueue.main.async {
-            self.isChanged = true
-        }
     }
 }
