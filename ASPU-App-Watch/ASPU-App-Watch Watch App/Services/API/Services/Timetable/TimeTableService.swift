@@ -20,6 +20,7 @@ final class TimeTableService {
             
             do {
                 let timetable = try JSONDecoder().decode(TimeTable.self, from: data)
+                print(timetable)
                 completion(.success(timetable))
             } catch {
                 completion(.failure(error))

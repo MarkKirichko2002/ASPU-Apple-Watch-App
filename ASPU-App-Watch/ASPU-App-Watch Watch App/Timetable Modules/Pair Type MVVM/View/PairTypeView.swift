@@ -25,7 +25,7 @@ struct PairTypeView: View {
                         .onTapGesture {
                             viewModel.currentDiscipline = pair
                             viewModel.isPresentedInfo.toggle()
-                        }
+                      }
                 }
             }
         }
@@ -34,7 +34,7 @@ struct PairTypeView: View {
             viewModel.setUpData(disciplines: disciplines)
         }
         .sheet(isPresented: $viewModel.isPresentedInfo) {
-            PairInfoView(viewModel: PairInfoViewModel(pair: viewModel.currentDiscipline, date: date))
+            PairInfoView(viewModel: PairInfoViewModel(pair: viewModel.currentDiscipline, pairs: viewModel.disciplines, date: date))
         }
     }
 }

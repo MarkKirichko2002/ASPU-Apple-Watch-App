@@ -13,19 +13,20 @@ struct SplashView: View {
     @State var isPresented = false
     @State var isEnded = false
     @State var opacity = 0.0
+    @State var splashScreen: splashScreenOptions
     
     var body: some View {
         VStack {
             if isPresented {
-                AppSectionsListView()
+                AppSectionsDisplayView()
             } else {
                 VStack(spacing: 15) {
-                    Image("aspu")
+                    Image(splashScreen.icon)
                         .resizable()
                         .frame(width: 90, height: 90)
                         .scaleEffect(isAnimation ? 1.1 : 1, anchor: .bottom)
                         .animation(.interpolatingSpring(stiffness: 170, damping: 8).delay(0.5), value: isAnimation)
-                    Text("ФГБОУ ВО «АГПУ»")
+                    Text(splashScreen.title)
                         .fontWeight(.bold)
                         .opacity(opacity)
                 }
@@ -53,6 +54,6 @@ struct SplashView: View {
     }
 }
 
-#Preview {
-    SplashView()
-}
+//#Preview {
+//    SplashView()
+//}

@@ -18,12 +18,30 @@ struct FacultiesListView: View {
                     .fontWeight(.bold)
             } else {
                 List(viewModel.faculties) { faculty in
-                    Text(faculty.facultyName)
-                        .fontWeight(.bold)
-                        .onTapGesture {
+                    if viewModel.checkSwipeOption() {
+                        HStack {
+                            Text(faculty.facultyName)
+                                .fontWeight(.bold)
+                        }.onTapGesture {
                             viewModel.currentFaculty = faculty
                             viewModel.isSelected.toggle()
-                     }
+                        }.swipeActions(edge: viewModel.getSwipeEdge().edge) {
+                            Button {
+                                viewModel.currentFaculty = faculty
+                                viewModel.isInfoSelected.toggle()
+                           } label: {
+                               Image("info")
+                           }
+                        }
+                    } else {
+                        HStack {
+                            Text(faculty.facultyName)
+                                .fontWeight(.bold)
+                        }.onTapGesture {
+                            viewModel.currentFaculty = faculty
+                            viewModel.isSelected.toggle()
+                        }
+                    }
                 }
             }
         }.modifier(CustomListStyle())
@@ -31,11 +49,17 @@ struct FacultiesListView: View {
         .onChange(of: viewModel.isSelected) {
             viewModel.isPresented.toggle()
         }
+        .onChange(of: viewModel.isInfoSelected) {
+            viewModel.isInfoPresented.toggle()
+        }
         .onAppear {
             viewModel.getFaculties()
         }
         .sheet(isPresented: $viewModel.isPresented, content: {
             FacultyGroupsListView(faculty: viewModel.currentFaculty)
+        })
+        .sheet(isPresented: $viewModel.isInfoPresented, content: {
+            FacultyGroupsInfoView(faculty: viewModel.currentFaculty)
         })
     }
 }

@@ -11,13 +11,16 @@ final class TimetableDayListViewModel: ObservableObject {
     
     @Published var timetable = TimeTable(id: "", date: "", disciplines: [])
     @Published var currentDiscipline = Discipline(id: "", time: "", name: "", groupName: "", teacherName: "", audienceID: "", subgroup: 0, type: .all)
+    @Published var currentDisciplines = [Discipline]()
     @Published var isLoading = true
     @Published var isPresented = false
     @Published var isPresentedInfo = false
+    @Published var isPresentedPairs = false
     
     var currentID: String = ""
     var currentOwner: String = ""
     var allDisciplines = [Discipline]()
+    @Published var date: String = ""
     
     // MARK: - сервисы
     private let service = TimeTableService()
@@ -32,18 +35,43 @@ final class TimetableDayListViewModel: ObservableObject {
         isLoading = true
         currentID = settingsManager.getSavedID()
         currentOwner = settingsManager.getSavedOwner()
-        service.getTimeTableDay(id: currentID, date: dateManager.getCurrentDate(), owner: currentOwner) { result in
+        date = dateManager.getCurrentDate()
+        service.getTimeTableDay(id: currentID, date: date, owner: currentOwner) { result in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
                     self.timetable = data
                     self.allDisciplines = data.disciplines
                     self.isLoading = false
-                    self.checkRemainingPairsOn()
+                    self.checkSettings()
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
                     self.isLoading = false
+                    self.checkSettings()
+                }
+                print(error)
+            }
+        }
+    }
+    
+    func getTimetable(date: String) {
+        isLoading = true
+        currentID = settingsManager.getSavedID()
+        currentOwner = settingsManager.getSavedOwner()
+        service.getTimeTableDay(id: currentID, date: date, owner: currentOwner) { result in
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    self.timetable = data
+                    self.allDisciplines = data.disciplines
+                    self.isLoading = false
+                    self.checkNextDayOnOption()
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    self.checkNextDayOnOption()
                 }
                 print(error)
             }
@@ -64,11 +92,55 @@ final class TimetableDayListViewModel: ObservableObject {
         }
     }
     
+    func checkSettings() {
+        checkRemainingPairsOn()
+    }
+    
     func checkRemainingPairsOn() {
         if settingsManager.getRemainingPairsOnOption() {
             timetable.disciplines = filterLeftedPairs(pairs: timetable.disciplines)
+            checkNextDayOnOption()
         } else {
             timetable.disciplines = allDisciplines
+            checkCurrentPairInfoOn()
+        }
+    }
+    
+    func checkNextDayOnOption() {
+        if settingsManager.getNextDayOnOption() {
+            if timetable.disciplines.isEmpty {
+                date = dateManager.nextDay(date: date)
+                getTimetable(date: date)
+            } else {
+                checkCurrentPairInfoOn()
+            }
+        }
+    }
+    
+    func checkCurrentPairInfoOn() {
+        if settingsManager.getCurrentPairInfoOption() {
+            checkCurrentPairs(pairs: timetable.disciplines)
+        }
+    }
+    
+    func checkCurrentPairs(pairs: [Discipline]) {
+        let leftedPairs = filterLeftedPairs(pairs: timetable.disciplines)
+        let filteredleftedPairs = leftedPairs.filter { $0.time == leftedPairs.first?.time }
+        let count = filteredleftedPairs.count
+        if timetable.date == dateManager.getCurrentDate() {
+            if count == 1 {
+                self.currentDiscipline = filteredleftedPairs.first!
+                Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
+                    self.isPresentedInfo.toggle()
+                }
+            } else if count > 1 {
+                self.currentDisciplines = filteredleftedPairs
+                Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
+                    self.isPresentedPairs.toggle()
+                }
+            } else if count == 0 {
+                print("пар нет")
+            }
         }
     }
     

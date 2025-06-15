@@ -13,7 +13,7 @@ struct AppSectionsListView: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.sections) { section in
+            List(viewModel.sections, id: \.id) { section in
                 NavigationLink {
                     switch section.id {
                     case 1:
@@ -30,7 +30,7 @@ struct AppSectionsListView: View {
                 } label: {
                     if viewModel.checkSwipeOption() {
                         AppSectionCell(section: section)
-                            .swipeActions(edge: .trailing) {
+                            .swipeActions(edge: viewModel.getSwipeEdge().edge) {
                                 Button {
                                     viewModel.showInfo(id: section.id)
                                 } label: {
@@ -65,6 +65,6 @@ struct AppSectionsListView: View {
     }
 }
 
-#Preview {
-    AppSectionsListView()
-}
+//#Preview {
+//    AppSectionsListView()
+//}

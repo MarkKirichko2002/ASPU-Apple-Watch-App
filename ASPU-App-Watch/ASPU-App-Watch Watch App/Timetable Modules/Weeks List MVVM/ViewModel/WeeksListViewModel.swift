@@ -20,6 +20,7 @@ final class WeeksListViewModel: ObservableObject {
     // MARK: - сервисы
     private let service = TimeTableService()
     private let settingsManager = SettingsManager()
+    private let dateManager = DateManager()
     
     func getWeeks() {
         isLoading = true
@@ -28,7 +29,7 @@ final class WeeksListViewModel: ObservableObject {
             case .success(let data):
                 DispatchQueue.main.async {
                     self.weeks = data
-                    self.isLoading = false
+                    self.filterWeeks()
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -39,15 +40,34 @@ final class WeeksListViewModel: ObservableObject {
         }
     }
     
-    func getSwipeOption()-> Bool {
-        return settingsManager.getSwipeOnOption()
+    func filterWeeks() {
+        let isWeeksOn = settingsManager.getRemainingWeeksOnOption()
+        if isWeeksOn {
+            getCurrentWeek()
+        } else {
+            isLoading = false
+        }
     }
     
+    func getCurrentWeek() {
+        let week = weeks.first { dateManager.dateRange(startDate: $0.from, endDate: $0.to)}!
+        weeks = weeks.filter({ dateManager.compareDates(date1: $0.to, date2: week.from) == .orderedDescending })
+        isLoading = false
+    }
+        
     func getSavedID()-> String {
         return settingsManager.getSavedID()
     }
     
     func getSavedOwner()-> String {
         return settingsManager.getSavedOwner()
+    }
+    
+    func getSwipeOption()-> Bool {
+        return settingsManager.getSwipeOnOption()
+    }
+    
+    func getSwipeEdge()-> swipeEdges {
+        return settingsManager.getSavedSwipeEdge()
     }
 }

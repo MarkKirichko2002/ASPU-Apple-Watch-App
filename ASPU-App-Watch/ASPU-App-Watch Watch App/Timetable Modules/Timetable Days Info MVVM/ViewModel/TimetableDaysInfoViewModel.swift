@@ -14,6 +14,7 @@ final class TimetableDaysInfoViewModel: ObservableObject {
     let dateManager = DateManager()
     @Published var days = [WeekDayModel]()
     @Published var isLoading = true
+    @Published var isPresented = false
     
     func getDays(week: WeekModel, id: String, owner: String) {
         service.getTimeTableWeek(id: id, startDate: week.from, endDate: week.to, owner: owner) { result in

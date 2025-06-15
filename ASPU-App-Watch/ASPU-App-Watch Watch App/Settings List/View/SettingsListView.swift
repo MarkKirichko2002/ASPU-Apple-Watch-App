@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SettingsListView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         Form() {
             Section("Основое") {
@@ -16,11 +18,15 @@ struct SettingsListView: View {
                     NavigationLink {
                         switch section.id {
                         case 1:
-                            SavedNewsCategoriesListView()
+                            NewsSettingsListView()
                         case 2:
                             TimetableSettingsListView()
-                        default:
+                        case 3:
                             MapSettingsListView()
+                        case 4:
+                            AppSectionsOptionsListView()
+                        default:
+                            EmptyView()
                         }
                     } label: {
                         SettingSectionCell(section: section)
@@ -29,8 +35,7 @@ struct SettingsListView: View {
             }
             
             Section("Другое") {
-                ShowSplashOptionCell()
-                SectionsOptionCell()
+                SplashScreenOptionCell()
                 SwipeOptionsCell()
                 CellStyleOptionCell()
             }
@@ -38,8 +43,7 @@ struct SettingsListView: View {
             Section("О приложении (версия: \(getAppVersion()))") {
                 AppFeaturesCell()
             }
-        }
-        .navigationTitle("Настройки")
+        }.navigationTitle("Настройки")
     }
     
     func getAppVersion()-> String {
@@ -51,6 +55,6 @@ struct SettingsListView: View {
     }
 }
 
-#Preview {
-    SettingsListView()
-}
+//#Preview {
+//    SettingsListView()
+//}

@@ -14,7 +14,25 @@ struct NewsCategoriesListView: View {
     var body: some View {
         NavigationView {
             List(viewModel.categories) { category in
-                NewsCategoryCell(category: category, isSelected: viewModel.isSavedCategory(category: category))
+                if viewModel.checkSwipeOption() {
+                    NewsCategoryCell(category: category, isSelected: viewModel.isSavedCategory(category: category))
+                        .swipeActions(edge: viewModel.getSwipeEdge().edge) {
+                            Button {
+                                viewModel.currentCategory = category
+                                viewModel.isInfoSelected.toggle()
+                            } label: {
+                                Image("info")
+                            }
+                        }
+                } else {
+                    NewsCategoryCell(category: category, isSelected: viewModel.isSavedCategory(category: category))
+                }
+            }
+            .onChange(of: viewModel.isInfoSelected) {
+                viewModel.isInfoPresented.toggle()
+            }
+            .sheet(isPresented: $viewModel.isInfoPresented) {
+                NewsCategoryPagesCountInfoView(category: viewModel.currentCategory)
             }
             .onAppear {
                 viewModel.updateView()

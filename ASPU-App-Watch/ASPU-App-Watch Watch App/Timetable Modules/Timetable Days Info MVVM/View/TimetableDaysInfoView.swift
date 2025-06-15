@@ -30,8 +30,14 @@ struct TimetableDaysInfoView: View {
                     .fontWeight(.bold)
             }
         }.navigationTitle("Неделя: \(week.id)")
+        .onTapGesture {
+            viewModel.isPresented.toggle()
+        }
         .onAppear {
             viewModel.getDays(week: week, id: id, owner: owner)
+        }
+        .sheet(isPresented: $viewModel.isPresented) {
+            WeekDaysListView(week: week)
         }
     }
 }

@@ -11,6 +11,8 @@ final class NewsCategoriesListViewModel: ObservableObject {
     
     @Published var currentCategory = NewsCategories.categories[0]
     @Published var isChanged = false
+    @Published var isInfoSelected = false
+    @Published var isInfoPresented = false
     var categories = NewsCategories.categories
     
     // MARK: - сервисы
@@ -20,6 +22,14 @@ final class NewsCategoriesListViewModel: ObservableObject {
         Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { _ in
             self.isChanged.toggle()
         }
+    }
+    
+    func checkSwipeOption()-> Bool {
+        return settingsManager.getSwipeOnOption()
+    }
+    
+    func getSwipeEdge()-> swipeEdges {
+        return settingsManager.getSavedSwipeEdge()
     }
     
     func isSavedCategory(category: NewsCategoryModel)-> Bool {

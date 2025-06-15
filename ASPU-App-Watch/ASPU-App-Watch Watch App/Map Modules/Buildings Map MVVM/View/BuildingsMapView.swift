@@ -60,6 +60,8 @@ struct BuildingsMapView: View {
                 viewModel.currentLocation = viewModel.buildings[index]
                 viewModel.isPresented.toggle()
             }
+        }.alert(isPresented: $viewModel.alert) {
+            Alert(title: Text("Больше локаций нет"))
         }
         .sheet(isPresented: $viewModel.isPresentedOptions) {
             BuildingFilterTypeListView(buildings: viewModel.buildings)

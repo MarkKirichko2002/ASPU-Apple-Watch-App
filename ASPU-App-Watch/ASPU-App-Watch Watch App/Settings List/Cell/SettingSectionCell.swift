@@ -12,10 +12,7 @@ struct SettingSectionCell: View {
     var section: SettingSectionModel
     
     var body: some View {
-        HStack(spacing: 10) {
-            Image(section.icon)
-                .resizable()
-                .frame(width: 40, height: 40)
+        HStack {
             Text(section.name)
                 .fontWeight(.bold)
         }
@@ -23,5 +20,5 @@ struct SettingSectionCell: View {
 }
 
 #Preview {
-    SettingSectionCell(section: SettingSectionModel(id: 1, name: "Новости", icon: "mail"))
+    SettingSectionCell(section: SettingSectionModel(id: 1, name: "Новости"))
 }

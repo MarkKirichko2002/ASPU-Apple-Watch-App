@@ -300,6 +300,17 @@ final class DepartmentsListViewModel: ObservableObject {
     
     var departments = Departments.departments
     @Published var isPresented = false
+    @Published var isInfoPresented = false
     @Published var currentId = 1
     
+    // MARK: - сервисы
+    private let settingsManager = SettingsManager()
+    
+    func checkSwipeOption()-> Bool {
+        return settingsManager.getSwipeOnOption()
+    }
+    
+    func getSwipeEdge()-> swipeEdges {
+        return settingsManager.getSavedSwipeEdge()
+    }
 }

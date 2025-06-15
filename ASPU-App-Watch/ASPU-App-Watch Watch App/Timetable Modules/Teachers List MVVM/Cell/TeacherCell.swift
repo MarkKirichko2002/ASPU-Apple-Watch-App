@@ -26,7 +26,8 @@ struct TeacherCell: View {
             HStack {
                 Text(teacher)
                     .fontWeight(.bold)
-            }
+                Spacer()
+            }.contentShape(Rectangle())
         }
     }
 }

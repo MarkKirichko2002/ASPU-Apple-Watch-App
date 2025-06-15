@@ -27,7 +27,7 @@ struct CurrentPageNewsListView: View {
                 }.modifier(CustomListStyle())
             }
         }
-        .navigationTitle("Страница: \(page)")
+        .navigationTitle("Страница \(page)")
         .onAppear {
             if viewModel.isLoading {
                 viewModel.getNews(page: page, abbreviation: abbreviation)

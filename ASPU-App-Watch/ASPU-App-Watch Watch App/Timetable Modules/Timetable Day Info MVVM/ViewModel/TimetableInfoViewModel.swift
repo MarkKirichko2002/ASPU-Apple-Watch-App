@@ -9,12 +9,14 @@ import Foundation
 
 final class TimetableInfoViewModel: ObservableObject {
     
+    @Published var info = ["Загрузка..."]
+    @Published var isPresented = false
+    
+    // MARK: - сервисы
     let service = TimeTableService()
     let newsService = ASPUNewsService()
     let settingsManager = SettingsManager()
     let dateManager = DateManager()
-    
-    @Published var info = ["Загрузка..."]
     
     // Расписание
     func getTimetable(id: String, owner: String) {
@@ -46,5 +48,9 @@ final class TimetableInfoViewModel: ObservableObject {
         }
         
         return uniqueTimes.count
+    }
+    
+    func getCurrentDate()-> String {
+        return dateManager.getCurrentDate()
     }
 }

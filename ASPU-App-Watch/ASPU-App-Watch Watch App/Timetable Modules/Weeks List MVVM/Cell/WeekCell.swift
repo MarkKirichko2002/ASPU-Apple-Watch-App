@@ -23,7 +23,7 @@ struct WeekCell: View {
                     .multilineTextAlignment(.center)
             }
             Spacer()
-        }
+        }.contentShape(Rectangle())
     }
 }
 

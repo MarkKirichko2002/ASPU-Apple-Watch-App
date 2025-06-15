@@ -12,6 +12,8 @@ final class AudiencesListViewModel: ObservableObject {
     @Published var currentAudience = ""
     @Published var isPresented = false
     @Published var isSelected = false
+    @Published var isInfoPresented = false
+    @Published var isInfoSelected = false
     
     // MARK: - сервисы
     private let settingsManager = SettingsManager()
@@ -29,4 +31,11 @@ final class AudiencesListViewModel: ObservableObject {
         return false
     }
     
+    func getSwipeEdge()-> swipeEdges {
+        return settingsManager.getSavedSwipeEdge()
+    }
+    
+    func checkSwipeOption()-> Bool {
+        return settingsManager.getSwipeOnOption()
+    }
 }

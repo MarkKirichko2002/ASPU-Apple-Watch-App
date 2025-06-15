@@ -18,6 +18,7 @@ final class WeekDaysListViewModel: ObservableObject {
     @Published var isInfoPresented = false
     @Published var isPresented = false
     @Published var isSelected = false
+    @Published var isInfoSelected = false
     @Published var currentDay = WeekDayModel(name: "", date: "")
     @Published var isLoading = true
     
@@ -58,5 +59,9 @@ final class WeekDaysListViewModel: ObservableObject {
     
     func getSwipeOption()-> Bool {
         return settingsManager.getSwipeOnOption()
+    }
+    
+    func getSwipeEdge()-> swipeEdges {
+        return settingsManager.getSavedSwipeEdge()
     }
 }

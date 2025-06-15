@@ -10,20 +10,22 @@ import SwiftUI
 struct ShowRemainingPairsCell: View {
     
     @State var isRemainingPairsOn = UserDefaults.standard.object(forKey: "isRemainingPairsOn") as? Bool ?? false
+    @Binding var isOn: Bool
     
     var body: some View {
         HStack {
-            Text("Остав. пары")
+            Text("Остав. на сегодня")
                 .foregroundColor(isRemainingPairsOn ? .green : .gray)
                 .fontWeight(.bold)
             Toggle("", isOn: $isRemainingPairsOn)
         }.onChange(of: isRemainingPairsOn) { oldValue, newValue in
+            isOn.toggle()
             NotificationCenter.default.post(name: Notification.Name("remaining"), object: nil)
             UserDefaults.standard.setValue(newValue, forKey: "isRemainingPairsOn")
         }
     }
 }
 
-#Preview {
-    ShowRemainingPairsCell()
-}
+//#Preview {
+//    ShowRemainingPairsCell()
+//}

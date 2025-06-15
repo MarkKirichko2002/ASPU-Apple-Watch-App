@@ -9,19 +9,15 @@ import SwiftUI
 
 struct ArrowsColorOptionCell: View {
     
-    @State var currenColor = UserDefaults.loadData(type: AppColors.self, key: "arrow color") ?? AppColors.system
+    let settingsManager = SettingsManager()
+    @State var isChanged = false
     
     var body: some View {
-        Picker("Цвет стрелок", selection: $currenColor) {
-            ForEach(AppColors.allCases, id: \.self) {
-                Text($0.title)
-                    .fontWeight(.bold)
-                    .foregroundStyle(Color($0.color))
-            }.navigationTitle("Цвета")
-        }.fontWeight(.bold)
-        .onChange(of: currenColor) { color in
-            UserDefaults.saveData(object: color, key: "arrow color") {}
-        }
+        NavigationLink(destination: ArrowColorOptionsListView(isChanged: $isChanged)) {
+            Text("Цвет стрелок")
+                .fontWeight(.bold)
+                .foregroundStyle(Color(settingsManager.getArrowsColor().color))
+        }.onChange(of: isChanged) {}
     }
 }
 

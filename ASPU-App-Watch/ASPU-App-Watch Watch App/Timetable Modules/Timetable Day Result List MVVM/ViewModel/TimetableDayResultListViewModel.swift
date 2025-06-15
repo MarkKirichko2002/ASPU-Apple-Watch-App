@@ -15,6 +15,8 @@ final class TimetableDayResultListViewModel: ObservableObject {
     @Published var isPresentedInfo = false
     @Published var isPresentedOptions = false
     
+    var allDisciplines = [Discipline]()
+    
     // MARK: - сервисы
     private let service = TimeTableService()
     private let dateManager = DateManager()
@@ -32,6 +34,7 @@ final class TimetableDayResultListViewModel: ObservableObject {
             case .success(let data):
                 DispatchQueue.main.async {
                     self.timetable = data
+                    self.allDisciplines = data.disciplines
                     self.isLoading = false
                 }
             case .failure(let error):

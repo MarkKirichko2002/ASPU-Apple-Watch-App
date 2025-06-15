@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var isSplashOn = UserDefaults.standard.object(forKey: "isSplashOn") as? Bool ?? false
+    let settingsManager = SettingsManager()
     
     var body: some View {
         VStack {
-            if isSplashOn {
-                SplashView()
+            if settingsManager.getSavedSplashScreen() != .none {
+                SplashView(splashScreen: settingsManager.getSavedSplashScreen())
             } else {
-                AppSectionsListView()
+                AppSectionsDisplayView()
             }
         }
     }

@@ -13,17 +13,10 @@ enum CellStyle: String, Codable, CaseIterable, Hashable {
 }
 
 struct CellStyleOptionCell: View {
-    
-    @State var currentStyle = UserDefaults.loadData(type: CellStyle.self, key: "list style") ?? CellStyle.carousel
-    
     var body: some View {
-        Picker("Стиль списка", selection: $currentStyle) {
-            ForEach(CellStyle.allCases, id: \.self) {
-                Text($0.rawValue)
-            }.navigationTitle("Стили списка")
-        }.fontWeight(.bold)
-        .onChange(of: currentStyle) { style in
-            UserDefaults.saveData(object: style, key: "list style") {}
+        NavigationLink(destination: CellStyleOptionsListView()) {
+            Text("Стили списка")
+                .fontWeight(.bold)
         }
     }
 }

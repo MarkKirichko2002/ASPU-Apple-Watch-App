@@ -16,6 +16,7 @@ final class BuildingsMapViewModel: ObservableObject {
     @Published var buildings = Buildings.pins
     @Published var isPresented = false
     @Published var isPresentedOptions = false
+    @Published var alert = false
     
     var index = 0
     
@@ -45,6 +46,8 @@ final class BuildingsMapViewModel: ObservableObject {
             let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
             let region = MKCoordinateRegion(center: buildings[index].pin, span: span)
             self.camera = .region(region)
+        } else {
+            alert.toggle()
         }
     }
     
@@ -54,6 +57,8 @@ final class BuildingsMapViewModel: ObservableObject {
             let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
             let region = MKCoordinateRegion(center: buildings[index].pin, span: span)
             self.camera = .region(region)
+        } else {
+            alert.toggle()
         }
     }
     

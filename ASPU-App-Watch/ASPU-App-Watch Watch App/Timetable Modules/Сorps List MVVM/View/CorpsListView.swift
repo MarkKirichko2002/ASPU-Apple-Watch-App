@@ -13,14 +13,37 @@ struct CorpsListView: View {
     
     var body: some View {
         List(viewModel.corps) { corp in
-            Text(corp.name)
-                .fontWeight(.bold)
-                .onTapGesture {
-                    viewModel.isPresented.toggle()
-                    viewModel.currentBuilding = corp
-             }
+            if viewModel.checkSwipeOption() {
+                Text(corp.name)
+                    .fontWeight(.bold)
+                    .onTapGesture {
+                        viewModel.isPresented.toggle()
+                        viewModel.currentBuilding = corp
+                     }
+                    .swipeActions(edge: viewModel.getSwipeEdge().edge) {
+                        Button {
+                            viewModel.currentBuilding = corp
+                            viewModel.isInfoSelected.toggle()
+                        } label: {
+                            Image("info")
+                        }
+                    }
+            } else {
+                Text(corp.name)
+                    .fontWeight(.bold)
+                    .onTapGesture {
+                        viewModel.isPresented.toggle()
+                        viewModel.currentBuilding = corp
+                 }
+            }
         }
         .navigationTitle("Корпуса")
+        .onChange(of: viewModel.isInfoSelected) {
+            viewModel.isInfoPresented.toggle()
+        }
+        .sheet(isPresented: $viewModel.isInfoPresented) {
+            BuildingAudiencesInfoView(building: viewModel.currentBuilding)
+        }
         .sheet(isPresented: $viewModel.isPresented, content: {
             AudiencesListView(building: viewModel.currentBuilding)
         })

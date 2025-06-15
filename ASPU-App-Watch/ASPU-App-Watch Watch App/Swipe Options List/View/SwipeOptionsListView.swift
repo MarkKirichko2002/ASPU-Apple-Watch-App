@@ -9,10 +9,20 @@ import SwiftUI
 
 struct SwipeOptionsListView: View {
     
+    @State var isOn = UserDefaults.standard.object(forKey: "isSwipeOn") as? Bool ?? true
+    
     var body: some View {
         List {
-            SwipeOptionCell()
+            SwipeOptionCell(isOn: $isOn)
+            if checkOption() {
+                SwipeEdgeOptionCell()
+            }
         }.navigationTitle("Свайпы")
+        .onChange(of: isOn) {}
+    }
+    
+    func checkOption()-> Bool {
+        return UserDefaults.standard.object(forKey: "isSwipeOn") as? Bool ?? true
     }
 }
 

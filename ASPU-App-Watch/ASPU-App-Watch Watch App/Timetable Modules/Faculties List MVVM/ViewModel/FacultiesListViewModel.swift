@@ -12,11 +12,14 @@ final class FacultiesListViewModel: ObservableObject {
     @Published var faculties = [FacultyModel]()
     @Published var currentFaculty = FacultyModel(facultyName: "", groups: [])
     @Published var isPresented = false
+    @Published var isInfoPresented = false
     @Published var isSelected = false
+    @Published var isInfoSelected = false
     @Published var isLoading = true
     
     // MARK: - сервисы
     private let service = TimeTableService()
+    private let settingsManager = SettingsManager()
     
     func getFaculties() {
         isLoading = true
@@ -34,5 +37,13 @@ final class FacultiesListViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+    
+    func checkSwipeOption()-> Bool {
+        return settingsManager.getSwipeOnOption()
+    }
+    
+    func getSwipeEdge()-> swipeEdges {
+        return settingsManager.getSavedSwipeEdge()
     }
 }

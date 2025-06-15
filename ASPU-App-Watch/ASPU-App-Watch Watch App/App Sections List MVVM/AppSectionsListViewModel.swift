@@ -31,20 +31,21 @@ final class AppSectionsListViewModel: ObservableObject {
     }
     
     func getData() {
-        sections = []
-        let first = UserDefaults.standard.string(forKey: "first section") ?? "Новости"
-        let second = UserDefaults.standard.string(forKey: "second section") ?? "Расписание"
-        let third = UserDefaults.standard.string(forKey: "third section") ?? "Карты"
-        let fourth = UserDefaults.standard.string(forKey: "fourth section") ?? "Настройки"
-        
-        let value1 = AppSections.sections.first { $0.name == first }!
-        let value2 = AppSections.sections.first { $0.name == second }!
-        let value3 = AppSections.sections.first { $0.name == third }!
-        let value4 = AppSections.sections.first { $0.name == fourth }!
-        
-        sections = [value1, value2, value3, value4]
-        
+        if !loadSections().isEmpty {
+            checkVisibility()
+            isChanged.toggle()
+        }
     }
+    
+    func checkVisibility() {
+        sections = []
+        for section in loadSections() {
+            if section.isVisible {
+                sections.append(section)
+            }
+        }
+    }
+    
     func showInfo(id: Int) {
         currentId = id
         toggleInfo()
@@ -61,7 +62,23 @@ final class AppSectionsListViewModel: ObservableObject {
     func getSavedOwner()-> String {
         return settingsManager.getSavedOwner()
     }
+        
+    func loadSections()-> [AppSectionModel] {
+        var data = [AppSectionModel]()
+        if let result = UserDefaults.standard.object(forKey: "sections") as? Data {
+            do {
+                data = try JSONDecoder().decode([AppSectionModel].self, from: result)
+            } catch {
+                print(error)
+            }
+        }
+        return data
+    }
     
+    func getSwipeEdge()-> swipeEdges {
+        return settingsManager.getSavedSwipeEdge()
+    }
+
     func observeSectionsPosition() {
         NotificationCenter.default.addObserver(forName: Notification.Name("sections position changed"), object: nil, queue: nil) { _ in
             self.getData()

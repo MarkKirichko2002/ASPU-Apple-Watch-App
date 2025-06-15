@@ -10,9 +10,10 @@ import SwiftUI
 struct TimetableSettingsListView: View {
     var body: some View {
         List {
-            ShowRemainingPairsCell()
-            FullPairInfoOptionCell()
             TimetableDisplayOptionСell()
+            RemainingPairsOptionCell()
+            ShowCurrentPairInfoOptionCell()
+            ShowRemainingWeeksCell()
         }.navigationTitle("Расписание")
     }
 }

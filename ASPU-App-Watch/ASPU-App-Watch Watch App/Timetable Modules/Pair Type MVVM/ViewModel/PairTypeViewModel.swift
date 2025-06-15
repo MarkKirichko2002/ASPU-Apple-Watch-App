@@ -18,6 +18,17 @@ final class PairTypeViewModel: ObservableObject {
     }
     
     func disciplinesCount()-> Int {
-        return disciplines.count
+        
+        var uniqueTimes: Set<String> = Set()
+        
+        for pair in disciplines {
+            
+            let times = pair.time.components(separatedBy: "-")
+            let startTime = times[0]
+            
+            uniqueTimes.insert(startTime)
+        }
+        
+        return uniqueTimes.count
     }
 }

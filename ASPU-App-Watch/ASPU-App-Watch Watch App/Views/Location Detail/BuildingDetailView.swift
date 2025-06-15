@@ -55,8 +55,11 @@ struct BuildingDetailView: View {
             }
             
             Section("Адрес") {
-                Text(building.address)
-                    .fontWeight(.bold)
+                HStack {
+                    Text(building.address)
+                        .fontWeight(.bold)
+                    Spacer()
+                }.contentShape(Rectangle())
                     .onTapGesture {
                         if let url = URL(string: "http://maps.apple.com/?q=\(building.pin.latitude),\(building.pin.longitude)") {
                             WKExtension.shared().openSystemURL(url)
@@ -69,34 +72,32 @@ struct BuildingDetailView: View {
                     List(building.audiences, id: \.self) { audience in
                         if settingsManager.getSwipeOnOption() {
                             HStack {
-                                Spacer()
                                 Text(audience)
                                     .fontWeight(.bold)
-                                    .onTapGesture {
-                                        currentAudience = audience
-                                        isSelected.toggle()
-                                    }
                                 Spacer()
-                            }
-                            .swipeActions(edge: .trailing) {
-                                Button {
+                            }.contentShape(Rectangle())
+                                .onTapGesture {
                                     currentAudience = audience
-                                    isInfoSelected.toggle()
-                                } label: {
-                                    Image("info")
+                                    isSelected.toggle()
                                 }
-                            }
+                                .swipeActions(edge: settingsManager.getSavedSwipeEdge().edge) {
+                                    Button {
+                                        currentAudience = audience
+                                        isInfoSelected.toggle()
+                                    } label: {
+                                        Image("info")
+                                    }
+                                }
                         } else {
                             HStack {
-                                Spacer()
                                 Text(audience)
                                     .fontWeight(.bold)
-                                    .onTapGesture {
-                                        currentAudience = audience
-                                        isSelected.toggle()
-                                    }
                                 Spacer()
-                            }
+                            }.contentShape(Rectangle())
+                                .onTapGesture {
+                                    currentAudience = audience
+                                    isSelected.toggle()
+                              }
                         }
                     }
                 } else {

@@ -15,14 +15,24 @@ struct SavedNewsCategoriesListView: View {
     
     var body: some View {
         List(viewModel.categories) { category in
-            SavedNewsCategoryCell(category: category, isSelected: viewModel.isSavedCategory(category: category))
-                .onTapGesture {
-                    presentationMode.wrappedValue.dismiss()
-                    viewModel.selectCategory(category: category)
-             }
+            if viewModel.isSavedCategory(category: category) {
+                SavedNewsCategoryCell(category: category, isSelected: viewModel.isSavedCategory(category: category))
+            } else {
+                SavedNewsCategoryCell(category: category, isSelected: viewModel.isSavedCategory(category: category))
+                    .onTapGesture {
+                        viewModel.selectCategory(category: category)
+                        closeScreen()
+                    }
+              }
         }
         .navigationTitle("Категории")
         .onChange(of: viewModel.isChanged) {}
+    }
+    
+    func closeScreen() {
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
+            self.presentationMode.wrappedValue.dismiss()
+        }
     }
 }
 

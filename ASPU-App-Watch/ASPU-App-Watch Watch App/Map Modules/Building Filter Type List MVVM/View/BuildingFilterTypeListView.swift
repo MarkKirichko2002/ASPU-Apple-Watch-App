@@ -22,7 +22,7 @@ struct BuildingFilterTypeListView: View {
                         .fontWeight(.bold)
                 }
             }
-            .navigationTitle("Фильтрация")
+            .navigationTitle("Фильтр")
             .onAppear {
                 viewModel.getInfo(buildings: buildings)
             }

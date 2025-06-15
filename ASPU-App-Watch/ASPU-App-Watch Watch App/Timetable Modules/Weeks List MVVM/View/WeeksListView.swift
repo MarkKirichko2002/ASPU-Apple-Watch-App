@@ -24,7 +24,7 @@ struct WeeksListView: View {
                                 viewModel.currentWeek = week
                                 viewModel.isSelected.toggle()
                             }
-                            .swipeActions(edge: .trailing) {
+                            .swipeActions(edge: viewModel.getSwipeEdge().edge) {
                                 Button {
                                     viewModel.currentWeek = week
                                     viewModel.isPresentedInfo.toggle()
@@ -37,7 +37,7 @@ struct WeeksListView: View {
                             .onTapGesture {
                                 viewModel.currentWeek = week
                                 viewModel.isSelected.toggle()
-                            }
+                         }
                     }
                 }.modifier(CustomListStyle())
             } else {
@@ -60,10 +60,8 @@ struct WeeksListView: View {
                 viewModel.getWeeks()
             }
         }
-        .onChange(of: viewModel.isSelected) { newValue in
-            if newValue {
-                viewModel.isPresented.toggle()
-            }
+        .onChange(of: viewModel.isSelected) { _ in
+            viewModel.isPresented.toggle()
         }
         .sheet(isPresented: $viewModel.isPresented) {
             WeekDaysListView(week: viewModel.currentWeek)

@@ -23,7 +23,7 @@ struct NewsFilterOptionListView: View {
                         .fontWeight(.bold)
                 }
             }
-            .navigationTitle("Фильтрация")
+            .navigationTitle("Фильтр")
             .onAppear {
                 viewModel.getInfo(articles: news)
             }

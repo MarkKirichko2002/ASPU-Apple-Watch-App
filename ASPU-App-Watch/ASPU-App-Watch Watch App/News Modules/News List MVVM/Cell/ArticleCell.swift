@@ -15,6 +15,14 @@ struct ArticleCell: View {
     var abbreviation: String
     var isSavedArticle: Bool
     
+    // MARK: - сервисы
+    let settingsManager = SettingsManager()
+    let newsService = ASPUNewsService()
+    
+    @State var isPresented = false
+    @State var isLoading = true
+    @State var wordCount = -1
+    
     var body: some View {
         NavigationLink {
             if isSavedArticle {
@@ -23,29 +31,152 @@ struct ArticleCell: View {
                 ArticleDetailView(article: article, abbreviation: abbreviation)
             }
         } label: {
-            if isSavedArticle {
-                HStack {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text(savedArticle.title)
-                            .fontWeight(.black)
-                        Text(savedArticle.date)
-                            .fontWeight(.medium)
+            VStack {
+                if isSavedArticle {
+                    if settingsManager.getSwipeOnOption() {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text(configureLetterCase(text: savedArticle.title))
+                                    .fontWeight(.black)
+                                    .lineLimit(settingsManager.getSavedLineLimit().numberOfLines)
+                                if settingsManager.getShowArticleWordsCount() {
+                                    Text(configureWordCount())
+                                        .fontWeight(.black)
+                                }
+                                Text(savedArticle.date)
+                                    .fontWeight(.medium)
+                            }
+                        }.swipeActions(edge: settingsManager.getSavedSwipeEdge().edge) {
+                            Button {
+                                isPresented.toggle()
+                            } label: {
+                                Image("sections")
+                            }
+                        }
+                    } else {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text(configureLetterCase(text: savedArticle.title))
+                                    .fontWeight(.black)
+                                    .lineLimit(settingsManager.getSavedLineLimit().numberOfLines)
+                                if settingsManager.getShowArticleWordsCount() {
+                                    Text(configureWordCount())
+                                        .fontWeight(.black)
+                                }
+                                Text(savedArticle.date)
+                                    .fontWeight(.medium)
+                            }
+                        }
+                    }
+                } else {
+                    if settingsManager.getSwipeOnOption() {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text(configureLetterCase(text: article.title ?? "Нет заголовка"))
+                                    .fontWeight(.black)
+                                    .lineLimit(settingsManager.getSavedLineLimit().numberOfLines)
+                                if settingsManager.getShowArticleWordsCount() {
+                                    Text(configureWordCount())
+                                        .fontWeight(.black)
+                                }
+                                Text(article.date ?? "Нет даты")
+                                    .fontWeight(.medium)
+                            }
+                        }.swipeActions(edge: settingsManager.getSavedSwipeEdge().edge) {
+                            Button {
+                                isPresented.toggle()
+                            } label: {
+                                Image("sections")
+                            }
+                        }
+                    } else {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text(configureLetterCase(text: article.title ?? "Нет заголовка"))
+                                    .fontWeight(.black)
+                                    .lineLimit(settingsManager.getSavedLineLimit().numberOfLines)
+                                if settingsManager.getShowArticleWordsCount() {
+                                    Text(configureWordCount())
+                                        .fontWeight(.black)
+                                }
+                                Text(article.date ?? "Нет даты")
+                                    .fontWeight(.medium)
+                            }
+                        }
                     }
                 }
-            } else {
-                HStack {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text(article.title ?? "Нет заголовка")
-                            .fontWeight(.black)
-                        Text(article.date ?? "Нет даты")
-                            .fontWeight(.medium)
-                    }
+            }.onAppear {
+                if isLoading && settingsManager.getShowArticleWordsCount() {
+                    getArticleInfo()
+                }
+            }
+            .sheet(isPresented: $isPresented) {
+                if isSavedArticle {
+                    NewsInfoOptionsListView(abbreviation: abbreviation, id: savedArticle.id)
+                } else {
+                    NewsInfoOptionsListView(abbreviation: abbreviation, id: article.id)
                 }
             }
         }
     }
+    
+    func getArticleInfo() {
+        if isSavedArticle {
+            loadingInfoForSavedArticle()
+        } else {
+            loadingInfoForArticle()
+        }
+    }
+    
+    func loadingInfoForSavedArticle() {
+        Task {
+            let result = try await newsService.getArticleInfo(abbreviation: abbreviation, id: savedArticle.id)
+            switch result {
+            case .success(let data):
+                let words = data.description.components(separatedBy: " ").filter { !$0.isEmpty }
+                self.wordCount = words.count
+                isLoading = false
+            case .failure(let error):
+                print(error)
+                isLoading = false
+            }
+        }
+    }
+    
+    func loadingInfoForArticle() {
+        Task {
+            let result = try await newsService.getArticleInfo(abbreviation: abbreviation, id: article.id)
+            switch result {
+            case .success(let data):
+                let words = data.description.components(separatedBy: " ").filter { !$0.isEmpty }
+                self.wordCount = words.count
+                isLoading = false
+            case .failure(let error):
+                print(error)
+                isLoading = false
+            }
+        }
+    }
+    
+    func configureWordCount()-> String {
+        if wordCount <= 100 && wordCount > 0 {
+            return "Мало слов (≈\(wordCount))"
+        } else if wordCount > 100 {
+            return "Много слов (≈\(wordCount))"
+        } else if wordCount == 0 {
+            return "Нет текста"
+        }
+        return "Подсчет слов..."
+    }
+    
+    func configureLetterCase(text: String)-> String {
+        switch settingsManager.getSavedLetterCase() {
+        case .upperCase:
+            return text.uppercased()
+        case .lowerCase:
+            return text.lowercased()
+        case .mixed:
+            return text.mixedcased()
+        }
+    }
 }
-
-//#Preview {
-//    ArticleCell(article: Article(id: 1, title: "НАРЯДУ С ДИПЛОМОМ О ВЫСШЕМ ОБРАЗОВАНИИ ВЫПУСКНИКИ АГПУ ПОЛУЧАЮТ ЭЛЕКТРОННЫЙ ПОРТФЕЛЬ", description: "В день вручения дипломов о высшем образовании, 8 июля, выпускники АГПУ получат поздравительную открытку-вкладыш. В ней размещено поздравление Министра просвещения Российской Федерации Сергея Кравцова для выпускников педагогических университетов. Открытка-вкладыш содержит QR-код электронного портфеля, который откроет доступ выпускнику, молодому специалисту и педагогическому работнику со стажем работы актуальную и полезную информацию, станет надежным помощником в профессиональном становлении, навигатором в огромном информационном пространстве. Электронный портфель – это удобный поисково-информационный ресурс, объединяющий несколько рубрик. На страницах электронного портфеля раскрываются секреты воспитания, сервис рассказывает о важных событиях, памятных датах, дает рекомендации по разработке и управлению проектами в сфере образования. Кроме того, также представлены нормативные документы, ссылки на полезные медиаресурсы, советы по ведению школьной документации, подготовке к занятиям и многое другое. Ресурс будет постоянно обновляться, что позволит педагогу, студенту всегда быть в курсе всех изменений в системе образования!", date: "04.07.2024", previewImage: "http://www.agpu.net/upload/iblock/56e/7j5xwcjoniy9gr8k2q918ldchx7808h5.png"), abbreviation: "", isSavedArticle: false)
-//}

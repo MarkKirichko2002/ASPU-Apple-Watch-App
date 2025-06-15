@@ -38,7 +38,7 @@ final class NewsOptionsListViewModel: ObservableObject {
                 case .success(let data):
                     DispatchQueue.main.async {
                         self.newsResponse = data
-                        self.options[0].name = "Категория: \(category.name)"
+                        self.options[0].name = "\(category.name)"
                         self.options[1].name = "Страниц: \(data.countPages ?? 0)"
                     }
                 case .failure(let error):
@@ -52,7 +52,7 @@ final class NewsOptionsListViewModel: ObservableObject {
                 case .success(let data):
                     DispatchQueue.main.async {
                         self.newsResponse = data
-                        self.options[0].name = "Категория: \(category.name)"
+                        self.options[0].name = "\(category.name)"
                         self.options[1].name = "Страниц: \(data.countPages ?? 0)"
                     }
                 case .failure(let error):

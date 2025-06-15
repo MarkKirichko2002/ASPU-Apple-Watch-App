@@ -12,14 +12,29 @@ struct PairInfoView: View {
     @ObservedObject var viewModel: PairInfoViewModel
     
     var body: some View {
-        List(viewModel.pairInfo, id: \.self) { item in
-            Text(item)
-                .fontWeight(.bold)
-                .onTapGesture {
-                    viewModel.checkCell(item: item)
-             }
+        VStack {
+            List(viewModel.pairInfo, id: \.self) { item in
+                Text(item)
+                    .fontWeight(.bold)
+                    .onTapGesture {
+                        viewModel.checkCell(item: item)
+                 }
+            }
         }
         .navigationTitle("Информация")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    self.viewModel.isListPresented.toggle()
+                }) {
+                    Image("sections")
+                }.foregroundStyle(Color(UIColor.white))
+            }
+        }
+        .onChange(of: viewModel.pair) { newValue in
+            viewModel.pair = newValue
+            viewModel.refreshData()
+        }
         .onAppear {
             viewModel.checkSettings()
         }
@@ -29,9 +44,12 @@ struct PairInfoView: View {
         .sheet(isPresented: $viewModel.isPresented) {
             BuildingDetailView(building: viewModel.currentBuilding)
         }
+        .sheet(isPresented: $viewModel.isListPresented) {
+            DisciplinesListView(currentPair: $viewModel.pair, pairs: viewModel.pairs)
+        }
     }
 }
 
-#Preview {
-    PairInfoView(viewModel: PairInfoViewModel(pair: Discipline(id: "", time: "", name: "", groupName: "", teacherName: "", audienceID: "", subgroup: 0, type: .all), date: ""))
-}
+//#Preview {
+//    PairInfoView(viewModel: PairInfoViewModel(pair: Discipline(id: "", time: "", name: "", groupName: "", teacherName: "", audienceID: "", subgroup: 0, type: .all), date: ""))
+//}

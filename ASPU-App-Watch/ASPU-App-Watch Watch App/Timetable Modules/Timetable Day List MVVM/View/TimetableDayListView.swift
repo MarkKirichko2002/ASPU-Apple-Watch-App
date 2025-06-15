@@ -48,12 +48,15 @@ struct TimetableDayListView: View {
             viewModel.checkTimetableChanges()
         }
         .sheet(isPresented: $viewModel.isPresentedInfo) {
-            PairInfoView(viewModel: PairInfoViewModel(pair: viewModel.currentDiscipline, date: viewModel.timetable.date ?? viewModel.getCurrentDate()))
+            PairInfoView(viewModel: PairInfoViewModel(pair: viewModel.currentDiscipline, pairs: viewModel.allDisciplines, date: viewModel.timetable.date ?? viewModel.getCurrentDate()))
         }
         .sheet(isPresented: $viewModel.isPresented) {
             TimetableOptionsListView(date: viewModel.getCurrentDate(), disciplines: viewModel.timetable.disciplines, isPresented: $showOptions)
         }
-        .navigationTitle(viewModel.getCurrentDate())
+        .sheet(isPresented: $viewModel.isPresentedPairs) {
+            CurrentDisciplinesListView(date: viewModel.timetable.date ?? "", pairs: viewModel.currentDisciplines)
+        }
+        .navigationTitle(viewModel.date)
     }
 }
 

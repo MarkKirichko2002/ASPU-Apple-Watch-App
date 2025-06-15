@@ -12,15 +12,18 @@ final class PairInfoViewModel: ObservableObject {
     @Published var pairInfo = [String]()
     @Published var currentBuilding = Buildings.pins[0]
     @Published var isPresented = false
+    @Published var isListPresented = false
     
-    var pair: Discipline = Discipline(id: "", time: "8:00-9:30", name: "", groupName: "", teacherName: "", audienceID: "", subgroup: 0, type: .all)
+    @Published var pair: Discipline
+    var pairs: [Discipline]
     var date: String = ""
     
     var timer: Timer?
     
     // MARK: - Init
-    init(pair: Discipline, date: String) {
+    init(pair: Discipline, pairs: [Discipline], date: String) {
         self.pair = pair
+        self.pairs = pairs
         self.date = date
     }
     
@@ -76,6 +79,12 @@ final class PairInfoViewModel: ObservableObject {
         pairInfo.append(subGroup)
         pairInfo.append("Тип пары: \(pairType)")
         pairInfo.append("Аудитория: \(pair.audienceID)")
+    }
+    
+    func refreshData() {
+        pairInfo = []
+        stopUpdateInfo()
+        checkSettings()
     }
     
     func getStartTime()-> String {

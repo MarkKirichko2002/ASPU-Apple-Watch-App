@@ -25,12 +25,34 @@ struct WeekDaysListView: View {
                     .fontWeight(.bold)
             } else if !viewModel.days.isEmpty {
                 List(viewModel.days) { day in
-                    Text("\(day.name) \(day.date)")
-                        .fontWeight(.bold)
-                        .onTapGesture {
-                            viewModel.currentDay = day
-                            viewModel.isSelected.toggle()
-                        }
+                    if viewModel.getSwipeOption() {
+                        HStack {
+                            Text("\(day.name) \(day.date)")
+                                .fontWeight(.bold)
+                            Spacer()
+                        }.contentShape(Rectangle())
+                            .onTapGesture {
+                                viewModel.currentDay = day
+                                viewModel.isSelected.toggle()
+                            }
+                            .swipeActions(edge: viewModel.getSwipeEdge().edge) {
+                                Button {
+                                    viewModel.currentDay = day
+                                    viewModel.isInfoSelected.toggle()
+                                } label: {
+                                    Image("info")
+                                }
+                            }
+                    } else {
+                        HStack {
+                            Text("\(day.name) \(day.date)")
+                                .fontWeight(.bold)
+                        }.contentShape(Rectangle())
+                            .onTapGesture {
+                                viewModel.currentDay = day
+                                viewModel.isPresented.toggle()
+                         }
+                    }
                 }
             } else {
                 Text("Нет дней")
@@ -46,8 +68,14 @@ struct WeekDaysListView: View {
         .onChange(of: viewModel.isSelected) {
             viewModel.isPresented.toggle()
         }
+        .onChange(of: viewModel.isInfoSelected) {
+            viewModel.isInfoPresented.toggle()
+        }
         .sheet(isPresented: $viewModel.isPresented) {
             TimetableDayResultListView(id: viewModel.getSavedId(), date: viewModel.currentDay.date, owner: viewModel.getSavedOwner())
+        }
+        .sheet(isPresented: $viewModel.isInfoPresented) {
+            TimetableDayTimeInfoView(id: viewModel.getSavedId(), date: viewModel.currentDay.date, owner: viewModel.getSavedOwner())
         }
     }
 }

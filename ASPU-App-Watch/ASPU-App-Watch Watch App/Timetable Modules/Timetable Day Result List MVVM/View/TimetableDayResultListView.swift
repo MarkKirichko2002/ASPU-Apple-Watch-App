@@ -55,7 +55,7 @@ struct TimetableDayResultListView: View {
             viewModel.checkTimetableChanges()
         }
         .sheet(isPresented: $viewModel.isPresentedInfo) {
-            PairInfoView(viewModel: PairInfoViewModel(pair: viewModel.currentDiscipline, date: date))
+            PairInfoView(viewModel: PairInfoViewModel(pair: viewModel.currentDiscipline, pairs: viewModel.allDisciplines, date: date))
         }
         .sheet(isPresented: $viewModel.isPresentedOptions) {
             TimetableLessOptionsListView(date: viewModel.getCurrentDate(), disciplines: viewModel.timetable.disciplines, isPresented: $showOptions)

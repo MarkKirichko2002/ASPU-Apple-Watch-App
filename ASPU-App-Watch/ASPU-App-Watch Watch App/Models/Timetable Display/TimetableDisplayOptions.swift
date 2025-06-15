@@ -8,6 +8,6 @@
 import UIKit
 
 enum TimetableDisplayOptions: String, CaseIterable, Codable {
-    case day = "День"
-    case week = "Недели"
+    case day = "На сегодня"
+    case week = "Список недель"
 }

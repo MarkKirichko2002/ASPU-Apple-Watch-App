@@ -26,7 +26,8 @@ struct SavedNewsCategoryCell: View {
             HStack {
                 Text(category.name)
                     .fontWeight(.bold)
-            }
+                Spacer()
+            }.contentShape(Rectangle())
         }
     }
 }

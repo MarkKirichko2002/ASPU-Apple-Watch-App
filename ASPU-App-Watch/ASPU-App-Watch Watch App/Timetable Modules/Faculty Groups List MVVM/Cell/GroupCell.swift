@@ -26,7 +26,8 @@ struct GroupCell: View {
             HStack {
                 Text(group)
                     .fontWeight(.bold)
-            }
+                Spacer()
+            }.contentShape(Rectangle())
         }
     }
 }

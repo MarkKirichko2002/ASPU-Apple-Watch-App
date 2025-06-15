@@ -26,7 +26,8 @@ struct AudienceCell: View {
             HStack {
                 Text(audience)
                     .fontWeight(.bold)
-            }
+                Spacer()
+            }.contentShape(Rectangle())
         }
     }
 }

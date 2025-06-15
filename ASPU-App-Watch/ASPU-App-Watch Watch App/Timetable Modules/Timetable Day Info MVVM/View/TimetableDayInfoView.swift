@@ -18,11 +18,20 @@ struct TimetableDayInfoView: View {
             Image("clock")
                 .resizable()
                 .frame(width: 55, height: 55)
+                .onTapGesture {
+                    viewModel.isPresented.toggle()
+                }
             Text(viewModel.info[0])
                 .fontWeight(.bold)
+                .onTapGesture {
+                    viewModel.isPresented.toggle()
+                }
         }.navigationTitle("Расписание")
         .onAppear {
             viewModel.getTimetable(id: id, owner: owner)
+        }
+        .sheet(isPresented: $viewModel.isPresented) {
+            TimetableDayResultListView(id: id, date: viewModel.getCurrentDate(), owner: owner)
         }
     }
 }

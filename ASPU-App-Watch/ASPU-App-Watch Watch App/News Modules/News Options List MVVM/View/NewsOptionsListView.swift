@@ -10,12 +10,18 @@ import SwiftUI
 struct NewsOptionsListView: View {
     
     @ObservedObject var viewModel = NewsOptionsListViewModel()
-
+    
     var body: some View {
         NavigationView {
             List(viewModel.options) { option in
-                Text(option.name)
-                    .fontWeight(.bold)
+                HStack(spacing: 10) {
+                    Image(option.icon)
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                    Text(option.name)
+                        .fontWeight(.bold)
+                    Spacer()
+                }.contentShape(Rectangle())
                     .onTapGesture {
                         viewModel.currentId = option.id
                         viewModel.isPresented.toggle()

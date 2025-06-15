@@ -22,7 +22,7 @@ struct PairFilterTypeListView: View {
                 Text("\(type.name) (\(type.count))")
                     .fontWeight(.bold)
             }
-        }.navigationTitle("Фильтрация")
+        }.navigationTitle("Фильтр")
             .onAppear {
                 if !viewModel.isFiltered {
                     viewModel.setUpData(date: date, disciplines: disciplines)
