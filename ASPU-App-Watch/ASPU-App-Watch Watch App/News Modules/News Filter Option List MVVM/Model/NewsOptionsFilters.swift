@@ -11,6 +11,7 @@ enum NewsOptionsFilters {
     case today
     case yesterday
     case dayBeforeYesterday
+    case currentWeek
     case all
 }
 
@@ -27,6 +28,7 @@ struct NewsFilters {
         FilterOptionModel(id: 1, name: "Сегодня", option: NewsOptionsFilters.today, count: 0),
         FilterOptionModel(id: 2, name: "Вчера", option: NewsOptionsFilters.yesterday, count: 0),
         FilterOptionModel(id: 3, name: "Позавчера", option: NewsOptionsFilters.dayBeforeYesterday, count: 0),
-        FilterOptionModel(id: 4, name: "Все новости", option: NewsOptionsFilters.all, count: 0),
+        FilterOptionModel(id: 4, name: "Текущая неделя", option: NewsOptionsFilters.currentWeek, count: 0),
+        FilterOptionModel(id: 5, name: "Все новости", option: NewsOptionsFilters.all, count: 0),
     ]
 }

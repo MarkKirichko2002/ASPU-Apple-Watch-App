@@ -25,7 +25,7 @@ struct AppSectionsMenuView: View {
             .navigationDestination(item: $viewModel.section) { item in
                 switch item.id {
                 case 1:
-                    NewsListView()
+                    NewsDisplayView()
                 case 2:
                     TimetableDisplayView()
                 case 3:

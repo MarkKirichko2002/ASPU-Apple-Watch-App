@@ -17,7 +17,7 @@ struct NewsFilterOptionListView: View {
         NavigationView {
             List(viewModel.options) { option in
                 NavigationLink {
-                    NewsFilterOptionView(articles: viewModel.filterNews(option: option.option), abbreviation: abbreviation)
+                    NewsFilterDisplayView(news: viewModel.filterNews(option: option.option), abbreviation: abbreviation)
                 } label: {
                     Text("\(option.name) (\(option.count))")
                         .fontWeight(.bold)

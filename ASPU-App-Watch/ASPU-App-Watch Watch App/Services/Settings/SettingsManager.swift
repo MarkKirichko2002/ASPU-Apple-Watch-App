@@ -13,6 +13,10 @@ final class SettingsManager {
         UserDefaults.standard.setValue(abbreviation, forKey: "news category")
     }
     
+    func getGroupByDatesOnOption()-> Bool {
+        return UserDefaults.standard.object(forKey: "isGroupByDatesOn") as? Bool ?? false
+    }
+    
     func getShowArticleWordsCount()-> Bool {
         return UserDefaults.standard.object(forKey: "isShowArticleWordsCountOn") as? Bool ?? false
     }

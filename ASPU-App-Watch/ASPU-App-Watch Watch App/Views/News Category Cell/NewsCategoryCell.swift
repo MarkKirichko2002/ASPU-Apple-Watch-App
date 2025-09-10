@@ -15,7 +15,7 @@ struct NewsCategoryCell: View {
     var body: some View {
         if isSelected {
             NavigationLink {
-                CurrentCategoryNewsListView(category: category)
+                NewsCategoryDisplayView(category: category)
             } label: {
                 HStack {
                     Text(category.name)
@@ -28,7 +28,7 @@ struct NewsCategoryCell: View {
             }
         } else {
             NavigationLink {
-                CurrentCategoryNewsListView(category: category)
+                NewsCategoryDisplayView(category: category)
             } label: {
                 HStack {
                     Text(category.name)

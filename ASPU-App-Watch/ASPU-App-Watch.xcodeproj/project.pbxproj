@@ -195,6 +195,17 @@
 		82F2E75F2C67BE1E002E0A70 /* SavedArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2E75E2C67BE1E002E0A70 /* SavedArticleDetailView.swift */; };
 		82F315B32C405CB700E826F9 /* TimetableDayResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F315B22C405CB700E826F9 /* TimetableDayResultListView.swift */; };
 		82F315B52C405CC100E826F9 /* TimetableDayResultListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F315B42C405CC100E826F9 /* TimetableDayResultListViewModel.swift */; };
+		82F8141F2E06C2DF002A130A /* GroupByDatesOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8141E2E06C2DF002A130A /* GroupByDatesOptionCell.swift */; };
+		82F814252E06C449002A130A /* NewsGroupDateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F814242E06C449002A130A /* NewsGroupDateListView.swift */; };
+		82F8142A2E06C4EC002A130A /* NewsDateSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F814292E06C4EC002A130A /* NewsDateSectionModel.swift */; };
+		82F8142D2E06C53F002A130A /* NewsDateSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8142C2E06C53F002A130A /* NewsDateSectionCell.swift */; };
+		82F8142F2E06C58A002A130A /* NewsGroupDateListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8142E2E06C58A002A130A /* NewsGroupDateListViewModel.swift */; };
+		82F814342E06CCB6002A130A /* NewsDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F814332E06CCB6002A130A /* NewsDisplayView.swift */; };
+		82F8143B2E06D74E002A130A /* NewsPagesDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8143A2E06D74E002A130A /* NewsPagesDisplayView.swift */; };
+		82F8143F2E06F495002A130A /* NewsCategoryDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8143E2E06F495002A130A /* NewsCategoryDisplayView.swift */; };
+		82F814432E075D28002A130A /* NewsFilterDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F814422E075D28002A130A /* NewsFilterDisplayView.swift */; };
+		82F814482E075E6A002A130A /* NewsGroupDateFilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F814472E075E6A002A130A /* NewsGroupDateFilterListView.swift */; };
+		82F8144A2E075EF9002A130A /* NewsGroupDateFilterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F814492E075EF9002A130A /* NewsGroupDateFilterListViewModel.swift */; };
 		82FAEBBA2C531F9F00FB8B15 /* FacultiesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBB92C531F9F00FB8B15 /* FacultiesListViewModel.swift */; };
 		82FAEBC02C53233B00FB8B15 /* WeeksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBBF2C53233B00FB8B15 /* WeeksListView.swift */; };
 		82FAEBC22C53234900FB8B15 /* WeeksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBC12C53234900FB8B15 /* WeeksListViewModel.swift */; };
@@ -207,6 +218,7 @@
 		82FAEBD72C53430D00FB8B15 /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBD62C53430D00FB8B15 /* TeacherCell.swift */; };
 		82FAEBDE2C53443100FB8B15 /* AudienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBDD2C53443100FB8B15 /* AudienceCell.swift */; };
 		82FAEBE12C5344CA00FB8B15 /* AudiencesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FAEBE02C5344CA00FB8B15 /* AudiencesListViewModel.swift */; };
+		82FE78502E468988004DAC5C /* NewsDateSectionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE784F2E468988004DAC5C /* NewsDateSectionInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -422,6 +434,17 @@
 		82F2E75E2C67BE1E002E0A70 /* SavedArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedArticleDetailView.swift; sourceTree = "<group>"; };
 		82F315B22C405CB700E826F9 /* TimetableDayResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayResultListView.swift; sourceTree = "<group>"; };
 		82F315B42C405CC100E826F9 /* TimetableDayResultListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDayResultListViewModel.swift; sourceTree = "<group>"; };
+		82F8141E2E06C2DF002A130A /* GroupByDatesOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupByDatesOptionCell.swift; sourceTree = "<group>"; };
+		82F814242E06C449002A130A /* NewsGroupDateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsGroupDateListView.swift; sourceTree = "<group>"; };
+		82F814292E06C4EC002A130A /* NewsDateSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDateSectionModel.swift; sourceTree = "<group>"; };
+		82F8142C2E06C53F002A130A /* NewsDateSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDateSectionCell.swift; sourceTree = "<group>"; };
+		82F8142E2E06C58A002A130A /* NewsGroupDateListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsGroupDateListViewModel.swift; sourceTree = "<group>"; };
+		82F814332E06CCB6002A130A /* NewsDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDisplayView.swift; sourceTree = "<group>"; };
+		82F8143A2E06D74E002A130A /* NewsPagesDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPagesDisplayView.swift; sourceTree = "<group>"; };
+		82F8143E2E06F495002A130A /* NewsCategoryDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategoryDisplayView.swift; sourceTree = "<group>"; };
+		82F814422E075D28002A130A /* NewsFilterDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFilterDisplayView.swift; sourceTree = "<group>"; };
+		82F814472E075E6A002A130A /* NewsGroupDateFilterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsGroupDateFilterListView.swift; sourceTree = "<group>"; };
+		82F814492E075EF9002A130A /* NewsGroupDateFilterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsGroupDateFilterListViewModel.swift; sourceTree = "<group>"; };
 		82FAEBB92C531F9F00FB8B15 /* FacultiesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesListViewModel.swift; sourceTree = "<group>"; };
 		82FAEBBF2C53233B00FB8B15 /* WeeksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksListView.swift; sourceTree = "<group>"; };
 		82FAEBC12C53234900FB8B15 /* WeeksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksListViewModel.swift; sourceTree = "<group>"; };
@@ -434,6 +457,7 @@
 		82FAEBD62C53430D00FB8B15 /* TeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
 		82FAEBDD2C53443100FB8B15 /* AudienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudienceCell.swift; sourceTree = "<group>"; };
 		82FAEBE02C5344CA00FB8B15 /* AudiencesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiencesListViewModel.swift; sourceTree = "<group>"; };
+		82FE784F2E468988004DAC5C /* NewsDateSectionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDateSectionInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -497,6 +521,7 @@
 				829C9E442DC58014001FAD8C /* NewsCellLineLimitOptionCell.swift */,
 				828B115F2DE24CBA00A58503 /* NewsCellLetterCaseOptionCell.swift */,
 				820744E62DB684C400E4C505 /* ShowArticleWordsCountOptionCell.swift */,
+				82F8141E2E06C2DF002A130A /* GroupByDatesOptionCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2422,6 +2447,10 @@
 			children = (
 				820BFB2E2C9471BB006CE801 /* Today News Info View */,
 				82D4ABF32CD788EA003219F7 /* News Info MVVM */,
+				82F814302E06CC93002A130A /* News Display Modules */,
+				82F814202E06C400002A130A /* News Group Date List MVVM */,
+				82FE784D2E46894C004DAC5C /* News Date Section Info */,
+				82F814442E075E07002A130A /* News Group Date Filter List MVVM */,
 				8294CFD02C371A42006E7EDA /* News List MVVM */,
 				82269F3B2CE51C4800FC3256 /* News Info Options List */,
 				82160F512C38A11600017A1F /* Article Detail MVVM */,
@@ -2464,6 +2493,149 @@
 			isa = PBXGroup;
 			children = (
 				82F315B22C405CB700E826F9 /* TimetableDayResultListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82F814202E06C400002A130A /* News Group Date List MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				82F814282E06C4CE002A130A /* Model */,
+				82F814222E06C42E002A130A /* View */,
+				82F8142B2E06C50F002A130A /* Cell */,
+				82F814212E06C42C002A130A /* ViewModel */,
+			);
+			path = "News Group Date List MVVM";
+			sourceTree = "<group>";
+		};
+		82F814212E06C42C002A130A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82F8142E2E06C58A002A130A /* NewsGroupDateListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82F814222E06C42E002A130A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82F814242E06C449002A130A /* NewsGroupDateListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82F814282E06C4CE002A130A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82F814292E06C4EC002A130A /* NewsDateSectionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		82F8142B2E06C50F002A130A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				82F8142C2E06C53F002A130A /* NewsDateSectionCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		82F814302E06CC93002A130A /* News Display Modules */ = {
+			isa = PBXGroup;
+			children = (
+				82F814322E06CCA7002A130A /* News Display */,
+				82F8143C2E06F47C002A130A /* News Category Display */,
+				82F814382E06D735002A130A /* News Pages Display */,
+				82F814402E075CFF002A130A /* News Filter Display */,
+			);
+			path = "News Display Modules";
+			sourceTree = "<group>";
+		};
+		82F814322E06CCA7002A130A /* News Display */ = {
+			isa = PBXGroup;
+			children = (
+				82F814372E06D72D002A130A /* View */,
+			);
+			path = "News Display";
+			sourceTree = "<group>";
+		};
+		82F814372E06D72D002A130A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82F814332E06CCB6002A130A /* NewsDisplayView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82F814382E06D735002A130A /* News Pages Display */ = {
+			isa = PBXGroup;
+			children = (
+				82F814392E06D73E002A130A /* View */,
+			);
+			path = "News Pages Display";
+			sourceTree = "<group>";
+		};
+		82F814392E06D73E002A130A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82F8143A2E06D74E002A130A /* NewsPagesDisplayView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82F8143C2E06F47C002A130A /* News Category Display */ = {
+			isa = PBXGroup;
+			children = (
+				82F8143D2E06F488002A130A /* View */,
+			);
+			path = "News Category Display";
+			sourceTree = "<group>";
+		};
+		82F8143D2E06F488002A130A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82F8143E2E06F495002A130A /* NewsCategoryDisplayView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82F814402E075CFF002A130A /* News Filter Display */ = {
+			isa = PBXGroup;
+			children = (
+				82F814412E075D17002A130A /* View */,
+			);
+			path = "News Filter Display";
+			sourceTree = "<group>";
+		};
+		82F814412E075D17002A130A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82F814422E075D28002A130A /* NewsFilterDisplayView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82F814442E075E07002A130A /* News Group Date Filter List MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				82F814462E075E53002A130A /* View */,
+				82F814452E075E51002A130A /* ViewModel */,
+			);
+			path = "News Group Date Filter List MVVM";
+			sourceTree = "<group>";
+		};
+		82F814452E075E51002A130A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82F814492E075EF9002A130A /* NewsGroupDateFilterListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82F814462E075E53002A130A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82F814472E075E6A002A130A /* NewsGroupDateFilterListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2581,6 +2753,22 @@
 				82FAEBE02C5344CA00FB8B15 /* AudiencesListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82FE784D2E46894C004DAC5C /* News Date Section Info */ = {
+			isa = PBXGroup;
+			children = (
+				82FE784E2E468973004DAC5C /* View */,
+			);
+			path = "News Date Section Info";
+			sourceTree = "<group>";
+		};
+		82FE784E2E468973004DAC5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82FE784F2E468988004DAC5C /* NewsDateSectionInfoView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2718,12 +2906,15 @@
 				8294CF8B2C34B579006E7EDA /* ContentView.swift in Sources */,
 				820A2A542C61767A005FF3D9 /* PairInfoView.swift in Sources */,
 				82B40BE52C89E723003FCF07 /* CustomListStyle.swift in Sources */,
+				82F8141F2E06C2DF002A130A /* GroupByDatesOptionCell.swift in Sources */,
 				82CDF2372CA74440006783FF /* ShowRemainingPairsCell.swift in Sources */,
+				82FE78502E468988004DAC5C /* NewsDateSectionInfoView.swift in Sources */,
 				820BFB2D2C931175006CE801 /* TimetableInfoViewModel.swift in Sources */,
 				82A608F82C3759A10005EDC3 /* ASPUNewsService.swift in Sources */,
 				82A608EE2C3758FE0005EDC3 /* HostName.swift in Sources */,
 				82FAEBC22C53234900FB8B15 /* WeeksListViewModel.swift in Sources */,
 				82E8A1082C47509200CF2179 /* String + Extensions.swift in Sources */,
+				82F8142D2E06C53F002A130A /* NewsDateSectionCell.swift in Sources */,
 				82C919632C503F1700848231 /* FacultyModel.swift in Sources */,
 				829C9E4D2DC5811E001FAD8C /* NewsCellLineLimitOptionsListViewModel.swift in Sources */,
 				82A608F62C3759620005EDC3 /* TimeTable.swift in Sources */,
@@ -2772,6 +2963,8 @@
 				82D4ABF92CD78A43003219F7 /* NewsInfoView.swift in Sources */,
 				8294C3B52C6EC80C00C9DFBE /* PairTypeFilterModel.swift in Sources */,
 				82A608FA2C3759D30005EDC3 /* TimeTableService.swift in Sources */,
+				82F8144A2E075EF9002A130A /* NewsGroupDateFilterListViewModel.swift in Sources */,
+				82F8143B2E06D74E002A130A /* NewsPagesDisplayView.swift in Sources */,
 				828C1A412C397BBB00151AFA /* NewsOptionsListViewModel.swift in Sources */,
 				82269F412CE51CB300FC3256 /* NewsInfoOptions.swift in Sources */,
 				82160F542C38A13600017A1F /* BuildingsMapView.swift in Sources */,
@@ -2784,6 +2977,7 @@
 				828B11692DE24D9800A58503 /* NewsCellLetterCaseOptionsListViewModel.swift in Sources */,
 				82F2E74A2C655AB3002E0A70 /* BuildingFilterTypeListView.swift in Sources */,
 				821BAAA12C4C9AE6002470F2 /* CurrentPageNewsListView.swift in Sources */,
+				82F8143F2E06F495002A130A /* NewsCategoryDisplayView.swift in Sources */,
 				8294CFA42C34B7BC006E7EDA /* AppSections.swift in Sources */,
 				82E8A10D2C47635C00CF2179 /* TimetableOptionsListView.swift in Sources */,
 				82FAEBD12C53407B00FB8B15 /* GroupCell.swift in Sources */,
@@ -2812,6 +3006,7 @@
 				828B116D2DE24E2C00A58503 /* LetterCaseCell.swift in Sources */,
 				826877A02CCD89260017E466 /* TimetableDaysInfoViewModel.swift in Sources */,
 				820BFB372C948E27006CE801 /* TodayNewsSectionModel.swift in Sources */,
+				82F8142A2E06C4EC002A130A /* NewsDateSectionModel.swift in Sources */,
 				82F2E75C2C6789D7002E0A70 /* SavedNewsListView.swift in Sources */,
 				8294C3AF2C6EB83900C9DFBE /* PairTypeView.swift in Sources */,
 				82FAEBCB2C532AAE00FB8B15 /* WeekDaysListView.swift in Sources */,
@@ -2849,9 +3044,11 @@
 				821197CF2CA01A1E006A94E6 /* DaysListView.swift in Sources */,
 				821BAA972C4B38B4002470F2 /* NewsPagesListView.swift in Sources */,
 				8294CFB92C360564006E7EDA /* SettingSectionCell.swift in Sources */,
+				82F814482E075E6A002A130A /* NewsGroupDateFilterListView.swift in Sources */,
 				820744E52DB6830F00E4C505 /* NewsCategoryOptionCell.swift in Sources */,
 				828C1A4D2C39C2A900151AFA /* NewsCategoriesListViewModel.swift in Sources */,
 				82F2E7582C678897002E0A70 /* ArticleModel.swift in Sources */,
+				82F8142F2E06C58A002A130A /* NewsGroupDateListViewModel.swift in Sources */,
 				82958D8B2C3E05DC007ACA24 /* ArticleDetailViewModel.swift in Sources */,
 				8294CFCC2C371786006E7EDA /* SettingsManager.swift in Sources */,
 				8255E43B2C385A58009D24B1 /* DateManager.swift in Sources */,
@@ -2869,8 +3066,11 @@
 				829C9E3D2DC434AE001FAD8C /* BuildingAudiencesInfoView.swift in Sources */,
 				82A609032C375A4D0005EDC3 /* TimetableDayListViewModel.swift in Sources */,
 				8294CFD32C371A60006E7EDA /* NewsListView.swift in Sources */,
+				82F814342E06CCB6002A130A /* NewsDisplayView.swift in Sources */,
+				82F814252E06C449002A130A /* NewsGroupDateListView.swift in Sources */,
 				829AF57B2DDFA486007E6B2F /* NewsCategoryPageNewsCountInfoViewModel.swift in Sources */,
 				82E8A0FB2C47491100CF2179 /* DepartmentsListViewModel.swift in Sources */,
+				82F814432E075D28002A130A /* NewsFilterDisplayView.swift in Sources */,
 				829C9E502DC5813B001FAD8C /* LineLimits.swift in Sources */,
 				8294C3B12C6EB86700C9DFBE /* PairTypeViewModel.swift in Sources */,
 				8279F5912CE183DE00B0E599 /* AppSectionsOptionsListView.swift in Sources */,
@@ -3034,7 +3234,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -3068,7 +3268,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -3089,7 +3289,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -3108,7 +3308,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

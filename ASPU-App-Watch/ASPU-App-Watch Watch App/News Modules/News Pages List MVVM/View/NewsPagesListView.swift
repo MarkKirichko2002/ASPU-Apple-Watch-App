@@ -20,7 +20,7 @@ struct NewsPagesListView: View {
                 NavigationView {
                     List(viewModel.pages, id: \.self) { number in
                         NavigationLink {
-                            CurrentPageNewsListView(page: number, abbreviation: category.abbreviation)
+                            NewsPagesDisplayView(page: number, abbreviation: category.abbreviation)
                         } label: {
                             if viewModel.checkSwipeOption() {
                                 Text("Страница \(number)")

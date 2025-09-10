@@ -17,7 +17,7 @@ struct AppSectionsListView: View {
                 NavigationLink {
                     switch section.id {
                     case 1:
-                        NewsListView()
+                        NewsDisplayView()
                     case 2:
                         TimetableDisplayView()
                     case 3:

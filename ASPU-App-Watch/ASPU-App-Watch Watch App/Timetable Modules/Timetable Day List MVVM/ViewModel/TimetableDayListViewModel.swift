@@ -94,6 +94,7 @@ final class TimetableDayListViewModel: ObservableObject {
     
     func checkSettings() {
         checkRemainingPairsOn()
+        checkCurrentPairInfoOption()
     }
     
     func checkRemainingPairsOn() {
@@ -102,7 +103,6 @@ final class TimetableDayListViewModel: ObservableObject {
             checkNextDayOnOption()
         } else {
             timetable.disciplines = allDisciplines
-            checkCurrentPairInfoOn()
         }
     }
     
@@ -111,36 +111,33 @@ final class TimetableDayListViewModel: ObservableObject {
             if timetable.disciplines.isEmpty {
                 date = dateManager.nextDay(date: date)
                 getTimetable(date: date)
-            } else {
-                checkCurrentPairInfoOn()
             }
         }
     }
     
-    func checkCurrentPairInfoOn() {
-        if settingsManager.getCurrentPairInfoOption() {
-            checkCurrentPairs(pairs: timetable.disciplines)
-        }
+    func checkCurrentPairInfoOption() {
+        guard settingsManager.getCurrentPairInfoOption() else { return }
+        checkCurrentPairs(pairs: allDisciplines)
     }
     
     func checkCurrentPairs(pairs: [Discipline]) {
-        let leftedPairs = filterLeftedPairs(pairs: timetable.disciplines)
+        let leftedPairs = filterLeftedPairs(pairs: pairs)
         let filteredleftedPairs = leftedPairs.filter { $0.time == leftedPairs.first?.time }
         let count = filteredleftedPairs.count
-        if timetable.date == dateManager.getCurrentDate() {
-            if count == 1 {
-                self.currentDiscipline = filteredleftedPairs.first!
-                Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
-                    self.isPresentedInfo.toggle()
-                }
-            } else if count > 1 {
-                self.currentDisciplines = filteredleftedPairs
-                Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
-                    self.isPresentedPairs.toggle()
-                }
-            } else if count == 0 {
-                print("пар нет")
+        guard timetable.date == dateManager.getCurrentDate() else { return }
+        switch count {
+        case 1:
+            self.currentDiscipline = filteredleftedPairs.first!
+            Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
+                self.isPresentedInfo.toggle()
             }
+        case _ where count > 1:
+            self.currentDisciplines = filteredleftedPairs
+            Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
+                self.isPresentedPairs.toggle()
+            }
+        default:
+            break
         }
     }
     

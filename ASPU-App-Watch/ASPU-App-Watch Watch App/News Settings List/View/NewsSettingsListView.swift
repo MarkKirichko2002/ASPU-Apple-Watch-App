@@ -13,6 +13,7 @@ struct NewsSettingsListView: View {
             NewsCategoryOptionCell()
             NewsCellLineLimitOptionCell()
             NewsCellLetterCaseOptionCell()
+            GroupByDatesOptionCell()
             ShowArticleWordsCountOptionCell()
         }.navigationTitle("Новости")
     }

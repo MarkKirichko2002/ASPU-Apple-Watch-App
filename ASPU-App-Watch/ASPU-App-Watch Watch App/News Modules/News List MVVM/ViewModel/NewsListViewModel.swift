@@ -69,8 +69,12 @@ final class NewsListViewModel: ObservableObject {
     }
     
     func observeCategory() {
-        NotificationCenter.default.addObserver(forName: Notification.Name("category"), object: nil, queue: nil) { _ in
-            self.getNews()
+        NotificationCenter.default.addObserver(forName: Notification.Name("category"), object: nil, queue: nil) { notification in
+            if let category = notification.object as? NewsCategoryModel {
+                if self.currentCategory.id != category.id {
+                    self.getNews()
+                }
+            }
         }
     }
 }

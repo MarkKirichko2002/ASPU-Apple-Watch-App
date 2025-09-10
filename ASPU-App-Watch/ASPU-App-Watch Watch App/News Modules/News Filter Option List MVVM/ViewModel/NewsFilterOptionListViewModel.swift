@@ -20,7 +20,8 @@ final class NewsFilterOptionListViewModel: ObservableObject {
         self.options[0].count = articles.filter({ $0.date == dateManager.getCurrentDate()}).count
         self.options[1].count = articles.filter({ $0.date == dateManager.previousDay(date: dateManager.getCurrentDate())}).count
         self.options[2].count = articles.filter({ $0.date == dateManager.previousDay(date: dateManager.previousDay(date: dateManager.getCurrentDate()))}).count
-        self.options[3].count = articles.count
+        self.options[3].count = articles.filter { dateManager.datesOfCurrentWeek().contains($0.date ?? "")}.count
+        self.options[4].count = articles.count
         self.articles = articles
     }
     
@@ -37,6 +38,9 @@ final class NewsFilterOptionListViewModel: ObservableObject {
             let yesterday = dateManager.previousDay(date: today)
             let dayBeforeYesterday = dateManager.previousDay(date: yesterday)
             return articles.filter({ $0.date == dayBeforeYesterday })
+        case .currentWeek:
+            let dates = dateManager.datesOfCurrentWeek()
+            return articles.filter { dates.contains($0.date ?? "") }
         case .all:
             return articles
         }
