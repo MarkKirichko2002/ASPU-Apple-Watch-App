@@ -11,7 +11,7 @@ struct CurrentDisciplinesListView: View {
     
     @State var isSelectedInfo = false
     @State var isPresentedInfo = false
-    @State var currentDiscipline = Discipline(id: "", time: "", name: "", groupName: "", teacherName: "", audienceID: "", subgroup: 0, type: .all)
+    @State var currentDiscipline = Discipline(time: "", name: "", groupName: "", teacherName: "", audienceID: "", subgroup: 0, type: .all)
     var date = ""
     var pairs: [Discipline]
     

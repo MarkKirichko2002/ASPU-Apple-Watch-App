@@ -10,7 +10,7 @@ import Foundation
 final class TimetableDayResultListViewModel: ObservableObject {
     
     @Published var timetable = TimeTable(id: "", date: "", disciplines: [])
-    @Published var currentDiscipline = Discipline(id: "", time: "", name: "", groupName: "", teacherName: "", audienceID: "", subgroup: 0, type: .all)
+    @Published var currentDiscipline = Discipline(time: "", name: "", groupName: "", teacherName: "", audienceID: "", subgroup: 0, type: .all)
     @Published var isLoading = true
     @Published var isPresentedInfo = false
     @Published var isPresentedOptions = false

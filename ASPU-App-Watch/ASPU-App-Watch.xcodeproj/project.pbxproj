@@ -106,6 +106,16 @@
 		828DD7462C6A8113006F15DF /* ZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828DD7452C6A8112006F15DF /* ZoomImageView.swift */; };
 		828F7D3D2C9B895E00C27210 /* AppVersionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F7D3C2C9B895E00C27210 /* AppVersionInfoView.swift */; };
 		828F7D3F2C9B896600C27210 /* AppVersionInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F7D3E2C9B896600C27210 /* AppVersionInfoViewModel.swift */; };
+		8293D1A12E71E5EF0035A2E9 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 8293D1A02E71E5EF0035A2E9 /* SwiftSoup */; };
+		8293D1A42E71E6900035A2E9 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8293D1A32E71E6900035A2E9 /* FirebaseCore */; };
+		8293D1A62E71E6900035A2E9 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 8293D1A52E71E6900035A2E9 /* FirebaseRemoteConfig */; };
+		8293D1AB2E71E7280035A2E9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8293D1AA2E71E7280035A2E9 /* AppConfig.swift */; };
+		8293D1AD2E71E76A0035A2E9 /* TimetableParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8293D1AC2E71E76A0035A2E9 /* TimetableParser.swift */; };
+		8293D1AF2E71E7A40035A2E9 /* GetSearchIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8293D1AE2E71E7A40035A2E9 /* GetSearchIdService.swift */; };
+		8293D1B12E71E7C50035A2E9 /* WeekIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8293D1B02E71E7C50035A2E9 /* WeekIdService.swift */; };
+		8293D1B32E71E7DF0035A2E9 /* WeekParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8293D1B22E71E7DF0035A2E9 /* WeekParser.swift */; };
+		8293D1B52E71E7FB0035A2E9 /* NewsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8293D1B42E71E7FB0035A2E9 /* NewsParser.swift */; };
+		8293D1B72E71EF8E0035A2E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8293D1B62E71EF8E0035A2E9 /* GoogleService-Info.plist */; };
 		8294C3A42C6EB39600C9DFBE /* PairFilterTypeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294C3A32C6EB39600C9DFBE /* PairFilterTypeListView.swift */; };
 		8294C3A62C6EB3A500C9DFBE /* PairFilterTypeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294C3A52C6EB3A500C9DFBE /* PairFilterTypeListViewModel.swift */; };
 		8294C3AF2C6EB83900C9DFBE /* PairTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294C3AE2C6EB83900C9DFBE /* PairTypeView.swift */; };
@@ -345,6 +355,13 @@
 		828DD7452C6A8112006F15DF /* ZoomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomImageView.swift; sourceTree = "<group>"; };
 		828F7D3C2C9B895E00C27210 /* AppVersionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionInfoView.swift; sourceTree = "<group>"; };
 		828F7D3E2C9B896600C27210 /* AppVersionInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionInfoViewModel.swift; sourceTree = "<group>"; };
+		8293D1AA2E71E7280035A2E9 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		8293D1AC2E71E76A0035A2E9 /* TimetableParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableParser.swift; sourceTree = "<group>"; };
+		8293D1AE2E71E7A40035A2E9 /* GetSearchIdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSearchIdService.swift; sourceTree = "<group>"; };
+		8293D1B02E71E7C50035A2E9 /* WeekIdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekIdService.swift; sourceTree = "<group>"; };
+		8293D1B22E71E7DF0035A2E9 /* WeekParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekParser.swift; sourceTree = "<group>"; };
+		8293D1B42E71E7FB0035A2E9 /* NewsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsParser.swift; sourceTree = "<group>"; };
+		8293D1B62E71EF8E0035A2E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8294C3A32C6EB39600C9DFBE /* PairFilterTypeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairFilterTypeListView.swift; sourceTree = "<group>"; };
 		8294C3A52C6EB3A500C9DFBE /* PairFilterTypeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairFilterTypeListViewModel.swift; sourceTree = "<group>"; };
 		8294C3AE2C6EB83900C9DFBE /* PairTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairTypeView.swift; sourceTree = "<group>"; };
@@ -467,6 +484,9 @@
 			files = (
 				8255E4412C385DA3009D24B1 /* SDWebImageSwiftUI in Frameworks */,
 				82A609062C375C8B0005EDC3 /* Alamofire in Frameworks */,
+				8293D1A42E71E6900035A2E9 /* FirebaseCore in Frameworks */,
+				8293D1A12E71E5EF0035A2E9 /* SwiftSoup in Frameworks */,
+				8293D1A62E71E6900035A2E9 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1577,6 +1597,35 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8293D1A72E71E6A80035A2E9 /* HTML Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				8293D1A82E71E6E60035A2E9 /* Timetable */,
+				8293D1A92E71E6E90035A2E9 /* News */,
+			);
+			path = "HTML Parsing";
+			sourceTree = "<group>";
+		};
+		8293D1A82E71E6E60035A2E9 /* Timetable */ = {
+			isa = PBXGroup;
+			children = (
+				8293D1AA2E71E7280035A2E9 /* AppConfig.swift */,
+				8293D1AC2E71E76A0035A2E9 /* TimetableParser.swift */,
+				8293D1AE2E71E7A40035A2E9 /* GetSearchIdService.swift */,
+				8293D1B02E71E7C50035A2E9 /* WeekIdService.swift */,
+				8293D1B22E71E7DF0035A2E9 /* WeekParser.swift */,
+			);
+			path = Timetable;
+			sourceTree = "<group>";
+		};
+		8293D1A92E71E6E90035A2E9 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				8293D1B42E71E7FB0035A2E9 /* NewsParser.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 		8294C3A02C6EB15A00C9DFBE /* Pair Filter Type List MVVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -1682,6 +1731,7 @@
 				825541BB2DC6CC9E0080D69F /* Swipe Edge Options List MVVM */,
 				8294CF882C34B579006E7EDA /* ASPU_App_WatchApp.swift */,
 				8294CF8A2C34B579006E7EDA /* ContentView.swift */,
+				8293D1B62E71EF8E0035A2E9 /* GoogleService-Info.plist */,
 				822D84F42C37766200148062 /* ASPU-App-Watch-Watch-App-Info.plist */,
 				8294CF8C2C34B57F006E7EDA /* Assets.xcassets */,
 				8294CF8E2C34B57F006E7EDA /* Preview Content */,
@@ -1801,6 +1851,7 @@
 		8294CFC92C371771006E7EDA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8293D1A72E71E6A80035A2E9 /* HTML Parsing */,
 				82A608E72C3758A00005EDC3 /* API */,
 				8255E4392C385A47009D24B1 /* Date */,
 				8294CFCA2C371776006E7EDA /* Settings */,
@@ -2807,6 +2858,9 @@
 			packageProductDependencies = (
 				82A609052C375C8B0005EDC3 /* Alamofire */,
 				8255E4402C385DA3009D24B1 /* SDWebImageSwiftUI */,
+				8293D1A02E71E5EF0035A2E9 /* SwiftSoup */,
+				8293D1A32E71E6900035A2E9 /* FirebaseCore */,
+				8293D1A52E71E6900035A2E9 /* FirebaseRemoteConfig */,
 			);
 			productName = "ASPU-App-Watch Watch App";
 			productReference = 8294CF832C34B579006E7EDA /* ФГБОУ ВО «АГПУ».app */;
@@ -2842,6 +2896,8 @@
 			packageReferences = (
 				82A609042C375C8B0005EDC3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				8255E43F2C385DA3009D24B1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				8293D19F2E71E5EF0035A2E9 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				8293D1A22E71E6900035A2E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 8294CF7E2C34B579006E7EDA /* Products */;
 			projectDirPath = "";
@@ -2867,6 +2923,7 @@
 			files = (
 				8294CF902C34B57F006E7EDA /* Preview Assets.xcassets in Resources */,
 				8294CF8D2C34B57F006E7EDA /* Assets.xcassets in Resources */,
+				8293D1B72E71EF8E0035A2E9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2890,6 +2947,7 @@
 				828C1A482C39C24000151AFA /* NewsCategoriesListView.swift in Sources */,
 				828B116B2DE24DB000A58503 /* LetterCases.swift in Sources */,
 				821BAA9F2C4C9A2C002470F2 /* CurrentPageNewsListViewModel.swift in Sources */,
+				8293D1B12E71E7C50035A2E9 /* WeekIdService.swift in Sources */,
 				820BFB2B2C931168006CE801 /* TimetableDayInfoView.swift in Sources */,
 				82FAEBBA2C531F9F00FB8B15 /* FacultiesListViewModel.swift in Sources */,
 				828F7D3F2C9B896600C27210 /* AppVersionInfoViewModel.swift in Sources */,
@@ -2926,11 +2984,13 @@
 				8294CFA92C36022A006E7EDA /* SettingsListView.swift in Sources */,
 				821197CA2CA010B3006A94E6 /* SwipeOptionsListView.swift in Sources */,
 				820BFB342C9471FE006CE801 /* TodayNewsInfoViewModel.swift in Sources */,
+				8293D1AB2E71E7280035A2E9 /* AppConfig.swift in Sources */,
 				820BFB3A2C94908A006CE801 /* TodayNewsCategoryCell.swift in Sources */,
 				82160F5E2C38EDFB00017A1F /* BuildingsMapViewModel.swift in Sources */,
 				829C9E452DC58014001FAD8C /* NewsCellLineLimitOptionCell.swift in Sources */,
 				82B40BE32C89E5A7003FCF07 /* UserDefaults + Extensions.swift in Sources */,
 				8279F55C2CE1738400B0E599 /* AppSectionsOnboardingViewModel.swift in Sources */,
+				8293D1B32E71E7DF0035A2E9 /* WeekParser.swift in Sources */,
 				8279F59D2CE189CB00B0E599 /* AppSectionsDisplayView.swift in Sources */,
 				82160F612C38EEC800017A1F /* LocationManager.swift in Sources */,
 				827674D32C4861A10083A849 /* CorpsListViewModel.swift in Sources */,
@@ -2963,10 +3023,12 @@
 				82D4ABF92CD78A43003219F7 /* NewsInfoView.swift in Sources */,
 				8294C3B52C6EC80C00C9DFBE /* PairTypeFilterModel.swift in Sources */,
 				82A608FA2C3759D30005EDC3 /* TimeTableService.swift in Sources */,
+				8293D1AF2E71E7A40035A2E9 /* GetSearchIdService.swift in Sources */,
 				82F8144A2E075EF9002A130A /* NewsGroupDateFilterListViewModel.swift in Sources */,
 				82F8143B2E06D74E002A130A /* NewsPagesDisplayView.swift in Sources */,
 				828C1A412C397BBB00151AFA /* NewsOptionsListViewModel.swift in Sources */,
 				82269F412CE51CB300FC3256 /* NewsInfoOptions.swift in Sources */,
+				8293D1AD2E71E76A0035A2E9 /* TimetableParser.swift in Sources */,
 				82160F542C38A13600017A1F /* BuildingsMapView.swift in Sources */,
 				82E8A0FD2C47499A00CF2179 /* DepartmentsListView.swift in Sources */,
 				8212BDCC2C82E70300CBD5A3 /* SplashView.swift in Sources */,
@@ -2993,6 +3055,7 @@
 				82C18FC12DD277D1000E8ABD /* NewsCategoryPagesCountInfoView.swift in Sources */,
 				82A608F02C3759190005EDC3 /* Discipline.swift in Sources */,
 				8294CFC12C3606CF006E7EDA /* NewsCategories.swift in Sources */,
+				8293D1B52E71E7FB0035A2E9 /* NewsParser.swift in Sources */,
 				8279F5992CE1864300B0E599 /* AppSectionsDisplayOptionsListView.swift in Sources */,
 				824472862CC9A7E600114870 /* TimetableDisplayOptionСell.swift in Sources */,
 				820744E32DB6830000E4C505 /* NewsSettingsListView.swift in Sources */,
@@ -3234,7 +3297,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.5;
+				MARKETING_VERSION = 1.5.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -3268,7 +3331,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.5;
+				MARKETING_VERSION = 1.5.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch.watchkitapp";
 				PRODUCT_NAME = "ФГБОУ ВО «АГПУ»";
 				SDKROOT = watchos;
@@ -3289,7 +3352,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.5.5;
+				MARKETING_VERSION = 1.5.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -3308,7 +3371,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				INFOPLIST_KEY_CFBundleDisplayName = "ASPU-App-Watch";
-				MARKETING_VERSION = 1.5.5;
+				MARKETING_VERSION = 1.5.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ASPU-App-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -3361,6 +3424,22 @@
 				version = 3.1.1;
 			};
 		};
+		8293D19F2E71E5EF0035A2E9 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = exactVersion;
+				version = 2.11.0;
+			};
+		};
+		8293D1A22E71E6900035A2E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 12.2.0;
+			};
+		};
 		82A609042C375C8B0005EDC3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -3376,6 +3455,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8255E43F2C385DA3009D24B1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		8293D1A02E71E5EF0035A2E9 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8293D19F2E71E5EF0035A2E9 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		8293D1A32E71E6900035A2E9 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8293D1A22E71E6900035A2E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		8293D1A52E71E6900035A2E9 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8293D1A22E71E6900035A2E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
 		};
 		82A609052C375C8B0005EDC3 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
