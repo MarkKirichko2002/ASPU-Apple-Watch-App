@@ -1,5 +1,5 @@
 //
-//  RemainingPairsOptionsListView.swift
+//  PairsOptionsListView.swift
 //  ASPU-App-Watch Watch App
 //
 //  Created by Марк Киричко on 29.12.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RemainingPairsOptionsListView: View {
+struct PairsOptionsListView: View {
     
     @State var isOn = UserDefaults.standard.object(forKey: "isRemainingPairsOn") as? Bool ?? false
     
@@ -18,6 +18,7 @@ struct RemainingPairsOptionsListView: View {
                 FuturePaisOptionCell()
             }
             FullPairInfoOptionCell()
+            ShowCurrentPairInfoOptionCell()
         }.navigationTitle("Пары")
         .onChange(of: isOn) {}
     }
@@ -27,5 +28,5 @@ struct RemainingPairsOptionsListView: View {
 }
 
 #Preview {
-    RemainingPairsOptionsListView()
+    PairsOptionsListView()
 }

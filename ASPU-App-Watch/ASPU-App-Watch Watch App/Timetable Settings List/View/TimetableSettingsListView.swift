@@ -11,8 +11,7 @@ struct TimetableSettingsListView: View {
     var body: some View {
         List {
             TimetableDisplayOptionСell()
-            RemainingPairsOptionCell()
-            ShowCurrentPairInfoOptionCell()
+            PairOptionCell()
             ShowRemainingWeeksCell()
         }.navigationTitle("Расписание")
     }

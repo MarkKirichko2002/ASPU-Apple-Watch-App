@@ -64,5 +64,5 @@ struct TimetableDayResultListView: View {
 }
 
 #Preview {
-    TimetableDayResultListView(id: "ВМ-ИВТ-3-1", owner: "GROUP")
+    TimetableDayResultListView(id: "ВМ-ИВТ-4-1", owner: "GROUP")
 }
