@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let settingsManager = SettingsManager()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            if settingsManager.getSavedSplashScreen() != .none {
+                SplashView(splashScreen: settingsManager.getSavedSplashScreen())
+            } else {
+                AppSectionsDisplayView()
+            }
         }
-        .padding()
     }
 }
 

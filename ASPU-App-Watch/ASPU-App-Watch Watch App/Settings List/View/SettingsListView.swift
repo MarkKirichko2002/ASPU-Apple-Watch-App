@@ -9,16 +9,22 @@ import SwiftUI
 
 struct SettingsListView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
-        
         Form() {
-            
             Section("Основое") {
                 List(SettingSections.sections) { section in
                     NavigationLink {
                         switch section.id {
                         case 1:
-                            NewsCategoriesListView()
+                            NewsSettingsListView()
+                        case 2:
+                            TimetableSettingsListView()
+                        case 3:
+                            MapSettingsListView()
+                        case 4:
+                            AppSectionsOptionsListView()
                         default:
                             EmptyView()
                         }
@@ -28,11 +34,27 @@ struct SettingsListView: View {
                 }
             }
             
+            Section("Другое") {
+                SplashScreenOptionCell()
+                SwipeOptionsCell()
+                CellStyleOptionCell()
+            }
+            
+            Section("О приложении (версия: \(getAppVersion()))") {
+                AppFeaturesCell()
+            }
+        }.navigationTitle("Настройки")
+    }
+    
+    func getAppVersion()-> String {
+        var appVersion = ""
+        if let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            appVersion = currentVersion
         }
-        .navigationTitle("Настройки")
+        return appVersion
     }
 }
 
-#Preview {
-    SettingsListView()
-}
+//#Preview {
+//    SettingsListView()
+//}
